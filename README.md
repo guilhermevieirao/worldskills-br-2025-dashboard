@@ -51,7 +51,7 @@ O arquivo `worldskills-br-2025-dashboard.html` do `main` é a versão independen
 
 ## Dados
 
-- **Participantes (`data/pessoas.json`):** os campos do painel público "Quem é Quem":
+- **Participantes (`data/pessoas.json`):** os campos do [painel público "Quem é Quem"](https://app.powerbi.com/view?r=eyJrIjoiZjU5YzMwMmEtNTQzZS00MzEzLThhZTYtMGQ4M2Y4ODAxY2YwIiwidCI6IjZkNmJjYzNmLWJkYTEtNGY1NC1hZjFkLTg2ZDRiN2Q0ZTZiOCJ9) (Power BI):
   - nome, instituição, perfil, ocupação e número da ocupação;
   - local, delegação, empresa e foto de credenciamento.
 

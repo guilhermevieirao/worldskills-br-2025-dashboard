@@ -746,11 +746,11 @@ dialog.back::backdrop { background: rgb(6 13 31 / 0.78); }
 <footer class="sources wrap">
   <h2>Fontes</h2>
   <ul>
-    <li>Participantes: painel público “Quem é Quem” da WorldSkills Brasil / SENAI (modelo <i>Registration List by Group</i>), extraído em 21/09/2026: <span id="foot-count"></span>. As fotos são as de credenciamento do painel; a original enviada, em resolução máxima, vem do mesmo endereço, sem o recorte.</li>
+    <li>Participantes e fotos: <a href="https://app.powerbi.com/view?r=eyJrIjoiZjU5YzMwMmEtNTQzZS00MzEzLThhZTYtMGQ4M2Y4ODAxY2YwIiwidCI6IjZkNmJjYzNmLWJkYTEtNGY1NC1hZjFkLTg2ZDRiN2Q0ZTZiOCJ9" target="_blank" rel="noopener">painel “Quem é Quem” da WorldSkills Brasil (Power BI)</a>.</li>
     <li>Resultados e delegação no mundial: <a href="https://skillex.com.br/" target="_blank" rel="noopener">Brasil em Shanghai</a>, com os resultados oficiais de <a href="https://results.worldskills.org/" target="_blank" rel="noopener">results.worldskills.org</a>.</li>
     <li>Contornos dos estados: <a href="https://github.com/VictorCazanave/svg-maps/tree/master/packages/brazil" target="_blank" rel="noopener">@svg-maps/brazil</a>, de Victor Cazanave (CC BY 4.0).</li>
   </ul>
-  <p style="margin-top:14px">Os dados, as miniaturas das fotos e as fontes tipográficas estão dentro deste arquivo, que abre sem internet; no site, as fotos abrem em resolução maior. Campos pessoais do modelo de origem (CPF, e-mail, celular e data de nascimento) não aparecem no painel público e não foram extraídos. Página independente, sem vínculo oficial com a WorldSkills, o SENAI ou o Senac.</p>
+  <p style="margin-top:14px">Página independente, sem vínculo oficial com a WorldSkills, o SENAI ou o Senac.</p>
 </footer>
 
 <button class="to-top" id="to-top" type="button" aria-label="Voltar ao topo" data-show="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
@@ -971,7 +971,6 @@ dialog.back::backdrop { background: rgb(6 13 31 / 0.78); }
   const occTotal = new Set(P.filter(p => p.sn).map(p => p.sn)).size;
   const instTotal = new Set(P.map(p => p.inst).filter(Boolean)).size;
   $('#tally').innerHTML = `<span><b class="num">${P.length}</b> participantes</span><span><b class="num">${occTotal}</b> ocupações</span><span><b class="num">${wsComps.length}</b> competidores em Shanghai</span>`;
-  $('#foot-count').textContent = `${P.length} registros únicos, ${P.filter(p => p.img >= 0).length} com retrato`;
   const MRANK = { prata: 0, bronze: 1, excelencia: 2, participacao: 3 };
   const fan = [...wsComps].filter(p => p.img >= 0).sort((a, b) => MRANK[a.res.medal] - MRANK[b.res.medal] || a.res.position - b.res.position || b.res.mark - a.res.mark);
   const fanPick = [];

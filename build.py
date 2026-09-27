@@ -235,7 +235,7 @@ a {{ display: inline-block; padding: 13px 22px; border-radius: 999px; background
         '', '## Da seletiva a Shanghai', '',
     ] + [f'- {name}: #{n:02d} {pt}, {MED[m]}, {pos}º de {tot}' + (', Best of Nation' if bon else '') for n, name, pt, m, pos, tot, bon in comps] + [
         '', '## Fontes', '',
-        '- Painel público "Quem é Quem" da WorldSkills Brasil / SENAI (Power BI).',
+        '- Painel "Quem é Quem" da WorldSkills Brasil (Power BI): https://app.powerbi.com/view?r=eyJrIjoiZjU5YzMwMmEtNTQzZS00MzEzLThhZTYtMGQ4M2Y4ODAxY2YwIiwidCI6IjZkNmJjYzNmLWJkYTEtNGY1NC1hZjFkLTg2ZDRiN2Q0ZTZiOCJ9',
         '- Resultados oficiais: https://results.worldskills.org/',
         '- Álbum Brasil em Shanghai: https://skillex.com.br/', '']
     w('llms.txt', '\n'.join(lines))
