@@ -564,6 +564,27 @@ table.people .nm button { padding: 0; border: 0; background: none; font: inherit
 @media (hover: hover) and (pointer: fine) { .sources .author__links a:hover { background: rgb(255 255 255 / 0.08); } }
 @media (max-width: 480px) { .sources .author { align-items: flex-start; gap: 14px; } .sources .author__photo { width: 78px; } .sources .author__name { font-size: 1.6rem; } }
 
+/* foto ampliada: um toque abre a foto inteira por cima de tudo; outro toque, Esc ou × fecham */
+[data-zoom-root] { position: relative; }
+.zoom-btn { position: absolute; inset: 0; z-index: 3; display: flex; align-items: flex-start; justify-content: flex-end; padding: 8px; border: 0; border-radius: inherit; background: none; color: #fff; cursor: zoom-in; }
+.zoom-btn svg { width: 36px; height: 36px; padding: 8px; border-radius: 50%; background: rgb(0 0 0 / 0.45); opacity: 0.85; transition: opacity 160ms ease, transform 160ms var(--ease-out); }
+@media (hover: hover) and (pointer: fine) { .zoom-btn:hover svg { opacity: 1; transform: scale(1.06); } }
+.zoom-btn:focus-visible { outline-offset: -3px; }
+.author__photo .zoom-btn { padding: 4px; }
+.author__photo .zoom-btn svg { width: 24px; height: 24px; padding: 5px; }
+dialog.zoom { width: 100vw; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: rgb(6 13 31 / 0.94); color: #fff; }
+dialog.zoom[open] { display: grid; place-items: center; animation: zoom-in 200ms var(--ease-out); }
+dialog.zoom::backdrop { background: transparent; }
+dialog.zoom img { max-width: calc(100vw - 32px); max-height: calc(100dvh - 104px); width: auto; height: auto; object-fit: contain; border-radius: 8px; box-shadow: 0 30px 60px -20px rgb(0 0 0 / 0.8); cursor: zoom-out; }
+.zoom__close { position: fixed; top: calc(12px + env(safe-area-inset-top, 0px)); right: 12px; width: 44px; height: 44px; display: grid; place-items: center; padding: 0; border: 0; border-radius: 50%; background: rgb(255 255 255 / 0.16); color: #fff; }
+.zoom__close svg { width: 20px; height: 20px; }
+@media (hover: hover) and (pointer: fine) { .zoom__close:hover { background: rgb(255 255 255 / 0.28); } }
+.zoom__cap { position: fixed; left: 16px; right: 16px; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); margin: 0; text-align: center; font-size: 13px; color: #b9c6e4; }
+@keyframes zoom-in { from { opacity: 0; } }
+dialog.zoom[open] img { animation: zoom-img 240ms var(--ease-out); }
+@keyframes zoom-img { from { transform: scale(0.96); } }
+@media (prefers-reduced-motion: reduce) { dialog.zoom[open], dialog.zoom[open] img { animation: none; } }
+
 /* voltar ao topo */
 .to-top {
   position: fixed; z-index: 30; right: max(16px, env(safe-area-inset-right, 0px));
@@ -769,6 +790,11 @@ dialog.back::backdrop { background: rgb(6 13 31 / 0.78); }
 <button class="to-top" id="to-top" type="button" aria-label="Voltar ao topo" data-show="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
 
 <dialog class="back" id="back" aria-labelledby="back-name"></dialog>
+<dialog class="zoom" id="zoom" aria-label="Foto ampliada">
+  <button class="zoom__close" type="button" aria-label="Fechar a foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  <img alt="">
+  <p class="zoom__cap"></p>
+</dialog>
 
 <script id="bundle" type="application/json">/*__DATA__*/</script>
 <script>
@@ -1343,6 +1369,25 @@ dialog.back::backdrop { background: rgb(6 13 31 / 0.78); }
     addEventListener('scroll', () => { raf ||= requestAnimationFrame(sweep); }, { passive: true });
   }
 
+  // ── foto ampliada ──
+  const ZOOM_BTN = '<button class="zoom-btn" type="button" data-zoom aria-label="Ampliar a foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4-4M11 8v6M8 11h6"/></svg></button>';
+  const zoomDlg = document.getElementById('zoom');
+  let zoomFrom = null;
+  document.addEventListener('click', e => {
+    const b = e.target.closest('[data-zoom]');
+    if (!b) return;
+    const root = b.closest('[data-zoom-root]'), img = root && root.querySelector('img');
+    if (!img || !img.src) return;
+    zoomFrom = b;
+    const z = zoomDlg.querySelector('img');
+    z.src = img.currentSrc || img.src; z.alt = img.alt || '';
+    zoomDlg.querySelector('.zoom__cap').textContent = root.querySelector('figcaption')?.textContent || img.alt || '';
+    zoomDlg.showModal();
+    zoomDlg.querySelector('.zoom__close').focus();
+  });
+  zoomDlg.addEventListener('click', () => zoomDlg.close());
+  zoomDlg.addEventListener('close', () => { zoomDlg.querySelector('img').removeAttribute('src'); if (zoomFrom?.isConnected) zoomFrom.focus({ preventScroll: true }); });
+
   // ── verso ──
   const dlg = $('#back');
   const skillLine = s => `<p class="result-line result-line--sm"><span class="medal" data-m="${s.medal}">${MEDAL[s.medal]}</span><span><b class="num">${ord(s.position)}</b> de ${s.total}</span><span><b class="num">${s.mark}</b> pontos</span></p>`;
@@ -1420,7 +1465,7 @@ dialog.back::backdrop { background: rgb(6 13 31 / 0.78); }
     dlg.style.setProperty('--sec', p.sk ? secVar(p.sector) : 'var(--cover)');
     dlg.innerHTML = `<div class="back__inner">
       <div class="back__media">
-        ${photos.length ? `<figure class="back__main" id="back-fig"><img alt="${esc(p.nome)}"><figcaption></figcaption></figure>
+        ${photos.length ? `<figure class="back__main" id="back-fig" data-zoom-root><img alt="${esc(p.nome)}"><figcaption></figcaption>${ZOOM_BTN}</figure>
           ${photos.length > 1 ? `<div class="thumbs" role="group" aria-label="Fotos">${photos.map((ph, n) => `<button type="button" aria-pressed="${n === 0}" data-ph="${n}" aria-label="${esc(ph.cap)}"><img src="${thumb(ph.k)}" alt=""><span>${ph.full ? 'Original' : '3:4'}</span></button>`).join('')}</div>` : ''}
           <a class="back__full" target="_blank" rel="noopener" hidden>Abrir a foto em tamanho real</a>`
         : `<figure class="back__main"><span class="ph" aria-hidden="true">${esc(initials(p.nome))}</span></figure>`}
@@ -1510,7 +1555,7 @@ dialog.back::backdrop { background: rgb(6 13 31 / 0.78); }
     Instagram: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>',
   };
   const A = D.author;
-  if (A) $('#author').innerHTML = `<span class="author__photo"><img src="${A.photo}" alt="${esc(A.name)}" loading="lazy" decoding="async"></span>
+  if (A) $('#author').innerHTML = `<span class="author__photo" data-zoom-root><img src="${A.photo}" alt="${esc(A.name)}" loading="lazy" decoding="async">${ZOOM_BTN.replace('Ampliar a foto', 'Ampliar a foto de ' + esc(A.name))}</span>
     <div><h2 class="author__name">${esc(A.name)}</h2><p class="author__role">${esc(A.role)} · criou esta página</p>
       <ul class="author__links">${A.links.map(l => `<li><a href="${l.url}" target="_blank" rel="noopener me">${SOCIAL[l.label] || ''}${esc(l.label)}</a></li>`).join('')}</ul></div>`;
 
