@@ -1,738 +1,1256 @@
-<title>WorldSkills BR 2025 Dashboard</title>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Seletiva Nacional 2025 · WorldSkills Brasil</title>
+<meta name="description" content="Quem é quem na seletiva nacional da WorldSkills Brasil 2025: competidores, avaliadores, chefes de equipe e organização, e o que quem foi a Shanghai conquistou no mundial.">
+<meta name="theme-color" content="#0e1f47">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
+<!--__HEAD__-->
 <style>
-:root{
+/* o atributo hidden sempre esconde, mesmo em elementos com display próprio */
+[hidden] { display: none !important; }
+/* ── Tokens ─────────────────────────────────────────────
+   O mesmo álbum de "Brasil em Shanghai": capa azul-marinho com amarelo,
+   páginas de papel couché e uma tinta de processo por setor. */
+:root {
+  --cover: #0e1f47;
+  --cover-2: #16306a;
+  --cover-3: #203f85;
+  --on-cover: #f3f6fb;
+  --on-cover-2: #b9c6e4;
+  --yellow: #ffd21f;
+  --yellow-ink: #1a1400;
+  --green: #009a4e;
+  --paper: #f7f8f5;
+  --paper-2: #eceee9;
+  --ink: #121826;
+  --ink-2: #485064;
+  --ink-3: #555d6f;
+  --line: #d7dbe1;
+  --table: #10234f;
+
+  --s-construcao: #c9500f;
+  --s-artes: #d6246f;
+  --s-ti: #0a78c2;
+  --s-manufatura: #0a7a44;
+  --s-servicos: #7442c2;
+  --s-transporte: #d9352a;
+
+  --silver: #c3ccd6;
+  --silver-2: #eef2f6;
+  --bronze: #b8743a;
+  --bronze-2: #f0c99b;
+  --gold-rim: #d6a520;
+  --bon: #1d4fa8;
+  --bon-2: #102c66;
+
+  --display: 'Big Shoulders Display', 'Arial Narrow', 'Roboto Condensed', system-ui, sans-serif;
+  --body: 'Barlow', 'Segoe UI', system-ui, sans-serif;
+
+  --r-sticker: 10px;
+  --shadow-sticker: 0 1px 1px rgb(0 0 0 / 0.12), 0 8px 18px -10px rgb(0 0 0 / 0.45);
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --gutter: clamp(16px, 3vw, 40px);
   color-scheme: light;
-  --ground:#f3f2f7; --surface:#ffffff; --surface-2:#eceaf3; --surface-3:#e2dfed;
-  --line:#dcd8e8; --line-soft:#e8e5f0;
-  --ink:#1a1626; --ink-2:#565070; --ink-3:#847ca0;
-  --accent:#c94a22; --accent-soft:#fbeee8;
-  --cat-1:#2a78d6; --cat-2:#1baf7a; --cat-3:#eb6834; --cat-4:#4a3aa7; --cat-5:#eda100;
-  --cat-1-fill:#2873cd; --cat-2-fill:#15855d; --cat-3-fill:#c1552b; --cat-4-fill:#4a3aa7; --cat-5-fill:#9c6a00;
-  --bar:#2a78d6; --bar-track:#e6e3f0;
-  --shadow:0 1px 2px rgba(26,22,38,.06), 0 8px 24px -16px rgba(26,22,38,.28);
-  --focus:#4a3aa7;
 }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --table: #0c1b3f;
+    --paper: #e9ebe6;
+    --paper-2: #dcdfd8;
+    --line: #c6cbd2;
     color-scheme: dark;
-    --ground:#121020; --surface:#1b1830; --surface-2:#231f3c; --surface-3:#2c2749;
-    --line:#332e52; --line-soft:#282343;
-    --ink:#f1eff9; --ink-2:#aaa3c8; --ink-3:#7b739c;
-    --accent:#ff8f5e; --accent-soft:#33203a;
-    --cat-1:#3987e5; --cat-2:#199e70; --cat-3:#d95926; --cat-4:#9085e9; --cat-5:#c98500;
-    --cat-1-fill:#3174c5; --cat-2-fill:#15855e; --cat-3-fill:#c35022; --cat-4-fill:#736aba; --cat-5-fill:#a16a00;
-    --bar:#3987e5; --bar-track:#2a2547;
-    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px -18px rgba(0,0,0,.9);
-    --focus:#9085e9;
   }
 }
-:root[data-theme="dark"]{
+:root[data-theme="dark"] {
+  --table: #0c1b3f;
+  --paper: #e9ebe6;
+  --paper-2: #dcdfd8;
+  --line: #c6cbd2;
   color-scheme: dark;
-  --ground:#121020; --surface:#1b1830; --surface-2:#231f3c; --surface-3:#2c2749;
-  --line:#332e52; --line-soft:#282343;
-  --ink:#f1eff9; --ink-2:#aaa3c8; --ink-3:#7b739c;
-  --accent:#ff8f5e; --accent-soft:#33203a;
-  --cat-1:#3987e5; --cat-2:#199e70; --cat-3:#d95926; --cat-4:#9085e9; --cat-5:#c98500;
-  --cat-1-fill:#3174c5; --cat-2-fill:#15855e; --cat-3-fill:#c35022; --cat-4-fill:#736aba; --cat-5-fill:#a16a00;
-  --bar:#3987e5; --bar-track:#2a2547;
-  --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px -18px rgba(0,0,0,.9);
-  --focus:#9085e9;
 }
 
-*{box-sizing:border-box}
-body{
-  margin:0; background:var(--ground); color:var(--ink);
-  font-family:"IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
-  font-size:15px; line-height:1.5; -webkit-font-smoothing:antialiased;
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 1.2px 1.2px, rgb(255 255 255 / 0.07) 1.2px, transparent 0) 0 0 / 14px 14px,
+    var(--table);
+  color: var(--ink);
+  font: 400 16px/1.55 var(--body);
+  -webkit-font-smoothing: antialiased;
 }
-h1,h2,h3{font-family:"Archivo", system-ui, sans-serif; margin:0; text-wrap:balance}
-p{margin:0}
-:focus-visible{outline:2px solid var(--focus); outline-offset:2px; border-radius:4px}
-.mono{font-family:"IBM Plex Mono", ui-monospace, monospace; font-variant-numeric:tabular-nums}
+::selection { background: var(--yellow); color: var(--yellow-ink); }
+img { max-width: 100%; display: block; }
+button, input, select { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; border-radius: 6px; }
+.sr { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.wrap { width: 100%; max-width: 1320px; margin-inline: auto; padding-inline: var(--gutter); }
+.num { font-variant-numeric: tabular-nums; }
 
-.shell{max-width:1440px; margin:0 auto; padding-inline:16px; padding-block:0 56px}
+/* ── Capa ─────────────────────────────────────────────── */
+.cover:focus { outline: none; }
+.cover {
+  position: relative; overflow: hidden;
+  background-color: var(--cover);
+  background-image:
+    radial-gradient(circle at 1.2px 1.2px, rgb(255 255 255 / 0.09) 1.2px, transparent 0) 0 0 / 14px 14px,
+    linear-gradient(160deg, var(--cover-2), var(--cover) 60%);
+  color: var(--on-cover);
+  padding-block: clamp(28px, 5vw, 64px) clamp(36px, 6vw, 72px);
+}
+.cover__grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 56px); align-items: center; }
+@media (max-width: 860px) { .cover__grid { grid-template-columns: 1fr; } }
+.cover h1 {
+  margin: 0; font: 900 clamp(3.4rem, 1.8rem + 7vw, 7.6rem)/0.84 var(--display);
+  letter-spacing: -0.01em; text-transform: uppercase; text-wrap: balance;
+}
+.cover h1 span { display: block; color: var(--yellow); }
+.cover__lead { max-width: 50ch; margin: 22px 0 0; font-size: 1.125rem; color: var(--on-cover-2); }
+/* contagem impressa numa faixa amarela, como o selo da capa do álbum */
+.tally {
+  display: inline-flex; flex-wrap: wrap; gap: 4px 0; margin: 24px 0 0; padding: 8px 6px;
+  border-radius: 12px; background: var(--yellow); color: var(--yellow-ink); font: 600 15px/1.2 var(--body);
+  transform: rotate(-1.2deg); box-shadow: 0 10px 20px -12px rgb(0 0 0 / 0.7);
+}
+.tally span { display: inline-flex; align-items: baseline; gap: 6px; padding: 0 12px; }
+.tally span + span { border-left: 2px dashed rgb(26 20 0 / 0.35); }
+.tally b { font: 900 2.2rem/1 var(--display); }
+@media (max-width: 480px) {
+  .tally { display: grid; grid-template-columns: repeat(3, auto); padding: 10px 4px; }
+  .tally span { flex-direction: column; align-items: center; gap: 2px; padding: 0 10px; font-size: 13px; text-align: center; }
+  .tally b { font-size: 2rem; }
+}
+.cover__actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 20px;
+  border: 0; border-radius: 999px; font-weight: 700; text-decoration: none;
+  transition: transform 140ms var(--ease-out), background-color 160ms ease;
+}
+.btn:active { transform: scale(0.97); }
+.btn--yellow { background: var(--yellow); color: var(--yellow-ink); }
+.btn--ghost { background: transparent; color: var(--on-cover); box-shadow: inset 0 0 0 2px rgb(255 255 255 / 0.28); }
+@media (hover: hover) and (pointer: fine) {
+  .btn--yellow:hover { background: #ffe066; }
+  .btn--ghost:hover { background: rgb(255 255 255 / 0.08); }
+}
+/* leque de figurinhas brilhantes na capa: quem saiu da seletiva para o pódio */
+.fan { position: relative; height: clamp(300px, 34vw, 420px); }
+.fan .sticker { position: absolute; width: clamp(150px, 15vw, 196px); top: 50%; left: 50%; }
+.fan .sticker:nth-child(1) { transform: translate(-165%, -46%) rotate(-12deg); }
+.fan .sticker:nth-child(2) { transform: translate(-108%, -54%) rotate(-5deg); }
+.fan .sticker:nth-child(3) { transform: translate(-50%, -58%) rotate(1deg); z-index: 3; }
+.fan .sticker:nth-child(4) { transform: translate(8%, -52%) rotate(6deg); z-index: 2; }
+.fan .sticker:nth-child(5) { transform: translate(64%, -44%) rotate(12deg); }
+.fan__cap { position: absolute; left: 0; right: 0; bottom: -6px; margin: 0; text-align: center; font: 600 13px/1.3 var(--body); color: var(--on-cover-2); }
+@media (max-width: 860px) { .fan { height: 290px; } .fan .sticker { width: 132px; } }
+@media (max-width: 480px) { .fan { height: 250px; } .fan .sticker { width: 112px; } }
 
-/* ---------- masthead ---------- */
-.masthead{
-  display:flex; align-items:center; gap:16px; flex-wrap:wrap;
-  padding-block:22px 18px; border-bottom:2px solid var(--ink);
+/* ── Barra de busca (fixa) ─────────────────────────────── */
+.finder {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  background: var(--cover); color: var(--on-cover);
+  box-shadow: 0 1px 0 rgb(255 255 255 / 0.08), 0 10px 24px -16px rgb(0 0 0 / 0.8);
 }
-.wordmark{display:flex; align-items:center; gap:14px; flex:1 1 300px; min-width:0}
-.crest{
-  width:46px; height:46px; flex:none; border-radius:11px; display:grid; place-items:center;
-  background:linear-gradient(145deg,#eb6834 0%, #c02f3a 46%, #4a3aa7 100%);
-  color:#fff; font-family:"Archivo",sans-serif; font-weight:800; font-size:14px; letter-spacing:.03em;
+.finder .wrap { position: relative; }
+.finder__bar { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; padding-block: 10px; }
+.field {
+  display: flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 8px 0 12px;
+  border-radius: 999px; background: var(--cover-2); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.14);
 }
-.masthead h1{font-size:clamp(25px,4.4vw,38px); font-weight:800; letter-spacing:-.025em; line-height:1}
-.masthead .sub{
-  margin-top:5px; font-family:"IBM Plex Mono",monospace; font-size:10.5px; letter-spacing:.1em;
-  text-transform:uppercase; color:var(--ink-2);
+.field input, .field select { min-width: 0; height: 38px; border: 0; background: transparent; color: var(--on-cover); outline: none; font-size: 14px; }
+.field input { width: 210px; }
+.field input::placeholder { color: var(--on-cover-2); }
+.field select { max-width: 200px; padding-right: 4px; cursor: pointer; }
+.field select option { color: #121826; background: #ffffff; }
+.field:focus-within { box-shadow: inset 0 0 0 2px var(--yellow); }
+.field svg { width: 16px; height: 16px; flex-shrink: 0; color: var(--on-cover-2); }
+/* filtro ativo: traço sólido amarelo; os outros ficam tracejados */
+.field[data-on="true"] { box-shadow: inset 0 0 0 2px var(--yellow); }
+.field[data-on="false"] { box-shadow: none; outline: 1px dashed rgb(255 255 255 / 0.28); outline-offset: -1px; }
+.finder__count { margin-left: auto; align-self: center; font: 600 14px/1.2 var(--body); color: var(--on-cover-2); white-space: nowrap; }
+.finder__count b { font: 800 1.35rem/1 var(--display); color: var(--yellow); }
+@media (min-width: 721px) { .finder__count { position: absolute; right: var(--gutter); bottom: 16px; } }
+.chip {
+  min-height: 36px; padding: 0 12px; border: 0; border-radius: 999px;
+  background: transparent; color: var(--on-cover-2); font-weight: 600; font-size: 14px;
+  outline: 1px dashed rgb(255 255 255 / 0.28); outline-offset: -1px;
 }
-.mast-actions{display:flex; gap:8px; align-items:center; margin-left:auto}
-.ghost{
-  font:inherit; font-size:13px; color:var(--ink-2); background:var(--surface); cursor:pointer;
-  border:1px solid var(--line); border-radius:8px; padding:7px 12px;
+.chip[aria-pressed="true"] { background: var(--yellow); color: var(--yellow-ink); }
+.chip[aria-pressed="true"]:focus-visible { outline-color: #fff; }
+.chip svg { width: 15px; height: 15px; vertical-align: -3px; margin-right: 5px; }
+.finder__row { display: flex; flex-wrap: wrap; gap: 6px; padding-bottom: 10px; padding-right: 190px; }
+.finder__sep { width: 1px; align-self: stretch; margin: 4px 2px; background: rgb(255 255 255 / 0.2); }
+.finder__clear { background: none; border: 0; color: var(--yellow); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; min-height: 36px; }
+.finder__selects { display: contents; }
+.finder__toggle { display: none; }
+@media (max-width: 720px) {
+  .finder__bar { gap: 8px; }
+  .finder__toggle { display: inline-flex; align-items: center; min-height: 42px; }
+  .finder__toggle[data-n]:not([data-n="0"])::after { content: attr(data-n); margin-left: 6px; display: grid; place-items: center; min-width: 20px; height: 20px; border-radius: 10px; background: var(--yellow); color: var(--yellow-ink); font-size: 12px; }
+  .finder__selects { display: none; width: 100%; }
+  .finder[data-open="true"] .finder__selects { display: grid; gap: 8px; }
+  .finder__selects .field, .finder__selects select { width: 100%; max-width: none; }
+  .field { flex: 1 1 140px; min-height: 42px; }
+  .field input { width: 100%; }
+  .finder__count { display: block; margin: 0 0 8px; }
+  .finder__row { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding-right: 0; }
+  .chip { flex-shrink: 0; }
+  .finder__sep { flex-shrink: 0; }
 }
-.ghost:hover{color:var(--ink); border-color:var(--ink-3)}
 
-/* ---------- stat tiles ---------- */
-.stats{display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:var(--line); border-bottom:1px solid var(--line)}
-.tile{background:var(--ground); padding:16px 14px 14px; min-width:0}
-.tile b{
-  display:block; font-family:"Archivo",sans-serif; font-weight:700; letter-spacing:-.03em;
-  font-size:clamp(24px,3.6vw,40px); line-height:1; font-variant-numeric:tabular-nums;
-}
-.tile span{
-  display:block; margin-top:6px; font-family:"IBM Plex Mono",monospace; font-size:10px;
-  letter-spacing:.09em; text-transform:uppercase; color:var(--ink-2);
-}
-.tile em{
-  display:block; font-style:normal; font-size:10px; color:var(--ink-3);
-  font-family:"IBM Plex Mono",monospace; margin-top:3px;
-}
-.tile.is-lead b{color:var(--accent)}
+/* ── Ferramentas do álbum ─────────────────────────────── */
+.album-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; padding-top: 24px; color: var(--on-cover); }
+.album-tools__label { font: 800 1.1rem/1 var(--display); text-transform: uppercase; margin-right: 4px; }
+.album-tools .finder__sep { margin-inline: 6px; }
+.album-tools .field select { max-width: 190px; }
+.order { display: inline-flex; gap: 4px; }
 
-/* ---------- overview charts ---------- */
-.overview{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; padding-block:22px}
-.panel{background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:15px 15px 9px; min-width:0}
-.panel-head{display:flex; align-items:baseline; justify-content:space-between; gap:10px; margin-bottom:11px}
-.panel-head h2{font-size:14px; font-weight:700; letter-spacing:-.005em}
-.panel-head .hint{font-family:"IBM Plex Mono",monospace; font-size:9.5px; letter-spacing:.07em; text-transform:uppercase; color:var(--ink-3)}
-.bars{max-height:318px; overflow-y:auto; margin-inline:-5px; padding:0 5px 8px; display:flex; flex-direction:column; gap:2px}
-.bars::-webkit-scrollbar{width:8px}
-.bars::-webkit-scrollbar-thumb{background:var(--surface-3); border-radius:8px}
-.bar-row{
-  display:grid; grid-template-columns:1fr 32px; gap:10px; align-items:center;
-  border:0; background:none; font:inherit; color:inherit; text-align:left;
-  padding:5px 6px; border-radius:7px; cursor:pointer; width:100%;
+/* ── Páginas do álbum ─────────────────────────────────── */
+.album { padding-block: 14px 12px; display: grid; gap: 28px; }
+.page {
+  --sec: var(--s-construcao);
+  position: relative; border-radius: 18px; padding: clamp(16px, 2.4vw, 30px);
+  background:
+    radial-gradient(circle at 1.5px 1.5px, rgb(255 255 255 / 0.16) 1.5px, transparent 0) 0 0 / 12px 12px,
+    var(--sec);
+  box-shadow: 0 24px 50px -30px rgb(0 0 0 / 0.9);
+  color: #fff;
 }
-.bar-row:hover{background:var(--surface-2)}
-.bar-row[aria-pressed="true"]{background:var(--accent-soft); box-shadow:inset 2px 0 0 var(--accent)}
-.bar-label{display:block; font-size:12.5px; color:var(--ink); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; min-width:0}
-.bar-track{display:block; height:7px; margin-top:5px; background:var(--bar-track); border-radius:4px; overflow:hidden}
-.bar-fill{display:block; height:100%; background:var(--bar); border-radius:0 4px 4px 0; transition:width .25s ease}
-.bar-val{font-family:"IBM Plex Mono",monospace; font-size:12px; font-variant-numeric:tabular-nums; color:var(--ink-2); text-align:right}
-.bars .none{padding:10px 6px; font-size:12.5px; color:var(--ink-3)}
+.page--all { --sec: var(--cover-3); }
+.page__head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 10px 24px; margin-bottom: 22px; }
+.page__letter { flex-shrink: 0; display: grid; place-items: center; width: 1.15em; height: 1.15em; border-radius: 50%; background: #fff; color: var(--sec); font-size: 0.8em; }
+.page__title { display: flex; align-items: center; gap: 0.3em; margin: 0; font: 900 clamp(2rem, 1.3rem + 2.6vw, 3.4rem)/0.9 var(--display); text-transform: uppercase; }
+.page__stats { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 14px; }
+.page__stats b { display: block; font: 800 1.6rem/1 var(--display); }
+.page__body { display: grid; gap: 30px; }
+/* cada ocupação: cabeçalho impresso, as figurinhas dos competidores e a equipe */
+.occ { display: grid; gap: 12px; min-width: 0; }
+.occ + .occ { padding-top: 26px; border-top: 2px dashed rgb(255 255 255 / 0.4); }
+.occ__head { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 10px; }
+.occ__n { flex-shrink: 0; display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: #fff; color: var(--sec); font: 900 1.1rem/1 var(--display); }
+.occ__name { min-width: 0; margin: 0; font: 800 1.45rem/1 var(--display); text-transform: uppercase; letter-spacing: 0.01em; overflow-wrap: break-word; }
+.occ__meta { flex-basis: 100%; margin: 0; padding-left: 48px; font-size: 14px; color: rgb(255 255 255 / 0.88); }
+.occ__stickers { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 22px 16px; align-items: start; }
+@media (max-width: 480px) {
+  .occ__stickers { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 10px; }
+  .occ__meta { padding-left: 0; }
+}
+.page .sticker { transform: rotate(var(--rot, 0deg)); }
 
-/* ---------- toolbar ---------- */
-.toolbar{
-  position:sticky; top:env(safe-area-inset-top, 0px); z-index:20;
-  background:var(--ground); border-bottom:1px solid var(--line);
-  padding-block:12px; display:flex; flex-direction:column; gap:10px;
-  margin-inline:-16px; padding-inline:16px;
+/* ── Figurinha ────────────────────────────────────────── */
+.sticker {
+  --tint: var(--sec, var(--cover-2));
+  position: relative; display: block; width: 100%; padding: 6px; border: 0; text-align: left;
+  border-radius: var(--r-sticker); background: #fff; color: var(--ink);
+  box-shadow: var(--shadow-sticker);
+  transition: transform 220ms var(--ease-out), box-shadow 220ms var(--ease-out);
+  isolation: isolate;
 }
-.search-row{display:flex; gap:9px; flex-wrap:wrap; align-items:center}
-.search{position:relative; flex:1 1 260px; min-width:0}
-.search input{
-  width:100%; font:inherit; font-size:15px; color:var(--ink); background:var(--surface);
-  border:1px solid var(--line); border-radius:9px; padding:10px 36px 10px 36px;
+@media (hover: hover) and (pointer: fine) {
+  .page .sticker:hover { transform: translateY(-3px) rotate(-0.6deg); box-shadow: 0 2px 2px rgb(0 0 0 / 0.12), 0 16px 26px -12px rgb(0 0 0 / 0.55); }
 }
-.search input::placeholder{color:var(--ink-3)}
-.search svg{position:absolute; left:12px; top:50%; transform:translateY(-50%); color:var(--ink-3)}
-.search button{
-  position:absolute; right:6px; top:50%; transform:translateY(-50%); border:0; background:none;
-  color:var(--ink-3); cursor:pointer; font-size:19px; line-height:1; padding:3px 7px; border-radius:6px;
+.sticker:active { transform: scale(0.98); }
+.sticker__photo {
+  position: relative; display: block; aspect-ratio: 3 / 4; overflow: hidden; border-radius: 6px 6px 0 0;
+  background: linear-gradient(180deg, color-mix(in oklab, var(--tint) 30%, #fff), color-mix(in oklab, var(--tint) 65%, #fff));
 }
-.search button:hover{color:var(--ink); background:var(--surface-2)}
-.search-row select{
-  font:inherit; font-size:13px; color:var(--ink); background:var(--surface);
-  border:1px solid var(--line); border-radius:9px; padding:9px 10px; max-width:185px;
+.sticker__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.ph { display: grid; place-items: center; width: 100%; height: 100%; font: 900 2.6rem/1 var(--display); color: rgb(255 255 255 / 0.9); }
+.sticker__n {
+  position: absolute; top: 6px; left: 6px; z-index: 2;
+  min-width: 34px; height: 26px; padding: 0 6px; display: grid; place-items: center; border-radius: 6px;
+  background: var(--ink); color: #fff; font: 800 1rem/1 var(--display);
 }
-.search-row select option{ color:var(--ink); background:var(--surface); }
-.seg{display:flex; background:var(--surface); border:1px solid var(--line); border-radius:9px; overflow:hidden}
-.seg button{
-  border:0; background:none; font:inherit; font-size:12.5px; color:var(--ink-2); cursor:pointer; padding:9px 13px;
+.sticker__uf {
+  position: absolute; top: 6px; right: 6px; z-index: 2; height: 22px; padding: 0 6px; display: grid; place-items: center;
+  border-radius: 5px; background: #fff; color: var(--ink); font: 700 12px/1 var(--body); letter-spacing: 0.04em;
 }
-.seg button[aria-pressed="true"]{background:var(--ink); color:var(--surface)}
-.chips{display:flex; gap:7px; flex-wrap:wrap; align-items:center}
-.chip{
-  display:inline-flex; align-items:center; gap:7px; font:inherit; font-size:12.5px; cursor:pointer;
-  border:1px solid var(--line); background:var(--surface); color:var(--ink-2);
-  border-radius:99px; padding:6px 12px 6px 9px;
+.sticker__band { position: relative; z-index: 4; display: block; padding: 7px 8px 6px; background: var(--tint); color: #fff; }
+.sticker__name { display: block; font: 800 1.2rem/0.95 var(--display); text-transform: uppercase; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sticker__occ { display: block; margin-top: 3px; font: 500 12px/1.2 var(--body); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sticker__res {
+  position: relative; z-index: 4; display: flex; align-items: center; justify-content: space-between; gap: 6px; padding: 6px 4px 1px;
+  font: 600 12.5px/1.2 var(--body); color: var(--ink-2);
 }
-.chip .dot{width:9px; height:9px; border-radius:3px; flex:none; background:var(--c)}
-.chip .n{font-family:"IBM Plex Mono",monospace; font-size:11px; color:var(--ink-3); font-variant-numeric:tabular-nums}
-.chip[aria-pressed="true"]{color:var(--ink); box-shadow:inset 0 0 0 1.5px var(--c); border-color:transparent}
-.chip[aria-pressed="true"] .n{color:var(--ink-2)}
+.sticker__res b { font: 800 1.05rem/1 var(--display); color: var(--ink); }
+.medal { display: inline-flex; align-items: center; gap: 5px; font-weight: 700; color: var(--ink); }
+.medal::before { content: ''; flex-shrink: 0; width: 12px; height: 12px; border-radius: 50%; background: var(--line); box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.15); }
+.medal[data-m="prata"]::before { background: linear-gradient(135deg, var(--silver-2), var(--silver) 60%, #9aa5b1); }
+.medal[data-m="bronze"]::before { background: linear-gradient(135deg, var(--bronze-2), var(--bronze) 60%, #8a5222); }
+.medal[data-m="excelencia"]::before { background: #fff; box-shadow: inset 0 0 0 2.5px var(--gold-rim); }
+/* excelência: aro dourado fino; prata e bronze: figurinha brilhante */
+.sticker[data-m="excelencia"] { box-shadow: var(--shadow-sticker), inset 0 0 0 2px var(--gold-rim); }
+.sticker[data-m="prata"], .sticker[data-m="bronze"] { --mx: 50%; --my: 30%; }
+.sticker[data-m="prata"] { background: linear-gradient(135deg, #f7f9fb, var(--silver) 45%, #f4f6f8 70%, #a9b3be); }
+.sticker[data-m="bronze"] { background: linear-gradient(135deg, #fbe4c9, var(--bronze) 45%, #f6d2a7 70%, #95592a); }
+.sticker[data-m="prata"]::after, .sticker[data-m="bronze"]::after {
+  content: ''; position: absolute; inset: 0; z-index: 3; border-radius: inherit; pointer-events: none; padding: 6px;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  background:
+    radial-gradient(circle at var(--mx) var(--my), rgb(255 255 255 / 0.55), transparent 42%),
+    repeating-linear-gradient(115deg, rgb(255 0 128 / 0.12) 0 6%, rgb(255 230 0 / 0.12) 6% 12%, rgb(0 220 255 / 0.12) 12% 18%, rgb(120 80 255 / 0.1) 18% 24%);
+  background-size: 100% 100%, 260% 260%;
+  background-position: 0 0, var(--mx) var(--my);
+  mix-blend-mode: overlay;
+}
+.sticker[data-m="prata"] .sticker__res, .sticker[data-m="bronze"] .sticker__res { color: var(--ink); }
+.sticker[data-m="prata"] .sticker__band, .sticker[data-m="bronze"] .sticker__band {
+  background-image: linear-gradient(105deg, transparent calc(var(--mx) - 22%), rgb(255 255 255 / 0.32) var(--mx), transparent calc(var(--mx) + 22%));
+}
+/* foi a Shanghai: faixa azul-marinho da capa na base da foto */
+.sash {
+  position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; height: 22px;
+  display: flex; align-items: center; justify-content: center; gap: 5px;
+  color: #fff; font: 800 10.5px/1 var(--body); letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap;
+  background:
+    radial-gradient(circle at 1px 1px, rgb(255 255 255 / 0.2) 0.8px, transparent 0) 0 0 / 7px 7px,
+    var(--cover);
+  box-shadow: 0 -1px 0 rgb(255 255 255 / 0.5);
+}
+.sash svg { width: 11px; height: 11px; flex-shrink: 0; }
+/* Best of Nation: azul do globo da bandeira com estrelas brancas, separado do bronze */
+.sash--bon {
+  background:
+    linear-gradient(105deg, transparent calc(var(--mx, 50%) - 22%), rgb(255 255 255 / 0.28) var(--mx, 50%), transparent calc(var(--mx, 50%) + 22%)),
+    radial-gradient(circle at 1px 1px, rgb(255 255 255 / 0.35) 0.8px, transparent 0) 0 0 / 7px 7px,
+    linear-gradient(90deg, var(--bon-2), var(--bon) 50%, var(--bon-2));
+}
+.sash--bon svg { width: 10px; height: 10px; }
+/* ex-competidor da WorldSkills: selo com estrela e aro dourado */
+.ex-badge { position: absolute; left: 4px; top: 4px; z-index: 2; display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: var(--yellow); color: var(--yellow-ink); box-shadow: 0 0 0 2px #fff, 0 2px 6px rgb(0 0 0 / 0.35); }
+.ex-badge svg { width: 14px; height: 14px; }
+.ex-badge--inline { position: static; display: inline-grid; margin-right: 8px; vertical-align: -5px; box-shadow: none; }
 
-/* ---------- active filters + count ---------- */
-.resultbar{display:flex; align-items:center; gap:10px; flex-wrap:wrap; padding-block:14px 12px}
-.count{font-family:"Archivo",sans-serif; font-weight:700; font-size:15px; letter-spacing:-.01em}
-.count .mono{color:var(--accent)}
-.count .of{color:var(--ink-3); font-weight:400}
-.active{display:flex; gap:6px; flex-wrap:wrap; align-items:center}
-.tag{
-  display:inline-flex; align-items:center; gap:6px; font-size:12px; background:var(--surface-2);
-  border:1px solid var(--line); border-radius:7px; padding:4px 5px 4px 9px; color:var(--ink-2);
+/* equipe da ocupação: avaliação e oficina */
+.crew { border-radius: 10px; background: rgb(0 0 0 / 0.16); }
+.crew > summary {
+  list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  min-height: 40px; padding: 6px 12px; cursor: pointer; font: 600 14px/1.2 var(--body);
 }
-.tag b{font-weight:600; color:var(--ink)}
-.tag button{border:0; background:none; cursor:pointer; color:var(--ink-3); font-size:15px; line-height:1; padding:0 4px; border-radius:4px}
-.tag button:hover{color:var(--accent)}
-.clear-all{font:inherit; font-size:12px; color:var(--accent); background:none; border:0; cursor:pointer; text-decoration:underline; text-underline-offset:3px}
+.crew > summary::-webkit-details-marker { display: none; }
+.crew > summary::after { content: '+'; font: 800 1.2rem/1 var(--display); }
+.crew[open] > summary::after { content: '–'; }
+.crew__list { display: grid; grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: 12px 10px; padding: 2px 12px 12px; }
+.mini { display: grid; align-content: start; gap: 4px; padding: 0; border: 0; background: none; color: inherit; text-align: left; font: 600 12px/1.2 var(--body); min-width: 0; }
+.mini small { font: 500 11px/1.2 var(--body); opacity: 0.85; }
+.mini__photo { position: relative; display: block; aspect-ratio: 3 / 4; border-radius: 7px; overflow: hidden; background: rgb(255 255 255 / 0.2); border: 3px solid #fff; transition: transform 200ms var(--ease-out); }
+.mini__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.mini__photo .ph { font-size: 1.5rem; }
+.mini .sash { height: 16px; font-size: 8.5px; letter-spacing: 0.08em; gap: 3px; }
+.mini .sash svg { width: 9px; height: 9px; }
+.mini .ex-badge { width: 20px; height: 20px; left: 3px; top: 3px; }
+.mini .ex-badge svg { width: 12px; height: 12px; }
+.mini[data-ex="true"] .mini__photo { border-color: var(--gold-rim); }
+@media (hover: hover) and (pointer: fine) { .mini:hover .mini__photo { transform: translateY(-2px) rotate(-1deg); } }
 
-/* ---------- grid ---------- */
-.grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(230px,1fr)); gap:12px}
-.card{
-  display:grid; grid-template-columns:72px 1fr; gap:12px; align-items:start; text-align:left;
-  background:var(--surface); border:1px solid var(--line); border-left:3px solid var(--c);
-  border-radius:11px; padding:12px; cursor:pointer; font:inherit; color:inherit; min-width:0;
-}
-.card:hover{box-shadow:var(--shadow)}
-.avatar{width:72px; height:96px; border-radius:9px; object-fit:cover; display:block; background:var(--surface-2)}
-.avatar.ph{
-  display:grid; place-items:center; font-family:"Archivo",sans-serif; font-weight:700;
-  font-size:22px; color:var(--ink-3);
-}
-.card-body{min-width:0; display:block}
-.card h3{font-size:14px; font-weight:600; letter-spacing:-.01em; line-height:1.25; overflow-wrap:anywhere}
-.role{
-  display:inline-block; margin-top:5px; font-family:"IBM Plex Mono",monospace; font-size:9px;
-  letter-spacing:.07em; text-transform:uppercase; color:#fff; background:var(--cf);
-  border-radius:4px; padding:2px 6px;
-}
-.card .skill{margin-top:6px; font-size:12.5px; color:var(--ink); font-weight:500; overflow-wrap:anywhere}
-.card .meta{margin-top:3px; font-size:11.5px; color:var(--ink-2); overflow-wrap:anywhere}
-.card .venue{color:var(--ink-3); font-size:11px}
+.empty-note { padding: 28px; border-radius: 18px; background: var(--paper); color: var(--ink); text-align: center; }
 
-/* ---------- list ---------- */
-.list-wrap{overflow-x:auto; border:1px solid var(--line); border-radius:11px; background:var(--surface)}
-table{border-collapse:collapse; width:100%; min-width:780px; font-size:13px}
-th{
-  text-align:left; font-family:"IBM Plex Mono",monospace; font-size:9.5px; letter-spacing:.09em;
-  text-transform:uppercase; color:var(--ink-2); font-weight:500; padding:11px 12px;
-  border-bottom:1px solid var(--line); position:sticky; top:0; background:var(--surface); z-index:1;
+/* ── Páginas de papel (números, comissão, lista) ──────── */
+.board, .team {
+  color: var(--ink); border-radius: 18px; padding: clamp(18px, 3vw, 36px);
+  background:
+    radial-gradient(circle at 1.4px 1.4px, rgb(14 31 71 / 0.07) 1.4px, transparent 0) 0 0 / 12px 12px,
+    var(--paper);
+  box-shadow: 0 24px 50px -30px rgb(0 0 0 / 0.9);
 }
-td{padding:8px 12px; border-bottom:1px solid var(--line-soft); vertical-align:middle}
-tbody tr{cursor:pointer}
-tbody tr:hover td{background:var(--surface-2)}
-td .mini{width:34px; height:34px; border-radius:7px; object-fit:cover; display:block; background:var(--surface-2)}
-td.nm{font-weight:600; white-space:nowrap}
-td .swatch{display:inline-block; width:8px; height:8px; border-radius:2px; background:var(--c); margin-right:7px; vertical-align:middle}
+.board h2, .team h2 { margin: 0; font: 900 clamp(2rem, 1.3rem + 2.6vw, 3.4rem)/0.9 var(--display); text-transform: uppercase; }
+.board__intro { max-width: 62ch; margin: 10px 0 0; color: var(--ink-2); }
+.board__grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 34px 36px; margin-top: 28px; }
+/* seções impressas direto na página, separadas por um filete grosso */
+.panel { grid-column: span 6; padding-top: 14px; border-top: 3px solid var(--ink); min-width: 0; }
+.panel--wide { grid-column: span 12; }
+@media (max-width: 960px) { .board__grid { grid-template-columns: minmax(0, 1fr); } .panel, .panel--wide { grid-column: auto; } }
+.panel h3 { margin: 0 0 12px; font: 800 1.35rem/1 var(--display); text-transform: uppercase; }
+.panel p.hint { margin: -6px 0 14px; font-size: 14px; color: var(--ink-3); }
+.medals { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 560px) { .medals { grid-template-columns: repeat(2, minmax(0, 132px)); justify-content: center; } }
+/* selos redondos colados na página */
+.medal-tile {
+  display: grid; place-content: center; justify-items: center; gap: 2px; aspect-ratio: 1; width: 100%; max-width: 150px;
+  border: 5px solid #fff; border-radius: 50%; text-align: center; padding: 0;
+  background: var(--paper-2); color: var(--ink); box-shadow: var(--shadow-sticker);
+  transition: transform 200ms var(--ease-out);
+}
+.medal-tile:nth-child(odd) { transform: rotate(-3deg); }
+.medal-tile:nth-child(even) { transform: rotate(2deg); }
+.medal-tile b { font: 900 2.8rem/0.9 var(--display); }
+.medal-tile span { font: 700 12px/1.1 var(--body); text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-2); }
+.medal-tile[data-m="prata"] { background: linear-gradient(135deg, #f7f9fb, var(--silver) 55%, #b9c3cd); }
+.medal-tile[data-m="bronze"] { background: linear-gradient(135deg, #fbe4c9, #d99a5d 55%, #b87a45); }
+.medal-tile[data-m="excelencia"] { background: #fff; box-shadow: var(--shadow-sticker), inset 0 0 0 3px var(--gold-rim); }
+.medal-tile[aria-pressed="true"] { outline: 3px solid var(--ink); outline-offset: 2px; }
+.ws-note { margin: 18px 0 0; font-size: 15px; color: var(--ink-2); }
+.ws-note b { font: 800 1.3rem/1 var(--display); color: var(--ink); }
 
-.more{display:grid; place-items:center; padding-top:24px}
-.more button{font:inherit; font-size:13px; padding:10px 20px; border-radius:9px; border:1px solid var(--line); background:var(--surface); color:var(--ink); cursor:pointer}
-.more button:hover{border-color:var(--ink-3)}
-.empty{text-align:center; padding:64px 20px; color:var(--ink-2)}
-.empty h3{font-size:18px; margin-bottom:6px}
+.bars { display: grid; gap: 10px; }
+.bar { display: grid; grid-template-columns: 130px 1fr 44px; align-items: center; gap: 10px; font-size: 14px; border: 0; background: none; padding: 0; text-align: left; color: var(--ink); }
+.bar__track { height: 22px; border-radius: 6px; box-shadow: inset 0 0 0 1px var(--line); overflow: hidden; display: flex; }
+.bar__track i { display: block; height: 100%; background: var(--ink); }
+.bar b { font: 800 1.15rem/1 var(--display); text-align: right; }
+.bar[aria-pressed="true"] { font-weight: 700; }
+.bar[aria-pressed="true"] .bar__track { outline: 2px solid var(--ink); outline-offset: 1px; }
+@media (max-width: 420px) { .bar { grid-template-columns: 104px 1fr 40px; } }
 
-/* ---------- drawer ---------- */
-.scrim{position:fixed; inset:0; background:rgba(16,12,28,.5); z-index:60}
-.drawer{
-  position:fixed; z-index:61; top:0; right:0; bottom:0; width:min(400px, 94vw);
-  background:var(--surface); border-left:1px solid var(--line); overflow-y:auto;
-  padding:22px 22px calc(28px + env(safe-area-inset-bottom, 0px));
-  box-shadow:-20px 0 50px -30px rgba(0,0,0,.6);
-}
-.drawer .close{position:absolute; top:14px; right:14px}
-.dw-photo{width:150px; height:200px; border-radius:14px; object-fit:cover; background:var(--surface-2); display:block}
-.drawer h2{font-size:23px; font-weight:700; letter-spacing:-.025em; margin-top:16px; line-height:1.15}
-.dw-role{
-  display:inline-block; margin-top:9px; font-family:"IBM Plex Mono",monospace; font-size:10px;
-  letter-spacing:.08em; text-transform:uppercase; color:#fff; background:var(--cf); border-radius:5px; padding:3px 8px;
-}
-.dl{margin:20px 0 0; display:grid; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:10px; overflow:hidden}
-.dl div{background:var(--surface); padding:10px 13px}
-.dl dt{font-family:"IBM Plex Mono",monospace; font-size:9px; letter-spacing:.09em; text-transform:uppercase; color:var(--ink-3)}
-.dl dd{margin:3px 0 0; font-size:14px; color:var(--ink)}
-.dw-actions{display:flex; gap:8px; flex-wrap:wrap; margin-top:18px}
-.dw-actions button{
-  font:inherit; font-size:12.5px; padding:8px 12px; border-radius:8px;
-  border:1px solid var(--line); background:var(--surface-2); color:var(--ink); cursor:pointer;
-  max-width:100%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
-}
-.dw-actions button:hover{border-color:var(--ink-3)}
+.rank-list { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.rank-list--cols { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 36px; }
+@media (max-width: 760px) { .rank-list--cols { grid-template-columns: minmax(0, 1fr); } }
+.rank-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 12px; align-items: center; font-size: 14px; }
+.rank-row__bar { grid-column: 1 / -1; display: flex; height: 8px; border-radius: 4px; box-shadow: inset 0 0 0 1px var(--line); overflow: hidden; }
+.rank-row__bar i { display: block; height: 100%; background: var(--ink); }
+.rank-row__v { color: var(--ink-2); white-space: nowrap; }
+.rank-row__v b { font: 800 1.1rem/1 var(--display); color: var(--ink); }
+.rank-row[data-on="true"] .linkish { text-decoration-color: var(--ink); text-decoration-thickness: 2px; }
+.linkish { padding: 2px 0; border: 0; background: none; color: var(--ink); font: inherit; font-weight: 600; text-align: left; text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; overflow-wrap: anywhere; }
+@media (hover: hover) and (pointer: fine) { .linkish:hover { text-decoration-color: var(--ink); } }
+.linkish .num { font-weight: 700; color: var(--ink-3); margin-right: 4px; }
+.mt-more { min-height: 40px; margin-top: 14px; padding: 0 14px; border: 2px dashed var(--ink-3); border-radius: 999px; background: none; color: var(--ink); font-weight: 700; font-size: 13.5px; }
+@media (hover: hover) and (pointer: fine) { .mt-more:hover { border-style: solid; } }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 12px; font-size: 13px; color: var(--ink-2); }
+.legend i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: -1px; margin-right: 5px; }
+.legend--center { justify-content: center; }
 
-.toast{
-  position:fixed; left:50%; transform:translateX(-50%); bottom:calc(24px + env(safe-area-inset-bottom,0px));
-  background:var(--ink); color:var(--ground); font-size:13px; padding:10px 18px; border-radius:99px; z-index:80;
-}
-.foot{padding-top:30px; border-top:1px solid var(--line); margin-top:34px; color:var(--ink-3); font-size:12px; line-height:1.7; max-width:78ch}
-.foot p + p{margin-top:10px}
-.foot b{color:var(--ink-2); font-weight:600}
+table.mt { width: 100%; border-collapse: collapse; font-size: 14px; }
+table.mt th, table.mt td { padding: 7px 6px; text-align: right; border-bottom: 1px solid var(--line); white-space: nowrap; }
+table.mt th:nth-child(2), table.mt td:nth-child(2) { text-align: left; }
+table.mt td:nth-child(2) { max-width: 0; width: 100%; overflow: hidden; text-overflow: ellipsis; }
+table.mt th { font: 700 12px/1 var(--body); text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-3); }
+table.mt tr[data-hot="true"] td { background: var(--paper-2); }
+@media (max-width: 480px) { table.mt th, table.mt td { padding: 7px 4px; } table.mt { font-size: 13.5px; } }
 
-@media (max-width:1080px){
-  .overview{grid-template-columns:1fr 1fr}
-  .overview .panel:last-child{grid-column:1 / -1}
+/* mapa dos estados */
+.states { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 24px; align-items: start; }
+@media (max-width: 760px) { .states { grid-template-columns: 1fr; } }
+.brmap { max-width: 540px; margin-inline: auto; width: 100%; }
+.brmap svg { display: block; width: 100%; height: auto; overflow: visible; }
+.brmap__uf { fill: var(--paper-2); stroke: var(--paper); stroke-width: 1.2; stroke-linejoin: round; }
+.brmap__uf[data-has="true"] { cursor: pointer; outline: none; transition: fill 160ms ease, stroke 160ms ease; }
+.brmap__uf[data-has="true"][data-hot="true"], .brmap__uf[data-has="true"]:focus-visible { stroke: var(--ink); stroke-width: 2; }
+.brmap__uf[aria-pressed="true"] { stroke: var(--ink); stroke-width: 3; }
+@media (hover: hover) and (pointer: fine) { .brmap__uf[data-has="true"]:hover { stroke: var(--ink); stroke-width: 2; } }
+.brmap__lbl { pointer-events: none; text-anchor: middle; }
+.brmap .uf { font: 700 15px/1 var(--body); letter-spacing: 0.06em; }
+.brmap .n { font: 900 30px/1 var(--display); }
+.brmap__lbl[data-size="s"] .uf { font-size: 12px; }
+.brmap__lbl[data-size="s"] .n { font-size: 22px; }
+.brmap__lbl[data-on="dark"] { fill: #fff; }
+.brmap__lbl[data-on="light"] { fill: var(--ink); }
+.brmap__call { text-anchor: start; fill: var(--ink); cursor: pointer; outline: none; }
+.brmap__call line, .brmap__call circle { pointer-events: none; }
+.brmap__call line { stroke: var(--ink); stroke-width: 1; }
+.brmap__call circle { fill: var(--ink); }
+.brmap__info { min-height: 1.55em; margin: 10px 0 0; text-align: center; font-size: 14px; color: var(--ink-2); }
+.brmap__info b { color: var(--ink); }
+
+/* ── Comissão da seletiva ─────────────────────────────── */
+.team__intro { max-width: 62ch; margin: 10px 0 20px; color: var(--ink-2); }
+.roles { display: grid; gap: 30px; }
+.role { padding-top: 10px; border-top: 3px solid var(--ink); }
+.role h3 { margin: 0 0 14px; font: 800 1.3rem/1 var(--display); text-transform: uppercase; }
+.role h3 span { font: 600 14px/1 var(--body); text-transform: none; color: var(--ink-3); margin-left: 6px; }
+.role__list { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 18px 14px; }
+@media (max-width: 480px) { .role__list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 10px; } }
+/* crachá: mesma anatomia da figurinha, faixa azul da capa */
+.card-staff { position: relative; display: block; width: 100%; border: 0; text-align: left; color: inherit; font: inherit; padding: 6px; border-radius: var(--r-sticker); background: #fff; box-shadow: var(--shadow-sticker); transition: transform 200ms var(--ease-out); }
+.card-staff:nth-child(3n+1) { transform: rotate(-0.6deg); }
+.card-staff:nth-child(3n+2) { transform: rotate(0.5deg); }
+.card-staff__photo { position: relative; display: block; aspect-ratio: 3 / 4; overflow: hidden; border-radius: 6px 6px 0 0; background: linear-gradient(180deg, #c9d3e8, #8ea0c7); }
+.card-staff__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.card-staff__band { display: block; padding: 7px 8px 6px; background: var(--cover); color: #fff; }
+.card-staff__name { display: block; font: 800 1.1rem/0.95 var(--display); text-transform: uppercase; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.card-staff__role { display: block; margin-top: 3px; font: 500 12px/1.2 var(--body); color: var(--on-cover-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.card-staff[data-ex="true"] { box-shadow: var(--shadow-sticker), inset 0 0 0 2px var(--gold-rim); }
+@media (hover: hover) and (pointer: fine) { .card-staff:hover { transform: translateY(-3px) rotate(-0.6deg); } }
+
+/* ── Lista ───────────────────────────────────────────── */
+.list-wrap { overflow-x: auto; margin-top: 18px; }
+table.people { width: 100%; min-width: 760px; border-collapse: collapse; font-size: 14px; }
+table.people th { position: sticky; top: 0; padding: 8px 8px; text-align: left; font: 700 12px/1 var(--body); text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-3); border-bottom: 3px solid var(--ink); background: var(--paper); }
+table.people td { padding: 7px 8px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+table.people tbody tr { cursor: pointer; }
+@media (hover: hover) and (pointer: fine) { table.people tbody tr:hover td { background: var(--paper-2); } }
+table.people .nm { font-weight: 700; }
+table.people .nm button { padding: 0; border: 0; background: none; font: inherit; color: inherit; text-align: left; }
+.thumb { width: 36px; height: 48px; border-radius: 5px; overflow: hidden; background: var(--paper-2); }
+.thumb img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.thumb .ph { font-size: 1rem; color: var(--ink-3); }
+.swatch { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 7px; vertical-align: -1px; }
+.ws-cell { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; }
+.ws-cell svg { width: 14px; height: 14px; color: var(--cover-3); }
+.more-row { display: grid; place-items: center; padding-top: 18px; }
+
+/* ── Fontes ───────────────────────────────────────────── */
+.sources { color: var(--on-cover-2); padding-block: 12px 48px; font-size: 14px; }
+.sources h2 { color: var(--on-cover); font: 800 1.4rem/1 var(--display); text-transform: uppercase; margin: 0 0 10px; }
+.sources ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; }
+.sources p { max-width: 90ch; }
+.sources a { color: var(--yellow); }
+
+/* voltar ao topo */
+.to-top {
+  position: fixed; z-index: 30; right: max(16px, env(safe-area-inset-right, 0px));
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  width: 48px; height: 48px; display: grid; place-items: center; padding: 0; border: 0; border-radius: 50%;
+  background: var(--yellow); color: var(--yellow-ink); box-shadow: 0 0 0 2px var(--yellow-ink), 0 10px 22px -10px rgb(0 0 0 / 0.6);
+  transition: opacity 200ms var(--ease-out), transform 200ms var(--ease-out), visibility 200ms;
 }
-@media (max-width:760px){
-  .stats{grid-template-columns:repeat(3,1fr)}
-  .overview{grid-template-columns:1fr}
-  .overview .panel:last-child{grid-column:auto}
-  .grid{grid-template-columns:1fr}
-  .search-row select{max-width:none; flex:1 1 140px}
+.to-top svg { width: 22px; height: 22px; }
+.to-top[data-show="false"] { opacity: 0; visibility: hidden; transform: translateY(12px) scale(0.95); pointer-events: none; }
+.to-top:active { transform: scale(0.94); transition-duration: 100ms; }
+@media (hover: hover) and (pointer: fine) { .to-top:hover { transform: translateY(-2px); } }
+@media (prefers-reduced-motion: reduce) { .to-top, .to-top[data-show="false"] { transform: none; } }
+.toast {
+  position: fixed; left: 50%; bottom: calc(20px + env(safe-area-inset-bottom, 0px)); z-index: 90; transform: translateX(-50%); width: max-content; max-width: calc(100vw - 32px);
+  padding: 10px 16px; border-radius: 999px; background: var(--ink); color: #fff; font: 600 14px/1.3 var(--body);
+  box-shadow: 0 10px 24px -10px rgb(0 0 0 / 0.6); animation: toast-in 200ms var(--ease-out);
 }
-@media (prefers-reduced-motion:reduce){ *{transition:none !important; animation:none !important} }
+@keyframes toast-in { from { opacity: 0; transform: translate(-50%, 8px); } }
+@media (prefers-reduced-motion: reduce) { .toast { animation: none; } }
+
+/* ── Verso da figurinha (diálogo) ─────────────────────── */
+dialog.back {
+  width: min(980px, calc(100vw - 24px)); max-height: calc(100dvh - 24px); padding: 0; border: 0; border-radius: 18px;
+  background: var(--paper); color: var(--ink); box-shadow: 0 40px 80px -30px rgb(0 0 0 / 0.9); overflow: hidden;
+}
+dialog.back::backdrop { background: rgb(6 13 31 / 0.78); }
+.back__inner { display: flex; max-height: calc(100dvh - 24px); }
+.back__inner > .back__media { flex: 0 0 38%; min-height: 0; overflow-y: auto; }
+.back__inner > .back__body { flex: 1 1 0; min-width: 0; min-height: 0; overflow-y: auto; }
+@media (max-width: 820px) {
+  .back__inner { flex-direction: column; overflow-y: auto; }
+  .back__inner > .back__media, .back__inner > .back__body { flex: none; overflow: visible; }
+}
+.back__media { background: var(--sec, var(--cover)); padding: 16px; display: grid; align-content: start; justify-items: center; }
+.back__main { position: relative; width: 100%; max-width: 320px; margin: 0; border-radius: 10px; overflow: hidden; background: rgb(0 0 0 / 0.2); aspect-ratio: 3 / 4; }
+.back__main img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.back__main .ph { font-size: 5rem; }
+.back__main figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 18px 10px 8px; font-size: 12px; color: #fff; background: linear-gradient(transparent, rgb(0 0 0 / 0.72)); }
+.back__body { padding: 0 clamp(18px, 3vw, 30px) clamp(18px, 3vw, 30px); display: grid; gap: 18px; align-content: start; }
+/* faixa impressa do verso, na tinta do setor */
+.back__band {
+  position: sticky; top: 0; z-index: 3;
+  display: grid; grid-template-columns: auto 1fr auto; gap: 14px; align-items: start;
+  margin-inline: calc(clamp(18px, 3vw, 30px) * -1); padding: 18px clamp(18px, 3vw, 30px);
+  background:
+    radial-gradient(circle at 1.5px 1.5px, rgb(255 255 255 / 0.16) 1.5px, transparent 0) 0 0 / 12px 12px,
+    var(--sec, var(--cover));
+  color: #fff;
+}
+.back__n { display: grid; place-items: center; min-width: 64px; height: 64px; padding: 0 8px; border-radius: 12px; background: var(--ink); color: #fff; font: 900 2.4rem/1 var(--display); }
+.back__n--txt { font-size: 1.5rem; }
+.back__name:focus { outline: none; }
+.back__name { margin: 0; font: 900 clamp(2rem, 1.4rem + 2vw, 3rem)/0.92 var(--display); text-transform: uppercase; text-wrap: balance; overflow-wrap: anywhere; }
+.back__where { margin-top: 6px; color: rgb(255 255 255 / 0.9); }
+.back__nav { display: flex; gap: 6px; flex-shrink: 0; }
+.icon-btn { width: 42px; height: 42px; display: grid; place-items: center; border: 0; border-radius: 50%; background: var(--paper-2); color: var(--ink); }
+.icon-btn svg { width: 18px; height: 18px; }
+.back__band .icon-btn { background: rgb(255 255 255 / 0.18); color: #fff; }
+@media (hover: hover) and (pointer: fine) { .back__band .icon-btn:hover { background: rgb(255 255 255 / 0.3); } }
+@media (max-width: 560px) {
+  .back__band { grid-template-columns: auto 1fr; }
+  .back__nav { grid-column: 1 / -1; justify-content: flex-end; order: -1; }
+  .back__n { min-width: 52px; height: 52px; font-size: 2rem; }
+}
+.back h3 { margin: 0; font: 800 1.15rem/1 var(--display); text-transform: uppercase; letter-spacing: 0.02em; }
+.back p { margin: 0; }
+.muted { color: var(--ink-2); }
+/* no mundial: caixa com aro azul-marinho; o resultado entre filetes, como no álbum */
+.wsb { display: grid; gap: 12px; padding: 14px 16px 16px; border-radius: 12px; background: var(--paper-2); box-shadow: inset 0 0 0 2px var(--cover); }
+.wsb h3 { display: flex; align-items: center; gap: 8px; }
+.wsb__ico { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: var(--cover); color: #fff; flex-shrink: 0; }
+.wsb__ico svg { width: 15px; height: 15px; }
+.wsb__role { font-size: 15px; color: var(--ink-2); }
+.wsb__role b { color: var(--ink); }
+.wsb a { color: var(--ink); font-weight: 700; font-size: 14.5px; }
+.result-line {
+  display: flex; flex-wrap: wrap; gap: 6px 0; align-items: baseline; padding: 12px 0; margin: 0 !important;
+  border-block: 3px solid var(--ink); font: 600 15px/1.2 var(--body); color: var(--ink-2);
+}
+.result-line > span { padding-right: 14px; margin-right: 14px; border-right: 2px dashed var(--line); }
+.result-line > span:last-child { border-right: 0; }
+.result-line b { font: 900 1.9rem/1 var(--display); color: var(--ink); }
+.result-line .medal { font: 800 1.25rem/1 var(--display); text-transform: uppercase; }
+.result-line--sm { padding: 8px 0; border-width: 2px; }
+.result-line--sm b { font-size: 1.5rem; }
+.result-line--sm .medal { font-size: 1.05rem; }
+@media (max-width: 480px) { .result-line .medal { flex-basis: 100%; border-right: 0; margin: 0 0 8px; padding: 0; } }
+.bon {
+  display: flex; align-items: center; gap: 14px; padding: 12px 16px; border-radius: 12px; color: #fff;
+  background:
+    radial-gradient(circle at 1.5px 1.5px, rgb(255 255 255 / 0.22) 1px, transparent 0) 0 0 / 11px 11px,
+    linear-gradient(120deg, var(--bon-2), var(--bon) 60%, var(--bon-2));
+}
+.bon__stars { display: flex; flex-shrink: 0; }
+.bon__stars svg { width: 20px; height: 20px; }
+.bon__stars svg:nth-child(2) { width: 26px; height: 26px; margin-top: -6px; }
+.bon__title { margin: 0; font: 900 1.35rem/1 var(--display); text-transform: uppercase; letter-spacing: 0.01em; }
+.bon__text { margin: 3px 0 0; font: 500 14px/1.35 var(--body); color: rgb(255 255 255 / 0.9); }
+.exws { display: grid; gap: 8px; padding: 12px 14px; border-radius: 12px; background: var(--paper-2); box-shadow: inset 0 0 0 2px var(--gold-rim); }
+.exws h3 { display: flex; align-items: center; }
+.nat { display: grid; gap: 8px; }
+.nat__list { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; font-size: 14.5px; color: var(--ink-2); }
+.nat__list li { padding-left: 14px; position: relative; }
+.nat__list li::before { content: ''; position: absolute; left: 0; top: 0.55em; width: 6px; height: 6px; border-radius: 2px; background: var(--ink-3); }
+.nat__list b { color: var(--ink); }
+.back__links { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 14px; }
 </style>
+</head>
+<body>
 
-<div class="shell">
-  <header class="masthead">
-    <div class="wordmark">
-      <div class="crest" aria-hidden="true">WSB</div>
-      <div>
-        <h1>WorldSkills BR 2025 Dashboard</h1>
-        <p class="sub">WorldSkills Brasil · SENAI · Competição Nacional</p>
+<header class="cover" id="topo" tabindex="-1">
+  <div class="wrap cover__grid">
+    <div>
+      <h1>Seletiva Nacional <span>2025</span></h1>
+      <p class="cover__lead">Quem é quem na competição nacional da WorldSkills Brasil: competidores, avaliadores, chefes de equipe e organização. Quem depois defendeu o Brasil em Shanghai traz na figurinha o que conquistou no mundial.</p>
+      <p class="tally" id="tally"></p>
+      <div class="cover__actions">
+        <a class="btn btn--yellow" href="#album">Abrir o álbum</a>
+        <button class="btn btn--ghost" type="button" data-filter="ws:1">Quem foi a Shanghai</button>
+        <a class="btn btn--ghost" href="#numeros">A seletiva em números</a>
       </div>
     </div>
-    <div class="mast-actions">
-      <button class="ghost" id="copy" type="button">Copiar CSV</button>
-      <button class="ghost" id="theme" type="button">Tema</button>
-    </div>
-  </header>
+    <div class="fan" id="fan"></div>
+  </div>
+</header>
 
-  <section class="stats" id="stats" aria-label="Resumo do recorte atual"></section>
+<nav class="finder" id="finder" aria-label="Procurar participante" data-open="false">
+  <div class="wrap">
+    <div class="finder__bar">
+      <label class="field" data-on="false" id="f-q-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <span class="sr">Nome, instituição, ocupação ou número da ocupação</span>
+        <input id="f-q" type="search" placeholder="Nome, ocupação ou nº" autocomplete="off">
+      </label>
+      <button class="chip finder__toggle" type="button" id="f-toggle" aria-expanded="false" aria-controls="f-selects">Filtros</button>
+      <div class="finder__selects" id="f-selects">
+        <label class="field" data-on="false" id="f-perfil-wrap"><span class="sr">Perfil</span><select id="f-perfil"></select></label>
+        <label class="field" data-on="false" id="f-inst-wrap"><span class="sr">Instituição</span><select id="f-inst"></select></label>
+        <label class="field" data-on="false" id="f-ocup-wrap"><span class="sr">Ocupação</span><select id="f-ocup"></select></label>
+        <label class="field" data-on="false" id="f-uf-wrap"><span class="sr">Estado</span><select id="f-uf"></select></label>
+      </div>
+    </div>
+    <span class="finder__count" aria-live="polite"><b class="num" id="f-count">0</b> de <span id="f-total">0</span> participantes</span>
+    <div class="finder__row" role="group" aria-label="Grupo">
+      <span id="f-cats" style="display:contents"></span>
+      <span class="finder__sep" aria-hidden="true"></span>
+      <button class="chip" type="button" id="f-ws" aria-pressed="false"></button>
+      <button class="chip" type="button" id="f-res" aria-pressed="true" hidden></button>
+      <button class="finder__clear" type="button" id="f-clear" hidden>Limpar filtros</button>
+    </div>
+  </div>
+</nav>
 
-  <section class="overview" aria-label="Distribuições">
-    <div class="panel">
-      <div class="panel-head"><h2>Ocupações</h2><span class="hint" id="h-ocup"></span></div>
-      <div class="bars" id="c-ocup"></div>
-    </div>
-    <div class="panel">
-      <div class="panel-head"><h2>Instituições</h2><span class="hint" id="h-inst"></span></div>
-      <div class="bars" id="c-inst"></div>
-    </div>
-    <div class="panel">
-      <div class="panel-head"><h2>Locais de competição</h2><span class="hint" id="h-local"></span></div>
-      <div class="bars" id="c-local"></div>
-    </div>
+<main class="wrap">
+  <section class="board" id="numeros" aria-labelledby="numeros-title" style="margin-top:28px">
+    <h2 id="numeros-title">A seletiva em números</h2>
+    <p class="board__intro">Todos os registros do painel público da competição nacional, e quem dali seguiu para a WorldSkills Shanghai 2026. Toque numa medalha, num estado, numa ocupação ou numa instituição para filtrar o álbum.</p>
+    <div class="board__grid" id="board"></div>
   </section>
 
-  <div class="toolbar">
-    <div class="search-row">
-      <div class="search">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="M10.5 10.5 14 14"/></svg>
-        <input id="q" type="search" placeholder="Buscar nome, instituição ou ocupação…" autocomplete="off" aria-label="Buscar pessoas">
-        <button type="button" id="qclear" aria-label="Limpar busca" hidden>×</button>
-      </div>
-      <select id="f-perfil" aria-label="Filtrar por perfil"></select>
-      <select id="f-inst" aria-label="Filtrar por instituição"></select>
-      <select id="f-ocup" aria-label="Filtrar por ocupação"></select>
-      <select id="f-local" aria-label="Filtrar por local"></select>
-      <select id="sort" aria-label="Ordenação">
-        <option value="nome">Ordenar: nome</option>
-        <option value="inst">Ordenar: instituição</option>
-        <option value="ocup">Ordenar: ocupação</option>
-        <option value="perfil">Ordenar: perfil</option>
-      </select>
-      <div class="seg" role="group" aria-label="Modo de visualização">
-        <button type="button" id="v-grid" aria-pressed="true">Grade</button>
-        <button type="button" id="v-list" aria-pressed="false">Lista</button>
-      </div>
-    </div>
-    <div class="chips" id="cats"></div>
+  <div class="album-tools" role="group" aria-label="Exibição">
+    <span class="album-tools__label">Ver</span>
+    <span class="order" role="group" aria-label="Formato">
+      <button class="chip" type="button" data-view="album" aria-pressed="true">Figurinhas</button>
+      <button class="chip" type="button" data-view="list" aria-pressed="false">Lista</button>
+    </span>
+    <span class="finder__sep" aria-hidden="true"></span>
+    <span class="order" role="group" aria-label="Ordem das ocupações" id="order-tools">
+      <button class="chip" type="button" data-order="setor" aria-pressed="true">Por setor</button>
+      <button class="chip" type="button" data-order="num" aria-pressed="false">Ordem numérica</button>
+    </span>
+    <label class="field" data-on="false" id="sort-wrap" hidden><span class="sr">Ordenar a lista</span>
+      <select id="sort"><option value="nome">Ordenar por nome</option><option value="ocup">Ordenar por ocupação</option><option value="inst">Ordenar por instituição</option><option value="perfil">Ordenar por perfil</option><option value="ws">Resultado em Shanghai</option></select>
+    </label>
+    <button class="chip" type="button" id="copy-csv">Copiar CSV</button>
   </div>
+  <div class="album" id="album" aria-label="Álbum da seletiva"></div>
+  <p class="empty-note" id="empty" hidden>Ninguém com esses filtros. <button class="finder__clear" type="button" data-clear style="color:var(--ink)">Limpar filtros</button></p>
+</main>
 
-  <div class="resultbar">
-    <p class="count" id="count"></p>
-    <div class="active" id="active"></div>
-  </div>
+<footer class="sources wrap">
+  <h2>Fontes</h2>
+  <ul>
+    <li>Participantes: painel público “Quem é Quem” da WorldSkills Brasil / SENAI (modelo <i>Registration List by Group</i>), extraído em 21/09/2026.</li>
+    <li>Resultados e delegação no mundial: <a href="https://skillex.com.br/" target="_blank" rel="noopener">Brasil em Shanghai</a>, com os resultados oficiais de <a href="https://results.worldskills.org/" target="_blank" rel="noopener">results.worldskills.org</a>.</li>
+    <li>Contornos dos estados: <a href="https://github.com/VictorCazanave/svg-maps/tree/master/packages/brazil" target="_blank" rel="noopener">@svg-maps/brazil</a>, de Victor Cazanave (CC BY 4.0).</li>
+  </ul>
+  <p style="margin-top:14px">Os dados, as fotos e as fontes tipográficas estão dentro deste arquivo, que abre sem internet. Campos pessoais do modelo de origem (CPF, e-mail, celular e data de nascimento) não aparecem no painel público e não foram extraídos. Página independente, sem vínculo oficial com a WorldSkills, o SENAI ou o Senac.</p>
+</footer>
 
-  <main id="results" aria-live="polite"></main>
-  <div class="more" id="more" hidden><button type="button" id="moreBtn"></button></div>
+<button class="to-top" id="to-top" type="button" aria-label="Voltar ao topo" data-show="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
 
-  <footer class="foot">
-    <p><b>Fonte:</b> painel público “Quem é Quem” da WorldSkills Brasil / SENAI, extraído do modelo <span class="mono">Registration List by Group</span> em 21/09/2026 — 943 registros únicos, 904 com retrato.</p>
-    <p>Esta é uma reconstrução em HTML: dados e miniaturas ficam embutidos na própria página, que funciona offline e sem depender do serviço original. Campos pessoais presentes no modelo de origem (CPF, e-mail, celular e data de nascimento) <b>não são exibidos no painel público e não foram extraídos</b>.</p>
-  </footer>
-</div>
+<dialog class="back" id="back" aria-labelledby="back-name"></dialog>
 
 <script id="bundle" type="application/json">/*__DATA__*/</script>
 <script>
-(function(){
-"use strict";
-var D = JSON.parse(document.getElementById('bundle').textContent);
+(() => {
+  const $ = (s, el = document) => el.querySelector(s);
+  const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const norm = s => String(s ?? '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+  const coll = new Intl.Collator('pt-BR');
+  const n2 = n => String(n).padStart(2, '0');
+  const ord = n => n + 'º';
+  const plural = (n, one, many) => `${n} ${n === 1 ? one : many}`;
 
-/* Categorias de perfil: agrupam os 29 rótulos da origem em 5 famílias, cada uma
-   com um slot categórico validado. A cor nunca é o único sinal — todo chip,
-   etiqueta e linha traz o rótulo por escrito. */
-var CATS = [
-  {id:'comp', nome:'Competidores',      cssvar:'--cat-1', fillvar:'--cat-1-fill', test:function(p){ return /^Competidor/.test(p); }},
-  {id:'aval', nome:'Avaliação',         cssvar:'--cat-2', fillvar:'--cat-2-fill', test:function(p){ return /^Avaliador|^SAEP Tutor/.test(p); }},
-  {id:'tec',  nome:'Liderança técnica', cssvar:'--cat-3', fillvar:'--cat-3-fill', test:function(p){ return /^(Chefe|Delegado)/.test(p); }},
-  {id:'org',  nome:'Organização',       cssvar:'--cat-4', fillvar:'--cat-4-fill', test:function(p){ return /^(Staff|Organiza|Coordenador|Assessoria)/.test(p); }},
-  {id:'com',  nome:'Comunicação',       cssvar:'--cat-5', fillvar:'--cat-5-fill', test:function(){ return true; }}
-];
-var catOfPerfil = D.perfil.map(function(p){
-  for (var i = 0; i < CATS.length; i++) if (CATS[i].test(p)) return i;
-  return CATS.length - 1;
-});
+  const D = JSON.parse($('#bundle').textContent);
+  const W = D.mundial;
 
-var DIACRITICS_RE = new RegExp('[' + String.fromCharCode(0x0300) + '-' + String.fromCharCode(0x036f) + ']', 'g');
-function norm(s){ return (s || '').normalize('NFD').replace(DIACRITICS_RE, '').toLowerCase(); }
-function esc(s){
-  return String(s).replace(/[&<>"']/g, function(c){
-    return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c];
-  });
-}
-
-var P = D.rows.map(function(r, i){
-  var inst = r[1] < 0 ? '' : D.inst[r[1]];
-  var perfil = r[2] < 0 ? '' : D.perfil[r[2]];
-  var ocup = r[3] < 0 ? '' : D.ocup[r[3]];
-  var local = r[4] < 0 ? '' : D.local[r[4]];
-  return {
-    i:i, nome:r[0], inst:inst, perfil:perfil, ocup:ocup, local:local,
-    grupo: r[5] < 0 ? '' : D.grupo[r[5]],
-    skill: r[6] || '',
-    emp: r[7] < 0 ? '' : D.emp[r[7]],
-    img: r[8],
-    cat: r[2] < 0 ? CATS.length - 1 : catOfPerfil[r[2]],
-    hay: norm([r[0], inst, ocup, perfil, local].join(' '))
-  };
-});
-function src(p){ return 'data:image/jpeg;base64,' + D.imgs[p.img]; }
-function initials(n){
-  var w = n.trim().split(/\s+/);
-  return (((w[0] || '')[0] || '') + ((w[w.length - 1] || '')[0] || '')).toUpperCase();
-}
-
-var S = { q:'', cats:{}, perfil:'', inst:'', ocup:'', local:'', sort:'nome', view:'grid', shown:48 };
-var PAGE = 48;
-
-function matchesExcept(p, skip){
-  if (skip !== 'q' && S.q && p.hay.indexOf(S.q) < 0) return false;
-  if (skip !== 'cats'){
-    var on = Object.keys(S.cats).filter(function(k){ return S.cats[k]; });
-    if (on.length && on.indexOf(String(p.cat)) < 0) return false;
-  }
-  if (skip !== 'perfil' && S.perfil && p.perfil !== S.perfil) return false;
-  if (skip !== 'inst' && S.inst && p.inst !== S.inst) return false;
-  if (skip !== 'ocup' && S.ocup && p.ocup !== S.ocup) return false;
-  if (skip !== 'local' && S.local && p.local !== S.local) return false;
-  return true;
-}
-function matches(p){ return matchesExcept(p, null); }
-
-var coll = new Intl.Collator('pt-BR');
-function sorted(list){
-  var k = S.sort;
-  return list.slice().sort(function(a, b){
-    if (k !== 'nome'){
-      var d = coll.compare(a[k] || '￿', b[k] || '￿');
-      if (d) return d;
-    }
-    return coll.compare(a.nome, b.nome);
-  });
-}
-
-function $(id){ return document.getElementById(id); }
-var elResults = $('results'), elCount = $('count'), elActive = $('active'), elStats = $('stats'),
-    elMore = $('more'), elMoreBtn = $('moreBtn'), elCats = $('cats'), elQ = $('q'), elQClear = $('qclear');
-
-function tally(list, key){
-  var m = {};
-  list.forEach(function(p){ if (p[key]) m[p[key]] = (m[p[key]] || 0) + 1; });
-  return m;
-}
-function byCount(m){
-  return Object.keys(m).sort(function(a, b){ return m[b] - m[a] || coll.compare(a, b); });
-}
-
-var allInst = tally(P, 'inst'), allOcup = tally(P, 'ocup'),
-    allLocal = tally(P, 'local'), allPerfil = tally(P, 'perfil');
-
-function fillSelect(el, label, values, counts){
-  el.innerHTML = ['<option value="">' + label + ': todos</option>'].concat(values.map(function(v){
-    return '<option value="' + esc(v) + '">' + esc(v) + ' (' + counts[v] + ')</option>';
-  })).join('');
-}
-fillSelect($('f-perfil'), 'Perfil', byCount(allPerfil), allPerfil);
-fillSelect($('f-inst'), 'Instituição', byCount(allInst), allInst);
-fillSelect($('f-ocup'), 'Ocupação', Object.keys(allOcup).sort(coll.compare), allOcup);
-fillSelect($('f-local'), 'Local', byCount(allLocal), allLocal);
-
-function renderCats(){
-  var counts = {};
-  P.forEach(function(p){ if (matchesExcept(p, 'cats')) counts[p.cat] = (counts[p.cat] || 0) + 1; });
-  elCats.innerHTML = CATS.map(function(c, i){
-    return '<button type="button" class="chip" data-cat="' + i + '" aria-pressed="' +
-      (S.cats[i] ? 'true' : 'false') + '" style="--c:var(' + c.cssvar + ')">' +
-      '<span class="dot"></span>' + c.nome + ' <span class="n">' + (counts[i] || 0) + '</span></button>';
-  }).join('');
-}
-elCats.addEventListener('click', function(e){
-  var b = e.target.closest('[data-cat]');
-  if (!b) return;
-  var k = b.getAttribute('data-cat');
-  S.cats[k] = !S.cats[k];
-  render();
-});
-
-function renderStats(list){
-  var comp = 0, aval = 0, ocup = {}, inst = {};
-  list.forEach(function(p){
-    if (p.cat === 0) comp++;
-    if (p.cat === 1) aval++;
-    if (p.ocup) ocup[p.ocup] = 1;
-    if (p.inst) inst[p.inst] = 1;
-  });
-  var filtered = list.length !== P.length;
-  var tiles = [
-    { n:list.length, l:'Participantes', lead:true, tot:P.length },
-    { n:comp, l:'Competidores' },
-    { n:aval, l:'Avaliação' },
-    { n:Object.keys(ocup).length, l:'Ocupações', tot:Object.keys(allOcup).length },
-    { n:Object.keys(inst).length, l:'Instituições', tot:Object.keys(allInst).length }
+  const SECTORS = [
+    { name: 'Construção e Edificações', key: 'construcao' },
+    { name: 'Artes Criativas e Moda', key: 'artes' },
+    { name: 'Tecnologia da Informação', key: 'ti' },
+    { name: 'Manufatura e Engenharia', key: 'manufatura' },
+    { name: 'Serviços Sociais e Pessoais', key: 'servicos' },
+    { name: 'Transporte e Logística', key: 'transporte' },
   ];
-  elStats.innerHTML = tiles.map(function(t){
-    return '<div class="tile' + (t.lead ? ' is-lead' : '') + '"><b>' + t.n + '</b><span>' + t.l + '</span>' +
-      (t.tot && filtered ? '<em>de ' + t.tot + '</em>' : '') + '</div>';
-  }).join('');
-}
+  const SECTOR_EN = { 'Construção e Edificações': 'construction building technology', 'Artes Criativas e Moda': 'creative arts fashion', 'Tecnologia da Informação': 'information communication technology', 'Manufatura e Engenharia': 'manufacturing engineering technology', 'Serviços Sociais e Pessoais': 'social personal services', 'Transporte e Logística': 'transportation logistics' };
+  const secVar = name => { const s = SECTORS.find(x => x.name === name); return s ? `var(--s-${s.key})` : 'var(--cover-2)'; };
+  const MEDAL = { prata: 'Medalha de Prata', bronze: 'Medalha de Bronze', excelencia: 'Medalha de Excelência', participacao: 'Participação' };
+  const MEDAL_SHORT = { prata: 'Prata', bronze: 'Bronze', excelencia: 'Excelência', participacao: 'Participação' };
+  const UF = { AC: 'Acre', AL: 'Alagoas', AP: 'Amapá', AM: 'Amazonas', BA: 'Bahia', CE: 'Ceará', DF: 'Distrito Federal', ES: 'Espírito Santo', GO: 'Goiás', MA: 'Maranhão', MT: 'Mato Grosso', MS: 'Mato Grosso do Sul', MG: 'Minas Gerais', PA: 'Pará', PB: 'Paraíba', PR: 'Paraná', PE: 'Pernambuco', PI: 'Piauí', RJ: 'Rio de Janeiro', RN: 'Rio Grande do Norte', RS: 'Rio Grande do Sul', RO: 'Rondônia', RR: 'Roraima', SC: 'Santa Catarina', SP: 'São Paulo', SE: 'Sergipe', TO: 'Tocantins' };
+  // estados pequenos demais para o rótulo: número fora, com linha até o estado
+  const MAP_CALLOUT = { PE: [614, 206], RJ: [548, 474], ES: [572, 380], AL: [640, 238], SE: [630, 262], PB: [640, 184], RN: [640, 160], DF: [452, 300] };
+  const COMPOUND = ['maria', 'joao', 'luiz', 'juan', 'ana', 'caio', 'marcus', 'jose'];
+  const shortName = full => {
+    const t = full.split(/\s+/).filter(w => !/^(de|da|do|dos|das|e)$/i.test(w));
+    if (t.length <= 2) return t.join(' ');
+    const first = COMPOUND.includes(norm(t[0])) ? t[0] + ' ' + t[1] : t[0];
+    return first + ' ' + t[t.length - 1];
+  };
+  const initials = n => { const w = n.trim().split(/\s+/); return ((w[0] || '')[0] + (w.length > 1 ? w[w.length - 1][0] : '')).toUpperCase(); };
 
-function renderBars(el, hintEl, counts, activeValue, kind){
-  var keys = byCount(counts);
-  var max = keys.length ? counts[keys[0]] : 1;
-  var total = keys.reduce(function(s, k){ return s + counts[k]; }, 0);
-  hintEl.textContent = keys.length + (keys.length === 1 ? ' categoria' : ' categorias');
-  if (!keys.length){
-    el.innerHTML = '<p class="none">Nenhum resultado no recorte atual.</p>';
-    return;
-  }
-  el.innerHTML = keys.map(function(k){
-    var n = counts[k], pct = Math.round(n / total * 1000) / 10;
-    return '<button type="button" class="bar-row" data-kind="' + kind + '" data-value="' + esc(k) + '"' +
-      ' aria-pressed="' + (activeValue === k ? 'true' : 'false') + '"' +
-      ' title="' + esc(k) + ' — ' + n + (n === 1 ? ' pessoa' : ' pessoas') + ' · ' + pct + '% do recorte">' +
-      '<span><span class="bar-label">' + esc(k) + '</span>' +
-      '<span class="bar-track"><span class="bar-fill" style="width:' + Math.max(2, n / max * 100) + '%"></span></span></span>' +
-      '<span class="bar-val">' + n + '</span></button>';
-  }).join('');
-}
-document.addEventListener('click', function(e){
-  var b = e.target.closest('.bar-row');
-  if (!b) return;
-  var kind = b.getAttribute('data-kind'), val = b.getAttribute('data-value');
-  S[kind] = (S[kind] === val) ? '' : val;
-  $('f-' + kind).value = S[kind];
-  render();
-});
+  const icon = {
+    left: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>',
+    right: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>',
+    close: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>',
+    star: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.8l2.7 5.7 6.2.8-4.6 4.3 1.2 6.2L12 16.8l-5.5 3 1.2-6.2L3.1 9.3l6.2-.8z"/></svg>',
+    globe: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.9 5.6 3.9 9s-1.3 6.4-3.9 9M12 3C9.4 5.6 8.1 8.6 8.1 12s1.3 6.4 3.9 9"/></svg>',
+  };
 
-var LABELS = { perfil:'Perfil', inst:'Instituição', ocup:'Ocupação', local:'Local' };
-function renderActive(){
-  var tags = [];
-  if (S.q) tags.push({ k:'q', l:'Busca', v:elQ.value.trim() });
-  Object.keys(S.cats).forEach(function(k){
-    if (S.cats[k]) tags.push({ k:'cat:' + k, l:'Grupo', v:CATS[k].nome });
+  // ── participantes ──
+  // perfis agrupados em cinco famílias, como no painel original
+  const CATS = [
+    { id: 'comp', nome: 'Competidores', test: p => /^Competidor/.test(p) },
+    { id: 'aval', nome: 'Avaliação', test: p => /^Avaliador|^SAEP Tutor/.test(p) },
+    { id: 'tec', nome: 'Liderança técnica', test: p => /^(Chefe|Delegado)/.test(p) },
+    { id: 'org', nome: 'Organização', test: p => /^(Staff|Organiza|Coordenador|Assessoria)/.test(p) },
+    { id: 'com', nome: 'Comunicação', test: () => true },
+  ];
+  const catOf = perfil => CATS.find(c => c.test(perfil)).id;
+  // comissão (quem não tem ocupação), em blocos
+  const ROLE_GROUPS = [
+    { nome: 'Coordenação', test: p => /^(Coordenador|Assessoria)/.test(p) },
+    { nome: 'Delegados técnicos', test: p => /^Delegado/.test(p) },
+    { nome: 'Chefes de equipe', test: p => /^Chefe/.test(p) },
+    { nome: 'Organização e staff', test: p => /^(Staff|Organiza)/.test(p) },
+    { nome: 'Comunicação', test: () => true },
+  ];
+  // ordem dentro da equipe da ocupação
+  const CREW_ORDER = ['Avaliador Líder', 'Avaliador Líder Adjunto', 'Chefe de Oficina', 'Coordenador Técnico', 'Avaliador', 'Avaliador de Empresa', 'SAEP Tutor', 'Staff'];
+  const crewRank = p => { const i = CREW_ORDER.indexOf(p.perfil); return i < 0 ? 99 : i; };
+
+  const P = D.rows.map((r, i) => {
+    const [nome, inst, perfil, ocup, uf, sn, img] = r;
+    const p = {
+      i, nome, inst: inst < 0 ? '' : D.inst[inst], perfil: perfil < 0 ? '' : D.perfil[perfil], ocup: ocup < 0 ? '' : D.ocup[ocup],
+      uf, sn, img, ws: W.rows[i] || null,
+    };
+    p.cat = catOf(p.perfil);
+    p.sk = sn ? W.skills[sn] : null;
+    p.sector = p.sk?.sector || '';
+    p.comp = (p.ws || []).find(x => x.kind === 'comp') || null;
+    p.res = p.comp ? W.skills[p.comp.n] : null;
+    p.past = (p.ws || []).flatMap(x => x.past || []);
+    const wsText = (p.ws || []).map(x => [x.role, x.n && W.skills[x.n]?.pt, x.n && W.skills[x.n]?.en, x.kind === 'comp' ? 'competidor' : ''].join(' ')).join(' ');
+    p.hay = norm([nome, p.inst, p.perfil, p.ocup, UF[uf], p.sk?.pt, p.sk?.en, p.sector, SECTOR_EN[p.sector], wsText, p.ws ? 'shanghai mundial worldskills 2026' : ''].join(' '));
+    p.nameKey = norm(nome);
+    return p;
   });
-  ['perfil', 'inst', 'ocup', 'local'].forEach(function(k){
-    if (S[k]) tags.push({ k:k, l:LABELS[k], v:S[k] });
+  const byName = {};
+  P.forEach(p => (byName[p.nameKey] ||= []).push(p));
+  const isComp = p => p.cat === 'comp' && p.sn;
+
+  // ── fotos: entram quando a figurinha chega perto da tela ──
+  const photo = (p, cls = '') => p.img < 0
+    ? `<span class="ph ${cls}" aria-hidden="true">${esc(initials(p.nome))}</span>`
+    : `<img data-img="${p.img}" alt="" decoding="async" ${cls ? `class="${cls}"` : ''}>`;
+  const io = 'IntersectionObserver' in window ? new IntersectionObserver(entries => entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    io.unobserve(e.target); load(e.target);
+  }), { rootMargin: '600px 0px' }) : null;
+  const load = img => { if (img.dataset.img) { img.src = 'data:image/jpeg;base64,' + D.imgs[+img.dataset.img]; img.removeAttribute('data-img'); } };
+  const lazy = root => $$('img[data-img]', root).forEach(img => io ? io.observe(img) : load(img));
+
+  // ── figurinha, mini e crachá ──
+  const rot = i => (((i * 37) % 5) - 2) * 0.45;
+  const sash = p => p.res?.bon
+    ? `<span class="sash sash--bon" aria-hidden="true">${icon.star}Best of Nation${icon.star}</span>`
+    : p.ws ? `<span class="sash" aria-hidden="true">${icon.globe}Shanghai 2026</span>` : '';
+  const wsLabel = p => {
+    if (!p.ws) return '';
+    if (p.res) return `, em Shanghai: ${MEDAL[p.res.medal]}, ${p.res.position}º de ${p.res.total}${p.res.bon ? ', Best of Nation' : ''}`;
+    const x = p.ws[0];
+    return `, em Shanghai: ${x.kind === 'gen' ? x.role : `${x.role || 'equipe'} de ${W.skills[x.n]?.pt || ''}`}`;
+  };
+  const sticker = (p, tag = 'button') => {
+    const m = p.res?.medal || '';
+    return `<${tag} class="sticker" ${tag === 'button' ? 'type="button"' : ''} data-p="${p.i}" ${m ? `data-m="${m}"` : ''}
+      aria-label="${esc(p.nome)}, ${esc(p.perfil)}${p.ocup ? ', ' + esc(p.ocup) : ''}, ${esc(p.inst)}${esc(wsLabel(p))}" style="--tint:${secVar(p.sector)};--rot:${rot(p.i)}deg">
+      <span class="sticker__photo">
+        ${p.sn ? `<span class="sticker__n num">${n2(p.sn)}</span>` : ''}
+        ${p.uf ? `<span class="sticker__uf">${p.uf}</span>` : ''}
+        ${photo(p)}
+        ${sash(p)}
+      </span>
+      <span class="sticker__band"><span class="sticker__name">${esc(shortName(p.nome))}</span><span class="sticker__occ">${esc(p.inst)}</span></span>
+      <span class="sticker__res">${p.res
+        ? `<span class="medal" data-m="${m}">${MEDAL_SHORT[m]}</span><span><b class="num">${ord(p.res.position)}</b> de ${p.res.total}</span>`
+        : `<span>${esc(p.perfil)}</span>`}</span>
+    </${tag}>`;
+  };
+  const mini = p => `<button class="mini" type="button" data-p="${p.i}" ${p.past.length ? 'data-ex="true"' : ''} aria-label="${esc(p.nome)}, ${esc(p.perfil)}, ${esc(p.inst)}${esc(wsLabel(p))}${p.past.length ? ', ex-competidor da WorldSkills' : ''}">
+      <span class="mini__photo">${p.past.length ? `<span class="ex-badge" aria-hidden="true">${icon.star}</span>` : ''}${photo(p)}${p.ws ? `<span class="sash" aria-hidden="true">${icon.globe}Shanghai</span>` : ''}</span>
+      <span>${esc(shortName(p.nome))}</span><small>${esc(p.perfil)}${p.uf ? ' · ' + p.uf : ''}</small>
+    </button>`;
+  const badge = p => `<button class="card-staff" type="button" data-p="${p.i}" ${p.past.length ? 'data-ex="true"' : ''} aria-label="${esc(p.nome)}, ${esc(p.perfil)}, ${esc(p.inst)}${esc(wsLabel(p))}${p.past.length ? ', ex-competidor da WorldSkills' : ''}">
+      <span class="card-staff__photo">${p.past.length ? `<span class="ex-badge" aria-hidden="true">${icon.star}</span>` : ''}${p.uf ? `<span class="sticker__uf">${p.uf}</span>` : ''}${photo(p)}${sash(p)}</span>
+      <span class="card-staff__band"><span class="card-staff__name">${esc(shortName(p.nome))}</span><span class="card-staff__role">${esc(p.perfil)} · ${esc(p.inst)}</span></span>
+    </button>`;
+
+  // ── filtros ──
+  const state = { q: '', cat: '', perfil: '', inst: '', ocup: '', uf: '', ws: false, res: '', view: 'album', order: 'setor', sort: 'nome', shown: 60 };
+  const SELECTS = ['perfil', 'inst', 'ocup', 'uf'];
+  const qWords = () => norm(state.q).split(/\s+/).filter(w => w && w !== '#');
+  const isNum = w => /^#?(\d{1,2})$/.exec(w);
+  const matches = p => {
+    if (state.cat && p.cat !== state.cat) return false;
+    if (state.perfil && p.perfil !== state.perfil) return false;
+    if (state.inst && p.inst !== state.inst) return false;
+    if (state.ocup && p.ocup !== state.ocup) return false;
+    if (state.uf && p.uf !== state.uf) return false;
+    if (state.ws && !p.ws) return false;
+    if (state.res && p.res?.medal !== state.res) return false;
+    // número da ocupação com ou sem # e zero (9, 09, #9, #09)
+    return qWords().every(w => { const n = isNum(w); return n ? +n[1] === p.sn : p.hay.includes(w); });
+  };
+  const filtered = () => !!(state.q || state.cat || state.ws || state.res || SELECTS.some(k => state[k]));
+
+  const tally = (list, f) => { const m = {}; list.forEach(p => { const k = f(p); if (k) m[k] = (m[k] || 0) + 1; }); return m; };
+  const fill = (id, label, m, sortAlpha, name = k => k) => {
+    const keys = Object.keys(m).sort(sortAlpha ? (a, b) => coll.compare(name(a), name(b)) : (a, b) => m[b] - m[a] || coll.compare(a, b));
+    $('#f-' + id).innerHTML = `<option value="">${label}</option>` + keys.map(k => `<option value="${esc(k)}">${esc(name(k))} (${m[k]})</option>`).join('');
+  };
+  fill('perfil', 'Todos os perfis', tally(P, p => p.perfil));
+  fill('inst', 'Todas as instituições', tally(P, p => p.inst));
+  const occNum = {}; P.forEach(p => { if (p.ocup && p.sn) occNum[p.ocup] = p.sn; });
+  fill('ocup', 'Todas as ocupações', tally(P, p => p.ocup), true, k => `${n2(occNum[k] || 0)} · ${k}`);
+  $$('#f-ocup option').forEach(o => { if (o.value) o.textContent = o.textContent; });
+  fill('uf', 'Todos os estados', tally(P, p => p.uf), true, k => UF[k] || k);
+
+  const wsAll = P.filter(p => p.ws);
+  const catCount = tally(P, p => p.cat);
+  $('#f-cats').innerHTML = `<button class="chip" type="button" data-cat="" aria-pressed="true">Todos</button>` +
+    CATS.map(c => `<button class="chip" type="button" data-cat="${c.id}" aria-pressed="false">${c.nome}</button>`).join('');
+  $('#f-ws').innerHTML = `${icon.globe}Foram a Shanghai`;
+  $('#f-total').textContent = P.length;
+
+  // ── capa ──
+  const wsComps = P.filter(p => p.res);
+  const staffWS = new Set(wsAll.flatMap(p => p.ws.filter(x => x.kind !== 'comp').map(x => x.kind + x.name))).size;
+  const occCount = new Set(P.filter(p => p.sn).map(p => p.sn)).size;
+  $('#tally').innerHTML = `<span><b class="num">${P.length}</b> participantes</span><span><b class="num">${occCount}</b> ocupações</span><span><b class="num">${wsComps.length}</b> competidores em Shanghai</span>`;
+  const MRANK = { prata: 0, bronze: 1, excelencia: 2, participacao: 3 };
+  const fan = [...wsComps].filter(p => p.img >= 0).sort((a, b) => MRANK[a.res.medal] - MRANK[b.res.medal] || a.res.position - b.res.position || b.res.mark - a.res.mark);
+  const fanPick = [];
+  for (const p of fan) { if (fanPick.length < 5 && !fanPick.some(x => x.comp.n === p.comp.n)) fanPick.push(p); }
+  $('#fan').innerHTML = [fanPick[3], fanPick[1], fanPick[0], fanPick[2], fanPick[4]].filter(Boolean).map(p => sticker(p)).join('');
+  $('#fan').setAttribute('aria-label', 'Da seletiva ao pódio de Shanghai');
+  $('#fan').setAttribute('role', 'group');
+  $$('#fan img[data-img]').forEach(load);
+  $('#fan').addEventListener('click', e => { const s = e.target.closest('[data-p]'); if (s) openBack(+s.dataset.p, s); });
+
+  // ── números ──
+  const buildBoard = () => {
+    // 1. da seletiva a Shanghai
+    const seals = ['prata', 'bronze', 'excelencia', 'participacao'].map(m => {
+      const n = wsComps.filter(p => p.res.medal === m).length;
+      return `<button class="medal-tile" type="button" data-m="${m}" data-filter="res:${m}" aria-pressed="false" aria-label="${n} ${n === 1 ? 'competidor' : 'competidores'} com ${MEDAL[m]} em Shanghai"><b class="num">${n}</b><span>${MEDAL_SHORT[m]}</span></button>`;
+    }).join('');
+    // 2. perfis
+    const catMax = Math.max(...Object.values(catCount));
+    const catBars = CATS.map(c => `<button class="bar" type="button" data-filter="cat:${c.id}" aria-pressed="false"><span>${c.nome}</span><span class="bar__track"><i style="width:${catCount[c.id] / catMax * 100}%"></i></span><b class="num">${catCount[c.id]}</b></button>`).join('');
+    // 3. estados
+    const st = {};
+    P.forEach(p => { if (!p.uf) return; const u = (st[p.uf] ||= { uf: p.uf, n: 0, comp: 0, ws: 0 }); u.n++; if (p.cat === 'comp') u.comp++; if (p.ws) u.ws++; });
+    const states = Object.values(st).sort((a, b) => b.n - a.n || coll.compare(UF[a.uf], UF[b.uf]));
+    const shade = n => n >= 60 ? 1 : n >= 30 ? 0.66 : n >= 10 ? 0.42 : 0.24;
+    const tone = n => `color-mix(in srgb, var(--green) ${Math.round(shade(n) * 100)}%, var(--paper-2))`;
+    const ufLabel = u => `${UF[u.uf]}: ${u.n} participantes, ${u.comp} competidores${u.ws ? `, ${u.ws} em Shanghai` : ''}`;
+    const order = Object.keys(D.map.states).sort((a, b) => (a === 'DF') - (b === 'DF'));
+    const paths = order.map(uf => {
+      const u = st[uf], m = D.map.states[uf];
+      return u
+        ? `<path class="brmap__uf" d="${m.d}" data-has="true" data-uf="${uf}" data-filter="uf:${uf}" role="button" tabindex="0" aria-pressed="false" aria-label="${ufLabel(u)}" style="fill:${tone(u.n)}"/>`
+        : `<path class="brmap__uf" d="${m.d}" aria-hidden="true"/>`;
+    }).join('');
+    const labels = states.map(u => {
+      const m = D.map.states[u.uf], dark = shade(u.n) >= 0.42 ? 'dark' : 'light', c = MAP_CALLOUT[u.uf];
+      if (c) return `<g class="brmap__call" data-uf="${u.uf}" aria-hidden="true"><rect x="${c[0] - 6}" y="${c[1] - 20}" width="72" height="36" fill="transparent"/><line x1="${m.x}" y1="${m.y}" x2="${c[0] - 4}" y2="${c[1]}"/><circle cx="${m.x}" cy="${m.y}" r="2.6"/><text x="${c[0]}" y="${c[1] + 9}"><tspan class="uf">${u.uf}</tspan> <tspan class="n">${u.n}</tspan></text></g>`;
+      return m.r >= 24
+        ? `<g class="brmap__lbl" data-on="${dark}" transform="translate(${m.x} ${m.y})"><text class="uf" y="-9">${u.uf}</text><text class="n" y="19">${u.n}</text></g>`
+        : `<g class="brmap__lbl" data-on="${dark}" data-size="s" transform="translate(${m.x} ${m.y})"><text class="uf" y="-6">${u.uf}</text><text class="n" y="14">${u.n}</text></g>`;
+    }).join('');
+    const stateRows = states.map((u, k) => `<tr data-uf="${u.uf}"><td class="num">${k + 1}º</td><td><button class="linkish" type="button" data-filter="uf:${u.uf}">${UF[u.uf]}</button></td><td class="num">${u.n}</td><td class="num">${u.comp}</td><td class="num">${u.ws || ''}</td></tr>`).join('');
+    const outside = P.filter(p => !p.uf).length;
+    // 4. ocupações, na tinta do setor
+    const occs = {};
+    P.forEach(p => { if (!p.sn) return; const o = (occs[p.sn] ||= { sn: p.sn, name: p.ocup, sector: p.sector, comp: 0, crew: 0 }); isComp(p) ? o.comp++ : o.crew++; });
+    const occList = Object.values(occs).sort((a, b) => (b.comp + b.crew) - (a.comp + a.crew) || a.sn - b.sn);
+    const occMax = Math.max(...occList.map(o => o.comp + o.crew));
+    const occRows = occList.map((o, k) => `<li class="rank-row" data-ocup="${esc(o.name)}" ${k >= 12 ? 'data-extra hidden' : ''}><button class="linkish" type="button" data-filter="ocup:${esc(o.name)}"><span class="num">${n2(o.sn)}</span>${esc(o.name)}</button><span class="rank-row__v"><b class="num">${o.comp}</b> comp. · <b class="num">${o.crew}</b> na equipe</span><span class="rank-row__bar"><i style="width:${o.comp / occMax * 100}%;background:${secVar(o.sector)}"></i><i style="width:${o.crew / occMax * 100}%;background:color-mix(in srgb, ${secVar(o.sector)} 38%, var(--paper))"></i></span></li>`).join('');
+    // 5. instituições
+    const insts = {};
+    P.forEach(p => { if (!p.inst) return; const o = (insts[p.inst] ||= { name: p.inst, n: 0, comp: 0 }); o.n++; if (p.cat === 'comp') o.comp++; });
+    const instList = Object.values(insts).sort((a, b) => b.n - a.n || coll.compare(a.name, b.name));
+    const instRows = instList.map((o, k) => `<li class="rank-row" data-inst="${esc(o.name)}" ${k >= 10 ? 'data-extra hidden' : ''}><button class="linkish" type="button" data-filter="inst:${esc(o.name)}">${esc(o.name)}</button><span class="rank-row__v"><b class="num">${o.n}</b> · ${o.comp} comp.</span><span class="rank-row__bar"><i style="width:${o.n / instList[0].n * 100}%"></i></span></li>`).join('');
+
+    $('#board').innerHTML = `
+      <div class="panel"><h3>Da seletiva a Shanghai</h3><p class="hint">${wsComps.length} competidores desta seletiva defenderam o Brasil na WorldSkills Shanghai 2026. O resultado de cada um no mundial:</p>
+        <div class="medals">${seals}</div>
+        <p class="ws-note">E mais <b class="num">${staffWS}</b> pessoas da seletiva viajaram como experts, intérpretes ou na comissão da delegação. <button class="linkish" type="button" data-filter="ws:1">Ver quem foi a Shanghai</button></p></div>
+      <div class="panel"><h3>Quem está na seletiva</h3><p class="hint">Os ${P.length} registros do painel, agrupados por perfil.</p><div class="bars">${catBars}</div></div>
+      <div class="panel panel--wide"><h3>Participantes por estado</h3><p class="hint">Pela delegação de cada um. ${outside} participantes da organização nacional (WorldSkills Brasil) e da Setec/MEC ficam fora do mapa.</p>
+        <div class="states">
+          <div style="overflow-x:auto"><table class="mt"><thead><tr><th>#</th><th>Estado</th><th><abbr title="Participantes">Part.</abbr></th><th><abbr title="Competidores">Comp.</abbr></th><th><abbr title="Foram a Shanghai">Mundial</abbr></th></tr></thead><tbody>${stateRows}</tbody></table></div>
+          <div><div class="brmap"><svg viewBox="0 0 680 639" role="group" aria-label="Mapa do Brasil com o número de participantes por estado">${paths}${labels}</svg>
+            <p class="brmap__info" aria-hidden="true">${states.length} estados e o Distrito Federal. Passe o mouse ou toque para filtrar.</p></div>
+            <div class="legend legend--center">${[[1, '1 a 9'], [10, '10 a 29'], [30, '30 a 59'], [60, '60 ou mais']].map(([n, t]) => `<span><i style="background:${tone(n)}"></i>${t}</span>`).join('')}</div></div>
+        </div></div>
+      <div class="panel panel--wide"><h3>Ocupações</h3><p class="hint">Competidores e equipe (avaliação e oficina) de cada uma, na cor do setor.</p>
+        <ol class="rank-list rank-list--cols" id="occ-rank">${occRows}</ol>
+        <button class="mt-more" type="button" data-more="occ-rank" aria-expanded="false">Ver as ${occList.length} ocupações</button></div>
+      <div class="panel panel--wide"><h3>Instituições</h3><p class="hint">Participantes de cada instituição e quantos são competidores.</p>
+        <ol class="rank-list rank-list--cols" id="inst-rank">${instRows}</ol>
+        <button class="mt-more" type="button" data-more="inst-rank" aria-expanded="false">Ver as ${instList.length} instituições</button></div>`;
+
+    $$('#board [data-more]').forEach(b => b.addEventListener('click', () => {
+      const open = b.getAttribute('aria-expanded') !== 'true';
+      $$(`#${b.dataset.more} [data-extra]`).forEach(li => { li.hidden = !open; });
+      b.setAttribute('aria-expanded', open);
+      b.textContent = open ? 'Mostrar menos' : b.dataset.label;
+    }));
+    $$('#board [data-more]').forEach(b => { b.dataset.label = b.textContent; });
+    const info = $('#board .brmap__info'), infoDefault = info.innerHTML;
+    const hot = uf => {
+      $$('#board [data-uf]').forEach(el => { el.dataset.hot = el.dataset.uf === uf; });
+      const u = uf && st[uf];
+      info.innerHTML = u ? `<b>${UF[uf]}</b> · ${u.n} participantes · ${u.comp} competidores${u.ws ? ` · ${u.ws} em Shanghai` : ''}` : infoDefault;
+    };
+    $$('#board [data-uf]').forEach(el => {
+      el.addEventListener('pointerenter', () => hot(el.dataset.uf));
+      el.addEventListener('pointerleave', () => hot(''));
+      el.addEventListener('focus', () => hot(el.dataset.uf));
+      el.addEventListener('blur', () => hot(''));
+    });
+    $$('#board .brmap__call').forEach(g => g.addEventListener('click', () => $(`#board .brmap__uf[data-uf="${g.dataset.uf}"]`).dispatchEvent(new MouseEvent('click', { bubbles: true }))));
+    $$('#board .brmap__uf[role="button"]').forEach(el => el.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); el.dispatchEvent(new MouseEvent('click', { bubbles: true })); }
+    }));
+  };
+
+  // qualquer botão com data-filter="chave:valor" liga (ou desliga) um filtro e leva ao álbum
+  document.addEventListener('click', e => {
+    const b = e.target.closest('[data-filter]');
+    if (!b) return;
+    const [k, ...rest] = b.dataset.filter.split(':'); const v = rest.join(':');
+    const patch = {};
+    if (k === 'ws') patch.ws = true;
+    else if (k === 'res') { patch.res = state.res === v ? '' : v; patch.ws = false; }
+    else patch[k] = state[k] === v ? '' : v;
+    setFilter(patch, true);
   });
-  elActive.innerHTML = tags.map(function(t){
-    return '<span class="tag">' + t.l + ' <b>' + esc(t.v) + '</b>' +
-      '<button type="button" data-drop="' + esc(t.k) + '" aria-label="Remover filtro ' + esc(t.l) + '">×</button></span>';
-  }).join('') + (tags.length > 1 ? '<button type="button" class="clear-all" id="clearAll">limpar tudo</button>' : '');
-}
-elActive.addEventListener('click', function(e){
-  var d = e.target.closest('[data-drop]');
-  if (d){
-    var k = d.getAttribute('data-drop');
-    if (k === 'q'){ S.q = ''; elQ.value = ''; }
-    else if (k.indexOf('cat:') === 0) S.cats[k.slice(4)] = false;
-    else { S[k] = ''; $('f-' + k).value = ''; }
-    render();
-    return;
-  }
-  if (e.target.id === 'clearAll'){
-    S.q = ''; S.cats = {}; S.perfil = S.inst = S.ocup = S.local = '';
-    elQ.value = '';
-    ['perfil', 'inst', 'ocup', 'local'].forEach(function(k){ $('f-' + k).value = ''; });
-    render();
-  }
-});
 
-function cardHTML(p){
-  var photo = p.img < 0
-    ? '<span class="avatar ph" aria-hidden="true">' + esc(initials(p.nome)) + '</span>'
-    : '<img class="avatar" src="' + src(p) + '" alt="" decoding="async">';
-  return '<button type="button" class="card" data-p="' + p.i + '" style="--c:var(' + CATS[p.cat].cssvar + ');--cf:var(' + CATS[p.cat].fillvar + ')">' +
-    photo + '<span class="card-body"><h3>' + esc(p.nome) + '</h3>' +
-    (p.perfil ? '<span class="role">' + esc(p.perfil) + '</span>' : '') +
-    (p.ocup ? '<p class="skill">' + esc(p.ocup) + '</p>' : '') +
-    '<p class="meta">' + esc(p.inst || '—') + '</p>' +
-    (p.local ? '<p class="meta venue">' + esc(p.local) + '</p>' : '') +
-    '</span></button>';
-}
-function rowHTML(p){
-  var photo = p.img < 0 ? '<span class="mini"></span>'
-    : '<img class="mini" src="' + src(p) + '" alt="" decoding="async">';
-  return '<tr data-p="' + p.i + '" style="--c:var(' + CATS[p.cat].cssvar + ')"><td>' + photo + '</td>' +
-    '<td class="nm">' + esc(p.nome) + '</td>' +
-    '<td><span class="swatch"></span>' + esc(p.perfil || '—') + '</td>' +
-    '<td>' + esc(p.ocup || '—') + '</td><td>' + esc(p.inst || '—') + '</td>' +
-    '<td>' + esc(p.local || '—') + '</td></tr>';
-}
-
-var current = [];
-function renderResults(){
-  if (!current.length){
-    elResults.innerHTML = '<div class="empty"><h3>Nenhuma pessoa encontrada</h3>' +
-      '<p>Tente outra busca ou remova um dos filtros acima.</p></div>';
-    elMore.hidden = true;
-    return;
-  }
-  var slice = current.slice(0, S.shown);
-  if (S.view === 'grid'){
-    elResults.innerHTML = '<div class="grid">' + slice.map(cardHTML).join('') + '</div>';
-  } else {
-    elResults.innerHTML = '<div class="list-wrap"><table><thead><tr><th><span class="mono">foto</span></th>' +
-      '<th>Nome</th><th>Perfil</th><th>Ocupação</th><th>Instituição</th><th>Local</th></tr></thead><tbody>' +
-      slice.map(rowHTML).join('') + '</tbody></table></div>';
-  }
-  var rest = current.length - slice.length;
-  elMore.hidden = rest <= 0;
-  if (rest > 0) elMoreBtn.textContent = 'Mostrar mais ' + Math.min(PAGE * 2, rest) + ' · ' + rest + ' restantes';
-}
-elMoreBtn.addEventListener('click', function(){ S.shown += PAGE * 2; renderResults(); });
-elResults.addEventListener('click', function(e){
-  var t = e.target.closest('[data-p]');
-  if (t) openDrawer(P[+t.getAttribute('data-p')]);
-});
-
-function render(){
-  var list = P.filter(matches);
-  current = sorted(list);
-  S.shown = PAGE;
-  elCount.innerHTML = '<span class="mono">' + current.length + '</span> ' +
-    (current.length === 1 ? 'pessoa' : 'pessoas') +
-    (current.length !== P.length ? ' <span class="of">de ' + P.length + '</span>' : '');
-  renderStats(list);
-  renderCats();
-  renderBars($('c-ocup'), $('h-ocup'), tally(list, 'ocup'), S.ocup, 'ocup');
-  renderBars($('c-inst'), $('h-inst'), tally(list, 'inst'), S.inst, 'inst');
-  renderBars($('c-local'), $('h-local'), tally(list, 'local'), S.local, 'local');
-  renderActive();
-  renderResults();
-  elQClear.hidden = !S.q;
-}
-
-var tq;
-elQ.addEventListener('input', function(){
-  clearTimeout(tq);
-  tq = setTimeout(function(){ S.q = norm(elQ.value.trim()); render(); }, 130);
-});
-elQClear.addEventListener('click', function(){ S.q = ''; elQ.value = ''; elQ.focus(); render(); });
-['perfil', 'inst', 'ocup', 'local'].forEach(function(k){
-  $('f-' + k).addEventListener('change', function(){ S[k] = this.value; render(); });
-});
-$('sort').addEventListener('change', function(){ S.sort = this.value; render(); });
-$('v-grid').addEventListener('click', function(){ setView('grid'); });
-$('v-list').addEventListener('click', function(){ setView('list'); });
-function setView(v){
-  S.view = v;
-  $('v-grid').setAttribute('aria-pressed', String(v === 'grid'));
-  $('v-list').setAttribute('aria-pressed', String(v === 'list'));
-  try { localStorage.setItem('wsb-view', v); } catch(e){}
-  renderResults();
-}
-
-function applyTheme(t){
-  if (t) document.documentElement.setAttribute('data-theme', t);
-  else document.documentElement.removeAttribute('data-theme');
-  try { t ? localStorage.setItem('wsb-theme', t) : localStorage.removeItem('wsb-theme'); } catch(e){}
-}
-$('theme').addEventListener('click', function(){
-  var cur = document.documentElement.getAttribute('data-theme');
-  var dark = cur ? cur === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
-  applyTheme(dark ? 'light' : 'dark');
-});
-try { var storedTheme = localStorage.getItem('wsb-theme'); if (storedTheme) applyTheme(storedTheme); } catch(e){}
-try { if (localStorage.getItem('wsb-view') === 'list') S.view = 'list'; } catch(e){}
-
-var scrim = null, drawer = null, lastFocus = null;
-function openDrawer(p){
-  closeDrawer();
-  lastFocus = document.activeElement;
-  scrim = document.createElement('div');
-  scrim.className = 'scrim';
-  drawer = document.createElement('aside');
-  drawer.className = 'drawer';
-  drawer.setAttribute('role', 'dialog');
-  drawer.setAttribute('aria-modal', 'true');
-  drawer.setAttribute('aria-label', p.nome);
-  drawer.style.setProperty('--c', 'var(' + CATS[p.cat].cssvar + ')');
-  drawer.style.setProperty('--cf', 'var(' + CATS[p.cat].fillvar + ')');
-  var photo = p.img < 0
-    ? '<div class="dw-photo avatar ph" style="font-size:38px">' + esc(initials(p.nome)) + '</div>'
-    : '<img class="dw-photo" src="' + src(p) + '" alt="Retrato de ' + esc(p.nome) + '">';
-  function field(l, v){ return v ? '<div><dt>' + l + '</dt><dd>' + esc(v) + '</dd></div>' : ''; }
-  drawer.innerHTML =
-    '<button type="button" class="ghost close" id="dwClose">Fechar</button>' +
-    photo + '<h2>' + esc(p.nome) + '</h2>' +
-    (p.perfil ? '<span class="dw-role">' + esc(p.perfil) + '</span>' : '') +
-    '<dl class="dl">' +
-      field('Ocupação', p.ocup) +
-      field('Nº da ocupação', p.skill) +
-      field('Instituição', p.inst) +
-      field('Delegação / equipe', p.grupo) +
-      field('Empresa', p.emp) +
-      field('Local de competição', p.local) +
-    '</dl>' +
-    '<div class="dw-actions">' +
-      (p.inst ? '<button type="button" data-go="inst">Ver ' + esc(p.inst) + '</button>' : '') +
-      (p.ocup ? '<button type="button" data-go="ocup">Ver ' + esc(p.ocup) + '</button>' : '') +
-      (p.local ? '<button type="button" data-go="local">Ver este local</button>' : '') +
-    '</div>';
-  document.body.appendChild(scrim);
-  document.body.appendChild(drawer);
-  drawer.querySelector('#dwClose').focus();
-  scrim.addEventListener('click', closeDrawer);
-  drawer.addEventListener('click', function(e){
-    if (e.target.id === 'dwClose'){ closeDrawer(); return; }
-    var g = e.target.closest('[data-go]');
-    if (g){
-      var k = g.getAttribute('data-go');
-      S[k] = p[k];
-      $('f-' + k).value = p[k];
-      closeDrawer();
-      render();
-      window.scrollTo({ top:0, behavior:'smooth' });
+  // ── álbum ──
+  let current = [];
+  const occBlock = (sn, list) => {
+    const comps = list.filter(isComp).sort((a, b) => (a.perfil !== 'Competidor') - (b.perfil !== 'Competidor') || (!!b.res - !!a.res) || coll.compare(a.nome, b.nome));
+    const crew = list.filter(p => !isComp(p)).sort((a, b) => crewRank(a) - crewRank(b) || coll.compare(a.nome, b.nome));
+    const all = P.filter(p => p.sn === sn);
+    const name = (comps[0] || crew[0]).ocup;
+    const sk = W.skills[sn];
+    const nameHit = state.q && crew.some(p => qWords().some(w => p.nameKey.includes(w)));
+    const open = filtered() && (!comps.length || nameHit || state.cat === 'aval' || state.cat === 'tec' || state.cat === 'org');
+    current.push(...comps, ...crew);
+    const wsCount = all.filter(p => p.ws).length;
+    return `<article class="occ" style="--sec:${secVar(sk?.sector)}" aria-labelledby="o-${sn}">
+      <div class="occ__head"><span class="occ__n num">${n2(sn)}</span><h3 class="occ__name" id="o-${sn}">${esc(name)}</h3>
+        <p class="occ__meta">${plural(all.filter(isComp).length, 'competidor', 'competidores')} · ${all.length - all.filter(isComp).length} na equipe${wsCount ? ` · ${wsCount} em Shanghai` : ''}</p></div>
+      ${comps.length ? `<div class="occ__stickers">${comps.map(p => sticker(p)).join('')}</div>` : ''}
+      ${crew.length ? `<details class="crew" ${open ? 'open' : ''}><summary><span>Avaliação e oficina <span class="num">(${crew.length}${crew.length !== all.length - all.filter(isComp).length ? ` de ${all.length - all.filter(isComp).length}` : ''})</span></span></summary>
+        <div class="crew__list">${crew.map(mini).join('')}</div></details>` : ''}
+    </article>`;
+  };
+  const renderAlbum = list => {
+    current = [];
+    const bySn = {};
+    list.forEach(p => { if (p.sn) (bySn[p.sn] ||= []).push(p); });
+    const sns = Object.keys(bySn).map(Number).sort((a, b) => a - b);
+    let html = '';
+    if (state.order === 'num') {
+      if (sns.length) html += `<section class="page page--all" aria-labelledby="t-all"><div class="page__head"><h2 class="page__title" id="t-all"><span class="page__letter" aria-hidden="true">#</span>Todas as ocupações</h2>
+        <div class="page__stats"><span><b class="num">${sns.length}</b>ocupações</span><span><b class="num">${list.filter(isComp).length}</b>competidores</span></div></div>
+        <div class="page__body">${sns.map(sn => occBlock(sn, bySn[sn])).join('')}</div></section>`;
+    } else {
+      SECTORS.forEach((sec, k) => {
+        const mine = sns.filter(sn => W.skills[sn]?.sector === sec.name);
+        if (!mine.length) return;
+        const ps = mine.flatMap(sn => bySn[sn]);
+        html += `<section class="page" style="--sec:var(--s-${sec.key})" aria-labelledby="t-${sec.key}">
+          <div class="page__head"><h2 class="page__title" id="t-${sec.key}"><span class="page__letter" aria-label="Grupo ${'ABCDEF'[k]}">${'ABCDEF'[k]}</span>${sec.name}</h2>
+            <div class="page__stats"><span><b class="num">${mine.length}</b>ocupações</span><span><b class="num">${ps.filter(isComp).length}</b>competidores</span><span><b class="num">${ps.filter(p => !isComp(p)).length}</b>na equipe</span>${ps.some(p => p.ws) ? `<span><b class="num">${ps.filter(p => p.ws).length}</b>em Shanghai</span>` : ''}</div></div>
+          <div class="page__body">${mine.map(sn => occBlock(sn, bySn[sn])).join('')}</div></section>`;
+      });
     }
+    // quem não tem ocupação: a comissão da seletiva, em crachás
+    const rest = list.filter(p => !p.sn);
+    if (rest.length) {
+      const groups = ROLE_GROUPS.map(g => ({ g, ps: [] }));
+      rest.forEach(p => groups.find(x => x.g.test(p.perfil)).ps.push(p));
+      groups.forEach(x => x.ps.sort((a, b) => (!!b.ws - !!a.ws) || coll.compare(a.nome, b.nome)));
+      groups.forEach(x => current.push(...x.ps));
+      html += `<section class="team" aria-labelledby="t-team"><h2 id="t-team">Comissão da seletiva</h2>
+        <p class="team__intro">Coordenação, delegados técnicos, chefes de equipe, organização e comunicação: quem fez a competição acontecer sem estar numa ocupação.</p>
+        <div class="roles">${groups.filter(x => x.ps.length).map(x => `<div class="role"><h3>${x.g.nome}<span class="num">${x.ps.length}</span></h3><div class="role__list">${x.ps.map(badge).join('')}</div></div>`).join('')}</div></section>`;
+    }
+    $('#album').innerHTML = html;
+  };
+
+  const renderList = list => {
+    const k = state.sort;
+    const wsRank = p => p.res ? MRANK[p.res.medal] * 100 + p.res.position : p.ws ? 500 : 1000;
+    current = [...list].sort((a, b) => (k === 'ws' ? wsRank(a) - wsRank(b) : k === 'ocup' ? (a.sn || 99) - (b.sn || 99) : k !== 'nome' ? coll.compare(a[k] || '￿', b[k] || '￿') : 0) || coll.compare(a.nome, b.nome));
+    const slice = current.slice(0, state.shown);
+    const wsCell = p => {
+      if (p.res) return `<span class="medal" data-m="${p.res.medal}">${MEDAL_SHORT[p.res.medal]}</span> <span class="num">${ord(p.res.position)} de ${p.res.total}</span>`;
+      if (!p.ws) return '';
+      const x = p.ws[0];
+      return `<span class="ws-cell">${icon.globe}${esc(x.kind === 'gen' ? x.role : (x.role || 'Equipe'))}</span>`;
+    };
+    $('#album').innerHTML = `<section class="board" aria-labelledby="t-list"><h2 id="t-list">Lista</h2>
+      <div class="list-wrap"><table class="people"><thead><tr><th><span class="sr">Foto</span></th><th>Nome</th><th>Perfil</th><th>Ocupação</th><th>Instituição</th><th>Em Shanghai</th></tr></thead>
+      <tbody>${slice.map(p => `<tr data-p="${p.i}"><td><div class="thumb">${photo(p)}</div></td><td class="nm"><button type="button" data-p="${p.i}">${esc(p.nome)}</button></td><td>${esc(p.perfil)}</td>
+        <td>${p.sn ? `<span class="swatch" style="background:${secVar(p.sector)}"></span><span class="num">${n2(p.sn)}</span> ${esc(p.ocup)}` : ''}</td><td>${esc(p.inst)}</td><td>${wsCell(p)}</td></tr>`).join('')}</tbody></table></div>
+      ${current.length > slice.length ? `<div class="more-row"><button class="mt-more" type="button" id="list-more">Mostrar mais ${Math.min(120, current.length - slice.length)} · faltam ${current.length - slice.length}</button></div>` : ''}</section>`;
+    $('#list-more')?.addEventListener('click', () => { state.shown += 120; renderList(list); lazy($('#album')); });
+  };
+
+  const render = () => {
+    const list = P.filter(matches);
+    $('#f-count').textContent = list.length;
+    $('#empty').hidden = list.length > 0;
+    if (state.view === 'list') renderList(list); else renderAlbum(list);
+    lazy($('#album'));
+    bindFoil($('#album'));
+    // estado dos controles
+    $$('#f-cats [data-cat]').forEach(b => b.setAttribute('aria-pressed', b.dataset.cat === state.cat));
+    $('#f-ws').setAttribute('aria-pressed', state.ws);
+    $('#f-res').hidden = !state.res;
+    if (state.res) $('#f-res').innerHTML = `${MEDAL_SHORT[state.res]} em Shanghai <span aria-hidden="true">×</span>`;
+    $('#f-q-wrap').dataset.on = !!state.q;
+    SELECTS.forEach(k => { $(`#f-${k}`).value = state[k]; $(`#f-${k}-wrap`).dataset.on = !!state[k]; });
+    $('#f-clear').hidden = !filtered();
+    $('#f-toggle').dataset.n = SELECTS.filter(k => state[k]).length;
+    $$('#board [data-filter]').forEach(b => {
+      const [k, ...r] = b.dataset.filter.split(':'); const v = r.join(':');
+      const on = k === 'ws' ? false : String(state[k]) === v;
+      if (b.hasAttribute('aria-pressed')) b.setAttribute('aria-pressed', on);
+      const row = b.closest('.rank-row'); if (row) row.dataset.on = on;
+    });
+    $$('[data-view]').forEach(b => b.setAttribute('aria-pressed', b.dataset.view === state.view));
+    $$('[data-order]').forEach(b => b.setAttribute('aria-pressed', b.dataset.order === state.order));
+    $('#order-tools').hidden = state.view !== 'album';
+    $('#sort-wrap').hidden = state.view !== 'list';
+  };
+  const setFilter = (patch, scroll) => {
+    Object.assign(state, patch, { shown: 60 });
+    if ('q' in patch) $('#f-q').value = state.q;
+    render();
+    if (scroll) $('#album').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+  };
+  const clearAll = () => setFilter({ q: '', cat: '', perfil: '', inst: '', ocup: '', uf: '', ws: false, res: '' });
+
+  let tq;
+  $('#f-q').addEventListener('input', e => { clearTimeout(tq); tq = setTimeout(() => setFilter({ q: e.target.value.trim() }), 140); });
+  SELECTS.forEach(k => $(`#f-${k}`).addEventListener('change', e => setFilter({ [k]: e.target.value })));
+  $('#f-cats').addEventListener('click', e => { const b = e.target.closest('[data-cat]'); if (b) setFilter({ cat: b.dataset.cat }); });
+  $('#f-ws').addEventListener('click', () => setFilter({ ws: !state.ws }));
+  $('#f-res').addEventListener('click', () => setFilter({ res: '' }));
+  $('#f-clear').addEventListener('click', clearAll);
+  $('[data-clear]').addEventListener('click', clearAll);
+  $('#f-toggle').addEventListener('click', () => {
+    const open = $('#finder').dataset.open !== 'true';
+    $('#finder').dataset.open = open; $('#f-toggle').setAttribute('aria-expanded', open);
   });
-}
-function closeDrawer(){
-  if (scrim){ scrim.remove(); scrim = null; }
-  if (drawer){ drawer.remove(); drawer = null; }
-  if (lastFocus && lastFocus.focus){ lastFocus.focus(); lastFocus = null; }
-}
-document.addEventListener('keydown', function(e){
-  if (e.key === 'Escape' && drawer) closeDrawer();
-  if (e.key === '/' && !drawer && document.activeElement !== elQ){
-    e.preventDefault();
-    elQ.focus();
-    elQ.select();
-  }
-});
+  $$('[data-view]').forEach(b => b.addEventListener('click', () => setFilter({ view: b.dataset.view })));
+  $$('[data-order]').forEach(b => b.addEventListener('click', () => setFilter({ order: b.dataset.order })));
+  $('#sort').addEventListener('change', e => setFilter({ sort: e.target.value }));
+  $('#album').addEventListener('click', e => { const s = e.target.closest('[data-p]'); if (s) openBack(+s.dataset.p, s); });
 
-var toastTimer;
-function toast(msg){
-  clearTimeout(toastTimer);
-  var old = document.querySelector('.toast');
-  if (old) old.remove();
-  var d = document.createElement('div');
-  d.className = 'toast';
-  d.textContent = msg;
-  document.body.appendChild(d);
-  toastTimer = setTimeout(function(){ d.remove(); }, 2600);
-}
-$('copy').addEventListener('click', function(){
-  function q(s){ return '"' + String(s || '').replace(/"/g, '""') + '"'; }
-  var head = ['Nome', 'Perfil', 'Ocupacao', 'NumeroOcupacao', 'Instituicao', 'Delegacao', 'Empresa', 'Local'];
-  var csv = [head.join(';')].concat(current.map(function(p){
-    return [p.nome, p.perfil, p.ocup, p.skill, p.inst, p.grupo, p.emp, p.local].map(q).join(';');
-  })).join('\r\n');
-  if (navigator.clipboard && navigator.clipboard.writeText){
-    navigator.clipboard.writeText(csv).then(
-      function(){ toast(current.length + ' linhas copiadas para a área de transferência'); },
-      function(){ toast('O navegador bloqueou a cópia'); }
-    );
-  } else {
-    toast('O navegador bloqueou a cópia');
+  // ── brilho da figurinha segue o ponteiro ──
+  const bindFoil = root => {
+    if (reduce) return;
+    $$('.sticker[data-m="prata"], .sticker[data-m="bronze"]', root).forEach(el => {
+      el.addEventListener('pointermove', e => {
+        const r = el.getBoundingClientRect();
+        el.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100).toFixed(1) + '%');
+        el.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100).toFixed(1) + '%');
+      });
+      el.addEventListener('pointerleave', () => { el.style.setProperty('--mx', '50%'); el.style.setProperty('--my', '30%'); });
+    });
+  };
+  // no celular não há cursor: o brilho corre com a rolagem
+  if (!reduce && matchMedia('(hover: none), (pointer: coarse)').matches) {
+    let raf = 0;
+    const sweep = () => {
+      raf = 0;
+      $$('.sticker[data-m="prata"], .sticker[data-m="bronze"]').forEach(el => {
+        const r = el.getBoundingClientRect();
+        if (r.bottom < 0 || r.top > innerHeight) return;
+        const t = 1 - (r.top + r.height / 2) / innerHeight;
+        el.style.setProperty('--mx', (t * 120 - 10).toFixed(1) + '%');
+        el.style.setProperty('--my', (t * 80 + 10).toFixed(1) + '%');
+      });
+    };
+    addEventListener('scroll', () => { raf ||= requestAnimationFrame(sweep); }, { passive: true });
   }
-});
 
-setView(S.view);
-render();
+  // ── verso ──
+  const dlg = $('#back');
+  const skillLine = s => `<p class="result-line result-line--sm"><span class="medal" data-m="${s.medal}">${MEDAL[s.medal]}</span><span><b class="num">${ord(s.position)}</b> de ${s.total}</span><span><b class="num">${s.mark}</b> pontos</span></p>`;
+  const wsBlock = p => {
+    if (!p.ws) return '';
+    const parts = p.ws.map(x => {
+      const s = x.n ? W.skills[x.n] : null;
+      if (x.kind === 'comp') return `
+        <p class="result-line"><span class="medal" data-m="${s.medal}">${MEDAL[s.medal]}</span><span><b class="num">${ord(s.position)}</b> de ${s.total}</span><span><b class="num">${s.mark}</b> pontos</span></p>
+        ${s.bon ? `<div class="bon"><span class="bon__stars" aria-hidden="true">${icon.star}${icon.star}${icon.star}</span><div><p class="bon__title">Best of Nation</p><p class="bon__text">Melhor da nação: a maior nota do Brasil em Shanghai, entre todas as ocupações${x.partner.length ? ', conquistada em dupla' : ''}.</p></div></div>` : ''}
+        <p class="wsb__role">Competidor de <b>${esc(s.pt)}</b> <span class="num">(#${n2(x.n)})</span>${x.partner.length ? `, em dupla com ${x.partner.map(esc).join(' e ')}` : ''}.</p>
+        <a href="${x.url}" target="_blank" rel="noopener">Ver a figurinha no álbum Brasil em Shanghai</a>`;
+      if (x.kind === 'occ') return `
+        <p class="wsb__role">${x.role ? `<b>${esc(x.role)}</b>` : 'Integrante da equipe'} de <b>${esc(s.pt)}</b> <span class="num">(#${n2(x.n)})</span> na delegação brasileira. O resultado do Brasil na ocupação:</p>
+        ${skillLine(s)}
+        <a href="${s.url}" target="_blank" rel="noopener">Ver a ocupação no álbum Brasil em Shanghai</a>`;
+      return `<p class="wsb__role"><b>${esc(x.role)}</b> na comissão da delegação brasileira.</p>
+        <a href="${W.album}#equipe" target="_blank" rel="noopener">Ver a comissão no álbum Brasil em Shanghai</a>`;
+    }).join('');
+    return `<section class="wsb"><h3><span class="wsb__ico">${icon.globe}</span>No mundial · ${esc(W.event.name)}</h3>${parts}</section>`;
+  };
+  const exBlock = p => p.past.length ? `<div class="exws"><h3><span class="ex-badge ex-badge--inline">${icon.star}</span>Ex-competidor da WorldSkills</h3><ul class="nat__list">${p.past.map(a => `<li><b>${esc(a.event)}</b> · ${esc(a.skill)} · ${esc(a.medal)} (${a.position}º lugar)${a.note ? `<br>${esc(a.note)}` : ''}</li>`).join('')}</ul></div>` : '';
+  const natLine = p => `<b>${esc(p.perfil)}</b>${p.ocup ? ` · ${esc(p.ocup)}${p.sn ? ` <span class="num">(#${n2(p.sn)})</span>` : ''}` : ''} · ${esc(p.inst)}${p.uf ? ` · ${esc(UF[p.uf])}` : ''}`;
+  let lastFrom = null;
+  const openBack = (i, from) => {
+    const p = P[i]; if (!p) return;
+    if (from) lastFrom = from;
+    const ids = current.map(x => x.i); const k = ids.indexOf(i);
+    const prev = k >= 0 ? ids[(k - 1 + ids.length) % ids.length] : i, next = k >= 0 ? ids[(k + 1) % ids.length] : i;
+    const others = (byName[p.nameKey] || []).filter(x => x !== p);
+    const goIdx = $$('[data-go]', dlg).indexOf(document.activeElement);
+    dlg.style.setProperty('--sec', p.sk ? secVar(p.sector) : 'var(--cover)');
+    dlg.innerHTML = `<div class="back__inner">
+      <div class="back__media"><figure class="back__main">${p.img < 0 ? `<span class="ph" aria-hidden="true">${esc(initials(p.nome))}</span>` : `<img src="data:image/jpeg;base64,${D.imgs[p.img]}" alt="${esc(p.nome)}">`}${p.img < 0 ? '' : '<figcaption>Foto de credenciamento da seletiva</figcaption>'}</figure></div>
+      <div class="back__body">
+        <div class="back__band">
+          <span class="back__n num ${p.sn ? '' : 'back__n--txt'}">${p.sn ? n2(p.sn) : esc(p.uf || (/^Setec/i.test(p.inst) ? 'MEC' : 'BR'))}</span>
+          <div><h2 class="back__name" id="back-name" tabindex="-1">${esc(p.nome)}</h2>
+            <div class="back__where">${esc(p.perfil)}${p.ocup ? ' · ' + esc(p.ocup) : ''} · ${esc(p.inst)}</div></div>
+          <div class="back__nav">
+            ${ids.length > 1 && k >= 0 ? `<button class="icon-btn" type="button" data-go="${prev}" aria-label="Anterior">${icon.left}</button><button class="icon-btn" type="button" data-go="${next}" aria-label="Próximo">${icon.right}</button>` : ''}
+            <button class="icon-btn" type="button" data-close aria-label="Fechar">${icon.close}</button>
+          </div>
+        </div>
+        ${wsBlock(p)}
+        ${exBlock(p)}
+        <div class="nat"><h3>Na seletiva</h3><ul class="nat__list"><li>${natLine(p)}</li>${others.map(o => `<li>${natLine(o)} · <button class="linkish" type="button" data-go="${o.i}">abrir</button></li>`).join('')}</ul></div>
+        <div class="back__links">
+          ${p.ocup ? `<button class="linkish" type="button" data-see="ocup">Ver todos de ${esc(p.ocup)}</button>` : ''}
+          ${p.inst ? `<button class="linkish" type="button" data-see="inst">Ver todos de ${esc(p.inst)}</button>` : ''}
+        </div>
+      </div></div>`;
+    $$('[data-go]', dlg).forEach(b => b.addEventListener('click', () => openBack(+b.dataset.go)));
+    $('[data-close]', dlg).addEventListener('click', () => dlg.close());
+    $$('[data-see]', dlg).forEach(b => b.addEventListener('click', () => { dlg.close(); setFilter({ [b.dataset.see]: p[b.dataset.see] }, true); }));
+    if (!dlg.open) {
+      dlg.showModal();
+      const a0 = (from || lastFrom)?.getBoundingClientRect?.();
+      if (!reduce && a0 && a0.width && dlg.animate) {
+        const b0 = dlg.getBoundingClientRect();
+        const dx = a0.left + a0.width / 2 - (b0.left + b0.width / 2), dy = a0.top + a0.height / 2 - (b0.top + b0.height / 2);
+        const sc = Math.max(0.15, a0.width / b0.width);
+        dlg.animate([
+          { transform: `translate(${dx}px, ${dy}px) scale(${sc}) perspective(1200px) rotateY(90deg)`, opacity: 0.4 },
+          { transform: `translate(${dx * 0.4}px, ${dy * 0.4}px) scale(${(1 + sc) / 2}) perspective(1200px) rotateY(40deg)`, opacity: 1, offset: 0.45 },
+          { transform: 'none', opacity: 1 },
+        ], { duration: 520, easing: 'cubic-bezier(0.23, 1, 0.32, 1)' });
+      }
+    }
+    if (goIdx >= 0 && $$('[data-go]', dlg)[goIdx]) $$('[data-go]', dlg)[goIdx].focus({ preventScroll: true });
+    else $('#back-name').focus({ preventScroll: true });
+    $('.back__body', dlg).scrollTop = 0;
+    try { history.replaceState(null, '', '#p' + i); } catch (e) {}
+  };
+  dlg.addEventListener('close', () => {
+    try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {}
+    if (lastFrom?.isConnected) lastFrom.focus({ preventScroll: true });
+  });
+  dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+
+  // ── CSV do recorte atual ──
+  const toast = msg => {
+    $('.toast')?.remove();
+    const d = document.createElement('div'); d.className = 'toast'; d.setAttribute('role', 'status'); d.textContent = msg;
+    document.body.appendChild(d); setTimeout(() => d.remove(), 2600);
+  };
+  $('#copy-csv').addEventListener('click', () => {
+    const q = s => '"' + String(s ?? '').replace(/"/g, '""') + '"';
+    const ws = p => !p.ws ? '' : p.res ? `${MEDAL[p.res.medal]} (${p.res.position}º de ${p.res.total})` : p.ws.map(x => x.kind === 'gen' ? x.role : `${x.role || 'Equipe'} de ${W.skills[x.n]?.pt || ''}`).join('; ');
+    const csv = [['Nome', 'Perfil', 'Ocupacao', 'NumeroOcupacao', 'Instituicao', 'UF', 'Shanghai2026'].join(';')]
+      .concat(current.map(p => [p.nome, p.perfil, p.ocup, p.sn ? n2(p.sn) : '', p.inst, p.uf, ws(p)].map(q).join(';'))).join('\r\n');
+    const ok = () => toast(`${current.length} linhas copiadas`);
+    const fallback = () => {
+      const t = document.createElement('textarea'); t.value = csv; t.style.position = 'fixed'; t.style.opacity = '0';
+      document.body.appendChild(t); t.select();
+      try { document.execCommand('copy') ? ok() : toast('O navegador bloqueou a cópia'); } catch (e) { toast('O navegador bloqueou a cópia'); }
+      t.remove();
+    };
+    if (navigator.clipboard?.writeText) navigator.clipboard.writeText(csv).then(ok, fallback); else fallback();
+  });
+
+  // ── atalhos e voltar ao topo ──
+  document.addEventListener('keydown', e => {
+    if (e.key === '/' && !dlg.open && !/^(INPUT|SELECT|TEXTAREA)$/.test(document.activeElement?.tagName)) { e.preventDefault(); $('#f-q').focus(); $('#f-q').select(); }
+  });
+  const toTop = $('#to-top');
+  const syncTop = () => { toTop.dataset.show = scrollY > innerHeight * 0.9; };
+  addEventListener('scroll', syncTop, { passive: true }); syncTop();
+  toTop.addEventListener('click', () => { scrollTo({ top: 0 }); $('#topo').focus({ preventScroll: true }); });
+
+  buildBoard();
+  render();
+  bindFoil($('#fan'));
+  const h = location.hash.match(/^#p(\d+)$/);
+  if (h && P[+h[1]]) openBack(+h[1]);
 })();
 </script>
+</body>
+</html>

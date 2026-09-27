@@ -1,74 +1,67 @@
-# WorldSkills BR 2025 Dashboard
+# Seletiva Nacional 2025 · WorldSkills Brasil
 
-Diretório navegável dos participantes da competição nacional WorldSkills Brasil / SENAI, reconstruído como uma página HTML autocontida.
+Quem é quem na competição nacional da WorldSkills Brasil / SENAI de 2025, no mesmo visual de álbum de figurinhas do [Brasil em Shanghai](https://skillex.com.br/). Quem da seletiva depois defendeu o Brasil na WorldSkills Shanghai 2026 traz na figurinha o que conquistou no mundial.
 
-## O que é
+**[Abrir a página](https://guilhermevieirao.github.io/worldskills-br-2025-dashboard/worldskills-br-2025-dashboard.html)**
 
-Este projeto reorganiza os dados públicos do painel de participantes da WorldSkills Brasil em uma página HTML independente, mais rápida e com mais recursos de navegação do que o painel original.
+## O que tem
 
-**[Abrir a página](worldskills-br-2025-dashboard.html)**
+- **Álbum:** uma página por setor da WorldSkills, com uma tinta por setor. Em cada ocupação ficam as figurinhas dos competidores e, numa caixa, a equipe de avaliação e oficina. Quem não tem ocupação (coordenação, delegados técnicos, chefes de equipe, organização e comunicação) fica em crachás, na página da comissão.
+- **Mundial:** 146 registros da seletiva, de 132 pessoas, ligados ao que elas fizeram em Shanghai:
+  - 58 competidores, com a medalha, a posição e a nota, e o Best of Nation;
+  - 60 integrantes das equipes de ocupação (experts e intérpretes), com o resultado do Brasil na ocupação;
+  - 14 integrantes da comissão da delegação.
 
-### Recursos
+  Prata e bronze viram figurinhas brilhantes, e a Excelência ganha o aro dourado. Quem já competiu em edições anteriores da WorldSkills tem o selo de ex-competidor.
+- **Números:** medalhas em Shanghai de quem saiu da seletiva, perfis, mapa por estado, ocupações e instituições. Tudo filtra o álbum.
+- **Busca e filtros:** nome, instituição, ocupação (também pelo número, com ou sem `#`, e em inglês) e função no mundial ("expert", "intérprete"). Há filtros por perfil, instituição, ocupação, estado, grupo e "Foram a Shanghai".
+- **Visões:** figurinhas ou lista ordenável. Cada pessoa abre no verso da figurinha, com link direto (`#p123`).
+- **Outros recursos:** botão para copiar o recorte atual em CSV.
+- **Funciona offline:** dados, fotos, fontes e ícone estão dentro do próprio HTML.
 
-- Busca instantânea por nome, instituição ou ocupação
-- Filtros combináveis por perfil, instituição, ocupação e local de competição
-- Agrupamento por categoria (Competidores, Avaliação, Liderança técnica, Organização, Comunicação)
-- Visão em grade (com retrato) ou em lista
-- Painel de detalhe por pessoa
-- Gráficos de distribuição clicáveis (ocupações, instituições, locais)
-- Exportação do recorte atual para CSV
-- Tema claro/escuro automático
-- Funciona 100% offline: dados e fotos ficam embutidos no próprio arquivo HTML — não depende de nenhum serviço externo além das fontes tipográficas
+Ninguém foi acrescentado: a página mostra só os 943 registros do painel público. A informação do mundial entra apenas para quem já está nele.
 
-### Dados
+## Dados
 
-- **943** participantes únicos
-- **904** com retrato
-- **48** ocupações
-- **28** instituições
+- **Participantes (`data/pessoas.json`):** nome, instituição, perfil, ocupação, número da ocupação, delegação e foto de credenciamento, como no painel público "Quem é Quem".
+  - A página não usa os campos "empresa" e "local". Em alguns registros, "empresa" traz datas.
+  - Campos pessoais do modelo de origem (CPF, e-mail, celular e data de nascimento) nunca foram extraídos.
+- **Mundial (`data/mundial.json`):** gerado a partir do `data.json` do álbum [Resultado Brasil na WorldSkills 2026 Shangai](https://github.com/guilhermevieirao/Resultado-Brasil-na-WorldSkills-2026-Shangai). O álbum já guarda os registros de cada pessoa da delegação na etapa nacional, conferidos por nome e foto.
+- **Contornos dos estados (`data/brmap.json`):** [@svg-maps/brazil](https://github.com/VictorCazanave/svg-maps/tree/master/packages/brazil), de Victor Cazanave (CC BY 4.0).
+- **Fotos:** miniaturas 240×320 das fotos de credenciamento, para manter o HTML em cerca de 15 MB. As originais não ficam no repositório.
 
-Os únicos campos exibidos são os que já apareciam no painel público original (nome, instituição, perfil, ocupação, local, delegação, empresa e foto). Outros campos presentes na fonte de dados mas nunca exibidos publicamente (dados de contato e documentos pessoais) não foram extraídos.
-
-As fotos usadas na página são versões otimizadas (240×320) das fotos de credenciamento originais (nativamente 600×800), para manter o arquivo HTML em um tamanho razoável. Os arquivos em resolução máxima não estão neste repositório por tamanho (mais de 150 MB) e foram distribuídos separadamente.
-
-## Estrutura do projeto
+## Estrutura
 
 ```
-worldskills-br-2025-dashboard.html → página final, pronta para abrir em qualquer navegador
-page.template.html                 → template-fonte da página (HTML/CSS/JS), com um marcador
-                                      onde os dados são injetados na hora do build
-data/pessoas.json                  → dados já limpos e deduplicados
+worldskills-br-2025-dashboard.html → página final (gerada, não editar à mão)
+page.template.html                 → página, estilos e scripts (fonte)
+build.py                           → monta a página final com tudo embutido
+tools/build_mundial.py             → liga a seletiva ao mundial (gera data/mundial.json)
+tools/favicon.png                  → ícone
+data/                              → pessoas.json, mundial.json, brmap.json
 
 fetch.mjs                          → coleta os registros de origem
-build-data.mjs                     → (auxiliar) normaliza os dados em formato compacto
-fotos_raw.py                       → baixa as fotos de credenciamento em resolução original
-fotos_hq.py                        → recorta/redimensiona as fotos para uso na página
-build-bundle.py                    → monta o bundle final (dados + fotos em base64)
-pack_originals.py                  → empacota as fotos originais em um único .zip
-pack_originals_split.py            → mesma coisa, mas dividida em partes menores
+fotos_raw.py / fotos_hq.py         → baixam as fotos e geram as miniaturas (data/thumbs)
+pack_originals*.py                 → empacotam as fotos originais em .zip
 ```
 
-## Como reconstruir do zero
+## Como gerar
 
-Pré-requisitos: Node.js 18+, Python 3.10+ com Pillow (`pip install Pillow`).
+Pré-requisitos: Python 3.10+. Para refazer as fotos do zero: Node.js 18+ e Pillow (`pip install Pillow`).
 
 ```bash
-node fetch.mjs               # 1. coleta os dados de origem
-python fotos_raw.py          # 2. baixa as fotos em resolução original
-python fotos_hq.py           # 3. gera as miniaturas usadas na página
-python build-bundle.py       # 4. monta o bundle de dados (JSON + fotos em base64)
+python tools/build_mundial.py    # lê ../worldskills-brasil/app/data.json (ou o caminho passado)
+python build.py                  # gera worldskills-br-2025-dashboard.html
 ```
 
-Depois, injete o bundle no template para gerar o HTML final:
+Para refazer os dados e as fotos do zero, antes rode:
 
 ```bash
-python -c "
-tpl = open('page.template.html', encoding='utf8').read()
-data = open('data/bundle.json', encoding='utf8').read()
-open('worldskills-br-2025-dashboard.html', 'w', encoding='utf8').write(tpl.replace('/*__DATA__*/', data))
-"
+node fetch.mjs
+python fotos_raw.py
+python fotos_hq.py
 ```
 
 ## Licença
 
-Uso pessoal / educacional. Os dados pertencem à WorldSkills Brasil e ao SENAI; este projeto apenas os reorganiza em um formato mais acessível.
+Uso pessoal / educacional. Os dados pertencem à WorldSkills Brasil e ao SENAI. Os resultados do mundial vêm de results.worldskills.org. Página independente, sem vínculo oficial.

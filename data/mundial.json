@@ -1,0 +1,2377 @@
+{
+ "event": {
+  "name": "WorldSkills Shanghai 2026",
+  "start": "2026-09-23",
+  "end": "2026-09-26",
+  "countries": 70,
+  "skills": 64
+ },
+ "skills": {
+  "1": {
+   "pt": "Mecânica Industrial",
+   "en": "Industrial Mechanics",
+   "sector": "Manufatura e Engenharia",
+   "medal": "excelencia",
+   "position": 8,
+   "total": 15,
+   "mark": 700.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/01-gustavo-santos/"
+  },
+  "2": {
+   "pt": "Infraestrutura de Redes TIC",
+   "en": "ICT Network Infrastructure",
+   "sector": "Tecnologia da Informação",
+   "medal": "excelencia",
+   "position": 6,
+   "total": 14,
+   "mark": 703.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/02-luiz-fernando-santos/"
+  },
+  "3": {
+   "pt": "Tecnologia em Segurança Inteligente",
+   "en": "Intelligent Security Technology",
+   "sector": "Construção e Edificações",
+   "medal": "participacao",
+   "position": 5,
+   "total": 7,
+   "mark": 698.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/03-erick-fanka/"
+  },
+  "4": {
+   "pt": "Mecatrônica",
+   "en": "Mechatronics",
+   "sector": "Manufatura e Engenharia",
+   "medal": "excelencia",
+   "position": 4,
+   "total": 32,
+   "mark": 751.0,
+   "bon": false,
+   "team": true,
+   "url": "https://skillex.com.br/f/04-arthur-maia/"
+  },
+  "5": {
+   "pt": "Desenho Mecânico em CAD",
+   "en": "Mechanical Engineering CAD",
+   "sector": "Manufatura e Engenharia",
+   "medal": "excelencia",
+   "position": 8,
+   "total": 33,
+   "mark": 715.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/05-welinton-mendonca/"
+  },
+  "6": {
+   "pt": "Tornearia a CNC",
+   "en": "CNC Turning",
+   "sector": "Manufatura e Engenharia",
+   "medal": "excelencia",
+   "position": 6,
+   "total": 21,
+   "mark": 714.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/06-leonardo-cruz/"
+  },
+  "7": {
+   "pt": "Fresagem a CNC",
+   "en": "CNC Milling",
+   "sector": "Manufatura e Engenharia",
+   "medal": "bronze",
+   "position": 3,
+   "total": 23,
+   "mark": 729.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/07-alisson-oliveira/"
+  },
+  "8": {
+   "pt": "Desenvolvimento de Aplicativos Móveis",
+   "en": "Mobile Applications Development",
+   "sector": "Tecnologia da Informação",
+   "medal": "excelencia",
+   "position": 5,
+   "total": 18,
+   "mark": 717.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/08-renan-coelho/"
+  },
+  "9": {
+   "pt": "Soluções em Softwares para Negócios",
+   "en": "Software Applications Development",
+   "sector": "Tecnologia da Informação",
+   "medal": "excelencia",
+   "position": 8,
+   "total": 20,
+   "mark": 707.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/09-artur-fiorentino/"
+  },
+  "10": {
+   "pt": "Soldagem",
+   "en": "Welding",
+   "sector": "Manufatura e Engenharia",
+   "medal": "excelencia",
+   "position": 9,
+   "total": 37,
+   "mark": 718.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/10-felipe-rocha/"
+  },
+  "11": {
+   "pt": "Testagem de Software",
+   "en": "Software Testing",
+   "sector": "Tecnologia da Informação",
+   "medal": "participacao",
+   "position": 6,
+   "total": 10,
+   "mark": 697.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/11-gabriel-silva/"
+  },
+  "12": {
+   "pt": "Revestimentos Cerâmicos",
+   "en": "Wall and Floor Tiling",
+   "sector": "Construção e Edificações",
+   "medal": "excelencia",
+   "position": 10,
+   "total": 19,
+   "mark": 700.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/12-bruno-souza/"
+  },
+  "13": {
+   "pt": "Funilaria Automotiva",
+   "en": "Autobody Repair",
+   "sector": "Transporte e Logística",
+   "medal": "participacao",
+   "position": 11,
+   "total": 19,
+   "mark": 695.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/13-lucas-mortari/"
+  },
+  "14": {
+   "pt": "Manutenção de Aeronaves",
+   "en": "Aircraft Maintenance",
+   "sector": "Transporte e Logística",
+   "medal": "excelencia",
+   "position": 5,
+   "total": 18,
+   "mark": 720.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/14-davi-padilha/"
+  },
+  "15": {
+   "pt": "Instalações Hidráulicas",
+   "en": "Plumbing and Heating",
+   "sector": "Construção e Edificações",
+   "medal": "participacao",
+   "position": 25,
+   "total": 32,
+   "mark": 661.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/15-matteo-barbosa/"
+  },
+  "16": {
+   "pt": "Eletrônica",
+   "en": "Electronics",
+   "sector": "Manufatura e Engenharia",
+   "medal": "excelencia",
+   "position": 8,
+   "total": 19,
+   "mark": 706.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/16-joao-lucas-batista/"
+  },
+  "17": {
+   "pt": "Tecnologia Web",
+   "en": "Web Technologies",
+   "sector": "Tecnologia da Informação",
+   "medal": "excelencia",
+   "position": 10,
+   "total": 33,
+   "mark": 722.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/17-andre-basilio/"
+  },
+  "18": {
+   "pt": "Instalações Elétricas",
+   "en": "Electrical Installations",
+   "sector": "Construção e Edificações",
+   "medal": "excelencia",
+   "position": 10,
+   "total": 35,
+   "mark": 706.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/18-rhuan-barra/"
+  },
+  "19": {
+   "pt": "Controle Industrial",
+   "en": "Industrial Control",
+   "sector": "Manufatura e Engenharia",
+   "medal": "participacao",
+   "position": 11,
+   "total": 19,
+   "mark": 699.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/19-kawan-souza/"
+  },
+  "20": {
+   "pt": "Construção em Alvenaria",
+   "en": "Bricklaying",
+   "sector": "Construção e Edificações",
+   "medal": "excelencia",
+   "position": 11,
+   "total": 23,
+   "mark": 701.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/20-davi-ignacio/"
+  },
+  "21": {
+   "pt": "Sistemas Drywall",
+   "en": "Plastering and Drywall Systems",
+   "sector": "Construção e Edificações",
+   "medal": "bronze",
+   "position": 3,
+   "total": 14,
+   "mark": 713.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/21-guilherme-lunardi/"
+  },
+  "22": {
+   "pt": "Pintura Decorativa",
+   "en": "Painting and Decorating",
+   "sector": "Construção e Edificações",
+   "medal": "excelencia",
+   "position": 8,
+   "total": 19,
+   "mark": 707.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/22-izabela-lima/"
+  },
+  "23": {
+   "pt": "Robótica Móvel Autônoma",
+   "en": "Autonomous Mobile Robotics",
+   "sector": "Manufatura e Engenharia",
+   "medal": "bronze",
+   "position": 3,
+   "total": 18,
+   "mark": 771.0,
+   "bon": true,
+   "team": true,
+   "url": "https://skillex.com.br/f/23-arthur-barud/"
+  },
+  "24": {
+   "pt": "Movelaria",
+   "en": "Cabinetmaking",
+   "sector": "Construção e Edificações",
+   "medal": "participacao",
+   "position": 18,
+   "total": 25,
+   "mark": 685.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/24-enzo-pasito/"
+  },
+  "25": {
+   "pt": "Marcenaria de Estruturas",
+   "en": "Joinery",
+   "sector": "Construção e Edificações",
+   "medal": "participacao",
+   "position": 13,
+   "total": 20,
+   "mark": 695.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/25-joao-vitor-maul/"
+  },
+  "26": {
+   "pt": "Carpintaria",
+   "en": "Carpentry",
+   "sector": "Construção e Edificações",
+   "medal": "participacao",
+   "position": 15,
+   "total": 16,
+   "mark": 666.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/26-phelipe-galindo/"
+  },
+  "27": {
+   "pt": "Joalheria",
+   "en": "Jewellery",
+   "sector": "Artes Criativas e Moda",
+   "medal": "excelencia",
+   "position": 6,
+   "total": 13,
+   "mark": 700.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/27-ronie-almeida/"
+  },
+  "28": {
+   "pt": "Florista",
+   "en": "Floristry",
+   "sector": "Artes Criativas e Moda",
+   "medal": "participacao",
+   "position": 12,
+   "total": 16,
+   "mark": 688.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/28-karol-silva/"
+  },
+  "29": {
+   "pt": "Cabeleireiro",
+   "en": "Hairdressing",
+   "sector": "Serviços Sociais e Pessoais",
+   "medal": "excelencia",
+   "position": 8,
+   "total": 32,
+   "mark": 720.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/29-angelica-matsuda/"
+  },
+  "30": {
+   "pt": "Estética e Bem-Estar",
+   "en": "Beauty Therapy",
+   "sector": "Serviços Sociais e Pessoais",
+   "medal": "participacao",
+   "position": 20,
+   "total": 22,
+   "mark": 653.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/30-maria-eduarda-silveira/"
+  },
+  "31": {
+   "pt": "Tecnologia da Moda",
+   "en": "Fashion Technology",
+   "sector": "Artes Criativas e Moda",
+   "medal": "prata",
+   "position": 2,
+   "total": 31,
+   "mark": 740.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/31-myllena-nogueira/"
+  },
+  "32": {
+   "pt": "Confeitaria",
+   "en": "Pâtisserie and Confectionery",
+   "sector": "Serviços Sociais e Pessoais",
+   "medal": "participacao",
+   "position": 13,
+   "total": 22,
+   "mark": 689.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/32-maria-luiza-alves/"
+  },
+  "33": {
+   "pt": "Tecnologia Automotiva",
+   "en": "Automobile Technology",
+   "sector": "Transporte e Logística",
+   "medal": "excelencia",
+   "position": 6,
+   "total": 36,
+   "mark": 722.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/33-kauan-nazario/"
+  },
+  "34": {
+   "pt": "Culinária",
+   "en": "Cooking",
+   "sector": "Serviços Sociais e Pessoais",
+   "medal": "excelencia",
+   "position": 18,
+   "total": 43,
+   "mark": 705.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/34-gustavo-argoud/"
+  },
+  "35": {
+   "pt": "Serviços de Restaurante",
+   "en": "Restaurant Service",
+   "sector": "Serviços Sociais e Pessoais",
+   "medal": "excelencia",
+   "position": 14,
+   "total": 28,
+   "mark": 703.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/35-matheus-silva/"
+  },
+  "36": {
+   "pt": "Pintura Automotiva",
+   "en": "Car Painting",
+   "sector": "Transporte e Logística",
+   "medal": "excelencia",
+   "position": 5,
+   "total": 24,
+   "mark": 723.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/36-lucas-marques/"
+  },
+  "37": {
+   "pt": "Construção de Espaços Verdes",
+   "en": "Landscape Gardening",
+   "sector": "Construção e Edificações",
+   "medal": "participacao",
+   "position": 17,
+   "total": 18,
+   "mark": 674.0,
+   "bon": false,
+   "team": true,
+   "url": "https://skillex.com.br/f/37-leticia-rosa/"
+  },
+  "38": {
+   "pt": "Sistemas de Refrigeração",
+   "en": "Refrigeration and Air Conditioning",
+   "sector": "Construção e Edificações",
+   "medal": "participacao",
+   "position": 15,
+   "total": 27,
+   "mark": 693.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/38-keyla-dias/"
+  },
+  "39": {
+   "pt": "Gestão de Sistemas de Redes TI",
+   "en": "IT Network Systems Administration",
+   "sector": "Tecnologia da Informação",
+   "medal": "excelencia",
+   "position": 4,
+   "total": 25,
+   "mark": 733.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/39-luan-batista/"
+  },
+  "40": {
+   "pt": "Tecnologia em Design Gráfico",
+   "en": "Graphic Design Technology",
+   "sector": "Artes Criativas e Moda",
+   "medal": "excelencia",
+   "position": 7,
+   "total": 29,
+   "mark": 719.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/40-brenda-virgens/"
+  },
+  "41": {
+   "pt": "Cuidados Sociais e de Saúde",
+   "en": "Health and Social Care",
+   "sector": "Serviços Sociais e Pessoais",
+   "medal": "excelencia",
+   "position": 4,
+   "total": 19,
+   "mark": 726.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/41-cassia-oliveira/"
+  },
+  "42": {
+   "pt": "Próteses Dentarias",
+   "en": "Dental Prosthetics",
+   "sector": "Serviços Sociais e Pessoais",
+   "medal": "participacao",
+   "position": 4,
+   "total": 4,
+   "mark": 636.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/42-rafael-scotti/"
+  },
+  "43": {
+   "pt": "Vendas no Varejo",
+   "en": "Retail Sales",
+   "sector": "Serviços Sociais e Pessoais",
+   "medal": "participacao",
+   "position": 7,
+   "total": 7,
+   "mark": 635.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/43-gabriel-silva/"
+  },
+  "44": {
+   "pt": "Vitrinismo",
+   "en": "Visual Merchandising",
+   "sector": "Artes Criativas e Moda",
+   "medal": "participacao",
+   "position": 9,
+   "total": 12,
+   "mark": 682.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/44-ryana-brito/"
+  },
+  "45": {
+   "pt": "Design de Mídias Interativas Digitais",
+   "en": "Digital Interactive Media Design",
+   "sector": "Artes Criativas e Moda",
+   "medal": "excelencia",
+   "position": 4,
+   "total": 7,
+   "mark": 700.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/45-eran-ramos/"
+  },
+  "46": {
+   "pt": "Construção em Concreto",
+   "en": "Concrete Construction Work",
+   "sector": "Construção e Edificações",
+   "medal": "participacao",
+   "position": 7,
+   "total": 9,
+   "mark": 680.0,
+   "bon": false,
+   "team": true,
+   "url": "https://skillex.com.br/f/46-geovanny-neves/"
+  },
+  "47": {
+   "pt": "Panificação",
+   "en": "Bakery",
+   "sector": "Serviços Sociais e Pessoais",
+   "medal": "participacao",
+   "position": 17,
+   "total": 22,
+   "mark": 681.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/47-raiane-alves/"
+  },
+  "48": {
+   "pt": "Indústria 4.0",
+   "en": "Industry 4.0",
+   "sector": "Manufatura e Engenharia",
+   "medal": "bronze",
+   "position": 3,
+   "total": 16,
+   "mark": 740.0,
+   "bon": false,
+   "team": true,
+   "url": "https://skillex.com.br/f/48-gustavo-sousa/"
+  },
+  "49": {
+   "pt": "Tecnologia de Veículos Pesados",
+   "en": "Heavy Vehicle Technology",
+   "sector": "Transporte e Logística",
+   "medal": "participacao",
+   "position": 14,
+   "total": 18,
+   "mark": 667.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/49-diogo-mathias/"
+  },
+  "50": {
+   "pt": "Arte Digital 3D para Jogos",
+   "en": "3D Digital Game Art",
+   "sector": "Artes Criativas e Moda",
+   "medal": "excelencia",
+   "position": 4,
+   "total": 17,
+   "mark": 723.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/50-giovanna-silva/"
+  },
+  "51": {
+   "pt": "Logística & Envios Internacionais",
+   "en": "Logistics and Freight Forwarding",
+   "sector": "Transporte e Logística",
+   "medal": "participacao",
+   "position": 6,
+   "total": 6,
+   "mark": 541.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/51-maria-eduarda-lourenco/"
+  },
+  "52": {
+   "pt": "Tecnologia Química Laboratorial",
+   "en": "Chemical Laboratory Technology",
+   "sector": "Manufatura e Engenharia",
+   "medal": "participacao",
+   "position": 7,
+   "total": 10,
+   "mark": 689.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/52-joao-victor-alves/"
+  },
+  "53": {
+   "pt": "Computação em Nuvem",
+   "en": "Cloud Computing",
+   "sector": "Tecnologia da Informação",
+   "medal": "participacao",
+   "position": 11,
+   "total": 16,
+   "mark": 693.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/53-gabriel-oliveira/"
+  },
+  "54": {
+   "pt": "Segurança Cibernética",
+   "en": "Cyber Security",
+   "sector": "Tecnologia da Informação",
+   "medal": "participacao",
+   "position": 13,
+   "total": 20,
+   "mark": 684.0,
+   "bon": false,
+   "team": true,
+   "url": "https://skillex.com.br/f/54-arthur-mendes/"
+  },
+  "55": {
+   "pt": "Tecnologia da Água",
+   "en": "Water Technology",
+   "sector": "Manufatura e Engenharia",
+   "medal": "excelencia",
+   "position": 5,
+   "total": 12,
+   "mark": 705.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/55-leonardo-bertho/"
+  },
+  "56": {
+   "pt": "Recepção de Hotel",
+   "en": "Hotel Reception",
+   "sector": "Serviços Sociais e Pessoais",
+   "medal": "excelencia",
+   "position": 5,
+   "total": 21,
+   "mark": 720.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/56-natalia-corso/"
+  },
+  "57": {
+   "pt": "Manufatura Aditiva",
+   "en": "Additive Manufacturing",
+   "sector": "Manufatura e Engenharia",
+   "medal": "participacao",
+   "position": 8,
+   "total": 11,
+   "mark": 694.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/57-marcus-vinicius-oliveira/"
+  },
+  "58": {
+   "pt": "Construção Digital – BIM",
+   "en": "Digital Construction",
+   "sector": "Construção e Edificações",
+   "medal": "participacao",
+   "position": 10,
+   "total": 17,
+   "mark": 693.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/58-catarina-fonseca/"
+  },
+  "59": {
+   "pt": "Tecnologia em Design Industrial",
+   "en": "Industrial Design Technology",
+   "sector": "Manufatura e Engenharia",
+   "medal": "bronze",
+   "position": 3,
+   "total": 12,
+   "mark": 720.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/59-rafael-candido/"
+  },
+  "60": {
+   "pt": "Tecnologia Optoeletrônica",
+   "en": "Optoelectronic Technology",
+   "sector": "Manufatura e Engenharia",
+   "medal": "excelencia",
+   "position": 5,
+   "total": 9,
+   "mark": 700.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/60-kaique-camacho/"
+  },
+  "61": {
+   "pt": "Tecnologia de Veículos Ferroviários",
+   "en": "Rail Vehicle Technology",
+   "sector": "Transporte e Logística",
+   "medal": "participacao",
+   "position": 6,
+   "total": 9,
+   "mark": 693.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/61-joao-vitor-gomes/"
+  },
+  "62": {
+   "pt": "Energia Renovável",
+   "en": "Renewable Energy",
+   "sector": "Manufatura e Engenharia",
+   "medal": "bronze",
+   "position": 3,
+   "total": 10,
+   "mark": 718.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/62-kevin-silva/"
+  },
+  "63": {
+   "pt": "Integração de Sistemas Robóticos",
+   "en": "Robot Systems Integration",
+   "sector": "Manufatura e Engenharia",
+   "medal": "prata",
+   "position": 2,
+   "total": 20,
+   "mark": 722.0,
+   "bon": false,
+   "team": true,
+   "url": "https://skillex.com.br/f/63-alexandre-rodrigues/"
+  },
+  "64": {
+   "pt": "Sistemas Aéreos Não-Tripulados",
+   "en": "Unmanned Aerial Systems",
+   "sector": "Transporte e Logística",
+   "medal": "participacao",
+   "position": 11,
+   "total": 11,
+   "mark": 648.0,
+   "bon": false,
+   "team": false,
+   "url": "https://skillex.com.br/f/64-caio-vinicius-azevedo/"
+  }
+ },
+ "rows": {
+  "371": [
+   {
+    "kind": "comp",
+    "name": "Gustavo Carvalho Santos",
+    "n": 1,
+    "partner": [],
+    "city": "Guarulhos",
+    "uf": "SP",
+    "url": "https://skillex.com.br/f/01-gustavo-santos/"
+   }
+  ],
+  "619": [
+   {
+    "kind": "comp",
+    "name": "Luiz Fernando Barbosa Santos",
+    "n": 2,
+    "partner": [],
+    "city": "Jaboatão dos Guararapes",
+    "uf": "PE",
+    "url": "https://skillex.com.br/f/02-luiz-fernando-santos/"
+   }
+  ],
+  "248": [
+   {
+    "kind": "comp",
+    "name": "Erick da Cruz Fanka",
+    "n": 3,
+    "partner": [],
+    "city": "Canoas",
+    "uf": "RS",
+    "url": "https://skillex.com.br/f/03-erick-fanka/"
+   }
+  ],
+  "78": [
+   {
+    "kind": "comp",
+    "name": "Arthur Maia",
+    "n": 4,
+    "partner": [
+     "Daniel Henrique Bianquini Moraes Oliveira"
+    ],
+    "city": null,
+    "uf": "MG",
+    "url": "https://skillex.com.br/f/04-arthur-maia/"
+   }
+  ],
+  "170": [
+   {
+    "kind": "comp",
+    "name": "Daniel Henrique Bianquini Moraes Oliveira",
+    "n": 4,
+    "partner": [
+     "Arthur Maia"
+    ],
+    "city": "Betim",
+    "uf": "MG",
+    "url": "https://skillex.com.br/f/04-daniel-oliveira/"
+   }
+  ],
+  "924": [
+   {
+    "kind": "comp",
+    "name": "Welinton Staleng Mendonça",
+    "n": 5,
+    "partner": [],
+    "city": "Contagem",
+    "uf": "MG",
+    "url": "https://skillex.com.br/f/05-welinton-mendonca/"
+   }
+  ],
+  "563": [
+   {
+    "kind": "comp",
+    "name": "Leonardo Enrique Cruz",
+    "n": 6,
+    "partner": [],
+    "city": "Bauru",
+    "uf": "SP",
+    "url": "https://skillex.com.br/f/06-leonardo-cruz/"
+   }
+  ],
+  "29": [
+   {
+    "kind": "comp",
+    "name": "Alisson Gabriel Genova de Oliveira",
+    "n": 7,
+    "partner": [],
+    "city": "Hortolândia",
+    "uf": "SP",
+    "url": "https://skillex.com.br/f/07-alisson-oliveira/"
+   }
+  ],
+  "796": [
+   {
+    "kind": "comp",
+    "name": "Renan Gabriel Bernardes Coêlho",
+    "n": 8,
+    "partner": [],
+    "city": "Quintana",
+    "uf": "SP",
+    "url": "https://skillex.com.br/f/08-renan-coelho/"
+   }
+  ],
+  "80": [
+   {
+    "kind": "comp",
+    "name": "Artur Fiorentino",
+    "n": 9,
+    "partner": [],
+    "city": "Santo André",
+    "uf": "SP",
+    "url": "https://skillex.com.br/f/09-artur-fiorentino/"
+   }
+  ],
+  "273": [
+   {
+    "kind": "comp",
+    "name": "Felipe de Souza Rocha",
+    "n": 10,
+    "partner": [],
+    "city": "Pederneiras",
+    "uf": "SP",
+    "url": "https://skillex.com.br/f/10-felipe-rocha/"
+   }
+  ],
+  "326": [
+   {
+    "kind": "comp",
+    "name": "Gabriel Spinola Mendes da Silva",
+    "n": 11,
+    "partner": [],
+    "city": "Contagem",
+    "uf": "MG",
+    "url": "https://skillex.com.br/f/11-gabriel-silva/"
+   }
+  ],
+  "114": [
+   {
+    "kind": "comp",
+    "name": "Bruno Canuto de Souza",
+    "n": 12,
+    "partner": [],
+    "city": "Ponte Nova",
+    "uf": "MG",
+    "url": "https://skillex.com.br/f/12-bruno-souza/"
+   }
+  ],
+  "594": [
+   {
+    "kind": "comp",
+    "name": "Lucas Eduardo Mortari",
+    "n": 13,
+    "partner": [],
+    "city": "Bauru",
+    "uf": "SP",
+    "url": "https://skillex.com.br/f/13-lucas-mortari/"
+   }
+  ],
+  "253": [
+   {
+    "kind": "comp",
+    "name": "Matteo Victor Barbosa",
+    "n": 15,
+    "partner": [],
+    "city": "Barbacena",
+    "uf": "MG",
+    "url": "https://skillex.com.br/f/15-matteo-barbosa/"
+   }
+  ],
+  "459": [
+   {
+    "kind": "comp",
+    "name": "João Lucas Ramos Batista",
+    "n": 16,
+    "partner": [],
+    "city": "Pindamonhangaba",
+    "uf": "SP",
+    "url": "https://skillex.com.br/f/16-joao-lucas-batista/"
+   }
+  ],
+  "43": [
+   {
+    "kind": "comp",
+    "name": "André Brizido Basilio",
+    "n": 17,
+    "partner": [],
+    "city": "São Paulo",
+    "uf": "SP",
+    "url": "https://skillex.com.br/f/17-andre-basilio/"
+   }
+  ],
+  "801": [
+   {
+    "kind": "comp",
+    "name": "Rhuan Ferreira Barra",
+    "n": 18,
+    "partner": [],
+    "city": "Limeira",
+    "uf": "SP",
+    "url": "https://skillex.com.br/f/18-rhuan-barra/"
+   }
+  ],
+  "541": [
+   {
+    "kind": "comp",
+    "name": "Kawan Costa Alves de Souza",
+    "n": 19,
+    "partner": [],
+    "city": "São Paulo",
+    "uf": "SP",
+    "url": "https://skillex.com.br/f/19-kawan-souza/"
+   }
+  ],
+  "180": [
+   {
+    "kind": "comp",
+    "name": "Davi da Silva Aleixo Ignacio",
+    "n": 20,
+    "partner": [],
+    "city": "Curitiba",
+    "uf": "PR",
+    "url": "https://skillex.com.br/f/20-davi-ignacio/"
+   }
+  ],
+  "368": [
+   {
+    "kind": "comp",
+    "name": "Guilherme Rodrigues Lunardi",
+    "n": 21,
+    "partner": [],
+    "city": "São Leopoldo",
+    "uf": "RS",
+    "url": "https://skillex.com.br/f/21-guilherme-lunardi/"
+   }
+  ],
+  "427": [
+   {
+    "kind": "comp",
+    "name": "Izabela Lopes Lima",
+    "n": 22,
+    "partner": [],
+    "city": null,
+    "uf": "MG",
+    "url": "https://skillex.com.br/f/22-izabela-lima/"
+   }
+  ],
+  "76": [
+   {
+    "kind": "comp",
+    "name": "Arthur Martins Barud",
+    "n": 23,
+    "partner": [
+     "Gustavo Gabriel Dutra Alves"
+    ],
+    "city": "Ribeirão das Neves",
+    "uf": "MG",
+    "url": "https://skillex.com.br/f/23-arthur-barud/"
+   }
+  ],
+  "370": [
+   {
+    "kind": "comp",
+    "name": "Gustavo Gabriel Dutra Alves",
+    "n": 23,
+    "partner": [
+     "Arthur Martins Barud"
+    ],
+    "city": "Contagem",
+    "uf": "MG",
+    "url": "https://skillex.com.br/f/23-gustavo-alves/"
+   }
+  ],
+  "245": [
+   {
+    "kind": "comp",
+    "name": "Enzo Thomaz Pasito",
+    "n": 24,
+    "partner": [],
+    "city": "Ribeirão Pires",
+    "uf": "SP",
+    "url": "https://skillex.com.br/f/24-enzo-pasito/"
+   }
+  ],
+  "485": [
+   {
+    "kind": "comp",
+    "name": "João Vitor Corrêa Maul",
+    "n": 25,
+    "partner": [],
+    "city": "Cuiabá",
+    "uf": "MT",
+    "url": "https://skillex.com.br/f/25-joao-vitor-maul/"
+   }
+  ],
+  "769": [
+   {
+    "kind": "comp",
+    "name": "Phelipe Santana Galindo",
+    "n": 26,
+    "partner": [],
+    "city": "Osasco",
+    "uf": "SP",
+    "url": "https://skillex.com.br/f/26-phelipe-galindo/"
+   }
+  ],
+  "829": [
+   {
+    "kind": "comp",
+    "name": "Ronie Henrique de Almeida",
+    "n": 27,
+    "partner": [],
+    "city": "Limeira",
+    "uf": "SP",
+    "url": "https://skillex.com.br/f/27-ronie-almeida/"
+   }
+  ],
+  "730": [
+   {
+    "kind": "comp",
+    "name": "Myllena Vitória de Arruda Nogueira",
+    "n": 31,
+    "partner": [],
+    "city": "Cuiabá",
+    "uf": "MT",
+    "url": "https://skillex.com.br/f/31-myllena-nogueira/"
+   }
+  ],
+  "663": [
+   {
+    "kind": "comp",
+    "name": "Maria Luiza Silva Alves",
+    "n": 32,
+    "partner": [],
+    "city": "Sabará",
+    "uf": "MG",
+    "url": "https://skillex.com.br/f/32-maria-luiza-alves/"
+   }
+  ],
+  "540": [
+   {
+    "kind": "comp",
+    "name": "Kauan Henrique Martinello Nazario",
+    "n": 33,
+    "partner": [],
+    "city": "Cascavel",
+    "uf": "PR",
+    "url": "https://skillex.com.br/f/33-kauan-nazario/"
+   }
+  ],
+  "595": [
+   {
+    "kind": "comp",
+    "name": "Lucas Fonseca Marques",
+    "n": 36,
+    "partner": [],
+    "city": "São Paulo",
+    "uf": "SP",
+    "url": "https://skillex.com.br/f/36-lucas-marques/"
+   }
+  ],
+  "572": [
+   {
+    "kind": "comp",
+    "name": "Leticia Gabrielle dos Santos Rosa",
+    "n": 37,
+    "partner": [
+     "Juan Pablo Ramos de Souza"
+    ],
+    "city": null,
+    "uf": "MG",
+    "url": "https://skillex.com.br/f/37-leticia-rosa/"
+   }
+  ],
+  "514": [
+   {
+    "kind": "comp",
+    "name": "Juan Pablo Ramos de Souza",
+    "n": 37,
+    "partner": [
+     "Leticia Gabrielle dos Santos Rosa"
+    ],
+    "city": null,
+    "uf": "MG",
+    "url": "https://skillex.com.br/f/37-juan-pablo-souza/"
+   }
+  ],
+  "546": [
+   {
+    "kind": "comp",
+    "name": "Keyla Carvalho Dias",
+    "n": 38,
+    "partner": [],
+    "city": "São Paulo",
+    "uf": "SP",
+    "url": "https://skillex.com.br/f/38-keyla-dias/"
+   }
+  ],
+  "580": [
+   {
+    "kind": "comp",
+    "name": "Luan Antunes Batista",
+    "n": 39,
+    "partner": [],
+    "city": "Mauá",
+    "uf": "SP",
+    "url": "https://skillex.com.br/f/39-luan-batista/"
+   }
+  ],
+  "97": [
+   {
+    "kind": "comp",
+    "name": "Brenda Gomes Virgens",
+    "n": 40,
+    "partner": [],
+    "city": "Carapicuíba",
+    "uf": "SP",
+    "url": "https://skillex.com.br/f/40-brenda-virgens/"
+   }
+  ],
+  "339": [
+   {
+    "kind": "comp",
+    "name": "Geovanny Gabriel Quirino Das Neves",
+    "n": 46,
+    "partner": [
+     "Paulo Eduardo Nascimento de Jesus"
+    ],
+    "city": "Cuiabá",
+    "uf": "MT",
+    "url": "https://skillex.com.br/f/46-geovanny-neves/"
+   }
+  ],
+  "749": [
+   {
+    "kind": "comp",
+    "name": "Paulo Eduardo Nascimento de Jesus",
+    "n": 46,
+    "partner": [
+     "Geovanny Gabriel Quirino Das Neves"
+    ],
+    "city": "Cuiabá",
+    "uf": "MT",
+    "url": "https://skillex.com.br/f/46-paulo-jesus/"
+   }
+  ],
+  "787": [
+   {
+    "kind": "comp",
+    "name": "Raiane Vitoria Suith Alves",
+    "n": 47,
+    "partner": [],
+    "city": "Ribeirão Preto",
+    "uf": "SP",
+    "url": "https://skillex.com.br/f/47-raiane-alves/"
+   }
+  ],
+  "374": [
+   {
+    "kind": "comp",
+    "name": "Gustavo Vitor Martins Pereira de Sousa",
+    "n": 48,
+    "partner": [
+     "João Victor Caliaro Fonseca"
+    ],
+    "city": null,
+    "uf": "MG",
+    "url": "https://skillex.com.br/f/48-gustavo-sousa/"
+   }
+  ],
+  "475": [
+   {
+    "kind": "comp",
+    "name": "João Victor Caliaro Fonseca",
+    "n": 48,
+    "partner": [
+     "Gustavo Vitor Martins Pereira de Sousa"
+    ],
+    "city": "Belo Horizonte",
+    "uf": "MG",
+    "url": "https://skillex.com.br/f/48-joao-victor-fonseca/"
+   }
+  ],
+  "199": [
+   {
+    "kind": "comp",
+    "name": "Diogo Mathias",
+    "n": 49,
+    "partner": [],
+    "city": "Lins",
+    "uf": "SP",
+    "url": "https://skillex.com.br/f/49-diogo-mathias/"
+   }
+  ],
+  "352": [
+   {
+    "kind": "comp",
+    "name": "Giovanna Candido da Silva",
+    "n": 50,
+    "partner": [],
+    "city": "São Paulo",
+    "uf": "SP",
+    "url": "https://skillex.com.br/f/50-giovanna-silva/"
+   }
+  ],
+  "668": [
+   {
+    "kind": "comp",
+    "name": "Maria Eduarda Alves Lourenço",
+    "n": 51,
+    "partner": [],
+    "city": "São Paulo",
+    "uf": "SP",
+    "url": "https://skillex.com.br/f/51-maria-eduarda-lourenco/"
+   }
+  ],
+  "483": [
+   {
+    "kind": "comp",
+    "name": "João Victor Vieira Alves",
+    "n": 52,
+    "partner": [],
+    "city": "Sete Lagoas",
+    "uf": "MG",
+    "url": "https://skillex.com.br/f/52-joao-victor-alves/"
+   }
+  ],
+  "315": [
+   {
+    "kind": "comp",
+    "name": "Gabriel Henrique Gobato de Oliveira",
+    "n": 53,
+    "partner": [],
+    "city": "Londrina",
+    "uf": "PR",
+    "url": "https://skillex.com.br/f/53-gabriel-oliveira/"
+   }
+  ],
+  "75": [
+   {
+    "kind": "comp",
+    "name": "Arthur Abreu Vieira Mendes",
+    "n": 54,
+    "partner": [
+     "João Carlos de Farias"
+    ],
+    "city": null,
+    "uf": "MG",
+    "url": "https://skillex.com.br/f/54-arthur-mendes/"
+   }
+  ],
+  "454": [
+   {
+    "kind": "comp",
+    "name": "João Carlos de Farias",
+    "n": 54,
+    "partner": [
+     "Arthur Abreu Vieira Mendes"
+    ],
+    "city": "Vespasiano",
+    "uf": "MG",
+    "url": "https://skillex.com.br/f/54-joao-carlos-farias/"
+   }
+  ],
+  "570": [
+   {
+    "kind": "comp",
+    "name": "Leonardo Santos Bertho",
+    "n": 55,
+    "partner": [],
+    "city": "Salvador",
+    "uf": "BA",
+    "url": "https://skillex.com.br/f/55-leonardo-bertho/"
+   }
+  ],
+  "662": [
+   {
+    "kind": "comp",
+    "name": "Marcus Vinicius Santos Oliveira",
+    "n": 57,
+    "partner": [],
+    "city": "Contagem",
+    "uf": "MG",
+    "url": "https://skillex.com.br/f/57-marcus-vinicius-oliveira/"
+   }
+  ],
+  "136": [
+   {
+    "kind": "comp",
+    "name": "Catarina Matos dos Santos Costa da Fonseca",
+    "n": 58,
+    "partner": [],
+    "city": "Belo Horizonte",
+    "uf": "MG",
+    "url": "https://skillex.com.br/f/58-catarina-fonseca/"
+   }
+  ],
+  "782": [
+   {
+    "kind": "comp",
+    "name": "Rafael Seikiti Nishihara Candido",
+    "n": 59,
+    "partner": [],
+    "city": "Bauru",
+    "uf": "SP",
+    "url": "https://skillex.com.br/f/59-rafael-candido/"
+   }
+  ],
+  "533": [
+   {
+    "kind": "comp",
+    "name": "Kaique William Ventura Camacho",
+    "n": 60,
+    "partner": [],
+    "city": "Campo Mourão",
+    "uf": "PR",
+    "url": "https://skillex.com.br/f/60-kaique-camacho/"
+   }
+  ],
+  "486": [
+   {
+    "kind": "comp",
+    "name": "João Vitor Da Silva Gomes",
+    "n": 61,
+    "partner": [],
+    "city": "Rondonópolis",
+    "uf": "MT",
+    "url": "https://skillex.com.br/f/61-joao-vitor-gomes/"
+   }
+  ],
+  "545": [
+   {
+    "kind": "comp",
+    "name": "Kevin Gabriel Gonçalves Silva",
+    "n": 62,
+    "partner": [],
+    "city": "Birigui",
+    "uf": "SP",
+    "url": "https://skillex.com.br/f/62-kevin-silva/"
+   }
+  ],
+  "25": [
+   {
+    "kind": "comp",
+    "name": "Alexandre Isaque Almeida Rodrigues",
+    "n": 63,
+    "partner": [
+     "Bruno Gabriel Soares de Oliveira"
+    ],
+    "city": "Contagem",
+    "uf": "MG",
+    "url": "https://skillex.com.br/f/63-alexandre-rodrigues/"
+   }
+  ],
+  "109": [
+   {
+    "kind": "comp",
+    "name": "Bruno Gabriel Soares de Oliveira",
+    "n": 63,
+    "partner": [
+     "Alexandre Isaque Almeida Rodrigues"
+    ],
+    "city": "Betim",
+    "uf": "MG",
+    "url": "https://skillex.com.br/f/63-bruno-oliveira/"
+   }
+  ],
+  "16": [
+   {
+    "kind": "occ",
+    "name": "Alef Amaral do Nascimento Souza",
+    "n": 37,
+    "role": "Expert",
+    "past": [
+     {
+      "event": "WorldSkills São Paulo 2015",
+      "year": 2015,
+      "skill": "Construção de Espaços Verdes",
+      "medal": "Medalha de Excelência",
+      "position": 4
+     }
+    ]
+   }
+  ],
+  "17": [
+   {
+    "kind": "occ",
+    "name": "Alef Amaral do Nascimento Souza",
+    "n": 37,
+    "role": "Expert",
+    "past": [
+     {
+      "event": "WorldSkills São Paulo 2015",
+      "year": 2015,
+      "skill": "Construção de Espaços Verdes",
+      "medal": "Medalha de Excelência",
+      "position": 4
+     }
+    ]
+   }
+  ],
+  "20": [
+   {
+    "kind": "occ",
+    "name": "Alex Luiz Canzi",
+    "n": 48,
+    "role": "Expert",
+    "past": []
+   }
+  ],
+  "19": [
+   {
+    "kind": "occ",
+    "name": "Alex Luiz Canzi",
+    "n": 48,
+    "role": "Expert",
+    "past": []
+   }
+  ],
+  "36": [
+   {
+    "kind": "occ",
+    "name": "Ana Beatriz Gondim Sampaio",
+    "n": 50,
+    "role": "Expert",
+    "past": []
+   }
+  ],
+  "44": [
+   {
+    "kind": "occ",
+    "name": "André de Oliveira Sousa",
+    "n": 12,
+    "role": "Expert",
+    "past": []
+   }
+  ],
+  "46": [
+   {
+    "kind": "occ",
+    "name": "André Ferreira Pinto Dias",
+    "n": 31,
+    "role": "Intérprete",
+    "past": []
+   }
+  ],
+  "48": [
+   {
+    "kind": "occ",
+    "name": "André Luis Dono",
+    "n": 7,
+    "role": "Expert",
+    "past": [
+     {
+      "event": "WorldSkills Lyon 2024",
+      "year": 2024,
+      "skill": "Fresagem a CNC",
+      "medal": "Medalha de Prata",
+      "position": 2
+     }
+    ]
+   }
+  ],
+  "50": [
+   {
+    "kind": "occ",
+    "name": "André Malta Peixoto",
+    "n": 5,
+    "role": "Expert",
+    "past": []
+   }
+  ],
+  "91": [
+   {
+    "kind": "occ",
+    "name": "Betania Aparecida de Araujo Faria",
+    "n": 52,
+    "role": "Expert",
+    "past": []
+   }
+  ],
+  "94": [
+   {
+    "kind": "occ",
+    "name": "Bianca Klempe Correa",
+    "n": 40,
+    "role": "Expert",
+    "past": [
+     {
+      "event": "WorldSkills Kazan 2019",
+      "year": 2019,
+      "skill": "Tecnologia em Design Gráfico",
+      "medal": "Medalha de Excelência",
+      "position": 17
+     }
+    ]
+   }
+  ],
+  "105": [
+   {
+    "kind": "occ",
+    "name": "Bruno de Assis Coelho",
+    "n": 25,
+    "role": "",
+    "past": []
+   }
+  ],
+  "112": [
+   {
+    "kind": "occ",
+    "name": "Bruno Pereira De Assis",
+    "n": 49,
+    "role": "",
+    "past": [
+     {
+      "event": "WorldSkills Leipzig 2013",
+      "year": 2013,
+      "skill": "Tecnologia Automotiva",
+      "medal": "Medalha de Excelência",
+      "position": 7
+     }
+    ]
+   }
+  ],
+  "118": [
+   {
+    "kind": "occ",
+    "name": "Caio Freitas Silva",
+    "n": 36,
+    "role": "",
+    "past": []
+   }
+  ],
+  "148": [
+   {
+    "kind": "occ",
+    "name": "Cláudio Cassemiro Nogueira",
+    "n": 15,
+    "role": "Expert",
+    "past": []
+   }
+  ],
+  "149": [
+   {
+    "kind": "occ",
+    "name": "Cláudio Cassemiro Nogueira",
+    "n": 15,
+    "role": "Expert",
+    "past": []
+   }
+  ],
+  "209": [
+   {
+    "kind": "occ",
+    "name": "Douglas Rodrigues da Silva",
+    "n": 13,
+    "role": "",
+    "past": []
+   }
+  ],
+  "246": [
+   {
+    "kind": "occ",
+    "name": "Eric Coimbra da Silva",
+    "n": 22,
+    "role": "Expert",
+    "past": [
+     {
+      "event": "WorldSkills São Paulo 2015",
+      "year": 2015,
+      "skill": "Construção de Espaços Verdes",
+      "medal": "Medalha de Excelência",
+      "position": 4
+     }
+    ]
+   }
+  ],
+  "247": [
+   {
+    "kind": "occ",
+    "name": "Eric Coimbra da Silva",
+    "n": 22,
+    "role": "Expert",
+    "past": [
+     {
+      "event": "WorldSkills São Paulo 2015",
+      "year": 2015,
+      "skill": "Construção de Espaços Verdes",
+      "medal": "Medalha de Excelência",
+      "position": 4
+     }
+    ]
+   }
+  ],
+  "265": [
+   {
+    "kind": "occ",
+    "name": "Fabiano Netto Frazão",
+    "n": 10,
+    "role": "Expert",
+    "past": []
+   }
+  ],
+  "289": [
+   {
+    "kind": "occ",
+    "name": "Fernanda do Amor Divino Cerqueira",
+    "n": 55,
+    "role": "",
+    "past": []
+   }
+  ],
+  "290": [
+   {
+    "kind": "occ",
+    "name": "Fernanda do Amor Divino Cerqueira",
+    "n": 55,
+    "role": "",
+    "past": []
+   }
+  ],
+  "297": [
+   {
+    "kind": "occ",
+    "name": "Filipe Dias Pereira",
+    "n": 58,
+    "role": "Expert",
+    "past": []
+   }
+  ],
+  "305": [
+   {
+    "kind": "occ",
+    "name": "Frederico Augusto Cardoso Diniz",
+    "n": 11,
+    "role": "Expert",
+    "past": []
+   }
+  ],
+  "340": [
+   {
+    "kind": "occ",
+    "name": "Geraldo Cesar Gontijo Sousa",
+    "n": 63,
+    "role": "Expert",
+    "past": []
+   }
+  ],
+  "364": [
+   {
+    "kind": "occ",
+    "name": "Guilherme Felipe Pires",
+    "n": 45,
+    "role": "Expert",
+    "past": []
+   }
+  ],
+  "365": [
+   {
+    "kind": "occ",
+    "name": "Guilherme Felipe Pires",
+    "n": 45,
+    "role": "Expert",
+    "past": []
+   }
+  ],
+  "399": [
+   {
+    "kind": "occ",
+    "name": "Henrique Sobrinho Menezes",
+    "n": 59,
+    "role": "Expert",
+    "past": [
+     {
+      "event": "WorldSkills Kazan 2019",
+      "year": 2019,
+      "skill": "Modelagem de Protótipos",
+      "medal": "Medalha de Excelência",
+      "position": 4
+     }
+    ]
+   }
+  ],
+  "410": [
+   {
+    "kind": "occ",
+    "name": "Igor Peixoto Severino",
+    "n": 4,
+    "role": "Expert",
+    "past": []
+   }
+  ],
+  "495": [
+   {
+    "kind": "occ",
+    "name": "Jorge Enjiu Junior",
+    "n": 20,
+    "role": "Expert",
+    "past": []
+   }
+  ],
+  "493": [
+   {
+    "kind": "occ",
+    "name": "Jorge Enjiu Junior",
+    "n": 20,
+    "role": "Expert",
+    "past": []
+   }
+  ],
+  "494": [
+   {
+    "kind": "occ",
+    "name": "Jorge Enjiu Junior",
+    "n": 20,
+    "role": "Expert",
+    "past": []
+   }
+  ],
+  "498": [
+   {
+    "kind": "occ",
+    "name": "Jose Eduardo Silva Valerio",
+    "n": 61,
+    "role": "",
+    "past": []
+   }
+  ],
+  "505": [
+   {
+    "kind": "occ",
+    "name": "José Marcelo Morima Lima Rodrigues",
+    "n": 61,
+    "role": "",
+    "past": []
+   }
+  ],
+  "510": [
+   {
+    "kind": "occ",
+    "name": "Josemar Monteiro Silva",
+    "n": 39,
+    "role": "Expert",
+    "past": []
+   }
+  ],
+  "518": [
+   {
+    "kind": "occ",
+    "name": "Julia Gabriela da Rocha Oliveira",
+    "n": 31,
+    "role": "Expert",
+    "past": []
+   }
+  ],
+  "542": [
+   {
+    "kind": "occ",
+    "name": "Kennedy Yoshinori de Souza Yamashita",
+    "n": 1,
+    "role": "",
+    "past": [
+     {
+      "event": "WorldSkills Abu Dhabi 2017",
+      "year": 2017,
+      "skill": "Mecânica Industrial",
+      "medal": "Medalha de Prata",
+      "position": 2
+     }
+    ]
+   }
+  ],
+  "559": [
+   {
+    "kind": "occ",
+    "name": "Leandro Wagner",
+    "n": 38,
+    "role": "",
+    "past": []
+   }
+  ],
+  "566": [
+   {
+    "kind": "occ",
+    "name": "Leonardo Kazuo Rodrigues do Couto",
+    "n": 60,
+    "role": "Expert",
+    "past": []
+   }
+  ],
+  "565": [
+   {
+    "kind": "occ",
+    "name": "Leonardo Kazuo Rodrigues do Couto",
+    "n": 60,
+    "role": "Expert",
+    "past": []
+   }
+  ],
+  "574": [
+   {
+    "kind": "occ",
+    "name": "Lidiane dos Santos Orti",
+    "n": 9,
+    "role": "Expert",
+    "past": []
+   }
+  ],
+  "588": [
+   {
+    "kind": "occ",
+    "name": "Lucas Henrique Silva de Alcantara",
+    "n": 47,
+    "role": "",
+    "past": [
+     {
+      "event": "WorldSkills Abu Dhabi 2017",
+      "year": 2017,
+      "skill": "Panificação",
+      "medal": "Participação",
+      "position": 9
+     }
+    ]
+   }
+  ],
+  "605": [
+   {
+    "kind": "occ",
+    "name": "Lucas Silveira Portal",
+    "n": 17,
+    "role": "",
+    "past": []
+   }
+  ],
+  "614": [
+   {
+    "kind": "occ",
+    "name": "Luiz Augusto Cardozo Navazello",
+    "n": 24,
+    "role": "",
+    "past": []
+   }
+  ],
+  "620": [
+   {
+    "kind": "occ",
+    "name": "Luiz Fernando Silva Zanini",
+    "n": 16,
+    "role": "Expert",
+    "past": [
+     {
+      "event": "WorldSkills Kazan 2019",
+      "year": 2019,
+      "skill": "Desafio de Manufatura em Equipe",
+      "medal": "Medalha de Excelência",
+      "position": 4
+     }
+    ]
+   }
+  ],
+  "628": [
+   {
+    "kind": "occ",
+    "name": "Magdiel Jose da Silva",
+    "n": 64,
+    "role": "",
+    "past": []
+   }
+  ],
+  "689": [
+   {
+    "kind": "occ",
+    "name": "Mateus Bosco Ferraz",
+    "n": 27,
+    "role": "",
+    "past": []
+   }
+  ],
+  "701": [
+   {
+    "kind": "occ",
+    "name": "Matheus Palha de Barros",
+    "n": 57,
+    "role": "Expert",
+    "past": [
+     {
+      "event": "WorldSkills Lyon 2024",
+      "year": 2024,
+      "skill": "Manufatura Aditiva",
+      "medal": "Medalha de Excelência",
+      "position": 5
+     }
+    ]
+   }
+  ],
+  "735": [
+   {
+    "kind": "occ",
+    "name": "Nathany Pereira Vianna Rosado",
+    "n": 5,
+    "role": "Intérprete",
+    "past": []
+   }
+  ],
+  "804": [
+   {
+    "kind": "occ",
+    "name": "Ricardo Francisco de Angelis",
+    "n": 17,
+    "role": "",
+    "past": []
+   }
+  ],
+  "820": [
+   {
+    "kind": "occ",
+    "name": "Rodrigo Smiderle Bremm",
+    "n": 3,
+    "role": "",
+    "past": []
+   }
+  ],
+  "825": [
+   {
+    "kind": "occ",
+    "name": "Rogério Ronqui de Conti",
+    "n": 33,
+    "role": "",
+    "past": []
+   }
+  ],
+  "839": [
+   {
+    "kind": "occ",
+    "name": "Samanta Roveri",
+    "n": 51,
+    "role": "Expert",
+    "past": []
+   }
+  ],
+  "842": [
+   {
+    "kind": "occ",
+    "name": "Samuel Gonçalves Mordente",
+    "n": 10,
+    "role": "Intérprete",
+    "past": []
+   }
+  ],
+  "850": [
+   {
+    "kind": "occ",
+    "name": "Sidnei Rosso Serafim",
+    "n": 18,
+    "role": "",
+    "past": []
+   }
+  ],
+  "867": [
+   {
+    "kind": "occ",
+    "name": "Thaylon Roberto Muniz da Silva",
+    "n": 54,
+    "role": "Expert",
+    "past": [
+     {
+      "event": "WorldSkills Lyon 2024",
+      "year": 2024,
+      "skill": "Segurança Cibernética",
+      "medal": "Medalha de Excelência",
+      "position": 10
+     }
+    ]
+   }
+  ],
+  "873": [
+   {
+    "kind": "occ",
+    "name": "Thiago Geremias de Oliveira",
+    "n": 53,
+    "role": "Expert",
+    "past": []
+   }
+  ],
+  "875": [
+   {
+    "kind": "occ",
+    "name": "Thiago Rocha do Nascimento",
+    "n": 27,
+    "role": "",
+    "past": []
+   }
+  ],
+  "886": [
+   {
+    "kind": "occ",
+    "name": "Tiago Pereira Ramos",
+    "n": 8,
+    "role": "",
+    "past": []
+   }
+  ],
+  "903": [
+   {
+    "kind": "occ",
+    "name": "Vinícius Person de Oliveira",
+    "n": 63,
+    "role": "",
+    "past": [
+     {
+      "event": "WorldSkills Lyon 2024",
+      "year": 2024,
+      "skill": "Eletrônica",
+      "medal": "Medalha de Excelência",
+      "position": 9
+     }
+    ]
+   }
+  ],
+  "906": [
+   {
+    "kind": "occ",
+    "name": "Vitor Hugo Alves Vieira",
+    "n": 48,
+    "role": "Intérprete",
+    "past": []
+   }
+  ],
+  "907": [
+   {
+    "kind": "occ",
+    "name": "Vitor Hugo Alves Vieira",
+    "n": 48,
+    "role": "Intérprete",
+    "past": []
+   }
+  ],
+  "911": [
+   {
+    "kind": "occ",
+    "name": "Vitoria Tatiany de Sousa Reis Neris",
+    "n": 32,
+    "role": "Expert",
+    "past": []
+   }
+  ],
+  "913": [
+   {
+    "kind": "occ",
+    "name": "Walace Felipe de Almeida Oliveira",
+    "n": 23,
+    "role": "Expert",
+    "past": [
+     {
+      "event": "WorldSkills Lyon 2024",
+      "year": 2024,
+      "skill": "Integração de Sistemas Robóticos",
+      "medal": "Medalha de Excelência",
+      "position": 7
+     }
+    ]
+   }
+  ],
+  "915": [
+   {
+    "kind": "occ",
+    "name": "Waldemar Furbringer",
+    "n": 26,
+    "role": "Expert",
+    "past": []
+   }
+  ],
+  "929": [
+   {
+    "kind": "occ",
+    "name": "Wenderson Campos de Oliveira Ribas",
+    "n": 46,
+    "role": "",
+    "past": [
+     {
+      "event": "WorldSkills São Paulo 2015",
+      "year": 2015,
+      "skill": "Construção em Concreto",
+      "medal": "Medalha de Bronze",
+      "position": 3
+     }
+    ]
+   }
+  ],
+  "931": [
+   {
+    "kind": "occ",
+    "name": "Wesdra de Araujo Silva",
+    "n": 57,
+    "role": "Intérprete",
+    "past": []
+   }
+  ],
+  "939": [
+   {
+    "kind": "occ",
+    "name": "Willian Horing Azambuja",
+    "n": 15,
+    "role": "Intérprete",
+    "past": []
+   }
+  ],
+  "404": [
+   {
+    "kind": "occ",
+    "name": "Hugo Nakatani",
+    "n": 19,
+    "role": "",
+    "past": []
+   }
+  ],
+  "236": [
+   {
+    "kind": "occ",
+    "name": "Emanoel Marques Silva de Lima",
+    "n": 2,
+    "role": "",
+    "past": []
+   }
+  ],
+  "237": [
+   {
+    "kind": "occ",
+    "name": "Emanoel Marques Silva de Lima",
+    "n": 2,
+    "role": "",
+    "past": []
+   }
+  ],
+  "42": [
+   {
+    "kind": "gen",
+    "name": "Anderson Garcia Scarlassara",
+    "role": "Delegado Técnico Adjunto",
+    "past": [
+     {
+      "event": "WorldSkills Lyon 1995",
+      "year": 1995,
+      "skill": "Tornearia Convencional e CNC",
+      "medal": "Medalha de Ouro",
+      "position": 1,
+      "note": "Primeiro campeão brasileiro da história da WorldSkills, aos 20 anos. Nascido em Campinas (SP) e criado em Pederneiras (SP)."
+     }
+    ]
+   }
+  ],
+  "230": [
+   {
+    "kind": "gen",
+    "name": "Eliseia Candida da Silva Tavares",
+    "role": "Líder de Competidores",
+    "past": []
+   }
+  ],
+  "231": [
+   {
+    "kind": "gen",
+    "name": "Elisiê Coelho Lima",
+    "role": "Líder de Competidores",
+    "past": []
+   }
+  ],
+  "298": [
+   {
+    "kind": "gen",
+    "name": "Flaudilenio Eduardo Lima",
+    "role": "Líder de Competidores",
+    "past": []
+   }
+  ],
+  "447": [
+   {
+    "kind": "gen",
+    "name": "Jeferson Leandro Mateucci",
+    "role": "Delegado Técnico",
+    "past": []
+   }
+  ],
+  "529": [
+   {
+    "kind": "gen",
+    "name": "Julyana Carvalho Leite",
+    "role": "Suporte Competidores",
+    "past": []
+   }
+  ],
+  "849": [
+   {
+    "kind": "gen",
+    "name": "Sherman Willian Mukoyama",
+    "role": "Delegado Técnico Adjunto",
+    "past": [
+     {
+      "event": "WorldSkills Helsinki 2005",
+      "year": 2005,
+      "skill": "Polimecânica e Automação",
+      "medal": "Medalha de Bronze",
+      "position": 3
+     }
+    ]
+   }
+  ],
+  "899": [
+   {
+    "kind": "gen",
+    "name": "Vinicius Correa Ribeiro",
+    "role": "Líder de Competidores",
+    "past": []
+   }
+  ],
+  "831": [
+   {
+    "kind": "gen",
+    "name": "Rosangela Maria Costa",
+    "role": "Suporte Experts",
+    "past": []
+   }
+  ],
+  "824": [
+   {
+    "kind": "gen",
+    "name": "Rogério Rodrigues Herrera Leite",
+    "role": "Suporte Técnico",
+    "past": []
+   }
+  ],
+  "868": [
+   {
+    "kind": "gen",
+    "name": "Thiago de Almeida Alves",
+    "role": "Suporte Técnico",
+    "past": []
+   }
+  ],
+  "932": [
+   {
+    "kind": "gen",
+    "name": "Weslen Pereira Santana",
+    "role": "Suporte Técnico",
+    "past": [
+     {
+      "event": "WorldSkills São Paulo 2015",
+      "year": 2015,
+      "skill": "Marcenaria de Estruturas",
+      "medal": "Medalha de Prata",
+      "position": 2
+     }
+    ]
+   }
+  ],
+  "11": [
+   {
+    "kind": "gen",
+    "name": "Alan Cadmo Morales Barriento",
+    "role": "Suporte Técnico",
+    "past": []
+   }
+  ],
+  "12": [
+   {
+    "kind": "gen",
+    "name": "Alan Cadmo Morales Barriento",
+    "role": "Suporte Técnico",
+    "past": []
+   }
+  ],
+  "376": [
+   {
+    "kind": "gen",
+    "name": "Gustavo Gomes Fernandes",
+    "role": "Suporte Técnico",
+    "past": []
+   }
+  ],
+  "377": [
+   {
+    "kind": "gen",
+    "name": "Gustavo Gomes Fernandes",
+    "role": "Suporte Técnico",
+    "past": []
+   }
+  ],
+  "378": [
+   {
+    "kind": "gen",
+    "name": "Gustavo Gomes Fernandes",
+    "role": "Suporte Técnico",
+    "past": []
+   }
+  ]
+ },
+ "rename": {},
+ "album": "https://skillex.com.br/"
+}
