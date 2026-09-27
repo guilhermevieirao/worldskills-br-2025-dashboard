@@ -24,7 +24,7 @@ def flush():
     global cur_files, cur_size, part_n
     if not cur_files:
         return
-    zpath = f'{BASE}/quem-e-quem-fotos-parte{part_n}.zip'
+    zpath = f'{BASE}/worldskills-br-2025-dashboard-fotos-parte{part_n}.zip'
     with zipfile.ZipFile(zpath, 'w', zipfile.ZIP_STORED) as z:
         for fname, raw in cur_files:
             z.writestr(fname, raw)

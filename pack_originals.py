@@ -19,7 +19,7 @@ for p in people:
         by_url.setdefault(p['foto'], []).append(p)
 
 used_names = {}
-zpath = BASE + '/quem-e-quem-fotos-originais.zip'
+zpath = BASE + '/worldskills-br-2025-dashboard-fotos-originais.zip'
 with zipfile.ZipFile(zpath, 'w', zipfile.ZIP_STORED) as z:
     count = 0
     for url, plist in by_url.items():

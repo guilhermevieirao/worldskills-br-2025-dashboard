@@ -1,4 +1,4 @@
-<title>Quem é Quem WorldSkills Brasil</title>
+<title>WorldSkills BR 2025 Dashboard</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <style>
@@ -9,6 +9,7 @@
   --ink:#1a1626; --ink-2:#565070; --ink-3:#847ca0;
   --accent:#c94a22; --accent-soft:#fbeee8;
   --cat-1:#2a78d6; --cat-2:#1baf7a; --cat-3:#eb6834; --cat-4:#4a3aa7; --cat-5:#eda100;
+  --cat-1-fill:#2873cd; --cat-2-fill:#15855d; --cat-3-fill:#c1552b; --cat-4-fill:#4a3aa7; --cat-5-fill:#9c6a00;
   --bar:#2a78d6; --bar-track:#e6e3f0;
   --shadow:0 1px 2px rgba(26,22,38,.06), 0 8px 24px -16px rgba(26,22,38,.28);
   --focus:#4a3aa7;
@@ -21,6 +22,7 @@
     --ink:#f1eff9; --ink-2:#aaa3c8; --ink-3:#7b739c;
     --accent:#ff8f5e; --accent-soft:#33203a;
     --cat-1:#3987e5; --cat-2:#199e70; --cat-3:#d95926; --cat-4:#9085e9; --cat-5:#c98500;
+    --cat-1-fill:#3174c5; --cat-2-fill:#15855e; --cat-3-fill:#c35022; --cat-4-fill:#736aba; --cat-5-fill:#a16a00;
     --bar:#3987e5; --bar-track:#2a2547;
     --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px -18px rgba(0,0,0,.9);
     --focus:#9085e9;
@@ -33,6 +35,7 @@
   --ink:#f1eff9; --ink-2:#aaa3c8; --ink-3:#7b739c;
   --accent:#ff8f5e; --accent-soft:#33203a;
   --cat-1:#3987e5; --cat-2:#199e70; --cat-3:#d95926; --cat-4:#9085e9; --cat-5:#c98500;
+  --cat-1-fill:#3174c5; --cat-2-fill:#15855e; --cat-3-fill:#c35022; --cat-4-fill:#736aba; --cat-5-fill:#a16a00;
   --bar:#3987e5; --bar-track:#2a2547;
   --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px -18px rgba(0,0,0,.9);
   --focus:#9085e9;
@@ -137,6 +140,7 @@ p{margin:0}
   font:inherit; font-size:13px; color:var(--ink); background:var(--surface);
   border:1px solid var(--line); border-radius:9px; padding:9px 10px; max-width:185px;
 }
+.search-row select option{ color:var(--ink); background:var(--surface); }
 .seg{display:flex; background:var(--surface); border:1px solid var(--line); border-radius:9px; overflow:hidden}
 .seg button{
   border:0; background:none; font:inherit; font-size:12.5px; color:var(--ink-2); cursor:pointer; padding:9px 13px;
@@ -185,7 +189,7 @@ p{margin:0}
 .card h3{font-size:14px; font-weight:600; letter-spacing:-.01em; line-height:1.25; overflow-wrap:anywhere}
 .role{
   display:inline-block; margin-top:5px; font-family:"IBM Plex Mono",monospace; font-size:9px;
-  letter-spacing:.07em; text-transform:uppercase; color:#fff; background:var(--c);
+  letter-spacing:.07em; text-transform:uppercase; color:#fff; background:var(--cf);
   border-radius:4px; padding:2px 6px;
 }
 .card .skill{margin-top:6px; font-size:12.5px; color:var(--ink); font-weight:500; overflow-wrap:anywhere}
@@ -226,7 +230,7 @@ td .swatch{display:inline-block; width:8px; height:8px; border-radius:2px; backg
 .drawer h2{font-size:23px; font-weight:700; letter-spacing:-.025em; margin-top:16px; line-height:1.15}
 .dw-role{
   display:inline-block; margin-top:9px; font-family:"IBM Plex Mono",monospace; font-size:10px;
-  letter-spacing:.08em; text-transform:uppercase; color:#fff; background:var(--c); border-radius:5px; padding:3px 8px;
+  letter-spacing:.08em; text-transform:uppercase; color:#fff; background:var(--cf); border-radius:5px; padding:3px 8px;
 }
 .dl{margin:20px 0 0; display:grid; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:10px; overflow:hidden}
 .dl div{background:var(--surface); padding:10px 13px}
@@ -267,7 +271,7 @@ td .swatch{display:inline-block; width:8px; height:8px; border-radius:2px; backg
     <div class="wordmark">
       <div class="crest" aria-hidden="true">WSB</div>
       <div>
-        <h1>Quem é Quem</h1>
+        <h1>WorldSkills BR 2025 Dashboard</h1>
         <p class="sub">WorldSkills Brasil · SENAI · Competição Nacional</p>
       </div>
     </div>
@@ -343,11 +347,11 @@ var D = JSON.parse(document.getElementById('bundle').textContent);
    com um slot categórico validado. A cor nunca é o único sinal — todo chip,
    etiqueta e linha traz o rótulo por escrito. */
 var CATS = [
-  {id:'comp', nome:'Competidores',      cssvar:'--cat-1', test:function(p){ return /^Competidor/.test(p); }},
-  {id:'aval', nome:'Avaliação',         cssvar:'--cat-2', test:function(p){ return /^Avaliador|^SAEP Tutor/.test(p); }},
-  {id:'tec',  nome:'Liderança técnica', cssvar:'--cat-3', test:function(p){ return /^(Chefe|Delegado)/.test(p); }},
-  {id:'org',  nome:'Organização',       cssvar:'--cat-4', test:function(p){ return /^(Staff|Organiza|Coordenador|Assessoria)/.test(p); }},
-  {id:'com',  nome:'Comunicação',       cssvar:'--cat-5', test:function(){ return true; }}
+  {id:'comp', nome:'Competidores',      cssvar:'--cat-1', fillvar:'--cat-1-fill', test:function(p){ return /^Competidor/.test(p); }},
+  {id:'aval', nome:'Avaliação',         cssvar:'--cat-2', fillvar:'--cat-2-fill', test:function(p){ return /^Avaliador|^SAEP Tutor/.test(p); }},
+  {id:'tec',  nome:'Liderança técnica', cssvar:'--cat-3', fillvar:'--cat-3-fill', test:function(p){ return /^(Chefe|Delegado)/.test(p); }},
+  {id:'org',  nome:'Organização',       cssvar:'--cat-4', fillvar:'--cat-4-fill', test:function(p){ return /^(Staff|Organiza|Coordenador|Assessoria)/.test(p); }},
+  {id:'com',  nome:'Comunicação',       cssvar:'--cat-5', fillvar:'--cat-5-fill', test:function(){ return true; }}
 ];
 var catOfPerfil = D.perfil.map(function(p){
   for (var i = 0; i < CATS.length; i++) if (CATS[i].test(p)) return i;
@@ -542,7 +546,7 @@ function cardHTML(p){
   var photo = p.img < 0
     ? '<span class="avatar ph" aria-hidden="true">' + esc(initials(p.nome)) + '</span>'
     : '<img class="avatar" src="' + src(p) + '" alt="" decoding="async">';
-  return '<button type="button" class="card" data-p="' + p.i + '" style="--c:var(' + CATS[p.cat].cssvar + ')">' +
+  return '<button type="button" class="card" data-p="' + p.i + '" style="--c:var(' + CATS[p.cat].cssvar + ');--cf:var(' + CATS[p.cat].fillvar + ')">' +
     photo + '<span class="card-body"><h3>' + esc(p.nome) + '</h3>' +
     (p.perfil ? '<span class="role">' + esc(p.perfil) + '</span>' : '') +
     (p.ocup ? '<p class="skill">' + esc(p.ocup) + '</p>' : '') +
@@ -648,6 +652,7 @@ function openDrawer(p){
   drawer.setAttribute('aria-modal', 'true');
   drawer.setAttribute('aria-label', p.nome);
   drawer.style.setProperty('--c', 'var(' + CATS[p.cat].cssvar + ')');
+  drawer.style.setProperty('--cf', 'var(' + CATS[p.cat].fillvar + ')');
   var photo = p.img < 0
     ? '<div class="dw-photo avatar ph" style="font-size:38px">' + esc(initials(p.nome)) + '</div>'
     : '<img class="dw-photo" src="' + src(p) + '" alt="Retrato de ' + esc(p.nome) + '">';

@@ -1,12 +1,12 @@
-# Quem é Quem — WorldSkills Brasil
+# WorldSkills BR 2025 Dashboard
 
 Diretório navegável dos participantes da competição nacional WorldSkills Brasil / SENAI, reconstruído como uma página HTML autocontida.
 
 ## O que é
 
-Este projeto reorganiza os dados públicos do "Quem é Quem" da WorldSkills Brasil em uma página HTML independente, mais rápida e com mais recursos de navegação do que o painel original.
+Este projeto reorganiza os dados públicos do painel de participantes da WorldSkills Brasil em uma página HTML independente, mais rápida e com mais recursos de navegação do que o painel original.
 
-**[Abrir a página](quem-e-quem.html)**
+**[Abrir a página](worldskills-br-2025-dashboard.html)**
 
 ### Recursos
 
@@ -34,18 +34,18 @@ As fotos usadas na página são versões otimizadas (240×320) das fotos de cred
 ## Estrutura do projeto
 
 ```
-quem-e-quem.html        → página final, pronta para abrir em qualquer navegador
-page.template.html      → template-fonte da página (HTML/CSS/JS), com um marcador
-                           onde os dados são injetados na hora do build
-data/pessoas.json       → dados já limpos e deduplicados
+worldskills-br-2025-dashboard.html → página final, pronta para abrir em qualquer navegador
+page.template.html                 → template-fonte da página (HTML/CSS/JS), com um marcador
+                                      onde os dados são injetados na hora do build
+data/pessoas.json                  → dados já limpos e deduplicados
 
-fetch.mjs               → coleta os registros de origem
-build-data.mjs          → (auxiliar) normaliza os dados em formato compacto
-fotos_raw.py            → baixa as fotos de credenciamento em resolução original
-fotos_hq.py             → recorta/redimensiona as fotos para uso na página
-build-bundle.py         → monta o bundle final (dados + fotos em base64)
-pack_originals.py       → empacota as fotos originais em um único .zip
-pack_originals_split.py → mesma coisa, mas dividida em partes menores
+fetch.mjs                          → coleta os registros de origem
+build-data.mjs                     → (auxiliar) normaliza os dados em formato compacto
+fotos_raw.py                       → baixa as fotos de credenciamento em resolução original
+fotos_hq.py                        → recorta/redimensiona as fotos para uso na página
+build-bundle.py                    → monta o bundle final (dados + fotos em base64)
+pack_originals.py                  → empacota as fotos originais em um único .zip
+pack_originals_split.py            → mesma coisa, mas dividida em partes menores
 ```
 
 ## Como reconstruir do zero
@@ -65,7 +65,7 @@ Depois, injete o bundle no template para gerar o HTML final:
 python -c "
 tpl = open('page.template.html', encoding='utf8').read()
 data = open('data/bundle.json', encoding='utf8').read()
-open('quem-e-quem.html', 'w', encoding='utf8').write(tpl.replace('/*__DATA__*/', data))
+open('worldskills-br-2025-dashboard.html', 'w', encoding='utf8').write(tpl.replace('/*__DATA__*/', data))
 "
 ```
 
