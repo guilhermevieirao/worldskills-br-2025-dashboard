@@ -6,6 +6,27 @@
 <title>Seletiva Nacional 2025 · WorldSkills Brasil</title>
 <meta name="description" content="Quem é quem na seletiva nacional da WorldSkills Brasil 2025: competidores, avaliadores, chefes de equipe e organização, e o que quem foi a Shanghai conquistou no mundial.">
 <meta name="theme-color" content="#0e1f47">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://guilhermevieirao.github.io/worldskills-br-2025-dashboard/">
+<meta name="application-name" content="Seletiva 2025">
+<meta name="apple-mobile-web-app-title" content="Seletiva 2025">
+<meta name="format-detection" content="telephone=no">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Seletiva Nacional 2025">
+<meta property="og:title" content="Seletiva Nacional 2025 · WorldSkills Brasil">
+<meta property="og:description" content="Quem é quem na seletiva nacional da WorldSkills Brasil 2025, e o que quem foi a Shanghai conquistou no mundial.">
+<meta property="og:url" content="https://guilhermevieirao.github.io/worldskills-br-2025-dashboard/">
+<meta property="og:image" content="https://guilhermevieirao.github.io/worldskills-br-2025-dashboard/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Capa da Seletiva Nacional 2025 com figurinhas de competidores que subiram ao pódio em Shanghai">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Seletiva Nacional 2025 · WorldSkills Brasil">
+<meta name="twitter:description" content="Quem é quem na seletiva nacional da WorldSkills Brasil 2025, e o que quem foi a Shanghai conquistou no mundial.">
+<meta name="twitter:image" content="https://guilhermevieirao.github.io/worldskills-br-2025-dashboard/og.jpg">
+<meta name="twitter:image:alt" content="Capa da Seletiva Nacional 2025 com figurinhas de competidores que subiram ao pódio em Shanghai">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Seletiva Nacional 2025 · WorldSkills Brasil","url":"https://guilhermevieirao.github.io/worldskills-br-2025-dashboard/","inLanguage":"pt-BR","description":"Quem é quem na seletiva nacional da WorldSkills Brasil 2025, ligado aos resultados da WorldSkills Shanghai 2026."}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
@@ -166,9 +187,9 @@ button { cursor: pointer; }
   border-radius: 999px; background: var(--cover-2); box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.14);
 }
 .field input, .field select { min-width: 0; height: 38px; border: 0; background: transparent; color: var(--on-cover); outline: none; font-size: 14px; }
-.field input { width: 210px; }
+.field input { width: 178px; }
 .field input::placeholder { color: var(--on-cover-2); }
-.field select { max-width: 200px; padding-right: 4px; cursor: pointer; }
+.field select { max-width: 156px; padding-right: 4px; cursor: pointer; }
 .field select option { color: #121826; background: #ffffff; }
 .field:focus-within { box-shadow: inset 0 0 0 2px var(--yellow); }
 .field svg { width: 16px; height: 16px; flex-shrink: 0; color: var(--on-cover-2); }
@@ -177,7 +198,6 @@ button { cursor: pointer; }
 .field[data-on="false"] { box-shadow: none; outline: 1px dashed rgb(255 255 255 / 0.28); outline-offset: -1px; }
 .finder__count { margin-left: auto; align-self: center; font: 600 14px/1.2 var(--body); color: var(--on-cover-2); white-space: nowrap; }
 .finder__count b { font: 800 1.35rem/1 var(--display); color: var(--yellow); }
-@media (min-width: 721px) { .finder__count { position: absolute; right: var(--gutter); bottom: 16px; } }
 .chip {
   min-height: 36px; padding: 0 12px; border: 0; border-radius: 999px;
   background: transparent; color: var(--on-cover-2); font-weight: 600; font-size: 14px;
@@ -186,21 +206,35 @@ button { cursor: pointer; }
 .chip[aria-pressed="true"] { background: var(--yellow); color: var(--yellow-ink); }
 .chip[aria-pressed="true"]:focus-visible { outline-color: #fff; }
 .chip svg { width: 15px; height: 15px; vertical-align: -3px; margin-right: 5px; }
-.finder__row { display: flex; flex-wrap: wrap; gap: 6px; padding-bottom: 10px; padding-right: 190px; }
+.finder__row { display: flex; flex-wrap: wrap; gap: 6px; padding-bottom: 10px; }
 .finder__sep { width: 1px; align-self: stretch; margin: 4px 2px; background: rgb(255 255 255 / 0.2); }
 .finder__clear { background: none; border: 0; color: var(--yellow); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; min-height: 36px; }
-.finder__selects { display: contents; }
-.finder__toggle { display: none; }
+.finder__selects, .sel-main { display: contents; }
+.sel-more { display: none; }
+.finder[data-open="true"] .sel-more { display: contents; }
+.finder__toggle[data-n]:not([data-n="0"])::after { content: attr(data-n); margin-left: 6px; display: inline-grid; place-items: center; min-width: 20px; height: 20px; border-radius: 10px; background: var(--yellow); color: var(--yellow-ink); font-size: 12px; }
+.finder__toggle { display: inline-flex; align-items: center; }
+.only-m { display: none; }
+.chip .n { margin-left: 3px; font-weight: 500; opacity: 0.8; }
+.finder__tags { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; padding-bottom: 10px; }
+.tag { display: inline-flex; align-items: center; gap: 4px; min-height: 30px; padding: 0 2px 0 12px; border-radius: 999px; background: rgb(255 255 255 / 0.08); box-shadow: inset 0 0 0 1px var(--yellow); color: var(--on-cover-2); font-size: 13px; }
+.tag b { color: var(--on-cover); font-weight: 700; max-width: 26ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tag button { width: 26px; height: 26px; padding: 0; border: 0; border-radius: 50%; background: none; color: var(--yellow); font-size: 17px; line-height: 1; }
+@media (hover: hover) and (pointer: fine) { .tag button:hover { background: rgb(255 255 255 / 0.12); } }
 @media (max-width: 720px) {
+  .only-m { display: inline; } .only-d { display: none; }
+  .finder__tags { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding-right: 0; }
+  .tag, .finder__tags .finder__clear { flex-shrink: 0; }
+  .finder[data-open="true"] .sel-main, .finder[data-open="true"] .sel-more { display: contents; }
   .finder__bar { gap: 8px; }
-  .finder__toggle { display: inline-flex; align-items: center; min-height: 42px; }
-  .finder__toggle[data-n]:not([data-n="0"])::after { content: attr(data-n); margin-left: 6px; display: grid; place-items: center; min-width: 20px; height: 20px; border-radius: 10px; background: var(--yellow); color: var(--yellow-ink); font-size: 12px; }
+  .finder__toggle { min-height: 42px; }
+  .finder__selects { order: 1; }
   .finder__selects { display: none; width: 100%; }
   .finder[data-open="true"] .finder__selects { display: grid; gap: 8px; }
   .finder__selects .field, .finder__selects select { width: 100%; max-width: none; }
   .field { flex: 1 1 140px; min-height: 42px; }
   .field input { width: 100%; }
-  .finder__count { display: block; margin: 0 0 8px; }
+  .finder__count { order: 2; flex-basis: 100%; margin: 0; }
   .finder__row { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding-right: 0; }
   .chip { flex-shrink: 0; }
   .finder__sep { flex-shrink: 0; }
@@ -353,6 +387,29 @@ button { cursor: pointer; }
 .mini[data-ex="true"] .mini__photo { border-color: var(--gold-rim); }
 @media (hover: hover) and (pointer: fine) { .mini:hover .mini__photo { transform: translateY(-2px) rotate(-1deg); } }
 
+.tally--board { margin: 20px 0 0; transform: rotate(-0.6deg); }
+.tally em { font-style: normal; font-weight: 500; opacity: 0.75; }
+.bon--sm { margin-top: 16px; }
+.bon--sm .bon__title { font-size: 1.15rem; }
+.linkish--light { color: #fff; text-decoration-color: rgb(255 255 255 / 0.5); }
+.ex-note { grid-column: 1 / -1; font-size: 13px; color: var(--ink-3); }
+.ex-badge--xs { width: 18px; height: 18px; vertical-align: -3px; margin: 0 0 0 4px; }
+.ex-badge--xs svg { width: 11px; height: 11px; }
+table.mt--ws td { white-space: normal; vertical-align: top; }
+table.mt--ws td:nth-child(2) { max-width: none; width: auto; min-width: 180px; }
+table.mt--ws th:nth-child(4), table.mt--ws td:nth-child(4), table.mt--ws th:nth-child(5), table.mt--ws td:nth-child(5) { text-align: left; }
+table.mt--ws td:nth-child(5) { white-space: nowrap; }
+table.mt--ws small { color: var(--ink-3); }
+.dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 18px; margin: 0; }
+.dl dt { font: 700 11.5px/1.2 var(--body); letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); }
+.dl dd { margin: 2px 0 0; font-size: 15px; color: var(--ink); overflow-wrap: anywhere; }
+@media (max-width: 420px) { .dl { grid-template-columns: 1fr; } }
+.thumbs { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 12px; }
+.thumbs button { position: relative; width: 58px; height: 74px; padding: 0; border: 3px solid rgb(255 255 255 / 0.5); border-radius: 8px; overflow: hidden; background: #000; }
+.thumbs button[aria-pressed="true"] { border-color: #fff; }
+.thumbs img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.thumbs span { position: absolute; left: 0; right: 0; bottom: 0; padding: 2px 0; font: 700 10px/1 var(--body); color: #fff; background: rgb(0 0 0 / 0.6); text-align: center; }
+.back__full { display: inline-block; margin-top: 10px; color: #fff; font-weight: 700; font-size: 14px; }
 .empty-note { padding: 28px; border-radius: 18px; background: var(--paper); color: var(--ink); text-align: center; }
 
 /* ── Páginas de papel (números, comissão, lista) ──────── */
@@ -530,7 +587,7 @@ dialog.back::backdrop { background: rgb(6 13 31 / 0.78); }
   .back__inner > .back__media, .back__inner > .back__body { flex: none; overflow: visible; }
 }
 .back__media { background: var(--sec, var(--cover)); padding: 16px; display: grid; align-content: start; justify-items: center; }
-.back__main { position: relative; width: 100%; max-width: 320px; margin: 0; border-radius: 10px; overflow: hidden; background: rgb(0 0 0 / 0.2); aspect-ratio: 3 / 4; }
+.back__main { position: relative; width: 100%; max-width: 320px; margin: 0; border-radius: 10px; overflow: hidden; background: rgb(0 0 0 / 0.2); aspect-ratio: 3 / 4; max-height: 72vh; }
 .back__main img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
 .back__main .ph { font-size: 5rem; }
 .back__main figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 18px 10px 8px; font-size: 12px; color: #fff; background: linear-gradient(transparent, rgb(0 0 0 / 0.72)); }
@@ -627,36 +684,46 @@ dialog.back::backdrop { background: rgb(6 13 31 / 0.78); }
     <div class="finder__bar">
       <label class="field" data-on="false" id="f-q-wrap">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-        <span class="sr">Nome, instituição, ocupação ou número da ocupação</span>
-        <input id="f-q" type="search" placeholder="Nome, ocupação ou nº" autocomplete="off">
+        <span class="sr">Nome, instituição, ocupação, local ou número da ocupação</span>
+        <input id="f-q" type="search" placeholder="Nome, ocupação, local ou nº" autocomplete="off">
       </label>
-      <button class="chip finder__toggle" type="button" id="f-toggle" aria-expanded="false" aria-controls="f-selects">Filtros</button>
       <div class="finder__selects" id="f-selects">
-        <label class="field" data-on="false" id="f-perfil-wrap"><span class="sr">Perfil</span><select id="f-perfil"></select></label>
-        <label class="field" data-on="false" id="f-inst-wrap"><span class="sr">Instituição</span><select id="f-inst"></select></label>
-        <label class="field" data-on="false" id="f-ocup-wrap"><span class="sr">Ocupação</span><select id="f-ocup"></select></label>
-        <label class="field" data-on="false" id="f-uf-wrap"><span class="sr">Estado</span><select id="f-uf"></select></label>
+        <span class="sel-main">
+          <label class="field" data-on="false" id="f-perfil-wrap"><span class="sr">Perfil</span><select id="f-perfil"></select></label>
+          <label class="field" data-on="false" id="f-inst-wrap"><span class="sr">Instituição</span><select id="f-inst"></select></label>
+          <label class="field" data-on="false" id="f-ocup-wrap"><span class="sr">Ocupação</span><select id="f-ocup"></select></label>
+          <label class="field" data-on="false" id="f-local-wrap"><span class="sr">Local de competição</span><select id="f-local"></select></label>
+        </span>
+        <span class="sel-more">
+          <label class="field" data-on="false" id="f-sec-wrap"><span class="sr">Setor</span><select id="f-sec"></select></label>
+          <label class="field" data-on="false" id="f-uf-wrap"><span class="sr">Estado</span><select id="f-uf"></select></label>
+          <label class="field" data-on="false" id="f-reg-wrap"><span class="sr">Região</span><select id="f-reg"></select></label>
+          <label class="field" data-on="false" id="f-res-wrap"><span class="sr">Resultado em Shanghai</span><select id="f-res"></select></label>
+          <label class="field" data-on="false" id="f-fmt-wrap"><span class="sr">Formato da ocupação</span><select id="f-fmt"></select></label>
+        </span>
       </div>
+      <button class="chip finder__toggle" type="button" id="f-toggle" aria-expanded="false" aria-controls="f-selects"><span class="only-m">Filtros</span><span class="only-d">Mais filtros</span></button>
+      <span class="finder__count" aria-live="polite"><b class="num" id="f-count">0</b> de <span id="f-total">0</span> participantes</span>
     </div>
-    <span class="finder__count" aria-live="polite"><b class="num" id="f-count">0</b> de <span id="f-total">0</span> participantes</span>
-    <div class="finder__row" role="group" aria-label="Grupo">
+    <div class="finder__row" role="group" aria-label="Grupo e mundial">
       <span id="f-cats" style="display:contents"></span>
       <span class="finder__sep" aria-hidden="true"></span>
       <button class="chip" type="button" id="f-ws" aria-pressed="false"></button>
-      <button class="chip" type="button" id="f-res" aria-pressed="true" hidden></button>
-      <button class="finder__clear" type="button" id="f-clear" hidden>Limpar filtros</button>
+      <button class="chip" type="button" id="f-ex" aria-pressed="false"></button>
     </div>
+    <div class="finder__tags" id="f-tags" aria-label="Filtros ativos" hidden></div>
   </div>
 </nav>
 
 <main class="wrap">
   <section class="board" id="numeros" aria-labelledby="numeros-title" style="margin-top:28px">
     <h2 id="numeros-title">A seletiva em números</h2>
-    <p class="board__intro">Todos os registros do painel público da competição nacional, e quem dali seguiu para a WorldSkills Shanghai 2026. Toque numa medalha, num estado, numa ocupação ou numa instituição para filtrar o álbum.</p>
+    <p class="board__intro">Os registros do painel público da competição nacional e quem dali seguiu para a WorldSkills Shanghai 2026. Os números acompanham os filtros; toque numa medalha, num estado, numa barra ou numa linha para filtrar.</p>
+    <p class="tally tally--board" id="board-tally"></p>
     <div class="board__grid" id="board"></div>
   </section>
 
-  <div class="album-tools" role="group" aria-label="Exibição">
+  <div class="album-tools" id="album-tools" role="group" aria-label="Exibição">
     <span class="album-tools__label">Ver</span>
     <span class="order" role="group" aria-label="Formato">
       <button class="chip" type="button" data-view="album" aria-pressed="true">Figurinhas</button>
@@ -668,7 +735,7 @@ dialog.back::backdrop { background: rgb(6 13 31 / 0.78); }
       <button class="chip" type="button" data-order="num" aria-pressed="false">Ordem numérica</button>
     </span>
     <label class="field" data-on="false" id="sort-wrap" hidden><span class="sr">Ordenar a lista</span>
-      <select id="sort"><option value="nome">Ordenar por nome</option><option value="ocup">Ordenar por ocupação</option><option value="inst">Ordenar por instituição</option><option value="perfil">Ordenar por perfil</option><option value="ws">Resultado em Shanghai</option></select>
+      <select id="sort"><option value="nome">Ordenar por nome</option><option value="ocup">Ordenar por ocupação</option><option value="inst">Ordenar por instituição</option><option value="perfil">Ordenar por perfil</option><option value="local">Ordenar por local</option><option value="ws">Resultado em Shanghai</option></select>
     </label>
     <button class="chip" type="button" id="copy-csv">Copiar CSV</button>
   </div>
@@ -679,11 +746,11 @@ dialog.back::backdrop { background: rgb(6 13 31 / 0.78); }
 <footer class="sources wrap">
   <h2>Fontes</h2>
   <ul>
-    <li>Participantes: painel público “Quem é Quem” da WorldSkills Brasil / SENAI (modelo <i>Registration List by Group</i>), extraído em 21/09/2026.</li>
+    <li>Participantes: painel público “Quem é Quem” da WorldSkills Brasil / SENAI (modelo <i>Registration List by Group</i>), extraído em 21/09/2026: <span id="foot-count"></span>. As fotos são as de credenciamento do painel; a original enviada, em resolução máxima, vem do mesmo endereço, sem o recorte.</li>
     <li>Resultados e delegação no mundial: <a href="https://skillex.com.br/" target="_blank" rel="noopener">Brasil em Shanghai</a>, com os resultados oficiais de <a href="https://results.worldskills.org/" target="_blank" rel="noopener">results.worldskills.org</a>.</li>
     <li>Contornos dos estados: <a href="https://github.com/VictorCazanave/svg-maps/tree/master/packages/brazil" target="_blank" rel="noopener">@svg-maps/brazil</a>, de Victor Cazanave (CC BY 4.0).</li>
   </ul>
-  <p style="margin-top:14px">Os dados, as fotos e as fontes tipográficas estão dentro deste arquivo, que abre sem internet. Campos pessoais do modelo de origem (CPF, e-mail, celular e data de nascimento) não aparecem no painel público e não foram extraídos. Página independente, sem vínculo oficial com a WorldSkills, o SENAI ou o Senac.</p>
+  <p style="margin-top:14px">Os dados, as miniaturas das fotos e as fontes tipográficas estão dentro deste arquivo, que abre sem internet; no site, as fotos abrem em resolução maior. Campos pessoais do modelo de origem (CPF, e-mail, celular e data de nascimento) não aparecem no painel público e não foram extraídos. Página independente, sem vínculo oficial com a WorldSkills, o SENAI ou o Senac.</p>
 </footer>
 
 <button class="to-top" id="to-top" type="button" aria-label="Voltar ao topo" data-show="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
@@ -702,6 +769,7 @@ dialog.back::backdrop { background: rgb(6 13 31 / 0.78); }
   const n2 = n => String(n).padStart(2, '0');
   const ord = n => n + 'º';
   const plural = (n, one, many) => `${n} ${n === 1 ? one : many}`;
+  const store = { get: k => { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} } };
 
   const D = JSON.parse($('#bundle').textContent);
   const W = D.mundial;
@@ -718,7 +786,11 @@ dialog.back::backdrop { background: rgb(6 13 31 / 0.78); }
   const secVar = name => { const s = SECTORS.find(x => x.name === name); return s ? `var(--s-${s.key})` : 'var(--cover-2)'; };
   const MEDAL = { prata: 'Medalha de Prata', bronze: 'Medalha de Bronze', excelencia: 'Medalha de Excelência', participacao: 'Participação' };
   const MEDAL_SHORT = { prata: 'Prata', bronze: 'Bronze', excelencia: 'Excelência', participacao: 'Participação' };
+  const RES = { prata: 'Prata em Shanghai', bronze: 'Bronze em Shanghai', excelencia: 'Excelência em Shanghai', participacao: 'Participação em Shanghai', top5: 'Top 5 da ocupação em Shanghai' };
+  const FMT = { solo: 'Ocupações individuais', equipe: 'Ocupações em equipe' };
   const UF = { AC: 'Acre', AL: 'Alagoas', AP: 'Amapá', AM: 'Amazonas', BA: 'Bahia', CE: 'Ceará', DF: 'Distrito Federal', ES: 'Espírito Santo', GO: 'Goiás', MA: 'Maranhão', MT: 'Mato Grosso', MS: 'Mato Grosso do Sul', MG: 'Minas Gerais', PA: 'Pará', PB: 'Paraíba', PR: 'Paraná', PE: 'Pernambuco', PI: 'Piauí', RJ: 'Rio de Janeiro', RN: 'Rio Grande do Norte', RS: 'Rio Grande do Sul', RO: 'Rondônia', RR: 'Roraima', SC: 'Santa Catarina', SP: 'São Paulo', SE: 'Sergipe', TO: 'Tocantins' };
+  const REGIONS = ['Norte', 'Nordeste', 'Centro-Oeste', 'Sudeste', 'Sul'];
+  const UF_REGION = { AC: 'Norte', AP: 'Norte', AM: 'Norte', PA: 'Norte', RO: 'Norte', RR: 'Norte', TO: 'Norte', AL: 'Nordeste', BA: 'Nordeste', CE: 'Nordeste', MA: 'Nordeste', PB: 'Nordeste', PE: 'Nordeste', PI: 'Nordeste', RN: 'Nordeste', SE: 'Nordeste', DF: 'Centro-Oeste', GO: 'Centro-Oeste', MT: 'Centro-Oeste', MS: 'Centro-Oeste', ES: 'Sudeste', MG: 'Sudeste', RJ: 'Sudeste', SP: 'Sudeste', PR: 'Sul', RS: 'Sul', SC: 'Sul' };
   // estados pequenos demais para o rótulo: número fora, com linha até o estado
   const MAP_CALLOUT = { PE: [614, 206], RJ: [548, 474], ES: [572, 380], AL: [640, 238], SE: [630, 262], PB: [640, 184], RN: [640, 160], DF: [452, 300] };
   const COMPOUND = ['maria', 'joao', 'luiz', 'juan', 'ana', 'caio', 'marcus', 'jose'];
@@ -748,6 +820,7 @@ dialog.back::backdrop { background: rgb(6 13 31 / 0.78); }
     { id: 'com', nome: 'Comunicação', test: () => true },
   ];
   const catOf = perfil => CATS.find(c => c.test(perfil)).id;
+  const catName = id => CATS.find(c => c.id === id).nome;
   // comissão (quem não tem ocupação), em blocos
   const ROLE_GROUPS = [
     { nome: 'Coordenação', test: p => /^(Coordenador|Assessoria)/.test(p) },
@@ -759,21 +832,25 @@ dialog.back::backdrop { background: rgb(6 13 31 / 0.78); }
   // ordem dentro da equipe da ocupação
   const CREW_ORDER = ['Avaliador Líder', 'Avaliador Líder Adjunto', 'Chefe de Oficina', 'Coordenador Técnico', 'Avaliador', 'Avaliador de Empresa', 'SAEP Tutor', 'Staff'];
   const crewRank = p => { const i = CREW_ORDER.indexOf(p.perfil); return i < 0 ? 99 : i; };
+  const dict = (name, i) => i < 0 ? '' : D[name][i];
 
   const P = D.rows.map((r, i) => {
-    const [nome, inst, perfil, ocup, uf, sn, img] = r;
+    const [nome, inst, perfil, ocup, uf, sn, img, local, grupo, emp] = r;
     const p = {
-      i, nome, inst: inst < 0 ? '' : D.inst[inst], perfil: perfil < 0 ? '' : D.perfil[perfil], ocup: ocup < 0 ? '' : D.ocup[ocup],
-      uf, sn, img, ws: W.rows[i] || null,
+      i, nome, inst: dict('inst', inst), perfil: dict('perfil', perfil), ocup: dict('ocup', ocup), uf, sn, img,
+      local: dict('local', local), grupo: dict('grupo', grupo), emp: dict('emp', emp), ws: W.rows[i] || null,
     };
     p.cat = catOf(p.perfil);
+    p.reg = UF_REGION[uf] || '';
     p.sk = sn ? W.skills[sn] : null;
     p.sector = p.sk?.sector || '';
+    p.fmt = p.sk ? (p.sk.team ? 'equipe' : 'solo') : '';
     p.comp = (p.ws || []).find(x => x.kind === 'comp') || null;
     p.res = p.comp ? W.skills[p.comp.n] : null;
     p.past = (p.ws || []).flatMap(x => x.past || []);
     const wsText = (p.ws || []).map(x => [x.role, x.n && W.skills[x.n]?.pt, x.n && W.skills[x.n]?.en, x.kind === 'comp' ? 'competidor' : ''].join(' ')).join(' ');
-    p.hay = norm([nome, p.inst, p.perfil, p.ocup, UF[uf], p.sk?.pt, p.sk?.en, p.sector, SECTOR_EN[p.sector], wsText, p.ws ? 'shanghai mundial worldskills 2026' : ''].join(' '));
+    p.hay = norm([nome, p.inst, p.perfil, p.ocup, p.local, p.grupo, p.emp, UF[uf], p.reg, p.sk?.pt, p.sk?.en, p.sector, SECTOR_EN[p.sector], wsText,
+      p.ws ? 'shanghai mundial worldskills 2026' : '', p.past.map(a => a.event + ' ' + a.skill).join(' ')].join(' '));
     p.nameKey = norm(nome);
     return p;
   });
@@ -781,15 +858,32 @@ dialog.back::backdrop { background: rgb(6 13 31 / 0.78); }
   P.forEach(p => (byName[p.nameKey] ||= []).push(p));
   const isComp = p => p.cat === 'comp' && p.sn;
 
-  // ── fotos: entram quando a figurinha chega perto da tela ──
+  // ── fotos ──
+  // a miniatura embutida aparece na hora; no site, o recorte 600x800 e a original vêm dos pacotes por HTTP Range
+  let canRange = /^https?:$/.test(location.protocol) && !!D.packs?.length;
+  const cache = {};
+  const packUrl = ref => (cache[ref] ||= (async () => {
+    if (!canRange) throw new Error('offline');
+    const [b, o, l, t] = ref.split(':'); const s = +o, n = +l;
+    const ctl = new AbortController();
+    const r = await fetch(D.packs[+b], { headers: { Range: `bytes=${s}-${s + n - 1}` }, signal: ctl.signal });
+    if (r.status !== 206) { ctl.abort(); canRange = false; throw new Error('sem range'); }
+    return URL.createObjectURL(new Blob([await r.arrayBuffer()], { type: t === 'p' ? 'image/png' : 'image/jpeg' }));
+  })());
+  const thumb = k => 'data:image/jpeg;base64,' + D.imgs[k];
   const photo = (p, cls = '') => p.img < 0
     ? `<span class="ph ${cls}" aria-hidden="true">${esc(initials(p.nome))}</span>`
     : `<img data-img="${p.img}" alt="" decoding="async" ${cls ? `class="${cls}"` : ''}>`;
+  const load = img => {
+    if (!img.dataset.img) return;
+    const k = +img.dataset.img; img.removeAttribute('data-img');
+    img.src = thumb(k);
+    if (canRange && D.orig?.[k]) packUrl(D.orig[k]).then(u => { img.src = u; }, () => {});
+  };
   const io = 'IntersectionObserver' in window ? new IntersectionObserver(entries => entries.forEach(e => {
     if (!e.isIntersecting) return;
     io.unobserve(e.target); load(e.target);
-  }), { rootMargin: '600px 0px' }) : null;
-  const load = img => { if (img.dataset.img) { img.src = 'data:image/jpeg;base64,' + D.imgs[+img.dataset.img]; img.removeAttribute('data-img'); } };
+  }), { rootMargin: '500px 0px' }) : null;
   const lazy = root => $$('img[data-img]', root).forEach(img => io ? io.observe(img) : load(img));
 
   // ── figurinha, mini e crachá ──
@@ -803,10 +897,11 @@ dialog.back::backdrop { background: rgb(6 13 31 / 0.78); }
     const x = p.ws[0];
     return `, em Shanghai: ${x.kind === 'gen' ? x.role : `${x.role || 'equipe'} de ${W.skills[x.n]?.pt || ''}`}`;
   };
-  const sticker = (p, tag = 'button') => {
+  const exLabel = p => p.past.length ? ', ex-competidor da WorldSkills' : '';
+  const sticker = p => {
     const m = p.res?.medal || '';
-    return `<${tag} class="sticker" ${tag === 'button' ? 'type="button"' : ''} data-p="${p.i}" ${m ? `data-m="${m}"` : ''}
-      aria-label="${esc(p.nome)}, ${esc(p.perfil)}${p.ocup ? ', ' + esc(p.ocup) : ''}, ${esc(p.inst)}${esc(wsLabel(p))}" style="--tint:${secVar(p.sector)};--rot:${rot(p.i)}deg">
+    return `<button class="sticker" type="button" data-p="${p.i}" ${m ? `data-m="${m}"` : ''}
+      aria-label="${esc(p.nome)}, ${esc(p.perfil)}${p.ocup ? ', ' + esc(p.ocup) : ''}, ${esc(p.inst)}${esc(wsLabel(p))}${exLabel(p)}" style="--tint:${secVar(p.sector)};--rot:${rot(p.i)}deg">
       <span class="sticker__photo">
         ${p.sn ? `<span class="sticker__n num">${n2(p.sn)}</span>` : ''}
         ${p.uf ? `<span class="sticker__uf">${p.uf}</span>` : ''}
@@ -817,82 +912,114 @@ dialog.back::backdrop { background: rgb(6 13 31 / 0.78); }
       <span class="sticker__res">${p.res
         ? `<span class="medal" data-m="${m}">${MEDAL_SHORT[m]}</span><span><b class="num">${ord(p.res.position)}</b> de ${p.res.total}</span>`
         : `<span>${esc(p.perfil)}</span>`}</span>
-    </${tag}>`;
+    </button>`;
   };
-  const mini = p => `<button class="mini" type="button" data-p="${p.i}" ${p.past.length ? 'data-ex="true"' : ''} aria-label="${esc(p.nome)}, ${esc(p.perfil)}, ${esc(p.inst)}${esc(wsLabel(p))}${p.past.length ? ', ex-competidor da WorldSkills' : ''}">
+  const mini = p => `<button class="mini" type="button" data-p="${p.i}" ${p.past.length ? 'data-ex="true"' : ''} aria-label="${esc(p.nome)}, ${esc(p.perfil)}, ${esc(p.inst)}${esc(wsLabel(p))}${exLabel(p)}">
       <span class="mini__photo">${p.past.length ? `<span class="ex-badge" aria-hidden="true">${icon.star}</span>` : ''}${photo(p)}${p.ws ? `<span class="sash" aria-hidden="true">${icon.globe}Shanghai</span>` : ''}</span>
       <span>${esc(shortName(p.nome))}</span><small>${esc(p.perfil)}${p.uf ? ' · ' + p.uf : ''}</small>
     </button>`;
-  const badge = p => `<button class="card-staff" type="button" data-p="${p.i}" ${p.past.length ? 'data-ex="true"' : ''} aria-label="${esc(p.nome)}, ${esc(p.perfil)}, ${esc(p.inst)}${esc(wsLabel(p))}${p.past.length ? ', ex-competidor da WorldSkills' : ''}">
+  const badge = p => `<button class="card-staff" type="button" data-p="${p.i}" ${p.past.length ? 'data-ex="true"' : ''} aria-label="${esc(p.nome)}, ${esc(p.perfil)}, ${esc(p.inst)}${esc(wsLabel(p))}${exLabel(p)}">
       <span class="card-staff__photo">${p.past.length ? `<span class="ex-badge" aria-hidden="true">${icon.star}</span>` : ''}${p.uf ? `<span class="sticker__uf">${p.uf}</span>` : ''}${photo(p)}${sash(p)}</span>
       <span class="card-staff__band"><span class="card-staff__name">${esc(shortName(p.nome))}</span><span class="card-staff__role">${esc(p.perfil)} · ${esc(p.inst)}</span></span>
     </button>`;
 
   // ── filtros ──
-  const state = { q: '', cat: '', perfil: '', inst: '', ocup: '', uf: '', ws: false, res: '', view: 'album', order: 'setor', sort: 'nome', shown: 60 };
-  const SELECTS = ['perfil', 'inst', 'ocup', 'uf'];
+  const SELECTS = ['perfil', 'inst', 'ocup', 'local', 'sec', 'uf', 'reg', 'res', 'fmt'];
+  const MORE = ['sec', 'uf', 'reg', 'res', 'fmt'];
+  const state = { q: '', cats: [], perfil: '', inst: '', ocup: '', local: '', sec: '', uf: '', reg: '', res: '', fmt: '', ws: false, ex: false,
+    view: store.get('wsb-view') === 'list' ? 'list' : 'album', order: 'setor', sort: 'nome', shown: 60, more: {} };
   const qWords = () => norm(state.q).split(/\s+/).filter(w => w && w !== '#');
   const isNum = w => /^#?(\d{1,2})$/.exec(w);
-  const matches = p => {
-    if (state.cat && p.cat !== state.cat) return false;
-    if (state.perfil && p.perfil !== state.perfil) return false;
-    if (state.inst && p.inst !== state.inst) return false;
-    if (state.ocup && p.ocup !== state.ocup) return false;
-    if (state.uf && p.uf !== state.uf) return false;
-    if (state.ws && !p.ws) return false;
-    if (state.res && p.res?.medal !== state.res) return false;
+  const FIELD = { perfil: 'perfil', inst: 'inst', ocup: 'ocup', local: 'local', sec: 'sector', uf: 'uf', reg: 'reg', fmt: 'fmt' };
+  const matchesExcept = (p, skip) => {
+    if (skip !== 'cats' && state.cats.length && !state.cats.includes(p.cat)) return false;
+    for (const k in FIELD) if (skip !== k && state[k] && p[FIELD[k]] !== state[k]) return false;
+    if (skip !== 'res' && state.res && !(p.res && (state.res === 'top5' ? p.res.position <= 5 : p.res.medal === state.res))) return false;
+    if (skip !== 'ws' && state.ws && !p.ws) return false;
+    if (skip !== 'ex' && state.ex && !p.past.length) return false;
     // número da ocupação com ou sem # e zero (9, 09, #9, #09)
-    return qWords().every(w => { const n = isNum(w); return n ? +n[1] === p.sn : p.hay.includes(w); });
+    if (skip !== 'q') return qWords().every(w => { const n = isNum(w); return n ? +n[1] === p.sn : p.hay.includes(w); });
+    return true;
   };
-  const filtered = () => !!(state.q || state.cat || state.ws || state.res || SELECTS.some(k => state[k]));
+  const matches = p => matchesExcept(p, null);
+  const filtered = () => !!(state.q || state.cats.length || state.ws || state.ex || SELECTS.some(k => state[k]));
 
   const tally = (list, f) => { const m = {}; list.forEach(p => { const k = f(p); if (k) m[k] = (m[k] || 0) + 1; }); return m; };
-  const fill = (id, label, m, sortAlpha, name = k => k) => {
-    const keys = Object.keys(m).sort(sortAlpha ? (a, b) => coll.compare(name(a), name(b)) : (a, b) => m[b] - m[a] || coll.compare(a, b));
-    $('#f-' + id).innerHTML = `<option value="">${label}</option>` + keys.map(k => `<option value="${esc(k)}">${esc(name(k))} (${m[k]})</option>`).join('');
+  const fill = (id, label, m, sortAlpha, name = k => k, order) => {
+    const keys = order || Object.keys(m).sort(sortAlpha ? (a, b) => coll.compare(name(a), name(b)) : (a, b) => m[b] - m[a] || coll.compare(a, b));
+    $('#f-' + id).innerHTML = `<option value="">${label}</option>` + keys.filter(k => m[k]).map(k => `<option value="${esc(k)}">${esc(name(k))} (${m[k]})</option>`).join('');
   };
+  const occNum = {}; P.forEach(p => { if (p.ocup && p.sn) occNum[p.ocup] = p.sn; });
   fill('perfil', 'Todos os perfis', tally(P, p => p.perfil));
   fill('inst', 'Todas as instituições', tally(P, p => p.inst));
-  const occNum = {}; P.forEach(p => { if (p.ocup && p.sn) occNum[p.ocup] = p.sn; });
   fill('ocup', 'Todas as ocupações', tally(P, p => p.ocup), true, k => `${n2(occNum[k] || 0)} · ${k}`);
-  $$('#f-ocup option').forEach(o => { if (o.value) o.textContent = o.textContent; });
+  fill('local', 'Todos os locais de prova', tally(P, p => p.local));
+  fill('sec', 'Todos os setores', tally(P, p => p.sector), false, k => k, SECTORS.map(s => s.name));
   fill('uf', 'Todos os estados', tally(P, p => p.uf), true, k => UF[k] || k);
+  fill('reg', 'Todas as regiões', tally(P, p => p.reg), false, k => k, REGIONS);
+  const resCount = { prata: 0, bronze: 0, excelencia: 0, participacao: 0, top5: 0 };
+  P.forEach(p => { if (p.res) { resCount[p.res.medal]++; if (p.res.position <= 5) resCount.top5++; } });
+  fill('res', 'Todos os resultados', resCount, false, k => RES[k], Object.keys(RES));
+  fill('fmt', 'Individual e em equipe', tally(P, p => p.fmt), false, k => FMT[k], ['solo', 'equipe']);
 
-  const wsAll = P.filter(p => p.ws);
-  const catCount = tally(P, p => p.cat);
-  $('#f-cats').innerHTML = `<button class="chip" type="button" data-cat="" aria-pressed="true">Todos</button>` +
-    CATS.map(c => `<button class="chip" type="button" data-cat="${c.id}" aria-pressed="false">${c.nome}</button>`).join('');
-  $('#f-ws').innerHTML = `${icon.globe}Foram a Shanghai`;
+  $('#f-ws').innerHTML = `${icon.globe}Foram a Shanghai <span class="n num" id="n-ws"></span>`;
+  $('#f-ex').innerHTML = `${icon.star}Ex-competidores da WorldSkills <span class="n num" id="n-ex"></span>`;
   $('#f-total').textContent = P.length;
 
   // ── capa ──
   const wsComps = P.filter(p => p.res);
-  const staffWS = new Set(wsAll.flatMap(p => p.ws.filter(x => x.kind !== 'comp').map(x => x.kind + x.name))).size;
-  const occCount = new Set(P.filter(p => p.sn).map(p => p.sn)).size;
-  $('#tally').innerHTML = `<span><b class="num">${P.length}</b> participantes</span><span><b class="num">${occCount}</b> ocupações</span><span><b class="num">${wsComps.length}</b> competidores em Shanghai</span>`;
+  const occTotal = new Set(P.filter(p => p.sn).map(p => p.sn)).size;
+  const instTotal = new Set(P.map(p => p.inst).filter(Boolean)).size;
+  $('#tally').innerHTML = `<span><b class="num">${P.length}</b> participantes</span><span><b class="num">${occTotal}</b> ocupações</span><span><b class="num">${wsComps.length}</b> competidores em Shanghai</span>`;
+  $('#foot-count').textContent = `${P.length} registros únicos, ${P.filter(p => p.img >= 0).length} com retrato`;
   const MRANK = { prata: 0, bronze: 1, excelencia: 2, participacao: 3 };
   const fan = [...wsComps].filter(p => p.img >= 0).sort((a, b) => MRANK[a.res.medal] - MRANK[b.res.medal] || a.res.position - b.res.position || b.res.mark - a.res.mark);
   const fanPick = [];
   for (const p of fan) { if (fanPick.length < 5 && !fanPick.some(x => x.comp.n === p.comp.n)) fanPick.push(p); }
-  $('#fan').innerHTML = [fanPick[3], fanPick[1], fanPick[0], fanPick[2], fanPick[4]].filter(Boolean).map(p => sticker(p)).join('');
+  $('#fan').innerHTML = [fanPick[3], fanPick[1], fanPick[0], fanPick[2], fanPick[4]].filter(Boolean).map(sticker).join('');
   $('#fan').setAttribute('aria-label', 'Da seletiva ao pódio de Shanghai');
   $('#fan').setAttribute('role', 'group');
   $$('#fan img[data-img]').forEach(load);
   $('#fan').addEventListener('click', e => { const s = e.target.closest('[data-p]'); if (s) openBack(+s.dataset.p, s); });
 
-  // ── números ──
-  const buildBoard = () => {
+  // ── números do recorte ──
+  // cada painel conta o recorte atual sem o próprio filtro, para dar para trocar de valor direto nele
+  const facet = k => P.filter(p => matchesExcept(p, k));
+  const moreBtn = (id, n, label) => n > 0 ? `<button class="mt-more" type="button" data-more="${id}" aria-expanded="${!!state.more[id]}">${state.more[id] ? 'Mostrar menos' : label}</button>` : '';
+  const none = '<p class="hint">Ninguém no recorte atual.</p>';
+  const stack = (parts, max) => `<span class="bar__track">${parts.map(([v, c]) => v ? `<i style="width:${v / max * 100}%;background:${c}"></i>` : '').join('')}</span>`;
+  const buildBoard = list => {
+    // 0. resumo
+    const oc = new Set(list.filter(p => p.sn).map(p => p.sn)).size, ins = new Set(list.map(p => p.inst).filter(Boolean)).size;
+    const sub = (n, tot) => filtered() && tot ? ` <em>de ${tot}</em>` : '';
+    $('#board-tally').innerHTML = [
+      [list.length, ['participante', 'participantes'], P.length], [list.filter(p => p.cat === 'comp').length, ['competidor', 'competidores']],
+      [list.filter(p => p.cat === 'aval').length, ['na avaliação', 'na avaliação']], [oc, ['ocupação', 'ocupações'], occTotal],
+      [ins, ['instituição', 'instituições'], instTotal], [list.filter(p => p.ws).length, ['em Shanghai', 'em Shanghai']],
+    ].map(([n, l, tot]) => `<span><b class="num">${n}</b> ${n === 1 ? l[0] : l[1]}${sub(n, tot)}</span>`).join('');
+
     // 1. da seletiva a Shanghai
+    const fr = facet('res').filter(p => p.res);
     const seals = ['prata', 'bronze', 'excelencia', 'participacao'].map(m => {
-      const n = wsComps.filter(p => p.res.medal === m).length;
-      return `<button class="medal-tile" type="button" data-m="${m}" data-filter="res:${m}" aria-pressed="false" aria-label="${n} ${n === 1 ? 'competidor' : 'competidores'} com ${MEDAL[m]} em Shanghai"><b class="num">${n}</b><span>${MEDAL_SHORT[m]}</span></button>`;
+      const n = fr.filter(p => p.res.medal === m).length;
+      return `<button class="medal-tile" type="button" data-m="${m}" data-filter="res:${m}" aria-pressed="${state.res === m}" aria-label="${n} ${n === 1 ? 'competidor' : 'competidores'} com ${MEDAL[m]} em Shanghai"><b class="num">${n}</b><span>${MEDAL_SHORT[m]}</span></button>`;
     }).join('');
+    const top5 = fr.filter(p => p.res.position <= 5).length;
+    const bon = list.filter(p => p.res?.bon);
+    const staffWS = new Set(list.filter(p => p.ws).flatMap(p => p.ws.filter(x => x.kind !== 'comp').map(x => x.kind + x.name))).size;
+    const panelWS = `<div class="panel"><h3>Da seletiva a Shanghai</h3><p class="hint">${plural(fr.length, 'competidor', 'competidores')} ${filtered() ? 'do recorte' : 'desta seletiva'} ${fr.length === 1 ? 'defendeu' : 'defenderam'} o Brasil na WorldSkills Shanghai 2026. O resultado no mundial:</p>
+        <div class="medals">${seals}</div>
+        <p class="ws-note"><button class="linkish" type="button" data-filter="res:top5" aria-pressed="${state.res === 'top5'}"><b class="num">${top5}</b> ${top5 === 1 ? 'ficou' : 'ficaram'} entre os 5 primeiros da ocupação</button>.
+        ${staffWS ? `E mais <b class="num">${staffWS}</b> ${staffWS === 1 ? 'pessoa viajou' : 'pessoas viajaram'} como expert, intérprete ou na comissão da delegação.` : ''} <button class="linkish" type="button" data-filter="ws:1">Ver quem foi a Shanghai</button></p>
+        ${bon.length ? `<div class="bon bon--sm"><span class="bon__stars" aria-hidden="true">${icon.star}${icon.star}${icon.star}</span><div><p class="bon__title">Best of Nation</p><p class="bon__text">A maior nota do Brasil em Shanghai saiu desta seletiva: ${bon.map(p => `<button class="linkish linkish--light" type="button" data-open="${p.i}">${esc(p.nome)}</button>`).join(' e ')}, em ${esc(bon[0].res.pt)}.</p></div></div>` : ''}</div>`;
+
     // 2. perfis
-    const catMax = Math.max(...Object.values(catCount));
-    const catBars = CATS.map(c => `<button class="bar" type="button" data-filter="cat:${c.id}" aria-pressed="false"><span>${c.nome}</span><span class="bar__track"><i style="width:${catCount[c.id] / catMax * 100}%"></i></span><b class="num">${catCount[c.id]}</b></button>`).join('');
-    // 3. estados
+    const fc = facet('cats'); const cc = tally(fc, p => p.cat); const cmax = Math.max(1, ...Object.values(cc));
+    const panelCats = `<div class="panel"><h3>Quem está na seletiva</h3><p class="hint">Os registros ${filtered() ? 'do recorte' : 'do painel'}, por perfil. Dá para marcar mais de um.</p><div class="bars">${CATS.map(c => `<button class="bar" type="button" data-filter="cats:${c.id}" aria-pressed="${state.cats.includes(c.id)}"><span>${c.nome}</span>${stack([[cc[c.id] || 0, 'var(--ink)']], cmax)}<b class="num">${cc[c.id] || 0}</b></button>`).join('')}</div></div>`;
+
+    // 3. estados e mapa
     const st = {};
-    P.forEach(p => { if (!p.uf) return; const u = (st[p.uf] ||= { uf: p.uf, n: 0, comp: 0, ws: 0 }); u.n++; if (p.cat === 'comp') u.comp++; if (p.ws) u.ws++; });
+    facet('uf').forEach(p => { if (!p.uf) return; const u = (st[p.uf] ||= { uf: p.uf, n: 0, comp: 0, ws: 0, med: 0 }); u.n++; if (p.cat === 'comp') u.comp++; if (p.ws) u.ws++; if (p.res && p.res.medal !== 'participacao') u.med++; });
     const states = Object.values(st).sort((a, b) => b.n - a.n || coll.compare(UF[a.uf], UF[b.uf]));
     const shade = n => n >= 60 ? 1 : n >= 30 ? 0.66 : n >= 10 ? 0.42 : 0.24;
     const tone = n => `color-mix(in srgb, var(--green) ${Math.round(shade(n) * 100)}%, var(--paper-2))`;
@@ -901,7 +1028,7 @@ dialog.back::backdrop { background: rgb(6 13 31 / 0.78); }
     const paths = order.map(uf => {
       const u = st[uf], m = D.map.states[uf];
       return u
-        ? `<path class="brmap__uf" d="${m.d}" data-has="true" data-uf="${uf}" data-filter="uf:${uf}" role="button" tabindex="0" aria-pressed="false" aria-label="${ufLabel(u)}" style="fill:${tone(u.n)}"/>`
+        ? `<path class="brmap__uf" d="${m.d}" data-has="true" data-uf="${uf}" data-filter="uf:${uf}" role="button" tabindex="0" aria-pressed="${state.uf === uf}" aria-label="${ufLabel(u)}" style="fill:${tone(u.n)}"/>`
         : `<path class="brmap__uf" d="${m.d}" aria-hidden="true"/>`;
     }).join('');
     const labels = states.map(u => {
@@ -911,74 +1038,113 @@ dialog.back::backdrop { background: rgb(6 13 31 / 0.78); }
         ? `<g class="brmap__lbl" data-on="${dark}" transform="translate(${m.x} ${m.y})"><text class="uf" y="-9">${u.uf}</text><text class="n" y="19">${u.n}</text></g>`
         : `<g class="brmap__lbl" data-on="${dark}" data-size="s" transform="translate(${m.x} ${m.y})"><text class="uf" y="-6">${u.uf}</text><text class="n" y="14">${u.n}</text></g>`;
     }).join('');
-    const stateRows = states.map((u, k) => `<tr data-uf="${u.uf}"><td class="num">${k + 1}º</td><td><button class="linkish" type="button" data-filter="uf:${u.uf}">${UF[u.uf]}</button></td><td class="num">${u.n}</td><td class="num">${u.comp}</td><td class="num">${u.ws || ''}</td></tr>`).join('');
-    const outside = P.filter(p => !p.uf).length;
-    // 4. ocupações, na tinta do setor
-    const occs = {};
-    P.forEach(p => { if (!p.sn) return; const o = (occs[p.sn] ||= { sn: p.sn, name: p.ocup, sector: p.sector, comp: 0, crew: 0 }); isComp(p) ? o.comp++ : o.crew++; });
-    const occList = Object.values(occs).sort((a, b) => (b.comp + b.crew) - (a.comp + a.crew) || a.sn - b.sn);
-    const occMax = Math.max(...occList.map(o => o.comp + o.crew));
-    const occRows = occList.map((o, k) => `<li class="rank-row" data-ocup="${esc(o.name)}" ${k >= 12 ? 'data-extra hidden' : ''}><button class="linkish" type="button" data-filter="ocup:${esc(o.name)}"><span class="num">${n2(o.sn)}</span>${esc(o.name)}</button><span class="rank-row__v"><b class="num">${o.comp}</b> comp. · <b class="num">${o.crew}</b> na equipe</span><span class="rank-row__bar"><i style="width:${o.comp / occMax * 100}%;background:${secVar(o.sector)}"></i><i style="width:${o.crew / occMax * 100}%;background:color-mix(in srgb, ${secVar(o.sector)} 38%, var(--paper))"></i></span></li>`).join('');
-    // 5. instituições
-    const insts = {};
-    P.forEach(p => { if (!p.inst) return; const o = (insts[p.inst] ||= { name: p.inst, n: 0, comp: 0 }); o.n++; if (p.cat === 'comp') o.comp++; });
-    const instList = Object.values(insts).sort((a, b) => b.n - a.n || coll.compare(a.name, b.name));
-    const instRows = instList.map((o, k) => `<li class="rank-row" data-inst="${esc(o.name)}" ${k >= 10 ? 'data-extra hidden' : ''}><button class="linkish" type="button" data-filter="inst:${esc(o.name)}">${esc(o.name)}</button><span class="rank-row__v"><b class="num">${o.n}</b> · ${o.comp} comp.</span><span class="rank-row__bar"><i style="width:${o.n / instList[0].n * 100}%"></i></span></li>`).join('');
-
-    $('#board').innerHTML = `
-      <div class="panel"><h3>Da seletiva a Shanghai</h3><p class="hint">${wsComps.length} competidores desta seletiva defenderam o Brasil na WorldSkills Shanghai 2026. O resultado de cada um no mundial:</p>
-        <div class="medals">${seals}</div>
-        <p class="ws-note">E mais <b class="num">${staffWS}</b> pessoas da seletiva viajaram como experts, intérpretes ou na comissão da delegação. <button class="linkish" type="button" data-filter="ws:1">Ver quem foi a Shanghai</button></p></div>
-      <div class="panel"><h3>Quem está na seletiva</h3><p class="hint">Os ${P.length} registros do painel, agrupados por perfil.</p><div class="bars">${catBars}</div></div>
-      <div class="panel panel--wide"><h3>Participantes por estado</h3><p class="hint">Pela delegação de cada um. ${outside} participantes da organização nacional (WorldSkills Brasil) e da Setec/MEC ficam fora do mapa.</p>
-        <div class="states">
-          <div style="overflow-x:auto"><table class="mt"><thead><tr><th>#</th><th>Estado</th><th><abbr title="Participantes">Part.</abbr></th><th><abbr title="Competidores">Comp.</abbr></th><th><abbr title="Foram a Shanghai">Mundial</abbr></th></tr></thead><tbody>${stateRows}</tbody></table></div>
+    const stateRows = states.map((u, k) => `<tr data-uf="${u.uf}"><td class="num">${k + 1}º</td><td><button class="linkish" type="button" data-filter="uf:${u.uf}" aria-pressed="${state.uf === u.uf}">${UF[u.uf]}</button></td><td class="num">${u.n}</td><td class="num">${u.comp}</td><td class="num">${u.ws || ''}</td><td class="num">${u.med || ''}</td></tr>`).join('');
+    const outside = facet('uf').filter(p => !p.uf).length;
+    const panelStates = `<div class="panel panel--wide"><h3>Participantes por estado</h3><p class="hint">Pela delegação de cada um.${outside ? ` ${plural(outside, 'participante', 'participantes')} da organização nacional (WorldSkills Brasil) e da Setec/MEC ${outside === 1 ? 'fica' : 'ficam'} fora do mapa.` : ''} Medalhas contam prata, bronze e excelência em Shanghai.</p>
+        ${states.length ? `<div class="states">
+          <div style="overflow-x:auto"><table class="mt"><thead><tr><th>#</th><th>Estado</th><th><abbr title="Participantes">Part.</abbr></th><th><abbr title="Competidores">Comp.</abbr></th><th><abbr title="Foram a Shanghai">Shanghai</abbr></th><th><abbr title="Medalhas em Shanghai: prata, bronze e excelência">Med.</abbr></th></tr></thead><tbody>${stateRows}</tbody></table></div>
           <div><div class="brmap"><svg viewBox="0 0 680 639" role="group" aria-label="Mapa do Brasil com o número de participantes por estado">${paths}${labels}</svg>
-            <p class="brmap__info" aria-hidden="true">${states.length} estados e o Distrito Federal. Passe o mouse ou toque para filtrar.</p></div>
+            <p class="brmap__info" aria-hidden="true">${plural(states.length, 'estado', 'estados')} no recorte. Passe o mouse ou toque para filtrar.</p></div>
             <div class="legend legend--center">${[[1, '1 a 9'], [10, '10 a 29'], [30, '30 a 59'], [60, '60 ou mais']].map(([n, t]) => `<span><i style="background:${tone(n)}"></i>${t}</span>`).join('')}</div></div>
-        </div></div>
-      <div class="panel panel--wide"><h3>Ocupações</h3><p class="hint">Competidores e equipe (avaliação e oficina) de cada uma, na cor do setor.</p>
-        <ol class="rank-list rank-list--cols" id="occ-rank">${occRows}</ol>
-        <button class="mt-more" type="button" data-more="occ-rank" aria-expanded="false">Ver as ${occList.length} ocupações</button></div>
-      <div class="panel panel--wide"><h3>Instituições</h3><p class="hint">Participantes de cada instituição e quantos são competidores.</p>
-        <ol class="rank-list rank-list--cols" id="inst-rank">${instRows}</ol>
-        <button class="mt-more" type="button" data-more="inst-rank" aria-expanded="false">Ver as ${instList.length} instituições</button></div>`;
+        </div>` : none}</div>`;
 
-    $$('#board [data-more]').forEach(b => b.addEventListener('click', () => {
-      const open = b.getAttribute('aria-expanded') !== 'true';
-      $$(`#${b.dataset.more} [data-extra]`).forEach(li => { li.hidden = !open; });
-      b.setAttribute('aria-expanded', open);
-      b.textContent = open ? 'Mostrar menos' : b.dataset.label;
-    }));
-    $$('#board [data-more]').forEach(b => { b.dataset.label = b.textContent; });
-    const info = $('#board .brmap__info'), infoDefault = info.innerHTML;
-    const hot = uf => {
-      $$('#board [data-uf]').forEach(el => { el.dataset.hot = el.dataset.uf === uf; });
-      const u = uf && st[uf];
-      info.innerHTML = u ? `<b>${UF[uf]}</b> · ${u.n} participantes · ${u.comp} competidores${u.ws ? ` · ${u.ws} em Shanghai` : ''}` : infoDefault;
-    };
-    $$('#board [data-uf]').forEach(el => {
-      el.addEventListener('pointerenter', () => hot(el.dataset.uf));
-      el.addEventListener('pointerleave', () => hot(''));
-      el.addEventListener('focus', () => hot(el.dataset.uf));
-      el.addEventListener('blur', () => hot(''));
+    // 4. regiões e setores
+    const legendCE = c => `<div class="legend"><span><i style="background:${c}"></i>Competidores</span><span><i style="background:color-mix(in srgb, ${c} 38%, var(--paper))"></i>Equipe, comissão e organização</span></div>`;
+    const fg = facet('reg'); const rg = {};
+    fg.forEach(p => { if (!p.reg) return; const g = (rg[p.reg] ||= { c: 0, o: 0 }); p.cat === 'comp' ? g.c++ : g.o++; });
+    const rmax = Math.max(1, ...Object.values(rg).map(g => g.c + g.o));
+    const panelReg = `<div class="panel"><h3>Por região</h3><p class="hint">Pela delegação de cada participante.</p><div class="bars">${REGIONS.map(r => { const g = rg[r] || { c: 0, o: 0 }; return `<button class="bar" type="button" data-filter="reg:${r}" aria-pressed="${state.reg === r}"><span>${r}</span>${stack([[g.c, 'var(--ink)'], [g.o, 'color-mix(in srgb, var(--ink) 38%, var(--paper))']], rmax)}<b class="num">${g.c + g.o}</b></button>`; }).join('')}</div>${legendCE('var(--ink)')}</div>`;
+    const fs = facet('sec'); const sg = {};
+    fs.forEach(p => { if (!p.sector) return; const g = (sg[p.sector] ||= { c: 0, o: 0 }); isComp(p) ? g.c++ : g.o++; });
+    const smax = Math.max(1, ...Object.values(sg).map(g => g.c + g.o));
+    const panelSec = `<div class="panel"><h3>Por setor</h3><p class="hint">Os seis setores da WorldSkills, pela ocupação de cada um.</p><div class="bars">${SECTORS.map(s => { const g = sg[s.name] || { c: 0, o: 0 }; const c = `var(--s-${s.key})`; return `<button class="bar" type="button" data-filter="sec:${s.name}" aria-pressed="${state.sec === s.name}"><span>${s.name.replace(' e ', ' e ')}</span>${stack([[g.c, c], [g.o, `color-mix(in srgb, ${c} 38%, var(--paper))`]], smax)}<b class="num">${g.c + g.o}</b></button>`; }).join('')}</div>${legendCE('var(--ink-2)')}</div>`;
+
+    // 5. da seletiva ao mundial, ocupação por ocupação
+    const fo = facet('ocup'); const occ = {};
+    fo.forEach(p => { if (!p.sn) return; const o = (occ[p.sn] ||= { sn: p.sn, name: p.ocup, sector: p.sector, comp: 0, crew: 0, reps: [] }); isComp(p) ? o.comp++ : o.crew++; });
+    fo.forEach(p => {
+      if (!p.comp) return;
+      const o = occ[p.comp.n]; if (o && !o.reps.includes(p)) o.reps.push(p);
+      if (p.sn && p.sn !== p.comp.n && occ[p.sn] && !occ[p.sn].reps.includes(p)) occ[p.sn].reps.push(p);
     });
-    $$('#board .brmap__call').forEach(g => g.addEventListener('click', () => $(`#board .brmap__uf[data-uf="${g.dataset.uf}"]`).dispatchEvent(new MouseEvent('click', { bubbles: true }))));
-    $$('#board .brmap__uf[role="button"]').forEach(el => el.addEventListener('keydown', e => {
-      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); el.dispatchEvent(new MouseEvent('click', { bubbles: true })); }
-    }));
-  };
+    const occList = Object.values(occ).sort((a, b) => a.sn - b.sn);
+    const repTxt = (p, sn) => `<button class="linkish" type="button" data-open="${p.i}">${esc(shortName(p.nome))}</button>${p.comp.n !== sn ? ` <small>(em Shanghai, ${esc(W.skills[p.comp.n].pt)})</small>` : ''}`;
+    const wsRows = occList.map((o, k) => { const s = W.skills[o.sn]; return `<tr ${k >= 12 && !state.more['ws-occ'] ? 'hidden' : ''}><td class="num">${n2(o.sn)}</td><td><button class="linkish" type="button" data-filter="ocup:${esc(o.name)}" aria-pressed="${state.ocup === o.name}">${esc(o.name)}</button></td><td class="num">${o.comp}</td><td>${o.reps.map(p => repTxt(p, o.sn)).join(', ')}</td><td>${s ? `<span class="medal" data-m="${s.medal}">${MEDAL_SHORT[s.medal]}</span> <span class="num">${ord(s.position)} de ${s.total}</span>${s.bon ? ' <small>· Best of Nation</small>' : ''}` : ''}</td></tr>`; }).join('');
+    const panelWsOcc = `<div class="panel panel--wide"><h3>Da seletiva ao mundial, ocupação por ocupação</h3><p class="hint">Quantos competiram na seletiva, quem dela esteve em Shanghai e o resultado do Brasil na ocupação.</p>
+        ${occList.length ? `<div style="overflow-x:auto"><table class="mt mt--ws"><thead><tr><th>Nº</th><th>Ocupação</th><th><abbr title="Competidores na seletiva">Comp.</abbr></th><th>Em Shanghai</th><th>Resultado do Brasil</th></tr></thead><tbody>${wsRows}</tbody></table></div>${occList.length > 12 ? moreBtn('ws-occ', occList.length, `Ver as ${occList.length} ocupações`) : ''}` : none}</div>`;
 
-  // qualquer botão com data-filter="chave:valor" liga (ou desliga) um filtro e leva ao álbum
+    // 6. ocupações por tamanho, na tinta do setor
+    const occBySize = [...occList].sort((a, b) => (b.comp + b.crew) - (a.comp + a.crew) || a.sn - b.sn);
+    const omax = Math.max(1, ...occBySize.map(o => o.comp + o.crew));
+    const occRows = occBySize.map((o, k) => `<li class="rank-row" ${k >= 12 && !state.more['occ-rank'] ? 'hidden' : ''} data-on="${state.ocup === o.name}"><button class="linkish" type="button" data-filter="ocup:${esc(o.name)}"><span class="num">${n2(o.sn)}</span>${esc(o.name)}</button><span class="rank-row__v"><b class="num">${o.comp}</b> comp. · <b class="num">${o.crew}</b> na equipe</span><span class="rank-row__bar"><i style="width:${o.comp / omax * 100}%;background:${secVar(o.sector)}"></i><i style="width:${o.crew / omax * 100}%;background:color-mix(in srgb, ${secVar(o.sector)} 38%, var(--paper))"></i></span></li>`).join('');
+    const panelOcc = `<div class="panel panel--wide"><h3>Ocupações</h3><p class="hint">Competidores e equipe (avaliação e oficina) de cada uma, na cor do setor.</p>
+        ${occBySize.length ? `<ol class="rank-list rank-list--cols">${occRows}</ol>${occBySize.length > 12 ? moreBtn('occ-rank', occBySize.length, `Ver as ${occBySize.length} ocupações`) : ''}` : none}</div>`;
+
+    // 7. instituições e locais de prova
+    const rank = (id, key, label, cap) => {
+      const f = facet(key); const m = {};
+      f.forEach(p => { const v = p[key]; if (!v) return; const o = (m[v] ||= { name: v, n: 0, comp: 0 }); o.n++; if (p.cat === 'comp') o.comp++; });
+      const l = Object.values(m).sort((a, b) => b.n - a.n || coll.compare(a.name, b.name));
+      if (!l.length) return none;
+      return `<ol class="rank-list">${l.map((o, k) => `<li class="rank-row" ${k >= cap && !state.more[id] ? 'hidden' : ''} data-on="${state[key] === o.name}"><button class="linkish" type="button" data-filter="${key}:${esc(o.name)}">${esc(o.name)}</button><span class="rank-row__v"><b class="num">${o.n}</b> · ${o.comp} comp.</span><span class="rank-row__bar"><i style="width:${o.n / l[0].n * 100}%"></i></span></li>`).join('')}</ol>${l.length > cap ? moreBtn(id, l.length, `Ver ${label.replace('N', l.length)}`) : ''}`;
+    };
+    const panelInst = `<div class="panel"><h3>Instituições</h3><p class="hint">Participantes de cada instituição e quantos são competidores.</p>${rank('inst-rank', 'inst', 'as N instituições', 10)}</div>`;
+    const noLocal = facet('local').filter(p => !p.local).length;
+    const panelLocal = `<div class="panel"><h3>Locais de competição</h3><p class="hint">Onde cada um esteve na seletiva.${noLocal ? ` ${plural(noLocal, 'registro não tem', 'registros não têm')} local.` : ''}</p>${rank('local-rank', 'local', 'os N locais', 10)}</div>`;
+
+    // 8. ex-competidores da WorldSkills
+    const fe = facet('ex').filter(p => p.past.length);
+    const exSeen = new Set();
+    const exList = fe.filter(p => !exSeen.has(p.nameKey) && exSeen.add(p.nameKey)).sort((a, b) => b.past[0].year - a.past[0].year || coll.compare(a.nome, b.nome));
+    const panelEx = `<div class="panel panel--wide"><h3>Ex-competidores da WorldSkills</h3><p class="hint">Quem já defendeu o Brasil numa edição anterior e voltou à seletiva de outro lado: avaliando, liderando ou organizando. <button class="linkish" type="button" data-filter="ex:1">Filtrar o álbum</button></p>
+        ${exList.length ? `<ol class="rank-list rank-list--cols">${exList.map(p => `<li class="rank-row"><button class="linkish" type="button" data-open="${p.i}">${esc(p.nome)}</button><span class="rank-row__v">${p.past.map(a => `<b class="num">${a.year}</b> ${esc(a.medal.replace('Medalha de ', ''))}`).join(' · ')}</span><span class="ex-note">${p.past.map(a => `${esc(a.event)} · ${esc(a.skill)} · ${a.position}º lugar`).join('; ')}. Na seletiva: ${esc(p.perfil)}${p.ocup ? ', ' + esc(p.ocup) : ''}.</span></li>`).join('')}</ol>` : none}</div>`;
+
+    $('#board').innerHTML = panelWS + panelCats + panelStates + panelReg + panelSec + panelWsOcc + panelOcc + panelInst + panelLocal + panelEx;
+
+    // mapa: realce ao passar o mouse
+    const info = $('#board .brmap__info');
+    if (info) {
+      const infoDefault = info.innerHTML;
+      const hot = uf => {
+        $$('#board [data-uf]').forEach(el => { el.dataset.hot = el.dataset.uf === uf; });
+        const u = uf && st[uf];
+        info.innerHTML = u ? `<b>${UF[uf]}</b> · ${u.n} participantes · ${u.comp} competidores${u.ws ? ` · ${u.ws} em Shanghai` : ''}` : infoDefault;
+      };
+      $$('#board [data-uf]').forEach(el => {
+        el.addEventListener('pointerenter', () => hot(el.dataset.uf));
+        el.addEventListener('pointerleave', () => hot(''));
+        el.addEventListener('focus', () => hot(el.dataset.uf));
+        el.addEventListener('blur', () => hot(''));
+      });
+      $$('#board .brmap__call').forEach(g => g.addEventListener('click', () => $(`#board .brmap__uf[data-uf="${g.dataset.uf}"]`).dispatchEvent(new MouseEvent('click', { bubbles: true }))));
+      $$('#board .brmap__uf[role="button"]').forEach(el => el.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); el.dispatchEvent(new MouseEvent('click', { bubbles: true })); }
+      }));
+    }
+  };
+  $('#board').addEventListener('click', e => {
+    const b = e.target.closest('[data-more]');
+    if (!b) return;
+    state.more[b.dataset.more] = !state.more[b.dataset.more];
+    const y = b.getBoundingClientRect().top;
+    buildBoard(P.filter(matches));
+    const nb = $(`#board [data-more="${b.dataset.more}"]`);
+    if (nb) { nb.focus({ preventScroll: true }); if (!state.more[b.dataset.more]) scrollBy(0, nb.getBoundingClientRect().top - y); }
+  });
+
+  // qualquer botão com data-filter="chave:valor" liga (ou desliga) um filtro e leva ao álbum;
+  // os do painel de números só trocam o filtro, sem rolar
   document.addEventListener('click', e => {
+    const o = e.target.closest('[data-open]');
+    if (o) { openBack(+o.dataset.open, o); return; }
     const b = e.target.closest('[data-filter]');
     if (!b) return;
     const [k, ...rest] = b.dataset.filter.split(':'); const v = rest.join(':');
     const patch = {};
-    if (k === 'ws') patch.ws = true;
-    else if (k === 'res') { patch.res = state.res === v ? '' : v; patch.ws = false; }
+    if (k === 'ws' || k === 'ex') patch[k] = b.closest('#board') ? !state[k] || !b.closest('.ws-note, .panel') ? true : true : true;
+    else if (k === 'cats') patch.cats = state.cats.includes(v) ? state.cats.filter(x => x !== v) : [...state.cats, v];
     else patch[k] = state[k] === v ? '' : v;
-    setFilter(patch, true);
+    setFilter(patch, !b.closest('#board'));
   });
 
   // ── álbum ──
@@ -987,17 +1153,18 @@ dialog.back::backdrop { background: rgb(6 13 31 / 0.78); }
     const comps = list.filter(isComp).sort((a, b) => (a.perfil !== 'Competidor') - (b.perfil !== 'Competidor') || (!!b.res - !!a.res) || coll.compare(a.nome, b.nome));
     const crew = list.filter(p => !isComp(p)).sort((a, b) => crewRank(a) - crewRank(b) || coll.compare(a.nome, b.nome));
     const all = P.filter(p => p.sn === sn);
+    const allComp = all.filter(isComp).length, allCrew = all.length - allComp;
     const name = (comps[0] || crew[0]).ocup;
     const sk = W.skills[sn];
     const nameHit = state.q && crew.some(p => qWords().some(w => p.nameKey.includes(w)));
-    const open = filtered() && (!comps.length || nameHit || state.cat === 'aval' || state.cat === 'tec' || state.cat === 'org');
+    const open = filtered() && (!comps.length || nameHit || state.cats.some(c => c !== 'comp'));
     current.push(...comps, ...crew);
     const wsCount = all.filter(p => p.ws).length;
     return `<article class="occ" style="--sec:${secVar(sk?.sector)}" aria-labelledby="o-${sn}">
       <div class="occ__head"><span class="occ__n num">${n2(sn)}</span><h3 class="occ__name" id="o-${sn}">${esc(name)}</h3>
-        <p class="occ__meta">${plural(all.filter(isComp).length, 'competidor', 'competidores')} · ${all.length - all.filter(isComp).length} na equipe${wsCount ? ` · ${wsCount} em Shanghai` : ''}</p></div>
-      ${comps.length ? `<div class="occ__stickers">${comps.map(p => sticker(p)).join('')}</div>` : ''}
-      ${crew.length ? `<details class="crew" ${open ? 'open' : ''}><summary><span>Avaliação e oficina <span class="num">(${crew.length}${crew.length !== all.length - all.filter(isComp).length ? ` de ${all.length - all.filter(isComp).length}` : ''})</span></span></summary>
+        <p class="occ__meta">${plural(allComp, 'competidor', 'competidores')} · ${allCrew} na equipe${wsCount ? ` · ${wsCount} em Shanghai` : ''}${sk?.team ? ' · ocupação em equipe' : ''}</p></div>
+      ${comps.length ? `<div class="occ__stickers">${comps.map(sticker).join('')}</div>` : ''}
+      ${crew.length ? `<details class="crew" ${open ? 'open' : ''}><summary><span>Avaliação e oficina <span class="num">(${crew.length}${crew.length !== allCrew ? ` de ${allCrew}` : ''})</span></span></summary>
         <div class="crew__list">${crew.map(mini).join('')}</div></details>` : ''}
     </article>`;
   };
@@ -1036,9 +1203,9 @@ dialog.back::backdrop { background: rgb(6 13 31 / 0.78); }
     $('#album').innerHTML = html;
   };
 
+  const wsRank = p => p.res ? MRANK[p.res.medal] * 100 + p.res.position : p.ws ? 500 : 1000;
   const renderList = list => {
     const k = state.sort;
-    const wsRank = p => p.res ? MRANK[p.res.medal] * 100 + p.res.position : p.ws ? 500 : 1000;
     current = [...list].sort((a, b) => (k === 'ws' ? wsRank(a) - wsRank(b) : k === 'ocup' ? (a.sn || 99) - (b.sn || 99) : k !== 'nome' ? coll.compare(a[k] || '￿', b[k] || '￿') : 0) || coll.compare(a.nome, b.nome));
     const slice = current.slice(0, state.shown);
     const wsCell = p => {
@@ -1048,12 +1215,36 @@ dialog.back::backdrop { background: rgb(6 13 31 / 0.78); }
       return `<span class="ws-cell">${icon.globe}${esc(x.kind === 'gen' ? x.role : (x.role || 'Equipe'))}</span>`;
     };
     $('#album').innerHTML = `<section class="board" aria-labelledby="t-list"><h2 id="t-list">Lista</h2>
-      <div class="list-wrap"><table class="people"><thead><tr><th><span class="sr">Foto</span></th><th>Nome</th><th>Perfil</th><th>Ocupação</th><th>Instituição</th><th>Em Shanghai</th></tr></thead>
-      <tbody>${slice.map(p => `<tr data-p="${p.i}"><td><div class="thumb">${photo(p)}</div></td><td class="nm"><button type="button" data-p="${p.i}">${esc(p.nome)}</button></td><td>${esc(p.perfil)}</td>
-        <td>${p.sn ? `<span class="swatch" style="background:${secVar(p.sector)}"></span><span class="num">${n2(p.sn)}</span> ${esc(p.ocup)}` : ''}</td><td>${esc(p.inst)}</td><td>${wsCell(p)}</td></tr>`).join('')}</tbody></table></div>
+      <div class="list-wrap"><table class="people"><thead><tr><th><span class="sr">Foto</span></th><th>Nome</th><th>Perfil</th><th>Ocupação</th><th>Instituição</th><th>Local</th><th>Em Shanghai</th></tr></thead>
+      <tbody>${slice.map(p => `<tr data-p="${p.i}"><td><div class="thumb">${photo(p)}</div></td><td class="nm"><button type="button" data-p="${p.i}">${esc(p.nome)}</button>${p.past.length ? ` <span class="ex-badge ex-badge--inline ex-badge--xs" title="Ex-competidor da WorldSkills">${icon.star}</span>` : ''}</td><td>${esc(p.perfil)}</td>
+        <td>${p.sn ? `<span class="swatch" style="background:${secVar(p.sector)}"></span><span class="num">${n2(p.sn)}</span> ${esc(p.ocup)}` : ''}</td><td>${esc(p.inst)}</td><td>${esc(p.local)}</td><td>${wsCell(p)}</td></tr>`).join('')}</tbody></table></div>
       ${current.length > slice.length ? `<div class="more-row"><button class="mt-more" type="button" id="list-more">Mostrar mais ${Math.min(120, current.length - slice.length)} · faltam ${current.length - slice.length}</button></div>` : ''}</section>`;
     $('#list-more')?.addEventListener('click', () => { state.shown += 120; renderList(list); lazy($('#album')); });
   };
+
+  // ── etiquetas dos filtros ativos ──
+  const TAGS = { perfil: 'Perfil', inst: 'Instituição', ocup: 'Ocupação', local: 'Local', sec: 'Setor', uf: 'Estado', reg: 'Região', res: 'Resultado', fmt: 'Formato' };
+  const renderTags = () => {
+    const t = [];
+    if (state.q) t.push(['q', 'Busca', state.q]);
+    state.cats.forEach(c => t.push(['cat:' + c, 'Grupo', catName(c)]));
+    SELECTS.forEach(k => { if (state[k]) t.push([k, TAGS[k], k === 'uf' ? UF[state.uf] : k === 'res' ? RES[state.res] : k === 'fmt' ? FMT[state.fmt] : state[k]]); });
+    if (state.ws) t.push(['ws', 'Mundial', 'Foram a Shanghai']);
+    if (state.ex) t.push(['ex', 'Mundial', 'Ex-competidores da WorldSkills']);
+    $('#f-tags').hidden = !t.length;
+    $('#f-tags').innerHTML = t.map(([k, l, v]) => `<span class="tag">${l}: <b>${esc(v)}</b><button type="button" data-drop="${esc(k)}" aria-label="Remover o filtro ${esc(l)}: ${esc(v)}">×</button></span>`).join('') +
+      (t.length ? `<button class="finder__clear" type="button" id="f-clear">${t.length > 1 ? 'Limpar tudo' : 'Limpar filtro'}</button>` : '');
+  };
+  $('#f-tags').addEventListener('click', e => {
+    const d = e.target.closest('[data-drop]');
+    if (d) {
+      const k = d.dataset.drop;
+      if (k.startsWith('cat:')) setFilter({ cats: state.cats.filter(c => c !== k.slice(4)) });
+      else setFilter({ [k]: k === 'ws' || k === 'ex' ? false : '' });
+      return;
+    }
+    if (e.target.id === 'f-clear') clearAll();
+  });
 
   const render = () => {
     const list = P.filter(matches);
@@ -1062,21 +1253,21 @@ dialog.back::backdrop { background: rgb(6 13 31 / 0.78); }
     if (state.view === 'list') renderList(list); else renderAlbum(list);
     lazy($('#album'));
     bindFoil($('#album'));
+    buildBoard(list);
     // estado dos controles
-    $$('#f-cats [data-cat]').forEach(b => b.setAttribute('aria-pressed', b.dataset.cat === state.cat));
+    const cc = tally(facet('cats'), p => p.cat);
+    $('#f-cats').innerHTML = `<button class="chip" type="button" data-cat="" aria-pressed="${!state.cats.length}">Todos</button>` +
+      CATS.map(c => `<button class="chip" type="button" data-cat="${c.id}" aria-pressed="${state.cats.includes(c.id)}">${c.nome} <span class="n num">${cc[c.id] || 0}</span></button>`).join('');
+    $('#n-ws').textContent = facet('ws').filter(p => p.ws).length;
+    $('#n-ex').textContent = facet('ex').filter(p => p.past.length).length;
     $('#f-ws').setAttribute('aria-pressed', state.ws);
-    $('#f-res').hidden = !state.res;
-    if (state.res) $('#f-res').innerHTML = `${MEDAL_SHORT[state.res]} em Shanghai <span aria-hidden="true">×</span>`;
+    $('#f-ex').setAttribute('aria-pressed', state.ex);
     $('#f-q-wrap').dataset.on = !!state.q;
     SELECTS.forEach(k => { $(`#f-${k}`).value = state[k]; $(`#f-${k}-wrap`).dataset.on = !!state[k]; });
-    $('#f-clear').hidden = !filtered();
-    $('#f-toggle').dataset.n = SELECTS.filter(k => state[k]).length;
-    $$('#board [data-filter]').forEach(b => {
-      const [k, ...r] = b.dataset.filter.split(':'); const v = r.join(':');
-      const on = k === 'ws' ? false : String(state[k]) === v;
-      if (b.hasAttribute('aria-pressed')) b.setAttribute('aria-pressed', on);
-      const row = b.closest('.rank-row'); if (row) row.dataset.on = on;
-    });
+    const open = $('#finder').dataset.open === 'true';
+    const hiddenSel = matchMedia('(max-width: 720px)').matches ? SELECTS : MORE;
+    $('#f-toggle').dataset.n = open ? 0 : hiddenSel.filter(k => state[k]).length;
+    renderTags();
     $$('[data-view]').forEach(b => b.setAttribute('aria-pressed', b.dataset.view === state.view));
     $$('[data-order]').forEach(b => b.setAttribute('aria-pressed', b.dataset.order === state.order));
     $('#order-tools').hidden = state.view !== 'album';
@@ -1085,22 +1276,27 @@ dialog.back::backdrop { background: rgb(6 13 31 / 0.78); }
   const setFilter = (patch, scroll) => {
     Object.assign(state, patch, { shown: 60 });
     if ('q' in patch) $('#f-q').value = state.q;
+    if ('view' in patch) store.set('wsb-view', state.view);
     render();
-    if (scroll) $('#album').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    if (scroll) $('#album-tools').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
   };
-  const clearAll = () => setFilter({ q: '', cat: '', perfil: '', inst: '', ocup: '', uf: '', ws: false, res: '' });
+  const clearAll = () => setFilter({ q: '', cats: [], perfil: '', inst: '', ocup: '', local: '', sec: '', uf: '', reg: '', res: '', fmt: '', ws: false, ex: false });
 
   let tq;
-  $('#f-q').addEventListener('input', e => { clearTimeout(tq); tq = setTimeout(() => setFilter({ q: e.target.value.trim() }), 140); });
+  $('#f-q').addEventListener('input', e => { clearTimeout(tq); tq = setTimeout(() => setFilter({ q: e.target.value.trim() }), 160); });
   SELECTS.forEach(k => $(`#f-${k}`).addEventListener('change', e => setFilter({ [k]: e.target.value })));
-  $('#f-cats').addEventListener('click', e => { const b = e.target.closest('[data-cat]'); if (b) setFilter({ cat: b.dataset.cat }); });
+  $('#f-cats').addEventListener('click', e => {
+    const b = e.target.closest('[data-cat]'); if (!b) return;
+    const c = b.dataset.cat;
+    setFilter({ cats: !c ? [] : state.cats.includes(c) ? state.cats.filter(x => x !== c) : [...state.cats, c] });
+  });
   $('#f-ws').addEventListener('click', () => setFilter({ ws: !state.ws }));
-  $('#f-res').addEventListener('click', () => setFilter({ res: '' }));
-  $('#f-clear').addEventListener('click', clearAll);
+  $('#f-ex').addEventListener('click', () => setFilter({ ex: !state.ex }));
   $('[data-clear]').addEventListener('click', clearAll);
   $('#f-toggle').addEventListener('click', () => {
     const open = $('#finder').dataset.open !== 'true';
     $('#finder').dataset.open = open; $('#f-toggle').setAttribute('aria-expanded', open);
+    render();
   });
   $$('[data-view]').forEach(b => b.addEventListener('click', () => setFilter({ view: b.dataset.view })));
   $$('[data-order]').forEach(b => b.addEventListener('click', () => setFilter({ order: b.dataset.order })));
@@ -1157,7 +1353,49 @@ dialog.back::backdrop { background: rgb(6 13 31 / 0.78); }
     return `<section class="wsb"><h3><span class="wsb__ico">${icon.globe}</span>No mundial · ${esc(W.event.name)}</h3>${parts}</section>`;
   };
   const exBlock = p => p.past.length ? `<div class="exws"><h3><span class="ex-badge ex-badge--inline">${icon.star}</span>Ex-competidor da WorldSkills</h3><ul class="nat__list">${p.past.map(a => `<li><b>${esc(a.event)}</b> · ${esc(a.skill)} · ${esc(a.medal)} (${a.position}º lugar)${a.note ? `<br>${esc(a.note)}` : ''}</li>`).join('')}</ul></div>` : '';
-  const natLine = p => `<b>${esc(p.perfil)}</b>${p.ocup ? ` · ${esc(p.ocup)}${p.sn ? ` <span class="num">(#${n2(p.sn)})</span>` : ''}` : ''} · ${esc(p.inst)}${p.uf ? ` · ${esc(UF[p.uf])}` : ''}`;
+  const field = (l, v) => v ? `<div><dt>${l}</dt><dd>${v}</dd></div>` : '';
+  const natFields = p => `<dl class="dl">
+      ${field('Perfil', esc(p.perfil))}
+      ${field('Ocupação', p.ocup ? esc(p.ocup) : '')}
+      ${field('Nº da ocupação', p.sn ? `<span class="num">${n2(p.sn)}</span>` : '')}
+      ${field('Instituição', esc(p.inst))}
+      ${field('Delegação / equipe', esc(p.grupo))}
+      ${field('Empresa', esc(p.emp))}
+      ${field('Local de competição', esc(p.local))}
+      ${field('Estado', p.uf ? `${esc(UF[p.uf])} · ${esc(p.reg)}` : '')}
+      ${field('Setor na WorldSkills', esc(p.sector))}
+    </dl>`;
+  const otherLine = o => `<b>${esc(o.perfil)}</b>${o.ocup ? ` · ${esc(o.ocup)}${o.sn ? ` <span class="num">(#${n2(o.sn)})</span>` : ''}` : ''} · ${esc(o.inst)}${o.local ? ` · ${esc(o.local)}` : ''}`;
+  // fotos do verso: o recorte de credenciamento e, quando existe, a original enviada em resolução máxima
+  const photosOf = p => {
+    const ks = [...new Set([p, ...(byName[p.nameKey] || [])].map(x => x.img).filter(k => k >= 0))];
+    const out = [];
+    ks.forEach(k => {
+      out.push({ k, full: false, w: 600, h: 800, cap: 'Foto de credenciamento da seletiva' });
+      const f = canRange && D.full?.[k];
+      if (f) { const [b, o, l, t, w, h] = f.split(':'); out.push({ k, full: true, ref: [b, o, l, t].join(':'), w: +w, h: +h, cap: `Foto original enviada · ${w}×${h}` }); }
+    });
+    return out;
+  };
+  const showPhoto = (ph, fig) => {
+    const img = $('img', fig), cap = $('figcaption', fig), a = $('.back__full');
+    fig.style.aspectRatio = `${ph.w} / ${ph.h}`;
+    fig.style.maxWidth = ph.w > ph.h ? '100%' : '320px';
+    cap.textContent = ph.full ? 'Carregando a foto original…' : ph.cap;
+    if (a) a.hidden = true;
+    if (!ph.full) {
+      img.src = thumb(ph.k);
+      if (canRange && D.orig?.[ph.k]) packUrl(D.orig[ph.k]).then(u => { if (fig.dataset.k === `${ph.k}:0`) img.src = u; }, () => {});
+      fig.dataset.k = `${ph.k}:0`;
+      return;
+    }
+    fig.dataset.k = `${ph.k}:1`;
+    packUrl(ph.ref).then(u => {
+      if (fig.dataset.k !== `${ph.k}:1`) return;
+      img.src = u; cap.textContent = ph.cap;
+      if (a) { a.href = u; a.hidden = false; }
+    }, () => { cap.textContent = 'A foto original não carregou.'; });
+  };
   let lastFrom = null;
   const openBack = (i, from) => {
     const p = P[i]; if (!p) return;
@@ -1166,9 +1404,15 @@ dialog.back::backdrop { background: rgb(6 13 31 / 0.78); }
     const prev = k >= 0 ? ids[(k - 1 + ids.length) % ids.length] : i, next = k >= 0 ? ids[(k + 1) % ids.length] : i;
     const others = (byName[p.nameKey] || []).filter(x => x !== p);
     const goIdx = $$('[data-go]', dlg).indexOf(document.activeElement);
+    const photos = photosOf(p);
     dlg.style.setProperty('--sec', p.sk ? secVar(p.sector) : 'var(--cover)');
     dlg.innerHTML = `<div class="back__inner">
-      <div class="back__media"><figure class="back__main">${p.img < 0 ? `<span class="ph" aria-hidden="true">${esc(initials(p.nome))}</span>` : `<img src="data:image/jpeg;base64,${D.imgs[p.img]}" alt="${esc(p.nome)}">`}${p.img < 0 ? '' : '<figcaption>Foto de credenciamento da seletiva</figcaption>'}</figure></div>
+      <div class="back__media">
+        ${photos.length ? `<figure class="back__main" id="back-fig"><img alt="${esc(p.nome)}"><figcaption></figcaption></figure>
+          ${photos.length > 1 ? `<div class="thumbs" role="group" aria-label="Fotos">${photos.map((ph, n) => `<button type="button" aria-pressed="${n === 0}" data-ph="${n}" aria-label="${esc(ph.cap)}"><img src="${thumb(ph.k)}" alt=""><span>${ph.full ? 'Original' : '3:4'}</span></button>`).join('')}</div>` : ''}
+          <a class="back__full" target="_blank" rel="noopener" hidden>Abrir a foto em tamanho real</a>`
+        : `<figure class="back__main"><span class="ph" aria-hidden="true">${esc(initials(p.nome))}</span></figure>`}
+      </div>
       <div class="back__body">
         <div class="back__band">
           <span class="back__n num ${p.sn ? '' : 'back__n--txt'}">${p.sn ? n2(p.sn) : esc(p.uf || (/^Setec/i.test(p.inst) ? 'MEC' : 'BR'))}</span>
@@ -1181,12 +1425,22 @@ dialog.back::backdrop { background: rgb(6 13 31 / 0.78); }
         </div>
         ${wsBlock(p)}
         ${exBlock(p)}
-        <div class="nat"><h3>Na seletiva</h3><ul class="nat__list"><li>${natLine(p)}</li>${others.map(o => `<li>${natLine(o)} · <button class="linkish" type="button" data-go="${o.i}">abrir</button></li>`).join('')}</ul></div>
+        <div class="nat"><h3>Na seletiva</h3>${natFields(p)}
+          ${others.length ? `<p class="muted" style="font-size:14px">Também na seletiva:</p><ul class="nat__list">${others.map(o => `<li>${otherLine(o)} · <button class="linkish" type="button" data-go="${o.i}">abrir</button></li>`).join('')}</ul>` : ''}</div>
         <div class="back__links">
           ${p.ocup ? `<button class="linkish" type="button" data-see="ocup">Ver todos de ${esc(p.ocup)}</button>` : ''}
           ${p.inst ? `<button class="linkish" type="button" data-see="inst">Ver todos de ${esc(p.inst)}</button>` : ''}
+          ${p.local ? `<button class="linkish" type="button" data-see="local">Ver este local</button>` : ''}
         </div>
       </div></div>`;
+    const fig = $('#back-fig', dlg);
+    if (fig) {
+      showPhoto(photos[0], fig);
+      $$('.thumbs [data-ph]', dlg).forEach(b => b.addEventListener('click', () => {
+        $$('.thumbs [data-ph]', dlg).forEach(x => x.setAttribute('aria-pressed', x === b));
+        showPhoto(photos[+b.dataset.ph], fig);
+      }));
+    }
     $$('[data-go]', dlg).forEach(b => b.addEventListener('click', () => openBack(+b.dataset.go)));
     $('[data-close]', dlg).addEventListener('click', () => dlg.close());
     $$('[data-see]', dlg).forEach(b => b.addEventListener('click', () => { dlg.close(); setFilter({ [b.dataset.see]: p[b.dataset.see] }, true); }));
@@ -1224,8 +1478,9 @@ dialog.back::backdrop { background: rgb(6 13 31 / 0.78); }
   $('#copy-csv').addEventListener('click', () => {
     const q = s => '"' + String(s ?? '').replace(/"/g, '""') + '"';
     const ws = p => !p.ws ? '' : p.res ? `${MEDAL[p.res.medal]} (${p.res.position}º de ${p.res.total})` : p.ws.map(x => x.kind === 'gen' ? x.role : `${x.role || 'Equipe'} de ${W.skills[x.n]?.pt || ''}`).join('; ');
-    const csv = [['Nome', 'Perfil', 'Ocupacao', 'NumeroOcupacao', 'Instituicao', 'UF', 'Shanghai2026'].join(';')]
-      .concat(current.map(p => [p.nome, p.perfil, p.ocup, p.sn ? n2(p.sn) : '', p.inst, p.uf, ws(p)].map(q).join(';'))).join('\r\n');
+    const past = p => p.past.map(a => `${a.event}: ${a.medal} (${a.position}º)`).join('; ');
+    const csv = [['Nome', 'Perfil', 'Ocupacao', 'NumeroOcupacao', 'Instituicao', 'Delegacao', 'Empresa', 'Local', 'UF', 'Regiao', 'Setor', 'Shanghai2026', 'EdicoesAnteriores'].join(';')]
+      .concat(current.map(p => [p.nome, p.perfil, p.ocup, p.sn ? n2(p.sn) : '', p.inst, p.grupo, p.emp, p.local, p.uf, p.reg, p.sector, ws(p), past(p)].map(q).join(';'))).join('\r\n');
     const ok = () => toast(`${current.length} linhas copiadas`);
     const fallback = () => {
       const t = document.createElement('textarea'); t.value = csv; t.style.position = 'fixed'; t.style.opacity = '0';
@@ -1245,7 +1500,6 @@ dialog.back::backdrop { background: rgb(6 13 31 / 0.78); }
   addEventListener('scroll', syncTop, { passive: true }); syncTop();
   toTop.addEventListener('click', () => { scrollTo({ top: 0 }); $('#topo').focus({ preventScroll: true }); });
 
-  buildBoard();
   render();
   bindFoil($('#fan'));
   const h = location.hash.match(/^#p(\d+)$/);

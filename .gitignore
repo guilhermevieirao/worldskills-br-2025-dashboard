@@ -1,6 +1,7 @@
 # Cache de imagens baixadas (grande, regeneravel via fotos_raw.py)
 data/raw/
 data/thumbs/
+data/orig/
 
 # Bundle intermediario embutido no HTML final (regeneravel via build-bundle.py)
 data/bundle.json
@@ -10,3 +11,6 @@ data/bundle.json
 
 # Wrapper de preview local usado durante o desenvolvimento
 preview.html
+
+# Site publicado: worktree do branch gh-pages (git worktree add site gh-pages)
+site/
