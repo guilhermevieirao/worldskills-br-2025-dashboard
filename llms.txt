@@ -122,6 +122,6 @@ Página independente, sem vínculo oficial com a WorldSkills, o SENAI ou o Senac
 
 ## Fontes
 
-- Painel público "Quem é Quem" da WorldSkills Brasil / SENAI (Power BI).
+- Painel "Quem é Quem" da WorldSkills Brasil (Power BI): https://app.powerbi.com/view?r=eyJrIjoiZjU5YzMwMmEtNTQzZS00MzEzLThhZTYtMGQ4M2Y4ODAxY2YwIiwidCI6IjZkNmJjYzNmLWJkYTEtNGY1NC1hZjFkLTg2ZDRiN2Q0ZTZiOCJ9
 - Resultados oficiais: https://results.worldskills.org/
 - Álbum Brasil em Shanghai: https://skillex.com.br/
