@@ -120,7 +120,9 @@ for f in os.listdir(os.path.join(SITE, 'fotos')):
         os.remove(os.path.join(SITE, 'fotos', f))
 
 bundle = {k: dicts.get(k, {'list': []})['list'] for k in ('inst', 'perfil', 'ocup', 'local', 'grupo', 'emp')}
-bundle.update(rows=rows, imgs=imgs, orig=orig, full=full, packs=packs, mundial={k: mundial[k] for k in ('event', 'skills', 'rows', 'album')}, map=brmap)
+author = json.load(open(os.path.join(ROOT, 'tools', 'autor.json'), encoding='utf8'))
+author['photo'] = 'data:image/jpeg;base64,' + base64.b64encode(open(os.path.join(ROOT, 'tools', 'autor.jpg'), 'rb').read()).decode()
+bundle.update(author=author, rows=rows, imgs=imgs, orig=orig, full=full, packs=packs, mundial={k: mundial[k] for k in ('event', 'skills', 'rows', 'album')}, map=brmap)
 data = json.dumps(bundle, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
 
 html = open(os.path.join(ROOT, 'page.template.html'), encoding='utf8').read()

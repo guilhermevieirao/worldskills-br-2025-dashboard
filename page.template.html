@@ -552,6 +552,18 @@ table.people .nm button { padding: 0; border: 0; background: none; font: inherit
 .sources p { max-width: 90ch; }
 .sources a { color: var(--yellow); }
 
+/* créditos: quem fez a página, numa figurinha colada no rodapé */
+.sources .author { display: flex; align-items: center; gap: 18px; margin-top: 28px; padding-top: 24px; border-top: 2px dashed rgb(255 255 255 / 0.2); }
+.sources .author__photo { flex-shrink: 0; width: 96px; padding: 5px; border-radius: 10px; background: #fff; box-shadow: var(--shadow-sticker); transform: rotate(-3deg); }
+.sources .author__photo img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 22%; border-radius: 6px; background: var(--paper-2); }
+.sources .author__name { margin: 0; color: var(--on-cover); font: 900 1.9rem/0.95 var(--display); text-transform: uppercase; }
+.sources .author__role { margin: 4px 0 0; color: var(--on-cover-2); font-size: 14.5px; }
+.sources .author__links { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 0; padding: 0; list-style: none; }
+.sources .author__links a { display: inline-flex; align-items: center; gap: 7px; min-height: 40px; padding: 0 14px; border-radius: 999px; color: var(--on-cover); font-weight: 700; font-size: 14px; text-decoration: none; box-shadow: inset 0 0 0 2px rgb(255 255 255 / 0.28); transition: background-color 160ms ease; }
+.sources .author__links svg { width: 16px; height: 16px; flex-shrink: 0; }
+@media (hover: hover) and (pointer: fine) { .sources .author__links a:hover { background: rgb(255 255 255 / 0.08); } }
+@media (max-width: 480px) { .sources .author { align-items: flex-start; gap: 14px; } .sources .author__photo { width: 78px; } .sources .author__name { font-size: 1.6rem; } }
+
 /* voltar ao topo */
 .to-top {
   position: fixed; z-index: 30; right: max(16px, env(safe-area-inset-right, 0px));
@@ -751,6 +763,7 @@ dialog.back::backdrop { background: rgb(6 13 31 / 0.78); }
     <li>Contornos dos estados: <a href="https://github.com/VictorCazanave/svg-maps/tree/master/packages/brazil" target="_blank" rel="noopener">@svg-maps/brazil</a>, de Victor Cazanave (CC BY 4.0).</li>
   </ul>
   <p style="margin-top:14px">Página independente, sem vínculo oficial com a WorldSkills, o SENAI ou o Senac.</p>
+  <section class="author" id="author" aria-label="Créditos"></section>
 </footer>
 
 <button class="to-top" id="to-top" type="button" aria-label="Voltar ao topo" data-show="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
@@ -1489,6 +1502,17 @@ dialog.back::backdrop { background: rgb(6 13 31 / 0.78); }
     };
     if (navigator.clipboard?.writeText) navigator.clipboard.writeText(csv).then(ok, fallback); else fallback();
   });
+
+  // ── créditos ──
+  const SOCIAL = {
+    GitHub: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5C5.7.5.5 5.7.5 12.1c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.4 11.4 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6a11.6 11.6 0 0 0 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>',
+    LinkedIn: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.4 2H3.6A1.6 1.6 0 0 0 2 3.6v16.8A1.6 1.6 0 0 0 3.6 22h16.8a1.6 1.6 0 0 0 1.6-1.6V3.6A1.6 1.6 0 0 0 20.4 2zM8 19H5V9.5h3V19zM6.5 8.2a1.8 1.8 0 1 1 0-3.5 1.8 1.8 0 0 1 0 3.5zM19 19h-3v-4.6c0-1.1 0-2.5-1.5-2.5S12.8 13 12.8 14.3V19h-3V9.5h2.9v1.3c.4-.8 1.4-1.6 2.9-1.6 3.1 0 3.6 2 3.6 4.7V19z"/></svg>',
+    Instagram: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>',
+  };
+  const A = D.author;
+  if (A) $('#author').innerHTML = `<span class="author__photo"><img src="${A.photo}" alt="${esc(A.name)}" loading="lazy" decoding="async"></span>
+    <div><h2 class="author__name">${esc(A.name)}</h2><p class="author__role">${esc(A.role)} · criou esta página</p>
+      <ul class="author__links">${A.links.map(l => `<li><a href="${l.url}" target="_blank" rel="noopener me">${SOCIAL[l.label] || ''}${esc(l.label)}</a></li>`).join('')}</ul></div>`;
 
   // ── atalhos e voltar ao topo ──
   document.addEventListener('keydown', e => {
