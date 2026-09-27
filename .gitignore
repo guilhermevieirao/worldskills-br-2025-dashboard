@@ -1,0 +1,12 @@
+# Cache de imagens baixadas (grande, regeneravel via fotos_raw.py)
+data/raw/
+data/thumbs/
+
+# Bundle intermediario embutido no HTML final (regeneravel via build-bundle.py)
+data/bundle.json
+
+# Pacotes de fotos em resolucao original (grandes, distribuidos separadamente)
+*.zip
+
+# Wrapper de preview local usado durante o desenvolvimento
+preview.html

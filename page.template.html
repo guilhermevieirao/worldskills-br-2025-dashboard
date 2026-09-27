@@ -1,0 +1,733 @@
+<title>Quem é Quem WorldSkills Brasil</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  color-scheme: light;
+  --ground:#f3f2f7; --surface:#ffffff; --surface-2:#eceaf3; --surface-3:#e2dfed;
+  --line:#dcd8e8; --line-soft:#e8e5f0;
+  --ink:#1a1626; --ink-2:#565070; --ink-3:#847ca0;
+  --accent:#c94a22; --accent-soft:#fbeee8;
+  --cat-1:#2a78d6; --cat-2:#1baf7a; --cat-3:#eb6834; --cat-4:#4a3aa7; --cat-5:#eda100;
+  --bar:#2a78d6; --bar-track:#e6e3f0;
+  --shadow:0 1px 2px rgba(26,22,38,.06), 0 8px 24px -16px rgba(26,22,38,.28);
+  --focus:#4a3aa7;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --ground:#121020; --surface:#1b1830; --surface-2:#231f3c; --surface-3:#2c2749;
+    --line:#332e52; --line-soft:#282343;
+    --ink:#f1eff9; --ink-2:#aaa3c8; --ink-3:#7b739c;
+    --accent:#ff8f5e; --accent-soft:#33203a;
+    --cat-1:#3987e5; --cat-2:#199e70; --cat-3:#d95926; --cat-4:#9085e9; --cat-5:#c98500;
+    --bar:#3987e5; --bar-track:#2a2547;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px -18px rgba(0,0,0,.9);
+    --focus:#9085e9;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --ground:#121020; --surface:#1b1830; --surface-2:#231f3c; --surface-3:#2c2749;
+  --line:#332e52; --line-soft:#282343;
+  --ink:#f1eff9; --ink-2:#aaa3c8; --ink-3:#7b739c;
+  --accent:#ff8f5e; --accent-soft:#33203a;
+  --cat-1:#3987e5; --cat-2:#199e70; --cat-3:#d95926; --cat-4:#9085e9; --cat-5:#c98500;
+  --bar:#3987e5; --bar-track:#2a2547;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 28px -18px rgba(0,0,0,.9);
+  --focus:#9085e9;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:"IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size:15px; line-height:1.5; -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:"Archivo", system-ui, sans-serif; margin:0; text-wrap:balance}
+p{margin:0}
+:focus-visible{outline:2px solid var(--focus); outline-offset:2px; border-radius:4px}
+.mono{font-family:"IBM Plex Mono", ui-monospace, monospace; font-variant-numeric:tabular-nums}
+
+.shell{max-width:1440px; margin:0 auto; padding-inline:16px; padding-block:0 56px}
+
+/* ---------- masthead ---------- */
+.masthead{
+  display:flex; align-items:center; gap:16px; flex-wrap:wrap;
+  padding-block:22px 18px; border-bottom:2px solid var(--ink);
+}
+.wordmark{display:flex; align-items:center; gap:14px; flex:1 1 300px; min-width:0}
+.crest{
+  width:46px; height:46px; flex:none; border-radius:11px; display:grid; place-items:center;
+  background:linear-gradient(145deg,#eb6834 0%, #c02f3a 46%, #4a3aa7 100%);
+  color:#fff; font-family:"Archivo",sans-serif; font-weight:800; font-size:14px; letter-spacing:.03em;
+}
+.masthead h1{font-size:clamp(25px,4.4vw,38px); font-weight:800; letter-spacing:-.025em; line-height:1}
+.masthead .sub{
+  margin-top:5px; font-family:"IBM Plex Mono",monospace; font-size:10.5px; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--ink-2);
+}
+.mast-actions{display:flex; gap:8px; align-items:center; margin-left:auto}
+.ghost{
+  font:inherit; font-size:13px; color:var(--ink-2); background:var(--surface); cursor:pointer;
+  border:1px solid var(--line); border-radius:8px; padding:7px 12px;
+}
+.ghost:hover{color:var(--ink); border-color:var(--ink-3)}
+
+/* ---------- stat tiles ---------- */
+.stats{display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:var(--line); border-bottom:1px solid var(--line)}
+.tile{background:var(--ground); padding:16px 14px 14px; min-width:0}
+.tile b{
+  display:block; font-family:"Archivo",sans-serif; font-weight:700; letter-spacing:-.03em;
+  font-size:clamp(24px,3.6vw,40px); line-height:1; font-variant-numeric:tabular-nums;
+}
+.tile span{
+  display:block; margin-top:6px; font-family:"IBM Plex Mono",monospace; font-size:10px;
+  letter-spacing:.09em; text-transform:uppercase; color:var(--ink-2);
+}
+.tile em{
+  display:block; font-style:normal; font-size:10px; color:var(--ink-3);
+  font-family:"IBM Plex Mono",monospace; margin-top:3px;
+}
+.tile.is-lead b{color:var(--accent)}
+
+/* ---------- overview charts ---------- */
+.overview{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; padding-block:22px}
+.panel{background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:15px 15px 9px; min-width:0}
+.panel-head{display:flex; align-items:baseline; justify-content:space-between; gap:10px; margin-bottom:11px}
+.panel-head h2{font-size:14px; font-weight:700; letter-spacing:-.005em}
+.panel-head .hint{font-family:"IBM Plex Mono",monospace; font-size:9.5px; letter-spacing:.07em; text-transform:uppercase; color:var(--ink-3)}
+.bars{max-height:318px; overflow-y:auto; margin-inline:-5px; padding:0 5px 8px; display:flex; flex-direction:column; gap:2px}
+.bars::-webkit-scrollbar{width:8px}
+.bars::-webkit-scrollbar-thumb{background:var(--surface-3); border-radius:8px}
+.bar-row{
+  display:grid; grid-template-columns:1fr 32px; gap:10px; align-items:center;
+  border:0; background:none; font:inherit; color:inherit; text-align:left;
+  padding:5px 6px; border-radius:7px; cursor:pointer; width:100%;
+}
+.bar-row:hover{background:var(--surface-2)}
+.bar-row[aria-pressed="true"]{background:var(--accent-soft); box-shadow:inset 2px 0 0 var(--accent)}
+.bar-label{display:block; font-size:12.5px; color:var(--ink); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; min-width:0}
+.bar-track{display:block; height:7px; margin-top:5px; background:var(--bar-track); border-radius:4px; overflow:hidden}
+.bar-fill{display:block; height:100%; background:var(--bar); border-radius:0 4px 4px 0; transition:width .25s ease}
+.bar-val{font-family:"IBM Plex Mono",monospace; font-size:12px; font-variant-numeric:tabular-nums; color:var(--ink-2); text-align:right}
+.bars .none{padding:10px 6px; font-size:12.5px; color:var(--ink-3)}
+
+/* ---------- toolbar ---------- */
+.toolbar{
+  position:sticky; top:env(safe-area-inset-top, 0px); z-index:20;
+  background:var(--ground); border-bottom:1px solid var(--line);
+  padding-block:12px; display:flex; flex-direction:column; gap:10px;
+  margin-inline:-16px; padding-inline:16px;
+}
+.search-row{display:flex; gap:9px; flex-wrap:wrap; align-items:center}
+.search{position:relative; flex:1 1 260px; min-width:0}
+.search input{
+  width:100%; font:inherit; font-size:15px; color:var(--ink); background:var(--surface);
+  border:1px solid var(--line); border-radius:9px; padding:10px 36px 10px 36px;
+}
+.search input::placeholder{color:var(--ink-3)}
+.search svg{position:absolute; left:12px; top:50%; transform:translateY(-50%); color:var(--ink-3)}
+.search button{
+  position:absolute; right:6px; top:50%; transform:translateY(-50%); border:0; background:none;
+  color:var(--ink-3); cursor:pointer; font-size:19px; line-height:1; padding:3px 7px; border-radius:6px;
+}
+.search button:hover{color:var(--ink); background:var(--surface-2)}
+.search-row select{
+  font:inherit; font-size:13px; color:var(--ink); background:var(--surface);
+  border:1px solid var(--line); border-radius:9px; padding:9px 10px; max-width:185px;
+}
+.seg{display:flex; background:var(--surface); border:1px solid var(--line); border-radius:9px; overflow:hidden}
+.seg button{
+  border:0; background:none; font:inherit; font-size:12.5px; color:var(--ink-2); cursor:pointer; padding:9px 13px;
+}
+.seg button[aria-pressed="true"]{background:var(--ink); color:var(--surface)}
+.chips{display:flex; gap:7px; flex-wrap:wrap; align-items:center}
+.chip{
+  display:inline-flex; align-items:center; gap:7px; font:inherit; font-size:12.5px; cursor:pointer;
+  border:1px solid var(--line); background:var(--surface); color:var(--ink-2);
+  border-radius:99px; padding:6px 12px 6px 9px;
+}
+.chip .dot{width:9px; height:9px; border-radius:3px; flex:none; background:var(--c)}
+.chip .n{font-family:"IBM Plex Mono",monospace; font-size:11px; color:var(--ink-3); font-variant-numeric:tabular-nums}
+.chip[aria-pressed="true"]{color:var(--ink); box-shadow:inset 0 0 0 1.5px var(--c); border-color:transparent}
+.chip[aria-pressed="true"] .n{color:var(--ink-2)}
+
+/* ---------- active filters + count ---------- */
+.resultbar{display:flex; align-items:center; gap:10px; flex-wrap:wrap; padding-block:14px 12px}
+.count{font-family:"Archivo",sans-serif; font-weight:700; font-size:15px; letter-spacing:-.01em}
+.count .mono{color:var(--accent)}
+.count .of{color:var(--ink-3); font-weight:400}
+.active{display:flex; gap:6px; flex-wrap:wrap; align-items:center}
+.tag{
+  display:inline-flex; align-items:center; gap:6px; font-size:12px; background:var(--surface-2);
+  border:1px solid var(--line); border-radius:7px; padding:4px 5px 4px 9px; color:var(--ink-2);
+}
+.tag b{font-weight:600; color:var(--ink)}
+.tag button{border:0; background:none; cursor:pointer; color:var(--ink-3); font-size:15px; line-height:1; padding:0 4px; border-radius:4px}
+.tag button:hover{color:var(--accent)}
+.clear-all{font:inherit; font-size:12px; color:var(--accent); background:none; border:0; cursor:pointer; text-decoration:underline; text-underline-offset:3px}
+
+/* ---------- grid ---------- */
+.grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(230px,1fr)); gap:12px}
+.card{
+  display:grid; grid-template-columns:72px 1fr; gap:12px; align-items:start; text-align:left;
+  background:var(--surface); border:1px solid var(--line); border-left:3px solid var(--c);
+  border-radius:11px; padding:12px; cursor:pointer; font:inherit; color:inherit; min-width:0;
+}
+.card:hover{box-shadow:var(--shadow)}
+.avatar{width:72px; height:96px; border-radius:9px; object-fit:cover; display:block; background:var(--surface-2)}
+.avatar.ph{
+  display:grid; place-items:center; font-family:"Archivo",sans-serif; font-weight:700;
+  font-size:22px; color:var(--ink-3);
+}
+.card-body{min-width:0; display:block}
+.card h3{font-size:14px; font-weight:600; letter-spacing:-.01em; line-height:1.25; overflow-wrap:anywhere}
+.role{
+  display:inline-block; margin-top:5px; font-family:"IBM Plex Mono",monospace; font-size:9px;
+  letter-spacing:.07em; text-transform:uppercase; color:#fff; background:var(--c);
+  border-radius:4px; padding:2px 6px;
+}
+.card .skill{margin-top:6px; font-size:12.5px; color:var(--ink); font-weight:500; overflow-wrap:anywhere}
+.card .meta{margin-top:3px; font-size:11.5px; color:var(--ink-2); overflow-wrap:anywhere}
+.card .venue{color:var(--ink-3); font-size:11px}
+
+/* ---------- list ---------- */
+.list-wrap{overflow-x:auto; border:1px solid var(--line); border-radius:11px; background:var(--surface)}
+table{border-collapse:collapse; width:100%; min-width:780px; font-size:13px}
+th{
+  text-align:left; font-family:"IBM Plex Mono",monospace; font-size:9.5px; letter-spacing:.09em;
+  text-transform:uppercase; color:var(--ink-2); font-weight:500; padding:11px 12px;
+  border-bottom:1px solid var(--line); position:sticky; top:0; background:var(--surface); z-index:1;
+}
+td{padding:8px 12px; border-bottom:1px solid var(--line-soft); vertical-align:middle}
+tbody tr{cursor:pointer}
+tbody tr:hover td{background:var(--surface-2)}
+td .mini{width:34px; height:34px; border-radius:7px; object-fit:cover; display:block; background:var(--surface-2)}
+td.nm{font-weight:600; white-space:nowrap}
+td .swatch{display:inline-block; width:8px; height:8px; border-radius:2px; background:var(--c); margin-right:7px; vertical-align:middle}
+
+.more{display:grid; place-items:center; padding-top:24px}
+.more button{font:inherit; font-size:13px; padding:10px 20px; border-radius:9px; border:1px solid var(--line); background:var(--surface); color:var(--ink); cursor:pointer}
+.more button:hover{border-color:var(--ink-3)}
+.empty{text-align:center; padding:64px 20px; color:var(--ink-2)}
+.empty h3{font-size:18px; margin-bottom:6px}
+
+/* ---------- drawer ---------- */
+.scrim{position:fixed; inset:0; background:rgba(16,12,28,.5); z-index:60}
+.drawer{
+  position:fixed; z-index:61; top:0; right:0; bottom:0; width:min(400px, 94vw);
+  background:var(--surface); border-left:1px solid var(--line); overflow-y:auto;
+  padding:22px 22px calc(28px + env(safe-area-inset-bottom, 0px));
+  box-shadow:-20px 0 50px -30px rgba(0,0,0,.6);
+}
+.drawer .close{position:absolute; top:14px; right:14px}
+.dw-photo{width:150px; height:200px; border-radius:14px; object-fit:cover; background:var(--surface-2); display:block}
+.drawer h2{font-size:23px; font-weight:700; letter-spacing:-.025em; margin-top:16px; line-height:1.15}
+.dw-role{
+  display:inline-block; margin-top:9px; font-family:"IBM Plex Mono",monospace; font-size:10px;
+  letter-spacing:.08em; text-transform:uppercase; color:#fff; background:var(--c); border-radius:5px; padding:3px 8px;
+}
+.dl{margin:20px 0 0; display:grid; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:10px; overflow:hidden}
+.dl div{background:var(--surface); padding:10px 13px}
+.dl dt{font-family:"IBM Plex Mono",monospace; font-size:9px; letter-spacing:.09em; text-transform:uppercase; color:var(--ink-3)}
+.dl dd{margin:3px 0 0; font-size:14px; color:var(--ink)}
+.dw-actions{display:flex; gap:8px; flex-wrap:wrap; margin-top:18px}
+.dw-actions button{
+  font:inherit; font-size:12.5px; padding:8px 12px; border-radius:8px;
+  border:1px solid var(--line); background:var(--surface-2); color:var(--ink); cursor:pointer;
+  max-width:100%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+}
+.dw-actions button:hover{border-color:var(--ink-3)}
+
+.toast{
+  position:fixed; left:50%; transform:translateX(-50%); bottom:calc(24px + env(safe-area-inset-bottom,0px));
+  background:var(--ink); color:var(--ground); font-size:13px; padding:10px 18px; border-radius:99px; z-index:80;
+}
+.foot{padding-top:30px; border-top:1px solid var(--line); margin-top:34px; color:var(--ink-3); font-size:12px; line-height:1.7; max-width:78ch}
+.foot p + p{margin-top:10px}
+.foot b{color:var(--ink-2); font-weight:600}
+
+@media (max-width:1080px){
+  .overview{grid-template-columns:1fr 1fr}
+  .overview .panel:last-child{grid-column:1 / -1}
+}
+@media (max-width:760px){
+  .stats{grid-template-columns:repeat(3,1fr)}
+  .overview{grid-template-columns:1fr}
+  .overview .panel:last-child{grid-column:auto}
+  .grid{grid-template-columns:1fr}
+  .search-row select{max-width:none; flex:1 1 140px}
+}
+@media (prefers-reduced-motion:reduce){ *{transition:none !important; animation:none !important} }
+</style>
+
+<div class="shell">
+  <header class="masthead">
+    <div class="wordmark">
+      <div class="crest" aria-hidden="true">WSB</div>
+      <div>
+        <h1>Quem é Quem</h1>
+        <p class="sub">WorldSkills Brasil · SENAI · Competição Nacional</p>
+      </div>
+    </div>
+    <div class="mast-actions">
+      <button class="ghost" id="copy" type="button">Copiar CSV</button>
+      <button class="ghost" id="theme" type="button">Tema</button>
+    </div>
+  </header>
+
+  <section class="stats" id="stats" aria-label="Resumo do recorte atual"></section>
+
+  <section class="overview" aria-label="Distribuições">
+    <div class="panel">
+      <div class="panel-head"><h2>Ocupações</h2><span class="hint" id="h-ocup"></span></div>
+      <div class="bars" id="c-ocup"></div>
+    </div>
+    <div class="panel">
+      <div class="panel-head"><h2>Instituições</h2><span class="hint" id="h-inst"></span></div>
+      <div class="bars" id="c-inst"></div>
+    </div>
+    <div class="panel">
+      <div class="panel-head"><h2>Locais de competição</h2><span class="hint" id="h-local"></span></div>
+      <div class="bars" id="c-local"></div>
+    </div>
+  </section>
+
+  <div class="toolbar">
+    <div class="search-row">
+      <div class="search">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="M10.5 10.5 14 14"/></svg>
+        <input id="q" type="search" placeholder="Buscar nome, instituição ou ocupação…" autocomplete="off" aria-label="Buscar pessoas">
+        <button type="button" id="qclear" aria-label="Limpar busca" hidden>×</button>
+      </div>
+      <select id="f-perfil" aria-label="Filtrar por perfil"></select>
+      <select id="f-inst" aria-label="Filtrar por instituição"></select>
+      <select id="f-ocup" aria-label="Filtrar por ocupação"></select>
+      <select id="f-local" aria-label="Filtrar por local"></select>
+      <select id="sort" aria-label="Ordenação">
+        <option value="nome">Ordenar: nome</option>
+        <option value="inst">Ordenar: instituição</option>
+        <option value="ocup">Ordenar: ocupação</option>
+        <option value="perfil">Ordenar: perfil</option>
+      </select>
+      <div class="seg" role="group" aria-label="Modo de visualização">
+        <button type="button" id="v-grid" aria-pressed="true">Grade</button>
+        <button type="button" id="v-list" aria-pressed="false">Lista</button>
+      </div>
+    </div>
+    <div class="chips" id="cats"></div>
+  </div>
+
+  <div class="resultbar">
+    <p class="count" id="count"></p>
+    <div class="active" id="active"></div>
+  </div>
+
+  <main id="results" aria-live="polite"></main>
+  <div class="more" id="more" hidden><button type="button" id="moreBtn"></button></div>
+
+  <footer class="foot">
+    <p><b>Fonte:</b> painel público “Quem é Quem” da WorldSkills Brasil / SENAI, extraído do modelo <span class="mono">Registration List by Group</span> em 21/09/2026 — 943 registros únicos, 904 com retrato.</p>
+    <p>Esta é uma reconstrução em HTML: dados e miniaturas ficam embutidos na própria página, que funciona offline e sem depender do serviço original. Campos pessoais presentes no modelo de origem (CPF, e-mail, celular e data de nascimento) <b>não são exibidos no painel público e não foram extraídos</b>.</p>
+  </footer>
+</div>
+
+<script id="bundle" type="application/json">/*__DATA__*/</script>
+<script>
+(function(){
+"use strict";
+var D = JSON.parse(document.getElementById('bundle').textContent);
+
+/* Categorias de perfil: agrupam os 29 rótulos da origem em 5 famílias, cada uma
+   com um slot categórico validado. A cor nunca é o único sinal — todo chip,
+   etiqueta e linha traz o rótulo por escrito. */
+var CATS = [
+  {id:'comp', nome:'Competidores',      cssvar:'--cat-1', test:function(p){ return /^Competidor/.test(p); }},
+  {id:'aval', nome:'Avaliação',         cssvar:'--cat-2', test:function(p){ return /^Avaliador|^SAEP Tutor/.test(p); }},
+  {id:'tec',  nome:'Liderança técnica', cssvar:'--cat-3', test:function(p){ return /^(Chefe|Delegado)/.test(p); }},
+  {id:'org',  nome:'Organização',       cssvar:'--cat-4', test:function(p){ return /^(Staff|Organiza|Coordenador|Assessoria)/.test(p); }},
+  {id:'com',  nome:'Comunicação',       cssvar:'--cat-5', test:function(){ return true; }}
+];
+var catOfPerfil = D.perfil.map(function(p){
+  for (var i = 0; i < CATS.length; i++) if (CATS[i].test(p)) return i;
+  return CATS.length - 1;
+});
+
+var DIACRITICS_RE = new RegExp('[' + String.fromCharCode(0x0300) + '-' + String.fromCharCode(0x036f) + ']', 'g');
+function norm(s){ return (s || '').normalize('NFD').replace(DIACRITICS_RE, '').toLowerCase(); }
+function esc(s){
+  return String(s).replace(/[&<>"']/g, function(c){
+    return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c];
+  });
+}
+
+var P = D.rows.map(function(r, i){
+  var inst = r[1] < 0 ? '' : D.inst[r[1]];
+  var perfil = r[2] < 0 ? '' : D.perfil[r[2]];
+  var ocup = r[3] < 0 ? '' : D.ocup[r[3]];
+  var local = r[4] < 0 ? '' : D.local[r[4]];
+  return {
+    i:i, nome:r[0], inst:inst, perfil:perfil, ocup:ocup, local:local,
+    grupo: r[5] < 0 ? '' : D.grupo[r[5]],
+    skill: r[6] || '',
+    emp: r[7] < 0 ? '' : D.emp[r[7]],
+    img: r[8],
+    cat: r[2] < 0 ? CATS.length - 1 : catOfPerfil[r[2]],
+    hay: norm([r[0], inst, ocup, perfil, local].join(' '))
+  };
+});
+function src(p){ return 'data:image/jpeg;base64,' + D.imgs[p.img]; }
+function initials(n){
+  var w = n.trim().split(/\s+/);
+  return (((w[0] || '')[0] || '') + ((w[w.length - 1] || '')[0] || '')).toUpperCase();
+}
+
+var S = { q:'', cats:{}, perfil:'', inst:'', ocup:'', local:'', sort:'nome', view:'grid', shown:48 };
+var PAGE = 48;
+
+function matchesExcept(p, skip){
+  if (skip !== 'q' && S.q && p.hay.indexOf(S.q) < 0) return false;
+  if (skip !== 'cats'){
+    var on = Object.keys(S.cats).filter(function(k){ return S.cats[k]; });
+    if (on.length && on.indexOf(String(p.cat)) < 0) return false;
+  }
+  if (skip !== 'perfil' && S.perfil && p.perfil !== S.perfil) return false;
+  if (skip !== 'inst' && S.inst && p.inst !== S.inst) return false;
+  if (skip !== 'ocup' && S.ocup && p.ocup !== S.ocup) return false;
+  if (skip !== 'local' && S.local && p.local !== S.local) return false;
+  return true;
+}
+function matches(p){ return matchesExcept(p, null); }
+
+var coll = new Intl.Collator('pt-BR');
+function sorted(list){
+  var k = S.sort;
+  return list.slice().sort(function(a, b){
+    if (k !== 'nome'){
+      var d = coll.compare(a[k] || '￿', b[k] || '￿');
+      if (d) return d;
+    }
+    return coll.compare(a.nome, b.nome);
+  });
+}
+
+function $(id){ return document.getElementById(id); }
+var elResults = $('results'), elCount = $('count'), elActive = $('active'), elStats = $('stats'),
+    elMore = $('more'), elMoreBtn = $('moreBtn'), elCats = $('cats'), elQ = $('q'), elQClear = $('qclear');
+
+function tally(list, key){
+  var m = {};
+  list.forEach(function(p){ if (p[key]) m[p[key]] = (m[p[key]] || 0) + 1; });
+  return m;
+}
+function byCount(m){
+  return Object.keys(m).sort(function(a, b){ return m[b] - m[a] || coll.compare(a, b); });
+}
+
+var allInst = tally(P, 'inst'), allOcup = tally(P, 'ocup'),
+    allLocal = tally(P, 'local'), allPerfil = tally(P, 'perfil');
+
+function fillSelect(el, label, values, counts){
+  el.innerHTML = ['<option value="">' + label + ': todos</option>'].concat(values.map(function(v){
+    return '<option value="' + esc(v) + '">' + esc(v) + ' (' + counts[v] + ')</option>';
+  })).join('');
+}
+fillSelect($('f-perfil'), 'Perfil', byCount(allPerfil), allPerfil);
+fillSelect($('f-inst'), 'Instituição', byCount(allInst), allInst);
+fillSelect($('f-ocup'), 'Ocupação', Object.keys(allOcup).sort(coll.compare), allOcup);
+fillSelect($('f-local'), 'Local', byCount(allLocal), allLocal);
+
+function renderCats(){
+  var counts = {};
+  P.forEach(function(p){ if (matchesExcept(p, 'cats')) counts[p.cat] = (counts[p.cat] || 0) + 1; });
+  elCats.innerHTML = CATS.map(function(c, i){
+    return '<button type="button" class="chip" data-cat="' + i + '" aria-pressed="' +
+      (S.cats[i] ? 'true' : 'false') + '" style="--c:var(' + c.cssvar + ')">' +
+      '<span class="dot"></span>' + c.nome + ' <span class="n">' + (counts[i] || 0) + '</span></button>';
+  }).join('');
+}
+elCats.addEventListener('click', function(e){
+  var b = e.target.closest('[data-cat]');
+  if (!b) return;
+  var k = b.getAttribute('data-cat');
+  S.cats[k] = !S.cats[k];
+  render();
+});
+
+function renderStats(list){
+  var comp = 0, aval = 0, ocup = {}, inst = {};
+  list.forEach(function(p){
+    if (p.cat === 0) comp++;
+    if (p.cat === 1) aval++;
+    if (p.ocup) ocup[p.ocup] = 1;
+    if (p.inst) inst[p.inst] = 1;
+  });
+  var filtered = list.length !== P.length;
+  var tiles = [
+    { n:list.length, l:'Participantes', lead:true, tot:P.length },
+    { n:comp, l:'Competidores' },
+    { n:aval, l:'Avaliação' },
+    { n:Object.keys(ocup).length, l:'Ocupações', tot:Object.keys(allOcup).length },
+    { n:Object.keys(inst).length, l:'Instituições', tot:Object.keys(allInst).length }
+  ];
+  elStats.innerHTML = tiles.map(function(t){
+    return '<div class="tile' + (t.lead ? ' is-lead' : '') + '"><b>' + t.n + '</b><span>' + t.l + '</span>' +
+      (t.tot && filtered ? '<em>de ' + t.tot + '</em>' : '') + '</div>';
+  }).join('');
+}
+
+function renderBars(el, hintEl, counts, activeValue, kind){
+  var keys = byCount(counts);
+  var max = keys.length ? counts[keys[0]] : 1;
+  var total = keys.reduce(function(s, k){ return s + counts[k]; }, 0);
+  hintEl.textContent = keys.length + (keys.length === 1 ? ' categoria' : ' categorias');
+  if (!keys.length){
+    el.innerHTML = '<p class="none">Nenhum resultado no recorte atual.</p>';
+    return;
+  }
+  el.innerHTML = keys.map(function(k){
+    var n = counts[k], pct = Math.round(n / total * 1000) / 10;
+    return '<button type="button" class="bar-row" data-kind="' + kind + '" data-value="' + esc(k) + '"' +
+      ' aria-pressed="' + (activeValue === k ? 'true' : 'false') + '"' +
+      ' title="' + esc(k) + ' — ' + n + (n === 1 ? ' pessoa' : ' pessoas') + ' · ' + pct + '% do recorte">' +
+      '<span><span class="bar-label">' + esc(k) + '</span>' +
+      '<span class="bar-track"><span class="bar-fill" style="width:' + Math.max(2, n / max * 100) + '%"></span></span></span>' +
+      '<span class="bar-val">' + n + '</span></button>';
+  }).join('');
+}
+document.addEventListener('click', function(e){
+  var b = e.target.closest('.bar-row');
+  if (!b) return;
+  var kind = b.getAttribute('data-kind'), val = b.getAttribute('data-value');
+  S[kind] = (S[kind] === val) ? '' : val;
+  $('f-' + kind).value = S[kind];
+  render();
+});
+
+var LABELS = { perfil:'Perfil', inst:'Instituição', ocup:'Ocupação', local:'Local' };
+function renderActive(){
+  var tags = [];
+  if (S.q) tags.push({ k:'q', l:'Busca', v:elQ.value.trim() });
+  Object.keys(S.cats).forEach(function(k){
+    if (S.cats[k]) tags.push({ k:'cat:' + k, l:'Grupo', v:CATS[k].nome });
+  });
+  ['perfil', 'inst', 'ocup', 'local'].forEach(function(k){
+    if (S[k]) tags.push({ k:k, l:LABELS[k], v:S[k] });
+  });
+  elActive.innerHTML = tags.map(function(t){
+    return '<span class="tag">' + t.l + ' <b>' + esc(t.v) + '</b>' +
+      '<button type="button" data-drop="' + esc(t.k) + '" aria-label="Remover filtro ' + esc(t.l) + '">×</button></span>';
+  }).join('') + (tags.length > 1 ? '<button type="button" class="clear-all" id="clearAll">limpar tudo</button>' : '');
+}
+elActive.addEventListener('click', function(e){
+  var d = e.target.closest('[data-drop]');
+  if (d){
+    var k = d.getAttribute('data-drop');
+    if (k === 'q'){ S.q = ''; elQ.value = ''; }
+    else if (k.indexOf('cat:') === 0) S.cats[k.slice(4)] = false;
+    else { S[k] = ''; $('f-' + k).value = ''; }
+    render();
+    return;
+  }
+  if (e.target.id === 'clearAll'){
+    S.q = ''; S.cats = {}; S.perfil = S.inst = S.ocup = S.local = '';
+    elQ.value = '';
+    ['perfil', 'inst', 'ocup', 'local'].forEach(function(k){ $('f-' + k).value = ''; });
+    render();
+  }
+});
+
+function cardHTML(p){
+  var photo = p.img < 0
+    ? '<span class="avatar ph" aria-hidden="true">' + esc(initials(p.nome)) + '</span>'
+    : '<img class="avatar" src="' + src(p) + '" alt="" decoding="async">';
+  return '<button type="button" class="card" data-p="' + p.i + '" style="--c:var(' + CATS[p.cat].cssvar + ')">' +
+    photo + '<span class="card-body"><h3>' + esc(p.nome) + '</h3>' +
+    (p.perfil ? '<span class="role">' + esc(p.perfil) + '</span>' : '') +
+    (p.ocup ? '<p class="skill">' + esc(p.ocup) + '</p>' : '') +
+    '<p class="meta">' + esc(p.inst || '—') + '</p>' +
+    (p.local ? '<p class="meta venue">' + esc(p.local) + '</p>' : '') +
+    '</span></button>';
+}
+function rowHTML(p){
+  var photo = p.img < 0 ? '<span class="mini"></span>'
+    : '<img class="mini" src="' + src(p) + '" alt="" decoding="async">';
+  return '<tr data-p="' + p.i + '" style="--c:var(' + CATS[p.cat].cssvar + ')"><td>' + photo + '</td>' +
+    '<td class="nm">' + esc(p.nome) + '</td>' +
+    '<td><span class="swatch"></span>' + esc(p.perfil || '—') + '</td>' +
+    '<td>' + esc(p.ocup || '—') + '</td><td>' + esc(p.inst || '—') + '</td>' +
+    '<td>' + esc(p.local || '—') + '</td></tr>';
+}
+
+var current = [];
+function renderResults(){
+  if (!current.length){
+    elResults.innerHTML = '<div class="empty"><h3>Nenhuma pessoa encontrada</h3>' +
+      '<p>Tente outra busca ou remova um dos filtros acima.</p></div>';
+    elMore.hidden = true;
+    return;
+  }
+  var slice = current.slice(0, S.shown);
+  if (S.view === 'grid'){
+    elResults.innerHTML = '<div class="grid">' + slice.map(cardHTML).join('') + '</div>';
+  } else {
+    elResults.innerHTML = '<div class="list-wrap"><table><thead><tr><th><span class="mono">foto</span></th>' +
+      '<th>Nome</th><th>Perfil</th><th>Ocupação</th><th>Instituição</th><th>Local</th></tr></thead><tbody>' +
+      slice.map(rowHTML).join('') + '</tbody></table></div>';
+  }
+  var rest = current.length - slice.length;
+  elMore.hidden = rest <= 0;
+  if (rest > 0) elMoreBtn.textContent = 'Mostrar mais ' + Math.min(PAGE * 2, rest) + ' · ' + rest + ' restantes';
+}
+elMoreBtn.addEventListener('click', function(){ S.shown += PAGE * 2; renderResults(); });
+elResults.addEventListener('click', function(e){
+  var t = e.target.closest('[data-p]');
+  if (t) openDrawer(P[+t.getAttribute('data-p')]);
+});
+
+function render(){
+  var list = P.filter(matches);
+  current = sorted(list);
+  S.shown = PAGE;
+  elCount.innerHTML = '<span class="mono">' + current.length + '</span> ' +
+    (current.length === 1 ? 'pessoa' : 'pessoas') +
+    (current.length !== P.length ? ' <span class="of">de ' + P.length + '</span>' : '');
+  renderStats(list);
+  renderCats();
+  renderBars($('c-ocup'), $('h-ocup'), tally(list, 'ocup'), S.ocup, 'ocup');
+  renderBars($('c-inst'), $('h-inst'), tally(list, 'inst'), S.inst, 'inst');
+  renderBars($('c-local'), $('h-local'), tally(list, 'local'), S.local, 'local');
+  renderActive();
+  renderResults();
+  elQClear.hidden = !S.q;
+}
+
+var tq;
+elQ.addEventListener('input', function(){
+  clearTimeout(tq);
+  tq = setTimeout(function(){ S.q = norm(elQ.value.trim()); render(); }, 130);
+});
+elQClear.addEventListener('click', function(){ S.q = ''; elQ.value = ''; elQ.focus(); render(); });
+['perfil', 'inst', 'ocup', 'local'].forEach(function(k){
+  $('f-' + k).addEventListener('change', function(){ S[k] = this.value; render(); });
+});
+$('sort').addEventListener('change', function(){ S.sort = this.value; render(); });
+$('v-grid').addEventListener('click', function(){ setView('grid'); });
+$('v-list').addEventListener('click', function(){ setView('list'); });
+function setView(v){
+  S.view = v;
+  $('v-grid').setAttribute('aria-pressed', String(v === 'grid'));
+  $('v-list').setAttribute('aria-pressed', String(v === 'list'));
+  try { localStorage.setItem('wsb-view', v); } catch(e){}
+  renderResults();
+}
+
+function applyTheme(t){
+  if (t) document.documentElement.setAttribute('data-theme', t);
+  else document.documentElement.removeAttribute('data-theme');
+  try { t ? localStorage.setItem('wsb-theme', t) : localStorage.removeItem('wsb-theme'); } catch(e){}
+}
+$('theme').addEventListener('click', function(){
+  var cur = document.documentElement.getAttribute('data-theme');
+  var dark = cur ? cur === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  applyTheme(dark ? 'light' : 'dark');
+});
+try { var storedTheme = localStorage.getItem('wsb-theme'); if (storedTheme) applyTheme(storedTheme); } catch(e){}
+try { if (localStorage.getItem('wsb-view') === 'list') S.view = 'list'; } catch(e){}
+
+var scrim = null, drawer = null, lastFocus = null;
+function openDrawer(p){
+  closeDrawer();
+  lastFocus = document.activeElement;
+  scrim = document.createElement('div');
+  scrim.className = 'scrim';
+  drawer = document.createElement('aside');
+  drawer.className = 'drawer';
+  drawer.setAttribute('role', 'dialog');
+  drawer.setAttribute('aria-modal', 'true');
+  drawer.setAttribute('aria-label', p.nome);
+  drawer.style.setProperty('--c', 'var(' + CATS[p.cat].cssvar + ')');
+  var photo = p.img < 0
+    ? '<div class="dw-photo avatar ph" style="font-size:38px">' + esc(initials(p.nome)) + '</div>'
+    : '<img class="dw-photo" src="' + src(p) + '" alt="Retrato de ' + esc(p.nome) + '">';
+  function field(l, v){ return v ? '<div><dt>' + l + '</dt><dd>' + esc(v) + '</dd></div>' : ''; }
+  drawer.innerHTML =
+    '<button type="button" class="ghost close" id="dwClose">Fechar</button>' +
+    photo + '<h2>' + esc(p.nome) + '</h2>' +
+    (p.perfil ? '<span class="dw-role">' + esc(p.perfil) + '</span>' : '') +
+    '<dl class="dl">' +
+      field('Ocupação', p.ocup) +
+      field('Nº da ocupação', p.skill) +
+      field('Instituição', p.inst) +
+      field('Delegação / equipe', p.grupo) +
+      field('Empresa', p.emp) +
+      field('Local de competição', p.local) +
+    '</dl>' +
+    '<div class="dw-actions">' +
+      (p.inst ? '<button type="button" data-go="inst">Ver ' + esc(p.inst) + '</button>' : '') +
+      (p.ocup ? '<button type="button" data-go="ocup">Ver ' + esc(p.ocup) + '</button>' : '') +
+      (p.local ? '<button type="button" data-go="local">Ver este local</button>' : '') +
+    '</div>';
+  document.body.appendChild(scrim);
+  document.body.appendChild(drawer);
+  drawer.querySelector('#dwClose').focus();
+  scrim.addEventListener('click', closeDrawer);
+  drawer.addEventListener('click', function(e){
+    if (e.target.id === 'dwClose'){ closeDrawer(); return; }
+    var g = e.target.closest('[data-go]');
+    if (g){
+      var k = g.getAttribute('data-go');
+      S[k] = p[k];
+      $('f-' + k).value = p[k];
+      closeDrawer();
+      render();
+      window.scrollTo({ top:0, behavior:'smooth' });
+    }
+  });
+}
+function closeDrawer(){
+  if (scrim){ scrim.remove(); scrim = null; }
+  if (drawer){ drawer.remove(); drawer = null; }
+  if (lastFocus && lastFocus.focus){ lastFocus.focus(); lastFocus = null; }
+}
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape' && drawer) closeDrawer();
+  if (e.key === '/' && !drawer && document.activeElement !== elQ){
+    e.preventDefault();
+    elQ.focus();
+    elQ.select();
+  }
+});
+
+var toastTimer;
+function toast(msg){
+  clearTimeout(toastTimer);
+  var old = document.querySelector('.toast');
+  if (old) old.remove();
+  var d = document.createElement('div');
+  d.className = 'toast';
+  d.textContent = msg;
+  document.body.appendChild(d);
+  toastTimer = setTimeout(function(){ d.remove(); }, 2600);
+}
+$('copy').addEventListener('click', function(){
+  function q(s){ return '"' + String(s || '').replace(/"/g, '""') + '"'; }
+  var head = ['Nome', 'Perfil', 'Ocupacao', 'NumeroOcupacao', 'Instituicao', 'Delegacao', 'Empresa', 'Local'];
+  var csv = [head.join(';')].concat(current.map(function(p){
+    return [p.nome, p.perfil, p.ocup, p.skill, p.inst, p.grupo, p.emp, p.local].map(q).join(';');
+  })).join('\r\n');
+  if (navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(csv).then(
+      function(){ toast(current.length + ' linhas copiadas para a área de transferência'); },
+      function(){ toast('O navegador bloqueou a cópia'); }
+    );
+  } else {
+    toast('O navegador bloqueou a cópia');
+  }
+});
+
+setView(S.view);
+render();
+})();
+</script>
