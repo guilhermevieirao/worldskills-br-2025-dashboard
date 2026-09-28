@@ -2,7 +2,7 @@
 
 Uso: python tools/build_mundial.py [caminho do data.json do álbum]
 Entrada: data/pessoas.json (seletiva) e o data.json do álbum "Brasil em Shanghai"
-         (repositório Resultado-Brasil-na-WorldSkills-2026-Shangai, pasta app/).
+         (repositório Resultado-Brasil-na-WorldSkills-2026-Shangai, pasta public/).
 Saída:   data/mundial.json
 
 Ninguém novo entra: só ganham informação do mundial os registros que já estão na seletiva.
@@ -12,7 +12,7 @@ dela na etapa nacional (perfil, instituição e ocupação), conferidos por nome
 import json, os, re, sys, unicodedata, difflib
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-ALBUM = sys.argv[1] if len(sys.argv) > 1 else os.path.join(ROOT, '..', 'worldskills-brasil', 'app', 'data.json')
+ALBUM = sys.argv[1] if len(sys.argv) > 1 else os.path.join(ROOT, '..', 'worldskills-brasil', 'public', 'data.json')
 STOP = {'de', 'da', 'do', 'dos', 'das', 'e'}
 SITE = 'https://skillex.com.br/'
 

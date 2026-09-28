@@ -97,7 +97,7 @@ python tools/build_mundial.py
 python build.py
 ```
 
-O primeiro comando lê `../worldskills-brasil/app/data.json` ou o caminho passado. O segundo gera a versão independente e o site em `site/`.
+O primeiro comando lê `../worldskills-brasil/public/data.json` ou o caminho passado. O segundo gera a versão independente e o site em `site/`.
 
 Depois, faça commit e push nos dois branches: `main`, na raiz, e `gh-pages`, dentro de `site/`.
 
