@@ -2,7 +2,7 @@
 
 Uso: python tools/build_mundial.py [caminho do data.json do álbum]
 Entrada: data/pessoas.json (seletiva) e o data.json do álbum "Brasil em Shanghai"
-         (repositório Resultado-Brasil-na-WorldSkills-2026-Shangai, pasta public/).
+         (repositório WorldSkills-2026-Album, pasta public/).
 Saída:   data/mundial.json
 
 Ninguém novo entra: só ganham informação do mundial os registros que já estão na seletiva.

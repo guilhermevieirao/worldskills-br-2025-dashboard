@@ -56,7 +56,7 @@ O arquivo `worldskills-br-2025-dashboard.html` do `main` é a versão independen
   - local, delegação, empresa e foto de credenciamento.
 
   Três registros trazem uma data no campo "empresa", no lugar do nome da empresa; essas datas não entram na página. Campos pessoais do modelo de origem (CPF, e-mail, celular e data de nascimento) nunca foram extraídos.
-- **Mundial (`data/mundial.json`):** gerado a partir do `data.json` do álbum [Resultado Brasil na WorldSkills 2026 Shangai](https://github.com/guilhermevieirao/Resultado-Brasil-na-WorldSkills-2026-Shangai). O álbum já guarda os registros de cada pessoa da delegação na etapa nacional, conferidos por nome e foto.
+- **Mundial (`data/mundial.json`):** gerado a partir do `data.json` do álbum [WorldSkills 2026 Album](https://github.com/guilhermevieirao/WorldSkills-2026-Album). O álbum já guarda os registros de cada pessoa da delegação na etapa nacional, conferidos por nome e foto.
 - **Fotos:** todas são publicadas sem recompressão. O endereço do painel (terminado em `_accreditation`) entrega o recorte 3:4 de 600×800. O mesmo endereço sem esse sufixo entrega a foto que a pessoa enviou, maior em 735 das 870 fotos.
   - Na página independente vão as miniaturas 240×320.
   - No site, as figurinhas trocam a miniatura pelo recorte 600×800, e o verso oferece a original.
