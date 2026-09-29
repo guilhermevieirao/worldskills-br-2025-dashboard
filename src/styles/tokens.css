@@ -1,0 +1,62 @@
+/* o atributo hidden sempre esconde, mesmo em elementos com display próprio */
+[hidden] { display: none !important; }
+/* ── Tokens ─────────────────────────────────────────────
+   O mesmo álbum de "Brasil em Shanghai": capa azul-marinho com amarelo,
+   páginas de papel couché e uma tinta de processo por setor. */
+:root {
+  --cover: #0e1f47;
+  --cover-2: #16306a;
+  --cover-3: #203f85;
+  --on-cover: #f3f6fb;
+  --on-cover-2: #b9c6e4;
+  --yellow: #ffd21f;
+  --yellow-ink: #1a1400;
+  --green: #009a4e;
+  --paper: #f7f8f5;
+  --paper-2: #eceee9;
+  --ink: #121826;
+  --ink-2: #485064;
+  --ink-3: #555d6f;
+  --line: #d7dbe1;
+  --table: #10234f;
+
+  --s-construcao: #c9500f;
+  --s-artes: #d6246f;
+  --s-ti: #0a78c2;
+  --s-manufatura: #0a7a44;
+  --s-servicos: #7442c2;
+  --s-transporte: #d9352a;
+
+  --silver: #c3ccd6;
+  --silver-2: #eef2f6;
+  --bronze: #b8743a;
+  --bronze-2: #f0c99b;
+  --gold-rim: #d6a520;
+  --bon: #1d4fa8;
+  --bon-2: #102c66;
+
+  --display: 'Big Shoulders Display', 'Arial Narrow', 'Roboto Condensed', system-ui, sans-serif;
+  --body: 'Barlow', 'Segoe UI', system-ui, sans-serif;
+
+  --r-sticker: 10px;
+  --shadow-sticker: 0 1px 1px rgb(0 0 0 / 0.12), 0 8px 18px -10px rgb(0 0 0 / 0.45);
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --gutter: clamp(16px, 3vw, 40px);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --table: #0c1b3f;
+    --paper: #e9ebe6;
+    --paper-2: #dcdfd8;
+    --line: #c6cbd2;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --table: #0c1b3f;
+  --paper: #e9ebe6;
+  --paper-2: #dcdfd8;
+  --line: #c6cbd2;
+  color-scheme: dark;
+}

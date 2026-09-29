@@ -1,24 +1,26 @@
-"""Monta a página final num HTML único e independente.
+"""Monta a página final num HTML único e independente, e o site em dist/.
 
 Uso:
-  python tools/build_mundial.py   # liga a seletiva ao mundial (lê o data.json do álbum Brasil em Shanghai)
-  python build.py                 # gera worldskills-br-2025-dashboard.html
+  python scripts/data/build_mundial.py   # liga a seletiva ao mundial (lê o data.json do álbum Brasil em Shanghai)
+  python scripts/build.py                # gera o site em dist/
 
-Entram no arquivo: os dados da seletiva (data/pessoas.json), as ligações com o mundial
-(data/mundial.json), as miniaturas 240x320 (data/thumbs, geradas por fotos_raw.py e fotos_hq.py),
-os contornos dos estados (data/brmap.json), as fontes do Google Fonts e o favicon.
+A página é index.html com os estilos de src/styles/ (na ordem de index.css) e o script src/main.js embutidos.
+Entram no arquivo: os dados da seletiva (data/sources/pessoas.json), as ligações com o mundial
+(src/data/mundial.json), as miniaturas 240x320 (data/thumbs, geradas por fotos_raw.py e fotos_hq.py),
+os contornos dos estados (src/data/brazil-map.json), os créditos (src/data/autor.json e autor.jpg),
+as fontes do Google Fonts e o favicon.
 No campo "empresa", só entram nomes de empresa: três registros trazem ali uma data, que fica de fora.
 
-As fotos vão sem recompressão para fotos/, em pacotes com os arquivos concatenados:
+As fotos vão sem recompressão para dist/fotos/, em pacotes com os arquivos concatenados:
 - credenciamento-N.bin: o recorte 600x800 de data/raw (fotos_raw.py);
 - originais-N.bin: a foto enviada em resolução máxima, de data/orig (fotos_orig.py), quando é maior.
 No site, a página lê cada foto do pacote por HTTP Range; aberta do disco, fica com as miniaturas.
 """
 import base64, hashlib, json, os, re, urllib.request
 
-ROOT = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(ROOT, 'worldskills-br-2025-dashboard.html')
-SITE = os.path.join(ROOT, 'site')  # worktree do branch gh-pages, que o GitHub Pages publica
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SITE = os.path.join(ROOT, 'dist')  # o site que o GitHub Pages publica (.github/workflows/deploy.yml)
+OUT = os.path.join(SITE, 'index.html')  # a página, que também é a versão independente
 BASE = 'https://guilhermevieirao.github.io/worldskills-br-2025-dashboard/'
 UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36'
 THUMBS = next(p for p in (os.path.join(ROOT, 'data', 'thumbs'), 'C:/claude/quem-e-quem/data/thumbs') if os.path.isdir(p))
@@ -26,8 +28,9 @@ RAW = next(p for p in (os.path.join(ROOT, 'data', 'raw'), 'C:/claude/quem-e-quem
 FULL = next(p for p in (os.path.join(ROOT, 'data', 'orig'), 'C:/claude/quem-e-quem/data/orig') if os.path.isdir(p))
 PACK = 45 * 1024 * 1024  # cada pacote fica abaixo do limite de 50 MB do GitHub
 
-load = lambda name: json.load(open(os.path.join(ROOT, 'data', name), encoding='utf8'))
-people, mundial, brmap = load('pessoas.json'), load('mundial.json'), load('brmap.json')
+load = lambda *path: json.load(open(os.path.join(ROOT, *path), encoding='utf8'))
+people = load('data', 'sources', 'pessoas.json')
+mundial, brmap = load('src', 'data', 'mundial.json'), load('src', 'data', 'brazil-map.json')
 key = lambda u: hashlib.sha1(u.encode()).hexdigest()[:16]
 
 # o registro sem número de ocupação herda o número de quem tem a mesma ocupação
@@ -120,12 +123,18 @@ for f in os.listdir(os.path.join(SITE, 'fotos')):
         os.remove(os.path.join(SITE, 'fotos', f))
 
 bundle = {k: dicts.get(k, {'list': []})['list'] for k in ('inst', 'perfil', 'ocup', 'local', 'grupo', 'emp')}
-author = json.load(open(os.path.join(ROOT, 'tools', 'autor.json'), encoding='utf8'))
-author['photo'] = 'data:image/jpeg;base64,' + base64.b64encode(open(os.path.join(ROOT, 'tools', 'autor.jpg'), 'rb').read()).decode()
+author = load('src', 'data', 'autor.json')
+author['photo'] = 'data:image/jpeg;base64,' + base64.b64encode(open(os.path.join(ROOT, 'src', 'data', 'autor.jpg'), 'rb').read()).decode()
 bundle.update(author=author, rows=rows, imgs=imgs, orig=orig, full=full, packs=packs, mundial={k: mundial[k] for k in ('event', 'skills', 'rows', 'album')}, map=brmap)
 data = json.dumps(bundle, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
 
-html = open(os.path.join(ROOT, 'page.template.html'), encoding='utf8').read()
+read = lambda *path: open(os.path.join(ROOT, *path), encoding='utf8').read()
+html = read('index.html')
+# estilos e script de src/ entram na página: os CSS na ordem de index.css, com uma linha em branco entre eles
+STYLE, SCRIPT = '<link rel="stylesheet" href="src/styles/index.css">', '<script src="src/main.js"></script>'
+assert html.count(STYLE) == 1 and html.count(SCRIPT) == 1
+styles = '\n'.join(read('src', 'styles', f) for f in re.findall(r"@import '\./([\w-]+\.css)';", read('src', 'styles', 'index.css')))
+html = html.replace(STYLE, f'<style>\n{styles}</style>', 1).replace(SCRIPT, f"<script>\n{read('src', 'main.js')}</script>", 1)
 assert html.count('/*__DATA__*/') == 1
 
 # fontes: o CSS do Google Fonts com cada woff2 embutido, só os alfabetos que o português usa
@@ -138,22 +147,19 @@ css = re.sub(r'url\((https://fonts\.gstatic\.com/[^)]+)\)',
              lambda m: 'url(data:font/woff2;base64,' + base64.b64encode(get(m.group(1))).decode() + ')', css)
 for l in links:
     html = html.replace(l, '')
-fav = base64.b64encode(open(os.path.join(ROOT, 'tools', 'favicon.png'), 'rb').read()).decode()
+fav = base64.b64encode(open(os.path.join(ROOT, 'public', 'favicon.png'), 'rb').read()).decode()
 html = html.replace('<!--__HEAD__-->', f'<link rel="icon" type="image/png" href="data:image/png;base64,{fav}">\n<style>\n{css}\n</style>', 1)
 html = html.replace('/*__DATA__*/', data, 1)
 
 open(OUT, 'w', encoding='utf8', newline='\n').write(html)
 
 
-def write_site(html):
-    """O site publicado: a mesma página como index.html, mais os arquivos de busca e prévia."""
+def write_site():
+    """O resto do site, ao lado da página: public/ como está (favicon e prévia), mais os arquivos de busca."""
     import shutil
     w = lambda name, text: open(os.path.join(SITE, name), 'w', encoding='utf8', newline='\n').write(text)
-    w('index.html', html)
     w('.nojekyll', '')
-    shutil.copy(os.path.join(ROOT, 'tools', 'favicon.png'), os.path.join(SITE, 'favicon.png'))
-    if os.path.exists(os.path.join(ROOT, 'tools', 'og.jpg')):
-        shutil.copy(os.path.join(ROOT, 'tools', 'og.jpg'), os.path.join(SITE, 'og.jpg'))
+    shutil.copytree(os.path.join(ROOT, 'public'), SITE, dirs_exist_ok=True)
     desc = 'Quem é quem na seletiva nacional da WorldSkills Brasil 2025, e o que quem foi a Shanghai conquistou no mundial.'
     # o endereço antigo continua valendo, inclusive com o link direto de cada pessoa (#p123)
     w('worldskills-br-2025-dashboard.html', f'''<!doctype html>
@@ -241,7 +247,7 @@ a {{ display: inline-block; padding: 13px 22px; border-radius: 999px; background
         '- Resultados oficiais: https://results.worldskills.org/',
         '- Álbum Brasil em Shanghai: https://skillex.com.br/', '']
     w('llms.txt', '\n'.join(lines))
-print(os.path.basename(OUT), round(os.path.getsize(OUT) / 1e6, 1), 'MB |', len(rows), 'participantes |',
+print(os.path.relpath(OUT, ROOT).replace(os.sep, '/'), round(os.path.getsize(OUT) / 1e6, 1), 'MB |', len(rows), 'participantes |',
       len(imgs), 'fotos |', len(mundial['rows']), 'registros com o mundial |',
       len(packs), 'pacotes de originais,', round(sum(os.path.getsize(os.path.join(SITE, f)) for f in packs) / 1e6), 'MB')
-write_site(html)
+write_site()

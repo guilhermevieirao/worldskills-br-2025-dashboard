@@ -1,0 +1,23 @@
+/* mapa dos estados */
+.states { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: 24px; align-items: start; }
+@media (max-width: 760px) { .states { grid-template-columns: 1fr; } }
+.brmap { max-width: 540px; margin-inline: auto; width: 100%; }
+.brmap svg { display: block; width: 100%; height: auto; overflow: visible; }
+.brmap__uf { fill: var(--paper-2); stroke: var(--paper); stroke-width: 1.2; stroke-linejoin: round; }
+.brmap__uf[data-has="true"] { cursor: pointer; outline: none; transition: fill 160ms ease, stroke 160ms ease; }
+.brmap__uf[data-has="true"][data-hot="true"], .brmap__uf[data-has="true"]:focus-visible { stroke: var(--ink); stroke-width: 2; }
+.brmap__uf[aria-pressed="true"] { stroke: var(--ink); stroke-width: 3; }
+@media (hover: hover) and (pointer: fine) { .brmap__uf[data-has="true"]:hover { stroke: var(--ink); stroke-width: 2; } }
+.brmap__lbl { pointer-events: none; text-anchor: middle; }
+.brmap .uf { font: 700 15px/1 var(--body); letter-spacing: 0.06em; }
+.brmap .n { font: 900 30px/1 var(--display); }
+.brmap__lbl[data-size="s"] .uf { font-size: 12px; }
+.brmap__lbl[data-size="s"] .n { font-size: 22px; }
+.brmap__lbl[data-on="dark"] { fill: #fff; }
+.brmap__lbl[data-on="light"] { fill: var(--ink); }
+.brmap__call { text-anchor: start; fill: var(--ink); cursor: pointer; outline: none; }
+.brmap__call line, .brmap__call circle { pointer-events: none; }
+.brmap__call line { stroke: var(--ink); stroke-width: 1; }
+.brmap__call circle { fill: var(--ink); }
+.brmap__info { min-height: 1.55em; margin: 10px 0 0; text-align: center; font-size: 14px; color: var(--ink-2); }
+.brmap__info b { color: var(--ink); }

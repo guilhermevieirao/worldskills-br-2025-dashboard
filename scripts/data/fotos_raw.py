@@ -1,10 +1,10 @@
 import json, os, hashlib, concurrent.futures as cf
 import urllib.request
 
-BASE = 'C:/claude/quem-e-quem'
-RAWDIR = BASE + '/data/raw'
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # raiz do repositório
+RAWDIR = ROOT + '/data/raw'
 os.makedirs(RAWDIR, exist_ok=True)
-people = json.load(open(BASE + '/data/pessoas.json', encoding='utf8'))
+people = json.load(open(ROOT + '/data/sources/pessoas.json', encoding='utf8'))
 urls = sorted({p['foto'] for p in people if p['foto']})
 print('urls unicas:', len(urls))
 

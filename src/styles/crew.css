@@ -1,0 +1,21 @@
+/* equipe da ocupação: avaliação e oficina */
+.crew { border-radius: 10px; background: rgb(0 0 0 / 0.16); }
+.crew > summary {
+  list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  min-height: 40px; padding: 6px 12px; cursor: pointer; font: 600 14px/1.2 var(--body);
+}
+.crew > summary::-webkit-details-marker { display: none; }
+.crew > summary::after { content: '+'; font: 800 1.2rem/1 var(--display); }
+.crew[open] > summary::after { content: '–'; }
+.crew__list { display: grid; grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: 12px 10px; padding: 2px 12px 12px; }
+.mini { display: grid; align-content: start; gap: 4px; padding: 0; border: 0; background: none; color: inherit; text-align: left; font: 600 12px/1.2 var(--body); min-width: 0; }
+.mini small { font: 500 11px/1.2 var(--body); opacity: 0.85; }
+.mini__photo { position: relative; display: block; aspect-ratio: 3 / 4; border-radius: 7px; overflow: hidden; background: rgb(255 255 255 / 0.2); border: 3px solid #fff; transition: transform 200ms var(--ease-out); }
+.mini__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.mini__photo .ph { font-size: 1.5rem; }
+.mini .sash { height: 16px; font-size: 8.5px; letter-spacing: 0.08em; gap: 3px; }
+.mini .sash svg { width: 9px; height: 9px; }
+.mini .ex-badge { width: 20px; height: 20px; left: 3px; top: 3px; }
+.mini .ex-badge svg { width: 12px; height: 12px; }
+.mini[data-ex="true"] .mini__photo { border-color: var(--gold-rim); }
+@media (hover: hover) and (pointer: fine) { .mini:hover .mini__photo { transform: translateY(-2px) rotate(-1deg); } }

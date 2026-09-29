@@ -1,8 +1,8 @@
 import json, os, hashlib, zipfile, re, unicodedata
 
-BASE = 'C:/claude/quem-e-quem'
-RAWDIR = BASE + '/data/raw'
-people = json.load(open(BASE + '/data/pessoas.json', encoding='utf8'))
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # raiz do repositório
+RAWDIR = ROOT + '/data/raw'
+people = json.load(open(ROOT + '/data/sources/pessoas.json', encoding='utf8'))
 
 def key(u):
     return hashlib.sha1(u.encode()).hexdigest()[:16]
@@ -19,7 +19,7 @@ for p in people:
         by_url.setdefault(p['foto'], []).append(p)
 
 used_names = {}
-zpath = BASE + '/worldskills-br-2025-dashboard-fotos-originais.zip'
+zpath = ROOT + '/worldskills-br-2025-dashboard-fotos-originais.zip'
 with zipfile.ZipFile(zpath, 'w', zipfile.ZIP_STORED) as z:
     count = 0
     for url, plist in by_url.items():
@@ -35,6 +35,6 @@ with zipfile.ZipFile(zpath, 'w', zipfile.ZIP_STORED) as z:
             z.writestr(f'{fname}.jpg', raw)
             count += 1
     # inclui a planilha de dados para referência cruzada
-    z.write(BASE + '/data/pessoas.json', 'dados/pessoas.json')
+    z.write(ROOT + '/data/sources/pessoas.json', 'dados/pessoas.json')
 print('arquivos no zip:', count + 1)
 print('tamanho zip MB:', round(os.path.getsize(zpath) / 1048576, 2))

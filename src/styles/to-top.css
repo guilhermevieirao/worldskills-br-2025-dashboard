@@ -1,0 +1,20 @@
+/* voltar ao topo */
+.to-top {
+  position: fixed; z-index: 30; right: max(16px, env(safe-area-inset-right, 0px));
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  width: 48px; height: 48px; display: grid; place-items: center; padding: 0; border: 0; border-radius: 50%;
+  background: var(--yellow); color: var(--yellow-ink); box-shadow: 0 0 0 2px var(--yellow-ink), 0 10px 22px -10px rgb(0 0 0 / 0.6);
+  transition: opacity 200ms var(--ease-out), transform 200ms var(--ease-out), visibility 200ms;
+}
+.to-top svg { width: 22px; height: 22px; }
+.to-top[data-show="false"] { opacity: 0; visibility: hidden; transform: translateY(12px) scale(0.95); pointer-events: none; }
+.to-top:active { transform: scale(0.94); transition-duration: 100ms; }
+@media (hover: hover) and (pointer: fine) { .to-top:hover { transform: translateY(-2px); } }
+@media (prefers-reduced-motion: reduce) { .to-top, .to-top[data-show="false"] { transform: none; } }
+.toast {
+  position: fixed; left: 50%; bottom: calc(20px + env(safe-area-inset-bottom, 0px)); z-index: 90; transform: translateX(-50%); width: max-content; max-width: calc(100vw - 32px);
+  padding: 10px 16px; border-radius: 999px; background: var(--ink); color: #fff; font: 600 14px/1.3 var(--body);
+  box-shadow: 0 10px 24px -10px rgb(0 0 0 / 0.6); animation: toast-in 200ms var(--ease-out);
+}
+@keyframes toast-in { from { opacity: 0; transform: translate(-50%, 8px); } }
+@media (prefers-reduced-motion: reduce) { .toast { animation: none; } }

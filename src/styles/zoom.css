@@ -1,0 +1,20 @@
+/* foto ampliada: um toque abre a foto inteira por cima de tudo; outro toque, Esc ou × fecham */
+[data-zoom-root] { position: relative; }
+.zoom-btn { position: absolute; inset: 0; z-index: 3; display: flex; align-items: flex-start; justify-content: flex-end; padding: 8px; border: 0; border-radius: inherit; background: none; color: #fff; cursor: zoom-in; }
+.zoom-btn svg { width: 36px; height: 36px; padding: 8px; border-radius: 50%; background: rgb(0 0 0 / 0.45); opacity: 0.85; transition: opacity 160ms ease, transform 160ms var(--ease-out); }
+@media (hover: hover) and (pointer: fine) { .zoom-btn:hover svg { opacity: 1; transform: scale(1.06); } }
+.zoom-btn:focus-visible { outline-offset: -3px; }
+.author__photo .zoom-btn { padding: 4px; }
+.author__photo .zoom-btn svg { width: 24px; height: 24px; padding: 5px; }
+dialog.zoom { width: 100vw; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: rgb(6 13 31 / 0.94); color: #fff; }
+dialog.zoom[open] { display: grid; place-items: center; animation: zoom-in 200ms var(--ease-out); }
+dialog.zoom::backdrop { background: transparent; }
+dialog.zoom img { max-width: calc(100vw - 32px); max-height: calc(100dvh - 104px); width: auto; height: auto; object-fit: contain; border-radius: 8px; box-shadow: 0 30px 60px -20px rgb(0 0 0 / 0.8); cursor: zoom-out; }
+.zoom__close { position: fixed; top: calc(12px + env(safe-area-inset-top, 0px)); right: 12px; width: 44px; height: 44px; display: grid; place-items: center; padding: 0; border: 0; border-radius: 50%; background: rgb(255 255 255 / 0.16); color: #fff; }
+.zoom__close svg { width: 20px; height: 20px; }
+@media (hover: hover) and (pointer: fine) { .zoom__close:hover { background: rgb(255 255 255 / 0.28); } }
+.zoom__cap { position: fixed; left: 16px; right: 16px; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); margin: 0; text-align: center; font-size: 13px; color: #b9c6e4; }
+@keyframes zoom-in { from { opacity: 0; } }
+dialog.zoom[open] img { animation: zoom-img 240ms var(--ease-out); }
+@keyframes zoom-img { from { transform: scale(0.96); } }
+@media (prefers-reduced-motion: reduce) { dialog.zoom[open], dialog.zoom[open] img { animation: none; } }

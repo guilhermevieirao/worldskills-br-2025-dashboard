@@ -1,8 +1,8 @@
 import json, os, hashlib, zipfile, re, unicodedata
 
-BASE = 'C:/claude/quem-e-quem'
-RAWDIR = BASE + '/data/raw'
-people = json.load(open(BASE + '/data/pessoas.json', encoding='utf8'))
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # raiz do repositório
+RAWDIR = ROOT + '/data/raw'
+people = json.load(open(ROOT + '/data/sources/pessoas.json', encoding='utf8'))
 people.sort(key=lambda p: p['nome'])
 
 def key(u):
@@ -24,7 +24,7 @@ def flush():
     global cur_files, cur_size, part_n
     if not cur_files:
         return
-    zpath = f'{BASE}/worldskills-br-2025-dashboard-fotos-parte{part_n}.zip'
+    zpath = f'{ROOT}/worldskills-br-2025-dashboard-fotos-parte{part_n}.zip'
     with zipfile.ZipFile(zpath, 'w', zipfile.ZIP_STORED) as z:
         for fname, raw in cur_files:
             z.writestr(fname, raw)

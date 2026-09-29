@@ -1,0 +1,19 @@
+/* ── Comissão da seletiva ─────────────────────────────── */
+.team__intro { max-width: 62ch; margin: 10px 0 20px; color: var(--ink-2); }
+.roles { display: grid; gap: 30px; }
+.role { padding-top: 10px; border-top: 3px solid var(--ink); }
+.role h3 { margin: 0 0 14px; font: 800 1.3rem/1 var(--display); text-transform: uppercase; }
+.role h3 span { font: 600 14px/1 var(--body); text-transform: none; color: var(--ink-3); margin-left: 6px; }
+.role__list { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 18px 14px; }
+@media (max-width: 480px) { .role__list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 10px; } }
+/* crachá: mesma anatomia da figurinha, faixa azul da capa */
+.card-staff { position: relative; display: block; width: 100%; border: 0; text-align: left; color: inherit; font: inherit; padding: 6px; border-radius: var(--r-sticker); background: #fff; box-shadow: var(--shadow-sticker); transition: transform 200ms var(--ease-out); }
+.card-staff:nth-child(3n+1) { transform: rotate(-0.6deg); }
+.card-staff:nth-child(3n+2) { transform: rotate(0.5deg); }
+.card-staff__photo { position: relative; display: block; aspect-ratio: 3 / 4; overflow: hidden; border-radius: 6px 6px 0 0; background: linear-gradient(180deg, #c9d3e8, #8ea0c7); }
+.card-staff__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.card-staff__band { display: block; padding: 7px 8px 6px; background: var(--cover); color: #fff; }
+.card-staff__name { display: block; font: 800 1.1rem/0.95 var(--display); text-transform: uppercase; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.card-staff__role { display: block; margin-top: 3px; font: 500 12px/1.2 var(--body); color: var(--on-cover-2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.card-staff[data-ex="true"] { box-shadow: var(--shadow-sticker), inset 0 0 0 2px var(--gold-rim); }
+@media (hover: hover) and (pointer: fine) { .card-staff:hover { transform: translateY(-3px) rotate(-0.6deg); } }

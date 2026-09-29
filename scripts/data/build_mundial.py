@@ -1,9 +1,9 @@
 """Liga os participantes da seletiva nacional ao que fizeram no mundial (WorldSkills Shanghai 2026).
 
-Uso: python tools/build_mundial.py [caminho do data.json do álbum]
-Entrada: data/pessoas.json (seletiva) e o data.json do álbum "Brasil em Shanghai"
+Uso: python scripts/data/build_mundial.py [caminho do data.json do álbum]
+Entrada: data/sources/pessoas.json (seletiva) e o data.json do álbum "Brasil em Shanghai"
          (repositório WorldSkills-2026-Album, pasta public/).
-Saída:   data/mundial.json
+Saída:   src/data/mundial.json
 
 Ninguém novo entra: só ganham informação do mundial os registros que já estão na seletiva.
 A correspondência vem do álbum, que já guarda, para cada pessoa da delegação, os registros
@@ -11,7 +11,7 @@ dela na etapa nacional (perfil, instituição e ocupação), conferidos por nome
 """
 import json, os, re, sys, unicodedata, difflib
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 ALBUM = sys.argv[1] if len(sys.argv) > 1 else os.path.join(ROOT, '..', 'worldskills-brasil', 'public', 'data.json')
 STOP = {'de', 'da', 'do', 'dos', 'das', 'e'}
 SITE = 'https://skillex.com.br/'
@@ -35,7 +35,7 @@ def same_person(a, b):
     return bool(A and B and close(A[0], B[0]) and any(close(t, u) for t in A[1:] for u in B[1:]))
 
 
-Q = json.load(open(os.path.join(ROOT, 'data', 'pessoas.json'), encoding='utf8'))
+Q = json.load(open(os.path.join(ROOT, 'data', 'sources', 'pessoas.json'), encoding='utf8'))
 D = json.load(open(ALBUM, encoding='utf8'))
 by_skill = {s['n']: s for s in D['skills']}
 people = {p['id']: p for p in D['people']}
@@ -95,7 +95,7 @@ for v in rows.values():
     for x in v:
         del x['who']
 out = {'event': D['event'], 'skills': skills, 'rows': rows, 'rename': rename, 'album': SITE}
-json.dump(out, open(os.path.join(ROOT, 'data', 'mundial.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=1)
+json.dump(out, open(os.path.join(ROOT, 'src', 'data', 'mundial.json'), 'w', encoding='utf8'), ensure_ascii=False, indent=1)
 
 ents = {}
 for v in rows.values():

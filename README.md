@@ -39,75 +39,79 @@ Ninguém foi acrescentado: a página mostra só os 943 registros do painel públ
 
 ## Publicação
 
-O GitHub Pages publica o branch `gh-pages`, que tem só o site:
+Cada push na `main` dispara o workflow [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), que publica `dist/` no GitHub Pages. Em `dist/` fica o site inteiro:
 - `index.html`;
 - os pacotes de fotos em `fotos/`;
 - `404.html`, `robots.txt`, `sitemap.xml`, `llms.txt`, a imagem de prévia `og.jpg` e o favicon;
 - `worldskills-br-2025-dashboard.html`, que redireciona o endereço antigo, inclusive o link direto de cada pessoa.
 
-O código-fonte fica no `main`, fora do ar.
+Diferente do álbum, o site gerado fica no repositório: o build precisa das fotos em resolução máxima, que ficam fora dele (`data/raw` e `data/orig`), então o workflow só publica o que já está em `dist/`.
 
-O arquivo `worldskills-br-2025-dashboard.html` do `main` é a versão independente. Ele traz dados, miniaturas, fontes e ícone embutidos e abre sem internet.
+O `dist/index.html` é também a versão independente. Ele traz dados, miniaturas, fontes e ícone embutidos e abre sem internet.
 
 ## Dados
 
-- **Participantes (`data/pessoas.json`):** os campos do [painel público "Quem é Quem"](https://app.powerbi.com/view?r=eyJrIjoiZjU5YzMwMmEtNTQzZS00MzEzLThhZTYtMGQ4M2Y4ODAxY2YwIiwidCI6IjZkNmJjYzNmLWJkYTEtNGY1NC1hZjFkLTg2ZDRiN2Q0ZTZiOCJ9) (Power BI):
+- **Participantes (`data/sources/pessoas.json`):** os campos do [painel público "Quem é Quem"](https://app.powerbi.com/view?r=eyJrIjoiZjU5YzMwMmEtNTQzZS00MzEzLThhZTYtMGQ4M2Y4ODAxY2YwIiwidCI6IjZkNmJjYzNmLWJkYTEtNGY1NC1hZjFkLTg2ZDRiN2Q0ZTZiOCJ9) (Power BI):
   - nome, instituição, perfil, ocupação e número da ocupação;
   - local, delegação, empresa e foto de credenciamento.
 
   Três registros trazem uma data no campo "empresa", no lugar do nome da empresa; essas datas não entram na página. Campos pessoais do modelo de origem (CPF, e-mail, celular e data de nascimento) nunca foram extraídos.
-- **Mundial (`data/mundial.json`):** gerado a partir do `data.json` do álbum [WorldSkills 2026 Album](https://github.com/guilhermevieirao/WorldSkills-2026-Album). O álbum já guarda os registros de cada pessoa da delegação na etapa nacional, conferidos por nome e foto.
+- **Mundial (`src/data/mundial.json`):** gerado a partir do `data.json` do álbum [WorldSkills 2026 Album](https://github.com/guilhermevieirao/WorldSkills-2026-Album). O álbum já guarda os registros de cada pessoa da delegação na etapa nacional, conferidos por nome e foto.
 - **Fotos:** todas são publicadas sem recompressão. O endereço do painel (terminado em `_accreditation`) entrega o recorte 3:4 de 600×800. O mesmo endereço sem esse sufixo entrega a foto que a pessoa enviou, maior em 735 das 870 fotos.
   - Na página independente vão as miniaturas 240×320.
   - No site, as figurinhas trocam a miniatura pelo recorte 600×800, e o verso oferece a original.
-- **Contornos dos estados (`data/brmap.json`):** [@svg-maps/brazil](https://github.com/VictorCazanave/svg-maps/tree/master/packages/brazil), de Victor Cazanave (CC BY 4.0).
+- **Contornos dos estados (`src/data/brazil-map.json`):** [@svg-maps/brazil](https://github.com/VictorCazanave/svg-maps/tree/master/packages/brazil), de Victor Cazanave (CC BY 4.0).
 
 ## Estrutura
 
 ```
-page.template.html                 → página, estilos e scripts (fonte)
-build.py                           → monta a versão independente e o site (em site/)
-worldskills-br-2025-dashboard.html → versão independente (gerada)
-site/                              → worktree do branch gh-pages (gerado, fora do main)
-tools/build_mundial.py             → liga a seletiva ao mundial (gera data/mundial.json)
-tools/favicon.png, tools/og.jpg    → ícone e imagem de prévia do link
-data/                              → pessoas.json, mundial.json, brmap.json
-
-fetch.mjs                          → coleta os registros de origem
-fotos_raw.py                       → baixa os recortes de credenciamento (data/raw)
-fotos_orig.py                      → baixa as fotos originais em resolução máxima (data/orig)
-fotos_hq.py                        → gera as miniaturas (data/thumbs)
-pack_originals*.py                 → empacotam as fotos em .zip
+index.html                 página (fonte): cabeçalho (meta tags, prévia de link, dados estruturados) e a marcação fixa
+src/
+  main.js                  script da página: filtros, números, álbum, verso, foto ampliada e CSV
+  styles/                  um CSS por parte da página, reunidos em index.css
+  data/
+    mundial.json           a seletiva ligada ao mundial (gerado por scripts/data/build_mundial.py)
+    brazil-map.json        contornos dos estados para o mapa
+    autor.json, autor.jpg  créditos do rodapé
+public/                    vai para o ar como está: favicon.png e og.jpg (imagem de prévia do link)
+scripts/
+  build.py                 monta a página (index.html com src/, dados, miniaturas, fontes e ícone embutidos) e o site em dist/
+  data/                    coleta e cruzamento dos dados
+    build_mundial.py         liga a seletiva ao mundial (gera src/data/mundial.json)
+    fetch.mjs                coleta os registros de origem (gera data/sources/pessoas.json)
+    fotos_raw.py             baixa os recortes de credenciamento (data/raw)
+    fotos_orig.py            baixa as fotos originais em resolução máxima (data/orig)
+    fotos_hq.py              gera as miniaturas (data/thumbs)
+    fotos.py                 primeira versão das miniaturas (avatares quadrados)
+    pack_originals*.py       empacotam as fotos em .zip
+data/sources/pessoas.json  coleta bruta do painel "Quem é Quem"
+data/raw, orig, thumbs     fotos baixadas e miniaturas (cache local, fora do repositório)
+dist/                      o site publicado (gerado por scripts/build.py; fica no repositório)
+.github/workflows/         deploy no GitHub Pages
 ```
 
 ## Como gerar e publicar
 
 Pré-requisitos: Python 3.10+ com Pillow (`pip install Pillow`). Para refazer os dados do zero, também Node.js 18+.
 
-Uma vez, crie a pasta do site ligada ao branch `gh-pages`:
-
-```bash
-git worktree add site gh-pages
-```
-
 A cada mudança:
 
 ```bash
-python tools/build_mundial.py
-python build.py
+python scripts/data/build_mundial.py
+python scripts/build.py
 ```
 
-O primeiro comando lê `../worldskills-brasil/public/data.json` ou o caminho passado. O segundo gera a versão independente e o site em `site/`.
+O primeiro comando lê `../worldskills-brasil/public/data.json` ou o caminho passado. O segundo gera o site em `dist/`, com a versão independente em `dist/index.html`.
 
-Depois, faça commit e push nos dois branches: `main`, na raiz, e `gh-pages`, dentro de `site/`.
+Depois, faça commit e push na `main`: o workflow publica o `dist/`.
 
 Para refazer dados e fotos do zero, antes rode:
 
 ```bash
-node fetch.mjs
-python fotos_raw.py
-python fotos_orig.py
-python fotos_hq.py
+node scripts/data/fetch.mjs
+python scripts/data/fotos_raw.py
+python scripts/data/fotos_orig.py
+python scripts/data/fotos_hq.py
 ```
 
 ## Licença

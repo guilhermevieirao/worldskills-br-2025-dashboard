@@ -78,6 +78,6 @@ for (const r of raw) {
 }
 people.sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR'));
 
-fs.writeFileSync('C:/claude/quem-e-quem/data/pessoas.json', JSON.stringify(people, null, 2), 'utf8');
+fs.writeFileSync(new URL('../../data/sources/pessoas.json', import.meta.url), JSON.stringify(people, null, 2), 'utf8');
 console.log('linhas brutas:', raw.length, '| pessoas:', people.length);
 console.log('com foto:', people.filter(p => p.foto).length);

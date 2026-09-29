@@ -1,4 +1,4 @@
-# Cache de imagens baixadas (grande, regeneravel via fotos_raw.py)
+# Cache de imagens baixadas (grande, regeneravel via scripts/data/fotos_raw.py)
 data/raw/
 data/thumbs/
 data/orig/
@@ -12,5 +12,5 @@ data/bundle.json
 # Wrapper de preview local usado durante o desenvolvimento
 preview.html
 
-# Site publicado: worktree do branch gh-pages (git worktree add site gh-pages)
+# Antigo worktree do branch gh-pages: o site publicado agora fica em dist/, na main
 site/

@@ -1,0 +1,71 @@
+/* ── Páginas de papel (números, comissão, lista) ──────── */
+.board, .team {
+  color: var(--ink); border-radius: 18px; padding: clamp(18px, 3vw, 36px);
+  background:
+    radial-gradient(circle at 1.4px 1.4px, rgb(14 31 71 / 0.07) 1.4px, transparent 0) 0 0 / 12px 12px,
+    var(--paper);
+  box-shadow: 0 24px 50px -30px rgb(0 0 0 / 0.9);
+}
+.board h2, .team h2 { margin: 0; font: 900 clamp(2rem, 1.3rem + 2.6vw, 3.4rem)/0.9 var(--display); text-transform: uppercase; }
+.board__intro { max-width: 62ch; margin: 10px 0 0; color: var(--ink-2); }
+.board__grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 34px 36px; margin-top: 28px; }
+/* seções impressas direto na página, separadas por um filete grosso */
+.panel { grid-column: span 6; padding-top: 14px; border-top: 3px solid var(--ink); min-width: 0; }
+.panel--wide { grid-column: span 12; }
+@media (max-width: 960px) { .board__grid { grid-template-columns: minmax(0, 1fr); } .panel, .panel--wide { grid-column: auto; } }
+.panel h3 { margin: 0 0 12px; font: 800 1.35rem/1 var(--display); text-transform: uppercase; }
+.panel p.hint { margin: -6px 0 14px; font-size: 14px; color: var(--ink-3); }
+.medals { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 560px) { .medals { grid-template-columns: repeat(2, minmax(0, 132px)); justify-content: center; } }
+/* selos redondos colados na página */
+.medal-tile {
+  display: grid; place-content: center; justify-items: center; gap: 2px; aspect-ratio: 1; width: 100%; max-width: 150px;
+  border: 5px solid #fff; border-radius: 50%; text-align: center; padding: 0;
+  background: var(--paper-2); color: var(--ink); box-shadow: var(--shadow-sticker);
+  transition: transform 200ms var(--ease-out);
+}
+.medal-tile:nth-child(odd) { transform: rotate(-3deg); }
+.medal-tile:nth-child(even) { transform: rotate(2deg); }
+.medal-tile b { font: 900 2.8rem/0.9 var(--display); }
+.medal-tile span { font: 700 12px/1.1 var(--body); text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-2); }
+.medal-tile[data-m="prata"] { background: linear-gradient(135deg, #f7f9fb, var(--silver) 55%, #b9c3cd); }
+.medal-tile[data-m="bronze"] { background: linear-gradient(135deg, #fbe4c9, #d99a5d 55%, #b87a45); }
+.medal-tile[data-m="excelencia"] { background: #fff; box-shadow: var(--shadow-sticker), inset 0 0 0 3px var(--gold-rim); }
+.medal-tile[aria-pressed="true"] { outline: 3px solid var(--ink); outline-offset: 2px; }
+.ws-note { margin: 18px 0 0; font-size: 15px; color: var(--ink-2); }
+.ws-note b { font: 800 1.3rem/1 var(--display); color: var(--ink); }
+
+.bars { display: grid; gap: 10px; }
+.bar { display: grid; grid-template-columns: 130px 1fr 44px; align-items: center; gap: 10px; font-size: 14px; border: 0; background: none; padding: 0; text-align: left; color: var(--ink); }
+.bar__track { height: 22px; border-radius: 6px; box-shadow: inset 0 0 0 1px var(--line); overflow: hidden; display: flex; }
+.bar__track i { display: block; height: 100%; background: var(--ink); }
+.bar b { font: 800 1.15rem/1 var(--display); text-align: right; }
+.bar[aria-pressed="true"] { font-weight: 700; }
+.bar[aria-pressed="true"] .bar__track { outline: 2px solid var(--ink); outline-offset: 1px; }
+@media (max-width: 420px) { .bar { grid-template-columns: 104px 1fr 40px; } }
+
+.rank-list { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.rank-list--cols { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 36px; }
+@media (max-width: 760px) { .rank-list--cols { grid-template-columns: minmax(0, 1fr); } }
+.rank-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 12px; align-items: center; font-size: 14px; }
+.rank-row__bar { grid-column: 1 / -1; display: flex; height: 8px; border-radius: 4px; box-shadow: inset 0 0 0 1px var(--line); overflow: hidden; }
+.rank-row__bar i { display: block; height: 100%; background: var(--ink); }
+.rank-row__v { color: var(--ink-2); white-space: nowrap; }
+.rank-row__v b { font: 800 1.1rem/1 var(--display); color: var(--ink); }
+.rank-row[data-on="true"] .linkish { text-decoration-color: var(--ink); text-decoration-thickness: 2px; }
+.linkish { padding: 2px 0; border: 0; background: none; color: var(--ink); font: inherit; font-weight: 600; text-align: left; text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; overflow-wrap: anywhere; }
+@media (hover: hover) and (pointer: fine) { .linkish:hover { text-decoration-color: var(--ink); } }
+.linkish .num { font-weight: 700; color: var(--ink-3); margin-right: 4px; }
+.mt-more { min-height: 40px; margin-top: 14px; padding: 0 14px; border: 2px dashed var(--ink-3); border-radius: 999px; background: none; color: var(--ink); font-weight: 700; font-size: 13.5px; }
+@media (hover: hover) and (pointer: fine) { .mt-more:hover { border-style: solid; } }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 12px; font-size: 13px; color: var(--ink-2); }
+.legend i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: -1px; margin-right: 5px; }
+.legend--center { justify-content: center; }
+
+table.mt { width: 100%; border-collapse: collapse; font-size: 14px; }
+table.mt th, table.mt td { padding: 7px 6px; text-align: right; border-bottom: 1px solid var(--line); white-space: nowrap; }
+table.mt th:nth-child(2), table.mt td:nth-child(2) { text-align: left; }
+table.mt td:nth-child(2) { max-width: 0; width: 100%; overflow: hidden; text-overflow: ellipsis; }
+table.mt th { font: 700 12px/1 var(--body); text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-3); }
+table.mt tr[data-hot="true"] td { background: var(--paper-2); }
+@media (max-width: 480px) { table.mt th, table.mt td { padding: 7px 4px; } table.mt { font-size: 13.5px; } }

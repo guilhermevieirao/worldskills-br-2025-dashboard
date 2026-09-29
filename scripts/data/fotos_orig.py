@@ -6,10 +6,10 @@ Saída: data/orig/<chave>.bin (a mesma chave de fotos_raw.py)
 """
 import hashlib, json, os, urllib.request, concurrent.futures as cf
 
-BASE = 'C:/claude/quem-e-quem'
-OUT = BASE + '/data/orig'
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # raiz do repositório
+OUT = ROOT + '/data/orig'
 os.makedirs(OUT, exist_ok=True)
-people = json.load(open(BASE + '/data/pessoas.json', encoding='utf8'))
+people = json.load(open(ROOT + '/data/sources/pessoas.json', encoding='utf8'))
 urls = sorted({p['foto'] for p in people if p['foto']})
 key = lambda u: hashlib.sha1(u.encode()).hexdigest()[:16]
 

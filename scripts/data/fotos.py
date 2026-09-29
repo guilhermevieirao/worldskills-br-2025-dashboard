@@ -2,10 +2,10 @@ import json, os, io, hashlib, concurrent.futures as cf
 import urllib.request
 from PIL import Image, ImageOps
 
-BASE = 'C:/claude/quem-e-quem'
-OUT = BASE + '/data/thumbs'
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))  # raiz do repositório
+OUT = ROOT + '/data/thumbs'
 os.makedirs(OUT, exist_ok=True)
-people = json.load(open(BASE + '/data/pessoas.json', encoding='utf8'))
+people = json.load(open(ROOT + '/data/sources/pessoas.json', encoding='utf8'))
 urls = sorted({p['foto'] for p in people if p['foto']})
 print('urls unicas:', len(urls))
 
