@@ -1,0 +1,127 @@
+# Seletiva Nacional 2025 · WorldSkills Brasil
+
+> Quem é quem na competição nacional da WorldSkills Brasil / SENAI de 2025: 943 registros do painel público "Quem é Quem" (competidores, avaliadores, chefes de equipe, organização e comunicação) em 47 ocupações. 58 competidores da seletiva defenderam o Brasil na WorldSkills Shanghai 2026, e 74 pessoas viajaram como experts, intérpretes ou comissão.
+
+Página independente, sem vínculo oficial com a WorldSkills, o SENAI ou o Senac. Resultados do mundial: results.worldskills.org.
+
+## Páginas
+
+- [Seletiva Nacional 2025](https://guilhermevieirao.github.io/worldskills-br-2025-dashboard/): álbum por setor e ocupação, números, mapa por estado, locais de prova e lista com busca.
+- [Brasil em Shanghai](https://skillex.com.br/): o álbum da delegação brasileira na WorldSkills Shanghai 2026.
+
+## Ocupações e competidores na seletiva
+
+- #01 Mecânica Industrial: 11 competidores
+- #02 Redes de Cabeamento Estruturados: 2 competidores
+- #04 Mecatrônica: 18 competidores
+- #05 Desenho Mecânico em CAD: 13 competidores
+- #06 Tornearia a CNC: 7 competidores
+- #07 Fresagem a CNC: 5 competidores
+- #08 Desenvolvimento de Aplicativos Móveis: 8 competidores
+- #09 Soluções em Softwares para Negócios: 8 competidores
+- #10 Soldagem: 11 competidores
+- #12 Revestimentos Cerâmicos: 6 competidores
+- #13 Funilaria Automotiva: 3 competidores
+- #15 Instalações Hidráulicas e de Aquecimento: 1 competidores
+- #16 Eletrônica: 6 competidores
+- #17 Tecnologia Web: 10 competidores
+- #18 Instalações Elétricas: 13 competidores
+- #19 Controle Industrial: 11 competidores
+- #20 Construção em Alvenaria: 5 competidores
+- #21 Sistemas Drywall: 8 competidores
+- #22 Pintura Decorativa: 2 competidores
+- #23 Robótica Móvel Autônoma: 16 competidores
+- #24 Movelaria: 3 competidores
+- #25 Marcenaria de Estruturas: 3 competidores
+- #26 Carpintaria: 2 competidores
+- #27 Joalheria: 3 competidores
+- #31 Tecnologia da Moda: 13 competidores
+- #32 Confeitaria: 7 competidores
+- #33 Tecnologia Automotiva: 10 competidores
+- #36 Pintura Automotiva: 4 competidores
+- #37 Construção de Espaços Verdes: 6 competidores
+- #38 Sistemas de Refrigeração: 6 competidores
+- #39 Gestão de Sistemas de Redes TI: 5 competidores
+- #40 Tecnologia em Design Gráfico: 8 competidores
+- #47 Panificação: 8 competidores
+- #48 Indústria 4.0: 26 competidores
+- #49 Tecnologia de Veículos Pesados: 3 competidores
+- #50 Arte Digital 3D para Jogos: 6 competidores
+- #51 Logística & Envios Internacionais: 3 competidores
+- #52 Tecnologia Química Laboratorial: 6 competidores
+- #53 Computação em Nuvem: 8 competidores
+- #54 Segurança Cibernética: 24 competidores
+- #55 Tecnologia da Água: 4 competidores
+- #57 Manufatura Aditiva: 9 competidores
+- #58 Construção Digital – BIM: 12 competidores
+- #59 Tecnologia em Design Industrial: 7 competidores
+- #60 Tecnologia Optoeletrônica: 3 competidores
+- #62 Tecnologia de Energia Verde: 9 competidores
+- #63 Integração de Sistemas Robóticos: 10 competidores
+
+## Da seletiva a Shanghai
+
+- Gustavo Carvalho Santos: #01 Mecânica Industrial, Medalha de Excelência, 8º de 15
+- Luiz Fernando Barbosa Santos: #02 Infraestrutura de Redes TIC, Medalha de Excelência, 6º de 14
+- Erick da Cruz Fanka: #03 Tecnologia em Segurança Inteligente, Participação, 5º de 7
+- Arthur Maia: #04 Mecatrônica, Medalha de Excelência, 4º de 32
+- Daniel Henrique Bianquini Moraes Oliveira: #04 Mecatrônica, Medalha de Excelência, 4º de 32
+- Welinton Staleng Mendonça: #05 Desenho Mecânico em CAD, Medalha de Excelência, 8º de 33
+- Leonardo Enrique Cruz: #06 Tornearia a CNC, Medalha de Excelência, 6º de 21
+- Alisson Gabriel Genova de Oliveira: #07 Fresagem a CNC, Medalha de Bronze, 3º de 23
+- Renan Gabriel Bernardes Coêlho: #08 Desenvolvimento de Aplicativos Móveis, Medalha de Excelência, 5º de 18
+- Artur Fiorentino: #09 Soluções em Softwares para Negócios, Medalha de Excelência, 8º de 20
+- Felipe de Souza Rocha: #10 Soldagem, Medalha de Excelência, 9º de 37
+- Gabriel Spinola Mendes da Silva: #11 Testagem de Software, Participação, 6º de 10
+- Bruno Canuto de Souza: #12 Revestimentos Cerâmicos, Medalha de Excelência, 10º de 19
+- Lucas Eduardo Mortari: #13 Funilaria Automotiva, Participação, 11º de 19
+- Matteo Victor Barbosa: #15 Instalações Hidráulicas, Participação, 25º de 32
+- João Lucas Ramos Batista: #16 Eletrônica, Medalha de Excelência, 8º de 19
+- André Brizido Basilio: #17 Tecnologia Web, Medalha de Excelência, 10º de 33
+- Rhuan Ferreira Barra: #18 Instalações Elétricas, Medalha de Excelência, 10º de 35
+- Kawan Costa Alves de Souza: #19 Controle Industrial, Participação, 11º de 19
+- Davi da Silva Aleixo Ignacio: #20 Construção em Alvenaria, Medalha de Excelência, 11º de 23
+- Guilherme Rodrigues Lunardi: #21 Sistemas Drywall, Medalha de Bronze, 3º de 14
+- Izabela Lopes Lima: #22 Pintura Decorativa, Medalha de Excelência, 8º de 19
+- Arthur Martins Barud: #23 Robótica Móvel Autônoma, Medalha de Bronze, 3º de 18, Best of Nation
+- Gustavo Gabriel Dutra Alves: #23 Robótica Móvel Autônoma, Medalha de Bronze, 3º de 18, Best of Nation
+- Enzo Thomaz Pasito: #24 Movelaria, Participação, 18º de 25
+- João Vitor Corrêa Maul: #25 Marcenaria de Estruturas, Participação, 13º de 20
+- Phelipe Santana Galindo: #26 Carpintaria, Participação, 15º de 16
+- Ronie Henrique de Almeida: #27 Joalheria, Medalha de Excelência, 6º de 13
+- Myllena Vitória de Arruda Nogueira: #31 Tecnologia da Moda, Medalha de Prata, 2º de 31
+- Maria Luiza Silva Alves: #32 Confeitaria, Participação, 13º de 22
+- Kauan Henrique Martinello Nazario: #33 Tecnologia Automotiva, Medalha de Excelência, 6º de 36
+- Lucas Fonseca Marques: #36 Pintura Automotiva, Medalha de Excelência, 5º de 24
+- Juan Pablo Ramos de Souza: #37 Construção de Espaços Verdes, Participação, 17º de 18
+- Leticia Gabrielle dos Santos Rosa: #37 Construção de Espaços Verdes, Participação, 17º de 18
+- Keyla Carvalho Dias: #38 Sistemas de Refrigeração, Participação, 15º de 27
+- Luan Antunes Batista: #39 Gestão de Sistemas de Redes TI, Medalha de Excelência, 4º de 25
+- Brenda Gomes Virgens: #40 Tecnologia em Design Gráfico, Medalha de Excelência, 7º de 29
+- Geovanny Gabriel Quirino Das Neves: #46 Construção em Concreto, Participação, 7º de 9
+- Paulo Eduardo Nascimento de Jesus: #46 Construção em Concreto, Participação, 7º de 9
+- Raiane Vitoria Suith Alves: #47 Panificação, Participação, 17º de 22
+- Gustavo Vitor Martins Pereira de Sousa: #48 Indústria 4.0, Medalha de Bronze, 3º de 16
+- João Victor Caliaro Fonseca: #48 Indústria 4.0, Medalha de Bronze, 3º de 16
+- Diogo Mathias: #49 Tecnologia de Veículos Pesados, Participação, 14º de 18
+- Giovanna Candido da Silva: #50 Arte Digital 3D para Jogos, Medalha de Excelência, 4º de 17
+- Maria Eduarda Alves Lourenço: #51 Logística & Envios Internacionais, Participação, 6º de 6
+- João Victor Vieira Alves: #52 Tecnologia Química Laboratorial, Participação, 7º de 10
+- Gabriel Henrique Gobato de Oliveira: #53 Computação em Nuvem, Participação, 11º de 16
+- Arthur Abreu Vieira Mendes: #54 Segurança Cibernética, Participação, 13º de 20
+- João Carlos de Farias: #54 Segurança Cibernética, Participação, 13º de 20
+- Leonardo Santos Bertho: #55 Tecnologia da Água, Medalha de Excelência, 5º de 12
+- Marcus Vinicius Santos Oliveira: #57 Manufatura Aditiva, Participação, 8º de 11
+- Catarina Matos dos Santos Costa da Fonseca: #58 Construção Digital – BIM, Participação, 10º de 17
+- Rafael Seikiti Nishihara Candido: #59 Tecnologia em Design Industrial, Medalha de Bronze, 3º de 12
+- Kaique William Ventura Camacho: #60 Tecnologia Optoeletrônica, Medalha de Excelência, 5º de 9
+- João Vitor Da Silva Gomes: #61 Tecnologia de Veículos Ferroviários, Participação, 6º de 9
+- Kevin Gabriel Gonçalves Silva: #62 Energia Renovável, Medalha de Bronze, 3º de 10
+- Alexandre Isaque Almeida Rodrigues: #63 Integração de Sistemas Robóticos, Medalha de Prata, 2º de 20
+- Bruno Gabriel Soares de Oliveira: #63 Integração de Sistemas Robóticos, Medalha de Prata, 2º de 20
+
+## Fontes
+
+- Painel "Quem é Quem" da WorldSkills Brasil (Power BI): https://app.powerbi.com/view?r=eyJrIjoiZjU5YzMwMmEtNTQzZS00MzEzLThhZTYtMGQ4M2Y4ODAxY2YwIiwidCI6IjZkNmJjYzNmLWJkYTEtNGY1NC1hZjFkLTg2ZDRiN2Q0ZTZiOCJ9
+- Resultados oficiais: https://results.worldskills.org/
+- Álbum Brasil em Shanghai: https://skillex.com.br/

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://guilhermevieirao.github.io/worldskills-br-2025-dashboard/sitemap.xml
